@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.WebToAppConverter"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".presentations.ui.activities.myApps.EditAppActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentations.ui.activities.myApps.ViewAppDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentations.ui.activities.myApps.MyAppsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentations.ui.activities.createApp.BuildingAppActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentations.ui.activities.createApp.GenerateAppActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentations.ui.activities.createApp.AppFeaturesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentations.ui.activities.createApp.AppBrandingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentations.ui.activities.createApp.AppBasicInfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentations.ui.activities.createApp.CreateAppActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentations.ui.activities.authorization.ForgetActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentations.ui.activities.authorization.SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentations.ui.activities.authorization.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentations.ui.activities.onboarding.OnboardingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentations.ui.activities.home.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentations.ui.activities.splash.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+</manifest>

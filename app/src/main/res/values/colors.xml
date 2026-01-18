@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="white_80">#CCFFFFFF</color>
+
+    <color name="black_1">#364153</color>
+    <color name="black_2">#4A5565</color>
+    <color name="black_3">#101828</color>
+
+    <color name="grey_1">#6A7282</color>
+    <color name="grey_2">#F3F4F6</color>
+    <color name="grey_3">#F9FAFB</color>
+    <color name="grey_4">#E5E7EB</color>
+
+    <color name="blue">#9810FA</color>
+
+    <color name="chip_text_purple">#8200DB</color>
+    <color name="chip_bg_purple">#F3E8FF</color>
+
+
+    <color name="red">#EF0909</color>
+    <color name="green">#64DD17</color>
+    <color name="oringe">#FF6D00</color>
+
+    <color name="red_2">#E7000B</color>
+
+
+</resources>

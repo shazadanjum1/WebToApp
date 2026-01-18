@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "228665725056",
+    "project_id": "web-maker-c378e",
+    "storage_bucket": "web-maker-c378e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:228665725056:android:f88587d82ac0ea9a769665",
+        "android_client_info": {
+          "package_name": "com.example.webtoappconverter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuurXop0oaoAJ7dn5mo2wkjFKIujtCKM8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

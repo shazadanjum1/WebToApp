@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardView"
+    android:layout_margin="@dimen/_6sdp"
+    android:minHeight="@dimen/_80sdp"
+    app:cardCornerRadius="@dimen/_16sdp"
+    android:foreground="?attr/selectableItemBackground"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_12sdp"
+        >
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/apkIV"
+            android:layout_width="@dimen/_48sdp"
+            android:layout_height="@dimen/_48sdp"
+            android:scaleType="centerCrop"
+            android:background="@drawable/circle_bg"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/ic_launcher_foreground"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+
+        <TextView
+            android:id="@+id/appNameTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/apkIV"
+            app:layout_constraintEnd_toStartOf="@+id/optionMenuBtn"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/_app_name"
+            android:fontFamily="@font/arimo_regular"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/black_3"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:includeFontPadding="false"
+            />
+
+
+        <TextView
+            android:id="@+id/dateTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/apkIV"
+            app:layout_constraintEnd_toStartOf="@+id/optionMenuBtn"
+            app:layout_constraintTop_toBottomOf="@+id/appNameTv"
+            android:text="@string/date"
+            android:fontFamily="@font/arimo_regular"
+            android:textSize="@dimen/_11ssp"
+            android:textColor="@color/grey_1"
+            android:includeFontPadding="false"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            />
+
+
+
+
+        <TextView
+            android:id="@+id/versionTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/apkIV"
+            app:layout_constraintEnd_toStartOf="@+id/optionMenuBtn"
+            app:layout_constraintTop_toBottomOf="@+id/dateTv"
+            android:text="@string/version"
+            android:fontFamily="@font/arimo_regular"
+            android:textSize="@dimen/_11ssp"
+            android:textColor="@color/grey_1"
+            android:includeFontPadding="false"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            />
+
+
+
+
+        <TextView
+            android:id="@+id/statusTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/apkIV"
+            app:layout_constraintEnd_toStartOf="@+id/optionMenuBtn"
+            app:layout_constraintTop_toBottomOf="@+id/versionTv"
+            android:text="@string/status"
+            android:fontFamily="@font/arimo_regular"
+            android:textSize="@dimen/_11ssp"
+            android:textColor="@color/grey_1"
+            android:includeFontPadding="false"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            />
+
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            tools:visibility="visible"
+            android:visibility="gone"
+            android:id="@+id/optionMenuBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_option_menu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:foreground="?attr/selectableItemBackground"
+            />
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

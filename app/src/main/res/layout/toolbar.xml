@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_50sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:background="@color/blue"
+    android:layoutDirection="ltr">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        tools:visibility="visible"
+        android:visibility="gone"
+        android:id="@+id/backBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back_btn"
+        android:layout_marginStart="@dimen/_12sdp"
+        />
+
+    <TextView
+        android:id="@+id/titleTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/backBtn"
+        app:layout_constraintEnd_toStartOf="@+id/profileBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/app_name1"
+        android:includeFontPadding="false"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:fontFamily="@font/arimo_regular"
+        android:textSize="@dimen/_18ssp"
+        android:textColor="@color/white"
+        />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        tools:visibility="visible"
+        android:visibility="gone"
+        android:id="@+id/profileBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/signinBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_home_person"
+        android:layout_marginEnd="@dimen/_12sdp"
+        />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        tools:visibility="visible"
+        android:visibility="gone"
+        android:id="@+id/signinBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_home_login"
+        android:layout_marginEnd="@dimen/_12sdp"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

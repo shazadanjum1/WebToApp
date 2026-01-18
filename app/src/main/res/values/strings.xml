@@ -1,0 +1,205 @@
+<resources>
+    <string name="app_name" translatable="false">Web to App</string>
+    <string name="app_name1" translatable="false">Web to App</string>
+
+    <string name="convert_websites_to_mobile_apps">Convert websites to mobile apps</string>
+
+    <string name="convert_any_website_to_app">Convert Any Website to App</string>
+    <string name="transform_your_website_into_a_fully_functional_android_app_in_just_a_few_minutes_no_coding_required">Transform your website into a fully functional Android app in just a few minutes. No coding required!</string>
+    <string name="easy_url_input">Easy URL input</string>
+    <string name="quick_conversion">Quick conversion</string>
+    <string name="professional_results">Professional results</string>
+
+    <string name="customize_your_app">Customize Your App</string>
+    <string name="personalize_your_app_with_custom_icons_splash_screens_colors_and_branding_to_match_your_style">Personalize your app with custom icons, splash screens, colors, and branding to match your style.</string>
+    <string name="custom_branding">Custom branding</string>
+    <string name="color_themes">Color themes</string>
+    <string name="app_icons_logos">App icons &amp; logos</string>
+
+    <string name="build_publish">Build &amp; Publish</string>
+    <string name="generate_your_apk_instantly_and_get_help_publishing_to_google_play_store_your_app_ready_to_go">Generate your APK instantly and get help publishing to Google Play Store. Your app, ready to go!</string>
+    <string name="instant_apk_generation">Instant APK generation</string>
+    <string name="play_store_support">Play Store support</string>
+    <string name="ongoing_updates">Ongoing updates</string>
+
+
+    <string name="skip">Skip</string>
+    <string name="next">Next</string>
+    <string name="get_started">Get Started</string>
+
+    <string name="welcome">Welcome</string>
+    <string name="web_to_app_converter">Web to App Converter</string>
+    <string name="sign_in_to_continue">Sign in to continue</string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="remember_me">Remember me</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="sign_in">Sign In</string>
+    <string name="login">Login</string>
+
+    <string name="dont_have_an_account">Don\'t have an account? %1$s</string>
+    <string name="sign_up_for_free">Sign up for free</string>
+
+    <string name="create_account">Create Account</string>
+    <string name="create_your_free_account">Create your free account</string>
+    <string name="full_name">Full Name</string>
+    <string name="enter_full_name">Enter full name</string>
+    <string name="create_a_password">Create a password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="confirm_your_password">Confirm your password</string>
+
+    <string name="i_agree_to_the_terms_of_service_and_privacy_policy">I agree to the %1$s and %2$s</string>
+
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="terms_of_service">Terms of Service</string>
+    <string name="already_have_an_account">Already have an account?  %1$s</string>
+    <string name="sign_in_s">Sign in</string>
+
+    <string name="name_is_required">Name is required</string>
+    <string name="email_is_required">Email is required</string>
+    <string name="please_enter_a_valid_email">Please enter a valid email</string>
+    <string name="password_is_required">Password is required</string>
+    <string name="password_must_be_at_least_6_characters">Password must be at least 6 characters</string>
+
+    <string name="registered_successfully">Registered successfully</string>
+    <string name="login_successful">Login successful</string>
+
+    <string name="forgot_password_">Forgot password</string>
+    <string name="reset_password">Reset password</string>
+    <string name="reset_password_email_sent">Reset password mail sent</string>
+
+    <string name="no_internet_connection">No internet connection</string>
+
+    <string name="dashboard">Dashboard</string>
+    <string name="create_app">Create App</string>
+    <string name="web_to_app">Web to App</string>
+    <string name="my_apps">My Apps</string>
+    <string name="manage_apps">Manage Apps</string>
+    <string name="wa_support">WA Support</string>
+    <string name="chat_with_us">Chat with us</string>
+    <string name="services">Services</string>
+    <string name="extra_features">Extra features</string>
+    <string name="ask_features">Ask Features</string>
+    <string name="send_feedback">Send feedback</string>
+    <string name="tutorials">Tutorials</string>
+    <string name="learn_more">Learn more</string>
+    <string name="looking_for_ios_apps">Looking for iOS Apps?</string>
+    <string name="request_us_for_ios_apps_conversions">Request us for iOS Apps Conversions</string>
+
+    <string name="enter_website_url">Enter Website URL</string>
+    <string name="step_1_of_5">Step 1 of 5</string>
+    <string name="step_2_of_5">Step 2 of 5</string>
+    <string name="step_3_of_5">Step 3 of 5</string>
+    <string name="step_4_of_5">Step 4 of 5</string>
+    <string name="step_5_of_5">Step 5 of 5</string>
+
+    <string name="website_url">Website URL</string>
+    <string name="_continue">Continue</string>
+
+    <string name="app_basic_info">App Basic Info</string>
+    <string name="basic_information">Basic Information</string>
+    <string name="_app_name">App Name</string>
+    <string name="package_name">Package Name</string>
+    <string name="short_description">Short Description</string>
+    <string name="describe_your_app_in_a_few_words">Describe your app in a few words…</string>
+    <string name="category">Category</string>
+    <string name="orientation">Orientation</string>
+    <string name="portrait">Portrait</string>
+    <string name="landscape">Landscape</string>
+
+    <string name="app_branding">App Branding</string>
+
+    <string name="customize_branding">Customize Branding</string>
+    <string name="app_icon">App Icon</string>
+    <string name="upload_icon">Upload Icon</string>
+    <string name="primary_color">Primary Color</string>
+    <string name="secondary_color">Secondary Color</string>
+    <string name="show_preview">Show Preview</string>
+
+    <string name="choose_color">Choose Color</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="app_features">App Features</string>
+    <string name="configure_features">Configure Features</string>
+    <string name="pull_to_refresh">Pull to Refresh</string>
+    <string name="enable_pull_down_refresh_gesture">Enable pull-down refresh gesture</string>
+    <string name="loader_screen">Loader Screen</string>
+    <string name="show_loading_animation">Show loading animation</string>
+    <string name="fullscreen_mode">Fullscreen Mode</string>
+    <string name="hide_system_status_bar">Hide system status bar</string>
+    <string name="navigation_buttons">Navigation Buttons</string>
+    <string name="show_back_forward_buttons">Show back/forward buttons</string>
+    <string name="external_links_in_browser">External Links in Browser</string>
+    <string name="open_external_urls_in_browser">Open external URLs in browser</string>
+    <string name="notification_support">Notification Support</string>
+    <string name="enable_push_notifications">Enable push notifications</string>
+    <string name="continue_to_generate">Continue to Generate</string>
+
+    <string name="generate_app">Generate App</string>
+    <string name="review_app_summary">Review App Summary</string>
+    <string name="url">URL</string>
+    <string name="enabled_features">Enabled Features</string>
+    <string name="build_app">Build App</string>
+
+    <string name="please_enter_url">Please enter URL</string>
+    <string name="url_must_start_with_http_or_https">URL must start with http:// or https://</string>
+    <string name="invalid_web_url">Invalid web URL</string>
+
+    <string name="app_name_must_be_at_least_3_letters_and_contain_only_alphabets">App name must be at least 3 letters and contain only alphabets</string>
+    <string name="the_package_name_must_follow_the_format_com_example_app">The package name must follow the format com.example.app.</string>
+
+    <string name="please_select_app_icon">please select app icon</string>
+
+    <string name="building_your_app">Building Your App</string>
+    <string name="please_wait_while_we_generate_your_apk">Please wait while we generate your APK...</string>
+    <string name="progress">Progress</string>
+
+    <string name="app_details_saved_successfully">App details saved successfully</string>
+    <string name="no_app_found">No app found</string>
+
+    <string name="view_details">View Details</string>
+    <string name="edit_app">Edit App</string>
+    <string name="download_aab">Download AAB</string>
+    <string name="download_apk">Download APK</string>
+    <string name="delete_app">Delete App</string>
+
+    <string name="date">Date</string>
+    <string name="version">Version</string>
+    <string name="status">Status</string>
+
+    <string name="ready_to_download">Ready to download</string>
+    <string name="processing">Processing</string>
+    <string name="draft">Draft</string>
+
+    <string name="failed_to_delete">Failed to delete</string>
+    <string name="app_deleted">App deleted</string>
+
+
+    <string name="downloaded">Downloaded</string>
+    <string name="storage_permission_is_required_to_save_the_file">Storage permission is required to save the file</string>
+
+    <string name="storage_permission_required">Storage Permission Required</string>
+    <string name="this_permission_is_needed_to_save_the_downloaded_file_in_your_downloads_folder">This permission is needed to save the downloaded file in your Downloads folder.</string>
+    <string name="allow">Allow</string>
+    <string name="downloading">Downloading...</string>
+    <string name="failed_to_downloading">Failed to downloading</string>
+
+    <string name="app_details">App Details</string>
+    <string name="something_went_wrong_try_again">Something went wrong, try again</string>
+
+    <string name="app_information">App Information</string>
+    <string name="created">Created</string>
+    <string name="build_version">Build Version</string>
+
+    <string name="theme_colors">Theme Colors</string>
+    <string name="edit_rebuild">Edit &amp; Rebuild</string>
+    <string name="download">Download</string>
+    <string name="share">Share</string>
+
+    <string name="update_app">Update App</string>
+
+
+</resources>
