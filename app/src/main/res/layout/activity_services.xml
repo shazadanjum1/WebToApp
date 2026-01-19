@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="ltr"
+    android:background="@color/white"
+    tools:context=".presentations.ui.activities.services.ServicesActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/toolbarLL"
+        android:background="@drawable/toolbar_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarLL"
+        app:layout_constraintBottom_toTopOf="@+id/container"
+        >
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_20sdp"
+            >
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/publishAppBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/_90sdp"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                app:cardCornerRadius="@dimen/_14sdp"
+                android:foreground="?attr/selectableItemBackground"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_12sdp"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_publish_app"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/tv1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="@font/arimo_regular"
+                        android:includeFontPadding="false"
+                        android:maxLines="2"
+                        android:text="@string/publish_app_on_google_play"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black_3"
+                        android:textSize="@dimen/_12ssp"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        app:layout_constraintStart_toEndOf="@+id/iv1"
+                        app:layout_constraintEnd_toStartOf="@+id/fIv1"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:fontFamily="@font/arimo_regular"
+                        android:includeFontPadding="false"
+                        android:maxLines="2"
+                        android:text="@string/we_will_publish_your_app_on_google_play_store"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/grey_1"
+                        android:textSize="@dimen/_11ssp"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        app:layout_constraintStart_toEndOf="@+id/iv1"
+                        app:layout_constraintEnd_toStartOf="@+id/fIv1"
+                        app:layout_constraintTop_toBottomOf="@+id/tv1"
+                        />
+
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/fIv1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_forward"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/grey_5"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        />
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/customAppBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/_90sdp"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                app:cardCornerRadius="@dimen/_14sdp"
+                android:foreground="?attr/selectableItemBackground"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_12sdp"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_custom_app"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/tv2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="@font/arimo_regular"
+                        android:includeFontPadding="false"
+                        android:maxLines="2"
+                        android:text="@string/custom_android_app_development"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black_3"
+                        android:textSize="@dimen/_12ssp"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        app:layout_constraintStart_toEndOf="@+id/iv2"
+                        app:layout_constraintEnd_toStartOf="@+id/fIv2"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:fontFamily="@font/arimo_regular"
+                        android:includeFontPadding="false"
+                        android:maxLines="2"
+                        android:text="@string/get_a_fully_customized_android_app_built_for_you"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/grey_1"
+                        android:textSize="@dimen/_11ssp"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        app:layout_constraintStart_toEndOf="@+id/iv2"
+                        app:layout_constraintEnd_toStartOf="@+id/fIv2"
+                        app:layout_constraintTop_toBottomOf="@+id/tv2"
+                        />
+
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/fIv2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_forward"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/grey_5"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        />
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/notificationBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/_90sdp"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                app:cardCornerRadius="@dimen/_14sdp"
+                android:foreground="?attr/selectableItemBackground"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_12sdp"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_notification_service"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/tv3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="@font/arimo_regular"
+                        android:includeFontPadding="false"
+                        android:maxLines="2"
+                        android:text="@string/push_notifications_setup"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black_3"
+                        android:textSize="@dimen/_12ssp"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        app:layout_constraintStart_toEndOf="@+id/iv3"
+                        app:layout_constraintEnd_toStartOf="@+id/fIv3"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:fontFamily="@font/arimo_regular"
+                        android:includeFontPadding="false"
+                        android:maxLines="2"
+                        android:text="@string/enable_push_notifications_for_your_app"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/grey_1"
+                        android:textSize="@dimen/_11ssp"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        app:layout_constraintStart_toEndOf="@+id/iv3"
+                        app:layout_constraintEnd_toStartOf="@+id/fIv3"
+                        app:layout_constraintTop_toBottomOf="@+id/tv3"
+                        />
+
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/fIv3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_forward"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/grey_5"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        />
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/admobBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/_90sdp"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                app:cardCornerRadius="@dimen/_14sdp"
+                android:foreground="?attr/selectableItemBackground"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_12sdp"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_admob"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/tv4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="@font/arimo_regular"
+                        android:includeFontPadding="false"
+                        android:maxLines="2"
+                        android:text="@string/admob_monetization"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black_3"
+                        android:textSize="@dimen/_12ssp"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        app:layout_constraintStart_toEndOf="@+id/iv4"
+                        app:layout_constraintEnd_toStartOf="@+id/fIv4"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:fontFamily="@font/arimo_regular"
+                        android:includeFontPadding="false"
+                        android:maxLines="2"
+                        android:text="@string/integrate_ads_and_start_earning_from_your_app"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/grey_1"
+                        android:textSize="@dimen/_11ssp"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        app:layout_constraintStart_toEndOf="@+id/iv4"
+                        app:layout_constraintEnd_toStartOf="@+id/fIv4"
+                        app:layout_constraintTop_toBottomOf="@+id/tv4"
+                        />
+
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/fIv4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_forward"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/grey_5"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        />
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/proBuildBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/_90sdp"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_marginBottom="@dimen/_2sdp"
+                app:cardCornerRadius="@dimen/_14sdp"
+                android:foreground="?attr/selectableItemBackground"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_12sdp"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_pro_build"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/tv5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="@font/arimo_regular"
+                        android:includeFontPadding="false"
+                        android:maxLines="2"
+                        android:text="@string/premium_build_no_watermark"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black_3"
+                        android:textSize="@dimen/_12ssp"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        app:layout_constraintStart_toEndOf="@+id/iv5"
+                        app:layout_constraintEnd_toStartOf="@+id/fIv5"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:fontFamily="@font/arimo_regular"
+                        android:includeFontPadding="false"
+                        android:maxLines="2"
+                        android:text="@string/remove_watermark_and_get_premium_features"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/grey_1"
+                        android:textSize="@dimen/_11ssp"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        app:layout_constraintStart_toEndOf="@+id/iv5"
+                        app:layout_constraintEnd_toStartOf="@+id/fIv5"
+                        app:layout_constraintTop_toBottomOf="@+id/tv5"
+                        />
+
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/fIv5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_forward"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/grey_5"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        />
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </ScrollView>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

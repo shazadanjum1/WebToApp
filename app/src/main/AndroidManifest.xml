@@ -20,6 +20,18 @@
         android:theme="@style/Theme.WebToAppConverter"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".presentations.ui.activities.services.ServiceDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentations.ui.activities.services.ServicesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentations.ui.activities.serviceRequest.ServiceRequestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentations.ui.activities.support.SupportActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentations.ui.activities.myApps.EditAppActivity"
             android:exported="false" />
         <activity

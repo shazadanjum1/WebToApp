@@ -41,6 +41,7 @@ import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import com.app.styletap.webtoappconverter.R
+import com.app.styletap.webtoappconverter.presentations.ui.activities.authorization.LoginActivity
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.PROCESSING
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.READY_TO_DOWNLOAD
 import com.app.styletap.webtoappconverter.presentations.utils.DownloadProgressDialog
@@ -48,7 +49,9 @@ import com.flask.colorpicker.ColorPickerView
 import com.flask.colorpicker.builder.ColorPickerDialogBuilder
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
+import com.google.firebase.auth.FirebaseAuth
 import java.io.File
+import java.net.URLEncoder
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -542,3 +545,53 @@ fun incrementVersion(version: String): String {
 
     return "$major.$minor"
 }
+
+
+
+fun Context.openWhatsApp(phoneNumber: String) {
+    try {
+        val cleanNumber = phoneNumber
+            .replace("+", "")
+            .replace(" ", "")
+
+        val url = "https://wa.me/$cleanNumber"
+
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+        intent.setPackage("com.whatsapp") // force WhatsApp
+
+        startActivity(intent)
+    } catch (_: Exception) {
+        Toast.makeText(this, getString(R.string.whatsapp_not_installed), Toast.LENGTH_SHORT).show()
+    }
+}
+
+
+fun Context.openEmail(
+    email: String,
+    subject: String,
+    message: String
+) {
+    try {
+        val intent = Intent(Intent.ACTION_SEND).apply {
+            type = "message/rfc822"
+            putExtra(Intent.EXTRA_EMAIL, arrayOf(email))
+            putExtra(Intent.EXTRA_SUBJECT, subject)
+            putExtra(Intent.EXTRA_TEXT, message)
+        }
+
+        startActivity(Intent.createChooser(intent, "Send email"))
+    } catch (_: Exception) {
+        Toast.makeText(this, getString(R.string.no_email_app_found), Toast.LENGTH_SHORT).show()
+    }
+}
+
+fun Activity.logoutUser() {
+    FirebaseAuth.getInstance().signOut()
+    Toast.makeText(this, resources.getString(R.string.successfully_logged_out), Toast.LENGTH_SHORT).show()
+
+    val intent = Intent(this, LoginActivity::class.java)
+    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+    startActivity(intent)
+    this.finishAffinity()
+}
+

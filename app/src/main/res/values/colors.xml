@@ -13,6 +13,7 @@
     <color name="grey_2">#F3F4F6</color>
     <color name="grey_3">#F9FAFB</color>
     <color name="grey_4">#E5E7EB</color>
+    <color name="grey_5">#99A1AF</color>
 
     <color name="blue">#9810FA</color>
 
@@ -25,6 +26,8 @@
     <color name="oringe">#FF6D00</color>
 
     <color name="red_2">#E7000B</color>
+
+    <color name="green_2">#00A63E</color>
 
 
 </resources>

@@ -8,17 +8,19 @@ import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.app.styletap.webtoappconverter.R
-import com.app.styletap.webtoappconverter.databinding.ActivityLoginBinding
 import com.app.styletap.webtoappconverter.databinding.ActivityMainBinding
 import com.app.styletap.webtoappconverter.extentions.adjustBottomHeight
 import com.app.styletap.webtoappconverter.extentions.adjustTopHeight
 import com.app.styletap.webtoappconverter.extentions.customEnableEdgeToEdge
 import com.app.styletap.webtoappconverter.extentions.isNetworkAvailable
+import com.app.styletap.webtoappconverter.extentions.logoutUser
 import com.app.styletap.webtoappconverter.presentations.ui.activities.createApp.CreateAppActivity
 import com.app.styletap.webtoappconverter.presentations.ui.activities.myApps.MyAppsActivity
+import com.app.styletap.webtoappconverter.presentations.ui.activities.serviceRequest.ServiceRequestActivity
+import com.app.styletap.webtoappconverter.presentations.ui.activities.services.ServicesActivity
+import com.app.styletap.webtoappconverter.presentations.ui.activities.support.SupportActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.firestore.FirebaseFirestore
 import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity() {
@@ -59,8 +61,12 @@ class MainActivity : AppCompatActivity() {
     fun initView(){
         binding.apply {
             toolbar.titleTv.text = resources.getString(R.string.dashboard)
-            toolbar.signinBtn.isVisible = true
+            toolbar.signOutBtn.isVisible = true
             toolbar.profileBtn.isVisible = true
+
+            toolbar.signOutBtn.setOnClickListener {
+                logoutUser()
+            }
 
             createAppBtn.setOnClickListener {
                 moveNext(Intent(this@MainActivity, CreateAppActivity::class.java))
@@ -73,6 +79,19 @@ class MainActivity : AppCompatActivity() {
                     Toast.makeText(this@MainActivity, resources.getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show()
                 }
             }
+
+            waSupportBtn.setOnClickListener {
+                moveNext(Intent(this@MainActivity, SupportActivity::class.java))
+            }
+
+            promoBtn.setOnClickListener {
+                moveNext(Intent(this@MainActivity, ServiceRequestActivity::class.java))
+            }
+
+            servicesBtn.setOnClickListener {
+                moveNext(Intent(this@MainActivity, ServicesActivity::class.java))
+            }
+
         }
     }
 

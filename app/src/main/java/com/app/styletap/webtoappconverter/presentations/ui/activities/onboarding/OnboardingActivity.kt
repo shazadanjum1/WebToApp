@@ -10,11 +10,15 @@ import com.app.styletap.webtoappconverter.databinding.ActivityOnboardingBinding
 import com.app.styletap.webtoappconverter.extentions.adjustBottomHeight
 import com.app.styletap.webtoappconverter.extentions.customEnableEdgeToEdge
 import com.app.styletap.webtoappconverter.presentations.ui.activities.authorization.LoginActivity
+import com.app.styletap.webtoappconverter.presentations.utils.Contants.isShowOnBoarding
+import com.app.styletap.webtoappconverter.presentations.utils.PrefHelper
 
 class OnboardingActivity : AppCompatActivity() {
     lateinit var binding: ActivityOnboardingBinding
     var introCounter = 1
     var fromWhere = "home"
+
+    private lateinit var prefHelper: PrefHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +28,7 @@ class OnboardingActivity : AppCompatActivity() {
         customEnableEdgeToEdge()
 
         adjustBottomHeight(binding.container)
+        prefHelper = PrefHelper(this.applicationContext)
 
         initiView()
     }
@@ -77,6 +82,8 @@ class OnboardingActivity : AppCompatActivity() {
 
             }
         } else {
+            prefHelper.setBoolean(isShowOnBoarding, false)
+
             val mIntent = Intent(this, LoginActivity::class.java).apply {
                 putExtra("from", "splash")
             }

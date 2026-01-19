@@ -6,8 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.app.styletap.webtoappconverter.R
 import com.app.styletap.webtoappconverter.extentions.customEnableEdgeToEdge
+import com.app.styletap.webtoappconverter.presentations.ui.activities.authorization.LoginActivity
 import com.app.styletap.webtoappconverter.presentations.ui.activities.home.MainActivity
 import com.app.styletap.webtoappconverter.presentations.ui.activities.onboarding.OnboardingActivity
+import com.app.styletap.webtoappconverter.presentations.utils.Contants.isShowOnBoarding
+import com.app.styletap.webtoappconverter.presentations.utils.PrefHelper
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
@@ -17,6 +20,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class SplashActivity : AppCompatActivity() {
+    private lateinit var prefHelper: PrefHelper
 
     private lateinit var auth: FirebaseAuth
     var user: FirebaseUser? = null
@@ -26,6 +30,7 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
         customEnableEdgeToEdge()
 
+        prefHelper = PrefHelper(this.applicationContext)
         auth = FirebaseAuth.getInstance()
         user = auth.currentUser
 
@@ -39,7 +44,11 @@ class SplashActivity : AppCompatActivity() {
 
     fun moveNext(){
         val mIntent = if (user == null){
-            Intent(this, OnboardingActivity::class.java)
+            if (prefHelper.getBooleanDefultTrue(isShowOnBoarding)){
+                Intent(this, OnboardingActivity::class.java)
+            } else {
+                Intent(this, LoginActivity::class.java)
+            }
         } else {
             Intent(this, MainActivity::class.java)
         }

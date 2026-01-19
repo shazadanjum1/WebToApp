@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name" translatable="false">Web to App</string>
     <string name="app_name1" translatable="false">Web to App</string>
+    <string name="phone_number" translatable="false">+923184376629</string>
+    <string name="email">support@webtoapp.com</string>
 
     <string name="convert_websites_to_mobile_apps">Convert websites to mobile apps</string>
 
@@ -201,5 +203,75 @@
 
     <string name="update_app">Update App</string>
 
+    <string name="get_instant_support_via_whatsApp">Get instant support via WhatsApp</string>
+    <string name="open_whatsApp">Open WhatsApp</string>
+
+    <string name="support">Support</string>
+    <string name="submit_issue">Submit Issue</string>
+    <string name="tell_us_about_your_problem">Tell us about your problem</string>
+    <string name="issue_type">Issue Type</string>
+    <string name="message">Message</string>
+    <string name="describe_your_issue_in_detail">Describe your issue in detail...</string>
+    <string name="other_ways_to_reach_us">Other Ways to Reach Us</string>
+    <string name="email_">📧 Email: support@webtoapp.com</string>
+    <string name="phone_">📞 Phone: +92 318 4376629</string>
+    <string name="support_hours">⏰ Support Hours: 9 AM - 6 PM (Mon-Fri)</string>
+
+    <string name="whatsapp_not_installed">WhatsApp not installed</string>
+    <string name="no_email_app_found">No email app found</string>
+
+    <string name="service_request">Service Request</string>
+    <string name="tell_us_about_your_app">Tell us about your app</string>
+    <string name="service_type">Service Type</string>
+    <string name="submit">Submit</string>
+
+    <string name="publish_app_on_google_play">Publish App on Google Play</string>
+    <string name="we_will_publish_your_app_on_google_play_store">We will publish your app on Google Play Store</string>
+
+    <string name="custom_android_app_development">Custom Android App Development</string>
+    <string name="get_a_fully_customized_android_app_built_for_you">Get a fully customized Android app built for you</string>
+    <string name="push_notifications_setup">Push Notifications Setup</string>
+    <string name="enable_push_notifications_for_your_app">Enable push notifications for your app</string>
+
+    <string name="admob_monetization">AdMob Monetization</string>
+    <string name="integrate_ads_and_start_earning_from_your_app">Integrate ads and start earning from your app</string>
+    <string name="premium_build_no_watermark">Premium Build (No Watermark)</string>
+    <string name="remove_watermark_and_get_premium_features">Remove watermark and get premium features</string>
+
+    <string name="service_details">Service Details</string>
+    <string name="what_included">What\'s Included</string>
+
+    <string name="app_store_optimization">App Store Optimization</string>
+    <string name="professional_screenshots">Professional Screenshots</string>
+    <string name="app_description_writing">App Description Writing</string>
+    <string name="category_selection">Category Selection</string>
+    <string name="privacy_policy_creation">Privacy Policy Creation</string>
+    <string name="order_now">Order Now</string>
+
+    <string name="custom_uiux_design">Custom UI/UX Design</string>
+    <string name="native_android_development">Native Android Development</string>
+    <string name="api_integration">API Integration</string>
+    <string name="database_setup">Database Setup</string>
+    <string name="ongoing_support">Ongoing Support</string>
+
+    <string name="firebase_setup">Firebase Setup</string>
+    <string name="notification_templates">Notification Templates</string>
+    <string name="scheduling_support">Scheduling Support</string>
+    <string name="analytics_dashboard">Analytics Dashboard</string>
+    <string name="user_segmentation">User Segmentation</string>
+
+    <string name="banner_ads_integration">Banner Ads Integration</string>
+    <string name="interstitial_ads">Interstitial Ads</string>
+    <string name="reward_ads">Reward Ads</string>
+    <string name="admob_account_setup">AdMob Account Setup</string>
+    <string name="revenue_optimization">Revenue Optimization</string>
+
+    <string name="no_watermark">No Watermark</string>
+    <string name="priority_support">Priority Support</string>
+    <string name="custom_domain">Custom Domain</string>
+    <string name="advanced_analytics">Advanced Analytics</string>
+    <string name="unlimited_rebuilds">Unlimited Rebuilds</string>
+
+    <string name="successfully_logged_out">Successfully logged out.</string>
 
 </resources>

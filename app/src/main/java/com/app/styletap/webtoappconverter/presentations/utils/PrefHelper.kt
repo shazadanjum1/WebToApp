@@ -1,0 +1,34 @@
+package com.app.styletap.webtoappconverter.presentations.utils
+
+import android.content.Context
+import android.content.SharedPreferences
+
+class PrefHelper(context: Context) {
+    companion object{
+        var mPref: SharedPreferences? = null
+    }
+    var prefHelper: SharedPreferences? = null
+    init {
+        mPref?.let {
+            prefHelper = it
+        } ?: run {
+            mPref = context.applicationContext.getSharedPreferences("WebToApp", Context.MODE_PRIVATE)
+            prefHelper = mPref
+        }
+    }
+
+    fun setBoolean(key: String, value: Boolean){
+        prefHelper?.edit()?.remove(key)?.apply()
+        prefHelper?.edit()?.putBoolean(key, value)?.apply()
+    }
+
+    fun getBoolean(key: String): Boolean{
+        return prefHelper?.getBoolean(key, false) ?: false
+    }
+
+    fun getBooleanDefultTrue(key: String): Boolean{
+        return prefHelper?.getBoolean(key, true) ?: true
+    }
+
+
+}
