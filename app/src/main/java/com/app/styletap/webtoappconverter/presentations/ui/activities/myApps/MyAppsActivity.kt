@@ -29,6 +29,7 @@ import com.app.styletap.webtoappconverter.extentions.hasStoragePermission
 import com.app.styletap.webtoappconverter.extentions.showStorageRationaleDialog
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.ACTION_FINISH_ACTIVITY
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.ACTION_REFRESH_ACTIVITY
+import com.google.firebase.firestore.Filter
 
 class MyAppsActivity : AppCompatActivity() {
     lateinit var binding: ActivityMyAppsBinding
@@ -118,11 +119,19 @@ class MyAppsActivity : AppCompatActivity() {
 
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
 
+
+
         val userId = FirebaseAuth.getInstance().currentUser?.uid ?: return
         val db = FirebaseFirestore.getInstance()
 
         db.collection("apps")
-            .whereEqualTo("userId", userId)
+            //.whereEqualTo("userId", userId)
+            //.whereEqualTo("guestId", userId)
+            .where(
+                Filter.or(
+                Filter.equalTo("userId", userId),
+                Filter.equalTo("guestId", userId)
+            ))
             .get()
             .addOnSuccessListener { snapshot ->
                 val appList = snapshot.documents

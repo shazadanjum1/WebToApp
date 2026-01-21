@@ -235,7 +235,7 @@ class ViewAppDetailsActivity : AppCompatActivity() {
                     }
 
                 } else {
-                    sendBroadcast(Intent(ACTION_REFRESH_ACTIVITY))
+                    sendBroadcast(Intent(ACTION_REFRESH_ACTIVITY).apply { setPackage(packageName) })
                     finish()
                 }
             }

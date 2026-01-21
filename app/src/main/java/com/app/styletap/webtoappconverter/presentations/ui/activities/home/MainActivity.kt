@@ -62,7 +62,12 @@ class MainActivity : AppCompatActivity() {
         binding.apply {
             toolbar.titleTv.text = resources.getString(R.string.dashboard)
             toolbar.signOutBtn.isVisible = true
-            toolbar.profileBtn.isVisible = true
+
+            if (user?.isAnonymous == true){
+                toolbar.profileBtn.isVisible = false
+            } else {
+                toolbar.profileBtn.isVisible = true
+            }
 
             toolbar.signOutBtn.setOnClickListener {
                 logoutUser()

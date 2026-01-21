@@ -43,7 +43,7 @@ class SplashActivity : AppCompatActivity() {
 
 
     fun moveNext(){
-        val mIntent = if (user == null){
+        /*val mIntent = if (user == null){
             if (prefHelper.getBooleanDefultTrue(isShowOnBoarding)){
                 Intent(this, OnboardingActivity::class.java)
             } else {
@@ -51,7 +51,21 @@ class SplashActivity : AppCompatActivity() {
             }
         } else {
             Intent(this, MainActivity::class.java)
-        }
+        }*/
+
+        val mIntent =
+            if (user?.isAnonymous == true) {
+                Intent(this, MainActivity::class.java)
+            } else if (user == null) {
+                if (prefHelper.getBooleanDefultTrue(isShowOnBoarding)){
+                    Intent(this, OnboardingActivity::class.java)
+                } else {
+                    Intent(this, LoginActivity::class.java)
+                }
+            } else {
+                Intent(this, MainActivity::class.java)
+            }
+
 
         mIntent.apply {
             putExtra("from", "splash")

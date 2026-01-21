@@ -24,6 +24,7 @@ import com.app.styletap.webtoappconverter.extentions.enablePasswordToggle
 import com.app.styletap.webtoappconverter.extentions.isNetworkAvailable
 import com.app.styletap.webtoappconverter.extentions.setClickableText
 import com.app.styletap.webtoappconverter.extentions.setMultiClickableText
+import com.app.styletap.webtoappconverter.presentations.ui.activities.home.MainActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
@@ -210,8 +211,8 @@ class SignUpActivity : AppCompatActivity() {
                                 .set(userMap, SetOptions.merge())
                                 .addOnSuccessListener {
                                     Toast.makeText(this, resources.getString(R.string.registered_successfully), Toast.LENGTH_SHORT).show()
-                                    //startActivity(Intent(this, LoginActivity::class.java))
-                                    finish()
+                                    startActivity(Intent(this, MainActivity::class.java))
+                                    finishAffinity()
                                 }
                                 .addOnFailureListener { e ->
                                     isClickable = true

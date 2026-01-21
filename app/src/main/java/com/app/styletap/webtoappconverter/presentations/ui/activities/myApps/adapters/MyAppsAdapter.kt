@@ -59,7 +59,7 @@ class MyAppsAdapter(
             appNameTv.text = app.appName ?: "Unnamed App"
             versionTv.text = "${versionTv.context.resources.getString(R.string.version)}: " + app.appVersion ?: "1"
             val millis = app.updatedAt.toMillis()
-            dateTv.text =  "${versionTv.context.resources.getString(R.string.version)}: ${millis?.toFormattedDate()}"
+            dateTv.text =  "${versionTv.context.resources.getString(R.string.date)}: ${millis?.toFormattedDate()}"
 
             // Status
             statusTv.decorateStatus(statusTv.context,app.status ?: DRAFT)

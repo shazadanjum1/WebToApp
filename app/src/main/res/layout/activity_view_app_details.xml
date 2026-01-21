@@ -549,6 +549,8 @@
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
+                tools:visibility="visible"
+                android:visibility="gone"
                 android:id="@+id/editAndRebuildBtn"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_47sdp"
@@ -615,6 +617,8 @@
                     >
 
                     <com.google.android.material.card.MaterialCardView
+                        tools:visibility="visible"
+                        android:visibility="gone"
                         android:id="@+id/downloadBtn"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_40sdp"
@@ -660,6 +664,8 @@
                     >
 
                     <com.google.android.material.card.MaterialCardView
+                        tools:visibility="visible"
+                        android:visibility="gone"
                         android:id="@+id/shareBtn"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_40sdp"

@@ -15,6 +15,7 @@ import com.app.styletap.webtoappconverter.presentations.utils.Contants.CUSTOM_AP
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.PLAY_STORE
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.PREMIUM_BUILD
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.PUSH_NOTIFICATIONS
+import com.bumptech.glide.Glide
 
 class ServiceDetailsActivity : AppCompatActivity() {
     lateinit var binding: ActivityServiceDetailsBinding
@@ -85,6 +86,8 @@ class ServiceDetailsActivity : AppCompatActivity() {
             f3.text = resources.getString(R.string.app_description_writing)
             f4.text = resources.getString(R.string.category_selection)
             f5.text = resources.getString(R.string.privacy_policy_creation)
+
+            loadIcon(R.drawable.ic_publish_app)
         }
     }
 
@@ -98,6 +101,9 @@ class ServiceDetailsActivity : AppCompatActivity() {
             f3.text = resources.getString(R.string.api_integration)
             f4.text = resources.getString(R.string.database_setup)
             f5.text = resources.getString(R.string.ongoing_support)
+
+            loadIcon(R.drawable.ic_custom_app)
+
         }
     }
 
@@ -111,6 +117,8 @@ class ServiceDetailsActivity : AppCompatActivity() {
             f3.text = resources.getString(R.string.scheduling_support)
             f4.text = resources.getString(R.string.analytics_dashboard)
             f5.text = resources.getString(R.string.user_segmentation)
+
+            loadIcon(R.drawable.ic_notification_service)
         }
     }
 
@@ -124,6 +132,8 @@ class ServiceDetailsActivity : AppCompatActivity() {
             f3.text = resources.getString(R.string.reward_ads)
             f4.text = resources.getString(R.string.admob_account_setup)
             f5.text = resources.getString(R.string.revenue_optimization)
+
+            loadIcon(R.drawable.ic_admob)
         }
     }
 
@@ -137,6 +147,14 @@ class ServiceDetailsActivity : AppCompatActivity() {
             f3.text = resources.getString(R.string.custom_domain)
             f4.text = resources.getString(R.string.advanced_analytics)
             f5.text = resources.getString(R.string.unlimited_rebuilds)
+
+            loadIcon(R.drawable.ic_pro_build)
         }
+    }
+
+    fun loadIcon(icon: Int = R.drawable.ic_publish_app){
+        Glide.with(applicationContext)
+            .load(icon)
+            .into(binding.appIconIv)
     }
 }

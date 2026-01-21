@@ -69,6 +69,7 @@ class EditAppActivity : AppCompatActivity() {
         }
     }
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
@@ -99,6 +100,13 @@ class EditAppActivity : AppCompatActivity() {
             Context.RECEIVER_NOT_EXPORTED // required for Android 13+
         )
 
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        try {
+            unregisterReceiver(finishReceiver)
+        }catch (_: Exception){}
     }
 
     fun onBack() {
@@ -226,7 +234,7 @@ class EditAppActivity : AppCompatActivity() {
                     }
 
                 } else {
-                    sendBroadcast(Intent(ACTION_REFRESH_ACTIVITY))
+                    sendBroadcast(Intent(ACTION_REFRESH_ACTIVITY).apply { setPackage(packageName) })
                     finish()
                 }
             }

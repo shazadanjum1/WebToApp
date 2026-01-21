@@ -92,13 +92,13 @@ class LoginActivity : AppCompatActivity() {
 
             }
 
-            binding.forgetPasswordBtn.setOnClickListener {
+            forgetPasswordBtn.setOnClickListener {
                 startActivity(Intent(this@LoginActivity, ForgetActivity::class.java))
             }
 
-            binding.btnLogin.setOnClickListener {
-                val email = binding.etEmail.text.toString().trim()
-                val password = binding.etPassword.text.toString().trim()
+            btnLogin.setOnClickListener {
+                val email = etEmail.text.toString().trim()
+                val password = etPassword.text.toString().trim()
 
                 if (!validateInputs(email, password)) return@setOnClickListener
 
@@ -109,12 +109,28 @@ class LoginActivity : AppCompatActivity() {
 
                 if (isClickable){
                     isClickable = false
-                    binding.progressBar.isVisible = true
+                    progressBar.isVisible = true
                     loginUser(email, password)
                 }
 
             }
+
+            btnGuestLogin.setOnClickListener {
+
+                if (!isNetworkAvailable()){
+                    Toast.makeText(this@LoginActivity, resources.getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+
+                if (isClickable){
+                    isClickable = false
+                    progressBar.isVisible = true
+                    loginAsGuest()
+                }
+
+            }
         }
+
 
     }
 
@@ -184,4 +200,55 @@ class LoginActivity : AppCompatActivity() {
             }
     }
 
+
+    fun loginAsGuest(){
+        FirebaseAuth.getInstance()
+            .signInAnonymously()
+            .addOnSuccessListener { result ->
+
+                val user = result.user
+                val uid = user?.uid
+
+                val userId = uid //auth.currentUser?.uid
+                val timestamp = System.currentTimeMillis()
+
+                FirebaseMessaging.getInstance().token.addOnCompleteListener { tokenTask ->
+                    val fcmToken = if (tokenTask.isSuccessful) tokenTask.result else ""
+
+                    val userMap = hashMapOf(
+                        "uid" to userId,
+                        "name" to "Guest",
+                        "email" to "",
+                        "phone" to "",
+                        "fcmToken" to fcmToken,
+                        "signupDate" to timestamp,
+                        "lastLoginDate" to timestamp
+                    )
+
+                    if (userId != null) {
+                        db.collection("users").document(userId)
+                            .set(userMap, SetOptions.merge())
+                            .addOnSuccessListener {
+                                isClickable = true
+                                binding.progressBar.isVisible = false
+                                Toast.makeText(this, resources.getString(R.string.login_successful), Toast.LENGTH_SHORT).show()
+                                startActivity(Intent(this, MainActivity::class.java))
+                                finish()
+                            }
+                            .addOnFailureListener { e ->
+                                isClickable = true
+                                binding.progressBar.isVisible = false
+                                Toast.makeText(this, "error: ${e.message}", Toast.LENGTH_SHORT).show()
+                            }
+                    }
+                }
+            }
+            .addOnFailureListener { e ->
+                isClickable = true
+                binding.progressBar.isVisible = false
+                Toast.makeText(this, "Login failed: ${e.message}", Toast.LENGTH_SHORT).show()
+
+            }
+
+    }
 }

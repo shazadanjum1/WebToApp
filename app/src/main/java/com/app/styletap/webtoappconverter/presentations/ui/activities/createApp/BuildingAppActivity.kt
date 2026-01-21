@@ -185,9 +185,25 @@ class BuildingAppActivity : AppCompatActivity() {
 
         val db = FirebaseFirestore.getInstance()
 
-        val userId = auth.currentUser?.uid
+        val _userId = auth.currentUser?.uid
 
-        fetchFcmToken(userId) { fcmToken ->
+        val currentUser = FirebaseAuth.getInstance().currentUser ?: return
+
+        val userId: String
+        val guestId: String
+
+        if (currentUser.isAnonymous) {
+            // Guest user
+            guestId = currentUser.uid
+            userId = "" // no real user
+        } else {
+            // Real user
+            userId = currentUser.uid
+            guestId = "" // no guest
+        }
+
+
+        fetchFcmToken(_userId) { fcmToken ->
             binding.progressBar.progress = 75
             binding.progressTv.text = "75"
 // Generate a new UID for this app
@@ -218,7 +234,7 @@ class BuildingAppActivity : AppCompatActivity() {
                 "fcmToken" to fcmToken,
                 "fullScreenMode" to isFullScreenMode,
                 "googleServicesUrl" to null,
-                "guestId" to "",//"guest_$uid",
+                "guestId" to guestId,//"guest_$uid",
                 "id" to uid,
                 "interstitialAdId" to "",
                 "navigationButtons" to isNavigationButtons,
@@ -246,7 +262,7 @@ class BuildingAppActivity : AppCompatActivity() {
                     binding.progressBar.progress = 100
                     binding.progressTv.text = "100"
                     Toast.makeText(this, resources.getString(R.string.app_details_saved_successfully), Toast.LENGTH_SHORT).show()
-                    sendBroadcast(Intent(ACTION_FINISH_ACTIVITY))
+                    sendBroadcast(Intent(ACTION_FINISH_ACTIVITY).apply { setPackage(packageName) })
                     startActivity(Intent(this@BuildingAppActivity, MyAppsActivity::class.java))
                     finish()
                 }
@@ -255,7 +271,7 @@ class BuildingAppActivity : AppCompatActivity() {
                     binding.progressBar.progress = 100
                     binding.progressTv.text = "100"
                     Toast.makeText(this, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
-                    sendBroadcast(Intent(ACTION_FINISH_ACTIVITY))
+                    sendBroadcast(Intent(ACTION_FINISH_ACTIVITY).apply { setPackage(packageName) })
                     startActivity(Intent(this@BuildingAppActivity, MainActivity::class.java))
                     finish()
                 }
@@ -372,7 +388,7 @@ class BuildingAppActivity : AppCompatActivity() {
                     binding.progressBar.progress = 100
                     binding.progressTv.text = "100"
                     Toast.makeText(this, resources.getString(R.string.app_details_saved_successfully), Toast.LENGTH_SHORT).show()
-                    sendBroadcast(Intent(ACTION_FINISH_ACTIVITY))
+                    sendBroadcast(Intent(ACTION_FINISH_ACTIVITY).apply { setPackage(packageName) })
                     startActivity(Intent(this@BuildingAppActivity, MyAppsActivity::class.java))
                     finish()
                 }
@@ -381,7 +397,7 @@ class BuildingAppActivity : AppCompatActivity() {
                     binding.progressBar.progress = 100
                     binding.progressTv.text = "100"
                     Toast.makeText(this, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
-                    sendBroadcast(Intent(ACTION_FINISH_ACTIVITY))
+                    sendBroadcast(Intent(ACTION_FINISH_ACTIVITY).apply { setPackage(packageName) })
                     startActivity(Intent(this@BuildingAppActivity, MainActivity::class.java))
                     finish()
                 }

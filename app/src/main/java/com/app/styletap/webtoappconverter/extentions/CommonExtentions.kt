@@ -40,8 +40,10 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
+import androidx.core.view.doOnLayout
 import com.app.styletap.webtoappconverter.R
 import com.app.styletap.webtoappconverter.presentations.ui.activities.authorization.LoginActivity
+import com.app.styletap.webtoappconverter.presentations.utils.Contants.ERROR
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.PROCESSING
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.READY_TO_DOWNLOAD
 import com.app.styletap.webtoappconverter.presentations.utils.DownloadProgressDialog
@@ -85,6 +87,31 @@ fun Activity.customEnableEdgeToEdge() {
     }
 }
 
+fun Activity.adjustBottomHeight(layout: ConstraintLayout) {
+    val decorView = window.decorView
+
+    // Wait until layout is attached
+    decorView.doOnLayout {
+        val navBarHeight = ViewCompat.getRootWindowInsets(decorView)
+            ?.getInsets(WindowInsetsCompat.Type.navigationBars())?.bottom ?: 0
+
+        val params = layout.layoutParams as ConstraintLayout.LayoutParams
+        params.bottomMargin = navBarHeight
+        layout.layoutParams = params
+    }
+
+    // Optional: listen for inset changes (gestures hide/show nav bar)
+    ViewCompat.setOnApplyWindowInsetsListener(decorView) { _, insets ->
+        val navBarHeight = insets.getInsets(WindowInsetsCompat.Type.navigationBars()).bottom
+        val params = layout.layoutParams as ConstraintLayout.LayoutParams
+        params.bottomMargin = navBarHeight
+        layout.layoutParams = params
+        insets
+    }
+}
+
+
+/*
 fun Activity.adjustBottomHeight(layout: ConstraintLayout){
     val navBarHeight = navBarHeight()
 
@@ -92,7 +119,6 @@ fun Activity.adjustBottomHeight(layout: ConstraintLayout){
     params.bottomMargin = navBarHeight
     layout.layoutParams = params
 }
-
 
 fun Context.navBarHeight(): Int {
     val resourceId = resources.getIdentifier("navigation_bar_height", "dimen", "android")
@@ -117,6 +143,7 @@ fun Context.isHasNavBarVisible(): Boolean {
 
     return realHeight > displayHeight
 }
+ */
 
 fun Activity.adjustTopHeight(layout: ConstraintLayout) {
     ViewCompat.setOnApplyWindowInsetsListener(layout) { view, insets ->
@@ -452,7 +479,10 @@ fun TextView.decorateStatus(context: Context, status: String){
     } else if (status == READY_TO_DOWNLOAD){
         this.text = resources.getString(R.string.status) +": " + resources.getString(R.string.ready_to_download)
         this.setTextColor(ContextCompat.getColor(context,R.color.green))
-    } else {
+    }  else if (status == ERROR){
+        this.text = resources.getString(R.string.status) +": " + resources.getString(R.string.something_went_wrong_please_contact_support)
+        this.setTextColor(ContextCompat.getColor(context,R.color.red))
+    }  else {
         this.text = resources.getString(R.string.status) +": " + resources.getString(R.string.draft)
         this.setTextColor(ContextCompat.getColor(context,R.color.red))
     }

@@ -175,6 +175,7 @@
     <string name="ready_to_download">Ready to download</string>
     <string name="processing">Processing</string>
     <string name="draft">Draft</string>
+    <string name="something_went_wrong_please_contact_support">Something went wrong. Please contact support</string>
 
     <string name="failed_to_delete">Failed to delete</string>
     <string name="app_deleted">App deleted</string>
@@ -273,5 +274,8 @@
     <string name="unlimited_rebuilds">Unlimited Rebuilds</string>
 
     <string name="successfully_logged_out">Successfully logged out.</string>
+
+    <string name="continue_as_guest">Continue as Guest</string>
+    <string name="guest_login">Guest Login</string>
 
 </resources>

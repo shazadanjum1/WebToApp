@@ -65,8 +65,8 @@
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/app_icon_iv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/_45sdp"
+                        android:layout_height="@dimen/_45sdp"
                         app:srcCompat="@drawable/ic_publish_app"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"

@@ -259,7 +259,61 @@
                                 android:fontFamily="@font/arimo_regular"
                                 android:textSize="@dimen/_14ssp"
                                 android:drawablePadding="@dimen/_8sdp"
+                                android:maxLines="1"
                                 app:drawableStartCompat="@drawable/ic_sign_in"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/continue_as_guest"
+                        android:textSize="@dimen/_12ssp"
+                        android:textColor="@color/grey_1"
+                        android:fontFamily="@font/arimo_regular"
+                        android:textAlignment="center"
+                        android:layout_marginHorizontal="@dimen/_12sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/btnGuestLogin"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_47sdp"
+                        app:cardCornerRadius="@dimen/_14sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginHorizontal="@dimen/_4sdp"
+                        app:cardBackgroundColor="@color/white"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        >
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:foreground="?attr/selectableItemBackground"
+                            >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/guest_login"
+                                android:textColor="@color/black_1"
+                                android:fontFamily="@font/arimo_regular"
+                                android:textSize="@dimen/_14ssp"
+                                android:maxLines="1"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
