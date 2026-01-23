@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="ltr"
+    android:background="@color/white"
+    tools:context=".presentations.ui.activities.profile.ProfileActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/toolbarLL"
+        android:background="@drawable/toolbar_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarLL"
+        app:layout_constraintBottom_toTopOf="@+id/container"
+        >
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_20sdp"
+            >
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/header_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:strokeWidth="0dp"
+                app:cardElevation="@dimen/_2sdp"
+                app:cardCornerRadius="@dimen/_16sdp"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_18sdp"
+                app:cardBackgroundColor="@color/white"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginVertical="@dimen/_18sdp"
+                    android:layout_marginHorizontal="@dimen/_4sdp"
+                    >
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/initCard"
+                        android:layout_width="@dimen/_70sdp"
+                        android:layout_height="@dimen/_70sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:cardBackgroundColor="@color/blue"
+                        app:cardCornerRadius="@dimen/_35sdp"
+                        app:strokeWidth="0dp"
+                        android:foreground="?attr/selectableItemBackground"
+                        >
+
+                        <TextView
+                            android:id="@+id/avatarText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_20ssp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/arimo_regular"
+                            />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="@+id/initCard"
+                        app:layout_constraintEnd_toEndOf="@+id/initCard"
+                        app:srcCompat="@drawable/action_edit_user"
+                        android:elevation="@dimen/_3sdp"
+                        android:layout_marginBottom="-8dp"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/fullNameTv"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/initCard"
+                        android:textColor="@color/black_3"
+                        android:text="@string/full_name"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/arimo_regular"
+                        android:textSize="@dimen/_16ssp"
+                        android:includeFontPadding="false"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:maxLines="2"
+                        />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:strokeWidth="0dp"
+                app:cardElevation="@dimen/_2sdp"
+                app:cardCornerRadius="@dimen/_16sdp"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                app:cardBackgroundColor="@color/white"
+                >
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginVertical="@dimen/_18sdp"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/app_icon_iv"
+                        android:textColor="@color/black_3"
+                        android:text="@string/account_information"
+                        android:fontFamily="@font/arimo_regular"
+                        android:textSize="@dimen/_14ssp"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_18sdp"
+                        app:cardCornerRadius="@dimen/_14sdp"
+                        app:cardBackgroundColor="@color/grey_3"
+                        app:strokeWidth="0dp"
+                        >
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/_12sdp"
+                            >
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/icVersionIV"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:srcCompat="@drawable/ic_email_n"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/LL2"
+                                app:layout_constraintBottom_toBottomOf="@+id/LL2"
+                                />
+
+                            <LinearLayout
+                                android:id="@+id/LL2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintStart_toEndOf="@+id/icVersionIV"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                android:layout_marginHorizontal="@dimen/_12sdp"
+                                >
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/grey_1"
+                                    android:text="@string/Email"
+                                    android:fontFamily="@font/arimo_regular"
+                                    android:textSize="@dimen/_11ssp"
+                                    android:includeFontPadding="false"
+                                    android:maxLines="1"
+                                    />
+
+                                <TextView
+                                    android:id="@+id/emailTv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/black_3"
+                                    android:text="*****@****"
+                                    android:fontFamily="@font/arimo_regular"
+                                    android:textSize="@dimen/_12ssp"
+                                    android:includeFontPadding="false"
+                                    android:maxLines="1"
+                                    android:layout_marginTop="@dimen/_4sdp"
+                                    />
+
+
+                            </LinearLayout>
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="@dimen/_14sdp"
+                        app:cardBackgroundColor="@color/grey_3"
+                        app:strokeWidth="0dp"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        >
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/_12sdp"
+                            >
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/icCalenderIv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:srcCompat="@drawable/ic_memeber_since"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/LL1"
+                                app:layout_constraintBottom_toBottomOf="@+id/LL1"
+                                />
+
+                            <LinearLayout
+                                android:id="@+id/LL1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintStart_toEndOf="@+id/icCalenderIv"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                android:layout_marginHorizontal="@dimen/_12sdp"
+                                >
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/grey_1"
+                                    android:text="@string/member_since"
+                                    android:fontFamily="@font/arimo_regular"
+                                    android:textSize="@dimen/_11ssp"
+                                    android:includeFontPadding="false"
+                                    android:maxLines="1"
+                                    />
+
+                                <TextView
+                                    android:id="@+id/dateTv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/black_3"
+                                    android:text="**/**/****"
+                                    android:fontFamily="@font/arimo_regular"
+                                    android:textSize="@dimen/_12ssp"
+                                    android:includeFontPadding="false"
+                                    android:maxLines="1"
+                                    android:layout_marginTop="@dimen/_4sdp"
+                                    />
+
+
+                            </LinearLayout>
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:strokeWidth="0dp"
+                app:cardElevation="@dimen/_2sdp"
+                app:cardCornerRadius="@dimen/_16sdp"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_4sdp"
+                app:cardBackgroundColor="@color/white"
+                >
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginVertical="@dimen/_18sdp"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/app_icon_iv"
+                        android:textColor="@color/black_3"
+                        android:text="@string/settings"
+                        android:fontFamily="@font/arimo_regular"
+                        android:textSize="@dimen/_14ssp"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/accountSettingsBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:paddingVertical="@dimen/_4sdp"
+                        android:foreground="?attr/selectableItemBackground"
+                        >
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/settingsIv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_settings"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/LL3"
+                            app:layout_constraintBottom_toBottomOf="@+id/LL3"
+                            />
+
+                        <LinearLayout
+                            android:id="@+id/LL3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintStart_toEndOf="@+id/settingsIv"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_marginHorizontal="@dimen/_12sdp"
+                            >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black_3"
+                                android:text="@string/account_settings"
+                                android:fontFamily="@font/arimo_regular"
+                                android:textSize="@dimen/_11ssp"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                />
+
+                            <TextView
+                                android:id="@+id/settingsTv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/grey_1"
+                                android:text="@string/update_your_account_preferences"
+                                android:fontFamily="@font/arimo_regular"
+                                android:textSize="@dimen/_12ssp"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                />
+
+
+                        </LinearLayout>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/privacyBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:paddingVertical="@dimen/_4sdp"
+                        android:foreground="?attr/selectableItemBackground"
+                        >
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ppIv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_privacy_policy"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/LL4"
+                            app:layout_constraintBottom_toBottomOf="@+id/LL4"
+                            />
+
+                        <LinearLayout
+                            android:id="@+id/LL4"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintStart_toEndOf="@+id/ppIv"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_marginHorizontal="@dimen/_12sdp"
+                            >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black_3"
+                                android:text="@string/privacy_policy"
+                                android:fontFamily="@font/arimo_regular"
+                                android:textSize="@dimen/_11ssp"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/grey_1"
+                                android:text="@string/read_our_privacy_policy"
+                                android:fontFamily="@font/arimo_regular"
+                                android:textSize="@dimen/_12ssp"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                />
+
+
+                        </LinearLayout>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnLogout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_47sdp"
+                app:cardCornerRadius="@dimen/_14sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                app:cardBackgroundColor="@color/white"
+                app:strokeWidth="0dp"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/logout_btn_bg"
+                    android:foreground="?attr/selectableItemBackground"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sign_in"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/arimo_regular"
+                        android:textSize="@dimen/_14ssp"
+                        android:drawablePadding="@dimen/_8sdp"
+                        android:maxLines="1"
+                        app:drawableStartCompat="@drawable/ic_sign_in"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <TextView
+                android:id="@+id/versionTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/grey_1"
+                android:text="@string/version"
+                android:fontFamily="@font/arimo_regular"
+                android:textSize="@dimen/_12ssp"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:textAlignment="center"
+                />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <ProgressBar
+        tools:visibility="visible"
+        android:visibility="gone"
+        android:id="@+id/progressBar"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:indeterminateTint="@color/blue"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

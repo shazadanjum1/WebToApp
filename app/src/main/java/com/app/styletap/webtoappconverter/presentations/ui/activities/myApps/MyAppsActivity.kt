@@ -27,8 +27,10 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.app.styletap.webtoappconverter.extentions.hasStoragePermission
 import com.app.styletap.webtoappconverter.extentions.showStorageRationaleDialog
+import com.app.styletap.webtoappconverter.presentations.ui.activities.home.MainActivity
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.ACTION_FINISH_ACTIVITY
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.ACTION_REFRESH_ACTIVITY
+import com.app.styletap.webtoappconverter.presentations.utils.Contants.DRAFT_BUNDLE
 import com.google.firebase.firestore.Filter
 
 class MyAppsActivity : AppCompatActivity() {
@@ -56,6 +58,10 @@ class MyAppsActivity : AppCompatActivity() {
         }
     }
 
+
+    var isClickable = true
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
@@ -65,6 +71,7 @@ class MyAppsActivity : AppCompatActivity() {
 
         adjustTopHeight(binding.toolbarLL)
         adjustBottomHeight(binding.container)
+
 
         onBackPressedDispatcher.addCallback(
             this,
@@ -92,7 +99,9 @@ class MyAppsActivity : AppCompatActivity() {
     }
 
     fun onBack() {
-        finish()
+        if (isClickable){
+            finish()
+        }
     }
 
     fun initView() {
@@ -113,6 +122,8 @@ class MyAppsActivity : AppCompatActivity() {
     }
 
     fun fetchMyApps(){
+        isClickable = false
+
         binding.reFetchBtn.isVisible = false
         binding.progressBar.isVisible = true
         binding.emptyMsgTv.isVisible = false
@@ -136,6 +147,7 @@ class MyAppsActivity : AppCompatActivity() {
             .addOnSuccessListener { snapshot ->
                 val appList = snapshot.documents
                     .mapNotNull { it.toObject(AppModel::class.java) }
+                isClickable = true
 
                 binding.reFetchBtn.isVisible = true
 
@@ -143,7 +155,6 @@ class MyAppsActivity : AppCompatActivity() {
                     binding.emptyMsgTv.isVisible = true
                     binding.recyclerView.isVisible = false
                     binding.progressBar.isVisible = false
-
 
                 } else {
                     binding.emptyMsgTv.isVisible = false
@@ -159,7 +170,10 @@ class MyAppsActivity : AppCompatActivity() {
 
             }
             .addOnFailureListener {
-                it.printStackTrace()
+                isClickable = true
+                binding.emptyMsgTv.isVisible = true
+                binding.reFetchBtn.isVisible = false
+                binding.recyclerView.isVisible = false
             }
 
     }
@@ -201,12 +215,48 @@ class MyAppsActivity : AppCompatActivity() {
         ) {
             showStorageRationaleDialog(storagePermissionLauncher)
         } else {
-            // First time or "Don't ask again"
             storagePermissionLauncher.launch(Manifest.permission.WRITE_EXTERNAL_STORAGE)
         }
     }
 
 
+    fun generateBundle(
+        appId: String,
+        onRequestSubmission: () -> Unit
+    ) {
+        if (appId.isEmpty()){
+            onRequestSubmission()
+            return
+        }
+
+        isClickable = true
+        binding.reFetchBtn.isVisible = false
+        binding.progressBar.isVisible = true
+
+        val db = FirebaseFirestore.getInstance()
+
+        val appDetails = hashMapOf<String, Any?>(
+            "status" to DRAFT_BUNDLE,
+            )
+
+        db.collection("apps")
+            .document(appId)  // use generated UID
+            .update(appDetails)
+            .addOnSuccessListener {
+                onRequestSubmission()
+                isClickable = true
+                fetchMyApps()
+                Toast.makeText(this, resources.getString(R.string.bundle_request_submitted), Toast.LENGTH_SHORT).show()
+
+            }
+            .addOnFailureListener { e ->
+                onRequestSubmission()
+                isClickable = true
+                binding.reFetchBtn.isVisible = true
+                binding.progressBar.isVisible = false
+                Toast.makeText(this, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
+            }
+    }
 
 
 

@@ -18,6 +18,7 @@ import com.app.styletap.webtoappconverter.extentions.adjustBottomHeight
 import com.app.styletap.webtoappconverter.extentions.adjustTopHeight
 import com.app.styletap.webtoappconverter.extentions.customEnableEdgeToEdge
 import com.app.styletap.webtoappconverter.extentions.showColorPicker
+import com.app.styletap.webtoappconverter.extentions.uriToTempFile
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.ACTION_FINISH_ACTIVITY
 import com.bumptech.glide.Glide
 import com.flask.colorpicker.ColorPickerView
@@ -32,17 +33,20 @@ class AppBrandingActivity : AppCompatActivity() {
     var appOrientation1 = ""
 
 
-    private var imageUri: Uri? = null
+    //private var imageUri: Uri? = null
+    var filePath: String? = ""
 
     private val pickImageLauncher = registerForActivityResult(
         ActivityResultContracts.GetContent()
     ) { uri: Uri? ->
         if (uri != null) {
 
-            imageUri = uri
+            val file = uriToTempFile( uri)
+            filePath = file.absolutePath
+            //imageUri = uri
 
             Glide.with(this)
-                .load(uri)
+                .load(file)
                 .circleCrop()
                 .into(binding.appIconImageView)
 
@@ -131,7 +135,7 @@ class AppBrandingActivity : AppCompatActivity() {
 
             nextBtn.setOnClickListener {
 
-                if (imageUri == null){
+                if (filePath == null){
                     binding.iconErrorTv.isVisible = true
                     return@setOnClickListener
                 }
@@ -143,7 +147,7 @@ class AppBrandingActivity : AppCompatActivity() {
                     putExtra("appOrientation1", appOrientation1)
                     putExtra("primaryColor", primaryColorTv.text)
                     putExtra("secondaryColor", secondaryColorTv.text)
-                    putExtra("imageUri", imageUri)
+                    putExtra("filePath", filePath)
 
                 }
                 moveNext(mIntent)

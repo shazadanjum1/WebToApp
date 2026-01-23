@@ -25,6 +25,7 @@ import com.app.styletap.webtoappconverter.extentions.incrementVersion
 import com.app.styletap.webtoappconverter.extentions.isNetworkAvailable
 import com.app.styletap.webtoappconverter.extentions.isValidPackageName
 import com.app.styletap.webtoappconverter.extentions.showColorPicker
+import com.app.styletap.webtoappconverter.extentions.uriToTempFile
 import com.app.styletap.webtoappconverter.models.AppModel
 import com.app.styletap.webtoappconverter.presentations.ui.activities.createApp.BuildingAppActivity
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.ACTION_FINISH_ACTIVITY
@@ -44,17 +45,20 @@ class EditAppActivity : AppCompatActivity() {
     var isExternalLinksInBrowser = true
     var isNotificationSupport = false
 
-    private var imageUri: Uri? = null
+    //private var imageUri: Uri? = null
+    var filePath: String? = ""
 
     private val pickImageLauncher = registerForActivityResult(
         ActivityResultContracts.GetContent()
     ) { uri: Uri? ->
         if (uri != null) {
 
-            imageUri = uri
+            val file = uriToTempFile( uri)
+            filePath = file.absolutePath
+            //imageUri = uri
 
             Glide.with(this)
-                .load(uri)
+                .load(file)
                 .circleCrop()
                 .into(binding.appIconIv)
 
@@ -300,7 +304,7 @@ class EditAppActivity : AppCompatActivity() {
                 putExtra("appOrientation1", appModel?.orientation ?: "Portrait")
                 putExtra("primaryColor", primaryColorTv.text)
                 putExtra("secondaryColor", secondaryColorTv.text)
-                putExtra("imageUri", imageUri)
+                putExtra("filePath", filePath)
                 putExtra("enableFeatured", enableFeatured)
 
                 putExtra("isPullToRefresh", isPullToRefresh)

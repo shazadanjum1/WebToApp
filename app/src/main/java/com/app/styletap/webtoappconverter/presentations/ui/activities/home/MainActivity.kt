@@ -14,11 +14,15 @@ import com.app.styletap.webtoappconverter.extentions.adjustTopHeight
 import com.app.styletap.webtoappconverter.extentions.customEnableEdgeToEdge
 import com.app.styletap.webtoappconverter.extentions.isNetworkAvailable
 import com.app.styletap.webtoappconverter.extentions.logoutUser
+import com.app.styletap.webtoappconverter.extentions.showLogoutDialog
+import com.app.styletap.webtoappconverter.extentions.withNotificationPermission
 import com.app.styletap.webtoappconverter.presentations.ui.activities.createApp.CreateAppActivity
 import com.app.styletap.webtoappconverter.presentations.ui.activities.myApps.MyAppsActivity
+import com.app.styletap.webtoappconverter.presentations.ui.activities.profile.ProfileActivity
 import com.app.styletap.webtoappconverter.presentations.ui.activities.serviceRequest.ServiceRequestActivity
 import com.app.styletap.webtoappconverter.presentations.ui.activities.services.ServicesActivity
 import com.app.styletap.webtoappconverter.presentations.ui.activities.support.SupportActivity
+import com.app.styletap.webtoappconverter.presentations.ui.activities.tutorials.TutorialsActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import kotlin.system.exitProcess
@@ -51,6 +55,8 @@ class MainActivity : AppCompatActivity() {
         user = auth.currentUser
 
         initView()
+
+        withNotificationPermission{}
     }
 
     fun onBack(){
@@ -62,6 +68,7 @@ class MainActivity : AppCompatActivity() {
         binding.apply {
             toolbar.titleTv.text = resources.getString(R.string.dashboard)
             toolbar.signOutBtn.isVisible = true
+            //toolbar.profileBtn.isVisible = true
 
             if (user?.isAnonymous == true){
                 toolbar.profileBtn.isVisible = false
@@ -70,8 +77,20 @@ class MainActivity : AppCompatActivity() {
             }
 
             toolbar.signOutBtn.setOnClickListener {
-                logoutUser()
+                showLogoutDialog{
+                    logoutUser()
+                }
             }
+
+
+            toolbar.profileBtn.setOnClickListener {
+                if (isNetworkAvailable()){
+                    moveNext(Intent(this@MainActivity, ProfileActivity::class.java))
+                } else {
+                    Toast.makeText(this@MainActivity, resources.getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show()
+                }
+            }
+
 
             createAppBtn.setOnClickListener {
                 moveNext(Intent(this@MainActivity, CreateAppActivity::class.java))
@@ -95,6 +114,10 @@ class MainActivity : AppCompatActivity() {
 
             servicesBtn.setOnClickListener {
                 moveNext(Intent(this@MainActivity, ServicesActivity::class.java))
+            }
+
+            tutorialsBtn.setOnClickListener {
+                moveNext(Intent(this@MainActivity, TutorialsActivity::class.java))
             }
 
         }

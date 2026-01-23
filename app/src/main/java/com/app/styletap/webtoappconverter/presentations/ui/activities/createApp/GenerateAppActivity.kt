@@ -34,7 +34,8 @@ class GenerateAppActivity : AppCompatActivity() {
 
     var primaryColor = ""
     var secondaryColor = ""
-    var imageUri: Uri? = null
+    //var imageUri: Uri? = null
+    var filePath: String? = ""
 
     var isPullToRefresh = true
     var isLoaderScreen = true
@@ -81,12 +82,14 @@ class GenerateAppActivity : AppCompatActivity() {
             secondaryColor = it.getString("secondaryColor", "")
             appOrientation1 = it.getString("appOrientation1", "")
 
-            imageUri = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            filePath = it.getString("filePath", filePath)
+
+            /*imageUri = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 intent.getParcelableExtra("imageUri", Uri::class.java)
             } else {
                 @Suppress("DEPRECATION")
                 intent.getParcelableExtra<Uri>("imageUri")
-            }
+            }*/
 
             enableFeatured = it.getString("enableFeatured", "")
 
@@ -160,7 +163,7 @@ class GenerateAppActivity : AppCompatActivity() {
                     putExtra("appOrientation1", appOrientation1)
                     putExtra("primaryColor", primaryColor)
                     putExtra("secondaryColor", secondaryColor)
-                    putExtra("imageUri", imageUri)
+                    putExtra("filePath", filePath)
                     putExtra("enableFeatured", enableFeatured)
 
                     putExtra("isPullToRefresh", isPullToRefresh)

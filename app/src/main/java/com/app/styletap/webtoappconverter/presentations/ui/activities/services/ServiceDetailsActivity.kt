@@ -10,6 +10,7 @@ import com.app.styletap.webtoappconverter.databinding.ActivityServiceDetailsBind
 import com.app.styletap.webtoappconverter.extentions.adjustBottomHeight
 import com.app.styletap.webtoappconverter.extentions.adjustTopHeight
 import com.app.styletap.webtoappconverter.extentions.customEnableEdgeToEdge
+import com.app.styletap.webtoappconverter.extentions.openWhatsApp
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.ADMOB_MONETIZATION
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.CUSTOM_APP
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.PLAY_STORE
@@ -71,6 +72,11 @@ class ServiceDetailsActivity : AppCompatActivity() {
                 setProBuildTypeData()
             } else {
                 setPlayStoreTypeData()
+            }
+
+
+            orderBtn.setOnClickListener {
+                openWhatsApp(getString(R.string.phone_number))
             }
         }
     }

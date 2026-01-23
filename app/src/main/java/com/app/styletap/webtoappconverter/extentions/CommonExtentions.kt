@@ -4,12 +4,17 @@ import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.AlertDialog
+import android.app.Dialog
 import android.app.DownloadManager
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.res.ColorStateList
 import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.net.Uri
@@ -21,8 +26,10 @@ import android.text.Spanned
 import android.text.TextPaint
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
+import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
+import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.EditText
 import android.widget.TextView
@@ -32,6 +39,7 @@ import androidx.annotation.ColorRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import androidx.core.content.res.ResourcesCompat
@@ -42,10 +50,14 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.core.view.doOnLayout
 import com.app.styletap.webtoappconverter.R
+import com.app.styletap.webtoappconverter.databinding.DialogDeleteAppBinding
 import com.app.styletap.webtoappconverter.presentations.ui.activities.authorization.LoginActivity
+import com.app.styletap.webtoappconverter.presentations.utils.Contants.DRAFT_BUNDLE
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.ERROR
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.PROCESSING
+import com.app.styletap.webtoappconverter.presentations.utils.Contants.PROCESSING_BUNDLE
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.READY_TO_DOWNLOAD
+import com.app.styletap.webtoappconverter.presentations.utils.Contants.READY_TO_DOWNLOAD_BUNDLE
 import com.app.styletap.webtoappconverter.presentations.utils.DownloadProgressDialog
 import com.flask.colorpicker.ColorPickerView
 import com.flask.colorpicker.builder.ColorPickerDialogBuilder
@@ -57,6 +69,11 @@ import java.net.URLEncoder
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
+import androidx.core.graphics.drawable.toDrawable
+
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.ComponentActivity
+import com.app.styletap.webtoappconverter.databinding.DialogLogoutAppBinding
 
 
 fun Context.isNetworkAvailable(): Boolean {
@@ -362,7 +379,186 @@ fun Any?.toMillis(): Long? {
 }
 
 
+fun AppCompatActivity.downloadWithProgress(
+    url: String,
+    fileName: String,
+    isShare: Boolean
+) {
+    val dialog = DownloadProgressDialog(this)
+    val downloadManager =
+        getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
+
+    val request = DownloadManager.Request(url.toUri())
+        .setTitle("Downloading")
+        .setDescription("Please wait...")
+        .setDestinationInExternalPublicDir(
+            Environment.DIRECTORY_DOWNLOADS,
+            fileName
+        )
+        .setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE)
+        .setAllowedOverMetered(true)
+        .setAllowedOverRoaming(true)
+
+    val downloadId = downloadManager.enqueue(request)
+
+    dialog.show()
+
+    downloadManager.trackProgress(
+        downloadId = downloadId,
+        activity = this,
+        isShare= isShare,
+        onProgress = { dialog.update(it) },
+        onFinished = { file ->
+            dialog.dismiss()
+            if (isShare){
+                if (file != null && file.exists()) {
+                    shareFile(file)
+                }
+            }
+        }
+    )
+}
+
 fun DownloadManager.trackProgress(
+    downloadId: Long,
+    activity: Activity,
+    isShare: Boolean,
+    onProgress: (Int) -> Unit,
+    onFinished: (File?) -> Unit
+) {
+    Thread {
+        var downloading = true
+        var downloadedFile: File? = null
+
+        val notificationManager =
+            activity.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+
+        val channelId = "download_channel"
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val channel = NotificationChannel(
+                channelId,
+                "Downloads",
+                NotificationManager.IMPORTANCE_HIGH
+            )
+            notificationManager.createNotificationChannel(channel)
+        }
+
+        while (downloading) {
+            val query = DownloadManager.Query().setFilterById(downloadId)
+            val cursor = query(query)
+
+            if (cursor.moveToFirst()) {
+                val status =
+                    cursor.getInt(cursor.getColumnIndexOrThrow(DownloadManager.COLUMN_STATUS))
+
+                val downloaded =
+                    cursor.getLong(cursor.getColumnIndexOrThrow(
+                        DownloadManager.COLUMN_BYTES_DOWNLOADED_SO_FAR))
+
+                val total =
+                    cursor.getLong(cursor.getColumnIndexOrThrow(
+                        DownloadManager.COLUMN_TOTAL_SIZE_BYTES))
+
+                if (total > 0) {
+                    val progress = ((downloaded * 100) / total).toInt()
+                    activity.runOnUiThread { onProgress(progress) }
+                }
+
+                if (status == DownloadManager.STATUS_SUCCESSFUL){
+                    val localUri =
+                        cursor.getString(cursor.getColumnIndexOrThrow(
+                            DownloadManager.COLUMN_LOCAL_URI))
+
+
+                    downloadedFile = localUri?.let {
+                        File(Uri.parse(it).path!!)
+                    }
+
+                    // Show notification
+                    downloadedFile?.let { file ->
+                        showDownloadCompleteNotification(activity, file, downloadId.toInt())
+                    }
+
+
+                    activity.runOnUiThread {
+                        Toast.makeText(activity, activity.resources.getString(R.string.downloaded), Toast.LENGTH_SHORT).show()
+                    }
+
+                    downloading = false
+                }
+
+                if (status == DownloadManager.STATUS_FAILED) {
+                    activity.runOnUiThread {
+                        Toast.makeText(activity, activity.resources.getString(R.string.failed_to_downloading), Toast.LENGTH_SHORT).show()
+                    }
+                    downloading = false
+                }
+            }
+
+            cursor.close()
+            Thread.sleep(400)
+        }
+
+        activity.runOnUiThread { onFinished(downloadedFile) }
+    }.start()
+}
+
+fun showDownloadCompleteNotification(activity: Activity, file: File, notificationId: Int) {
+    val notificationManager =
+        activity.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+
+    val channelId = "download_channel"
+
+    // Only create channel on Android O+
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+        val channel = NotificationChannel(
+            channelId,
+            "Downloads",
+            NotificationManager.IMPORTANCE_HIGH
+        ).apply {
+            description = "Download notifications"
+        }
+        notificationManager.createNotificationChannel(channel)
+    }
+
+    // Use FileProvider for all versions
+    val uri = FileProvider.getUriForFile(
+        activity,
+        "${activity.packageName}.fileprovider",
+        file
+    )
+
+    val fileIntent = Intent(Intent.ACTION_VIEW).apply {
+        setDataAndType(uri, activity.contentResolver.getType(uri))
+        flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_GRANT_READ_URI_PERMISSION
+    }
+
+    val pendingIntent = PendingIntent.getActivity(
+        activity,
+        0,
+        fileIntent,
+        PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+    )
+
+    // Build notification
+    val notification = NotificationCompat.Builder(activity, channelId)
+        .setContentTitle("Download Complete")
+        .setContentText(file.name)
+        .setSmallIcon(android.R.drawable.stat_sys_download_done) // Required for old Android
+        .setContentIntent(pendingIntent)
+        .setAutoCancel(true)
+        .build()
+
+    // Show notification on main thread
+    activity.runOnUiThread {
+        notificationManager.notify(notificationId, notification)
+    }
+}
+
+
+
+
+fun DownloadManager.trackProgress1(
     downloadId: Long,
     activity: Activity,
     isShare: Boolean,
@@ -430,46 +626,6 @@ fun DownloadManager.trackProgress(
 }
 
 
-fun AppCompatActivity.downloadWithProgress(
-    url: String,
-    fileName: String,
-    isShare: Boolean
-) {
-    val dialog = DownloadProgressDialog(this)
-    val downloadManager =
-        getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
-
-    val request = DownloadManager.Request(url.toUri())
-        .setTitle("Downloading")
-        .setDescription("Please wait...")
-        .setDestinationInExternalPublicDir(
-            Environment.DIRECTORY_DOWNLOADS,
-            fileName
-        )
-        .setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE)
-        .setAllowedOverMetered(true)
-        .setAllowedOverRoaming(true)
-
-    val downloadId = downloadManager.enqueue(request)
-
-    dialog.show()
-
-    downloadManager.trackProgress(
-        downloadId = downloadId,
-        activity = this,
-        isShare= isShare,
-        onProgress = { dialog.update(it) },
-        onFinished = { file ->
-            dialog.dismiss()
-            if (isShare){
-                if (file != null && file.exists()) {
-                    shareFile(file)
-                }
-            }
-        }
-    )
-}
-
 
 fun TextView.decorateStatus(context: Context, status: String){
 
@@ -481,6 +637,15 @@ fun TextView.decorateStatus(context: Context, status: String){
         this.setTextColor(ContextCompat.getColor(context,R.color.green))
     }  else if (status == ERROR){
         this.text = resources.getString(R.string.status) +": " + resources.getString(R.string.something_went_wrong_please_contact_support)
+        this.setTextColor(ContextCompat.getColor(context,R.color.red))
+    } else if (status == PROCESSING_BUNDLE){
+        this.text = resources.getString(R.string.status) +": " + resources.getString(R.string.bundle_processing)
+        this.setTextColor(ContextCompat.getColor(context,R.color.oringe))
+    } else if (status == READY_TO_DOWNLOAD_BUNDLE){
+        this.text = resources.getString(R.string.status) +": " + resources.getString(R.string.bundle_ready_to_download)
+        this.setTextColor(ContextCompat.getColor(context,R.color.green))
+    }  else if (status == DRAFT_BUNDLE){
+        this.text = resources.getString(R.string.status) +": " + resources.getString(R.string.bundle_draft)
         this.setTextColor(ContextCompat.getColor(context,R.color.red))
     }  else {
         this.text = resources.getString(R.string.status) +": " + resources.getString(R.string.draft)
@@ -625,3 +790,147 @@ fun Activity.logoutUser() {
     this.finishAffinity()
 }
 
+fun Context.uriToTempFile(uri: Uri): File {
+    val inputStream = contentResolver.openInputStream(uri)!!
+    val file = File(cacheDir, "icon_${System.currentTimeMillis()}.png")
+    file.outputStream().use { output ->
+        inputStream.copyTo(output)
+    }
+    return file
+}
+
+fun getInitials(name: String?): String {
+    if (name.isNullOrBlank()) return ""
+
+    val parts = name
+        .trim()
+        .split("\\s+".toRegex())
+        .filter { it.isNotEmpty() }
+
+    return when {
+        parts.isEmpty() -> ""
+        parts.size == 1 -> parts[0].first().uppercaseChar().toString()
+        else -> {
+            val first = parts[0].first()
+            val second = parts[1].first()
+            "$first$second".uppercase()
+        }
+    }
+}
+
+fun formatDate(timestamp: Long): String {
+    val sdf = SimpleDateFormat("d MMMM yyyy", Locale.getDefault())
+    return sdf.format(Date(timestamp))
+}
+
+
+fun getTimeInMillis(value: Any?): Long {
+    return when (value) {
+        is Long -> value
+        is com.google.firebase.Timestamp -> value.toDate().time
+        else -> 0L
+    }
+}
+
+
+fun Context.openLink(url: String) {
+    try {
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+        startActivity(intent)
+    } catch (_: Exception){}
+}
+
+
+
+fun ComponentActivity.withNotificationPermission(onGranted: () -> Unit) {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+
+        val permissionLauncher = registerForActivityResult(
+            ActivityResultContracts.RequestPermission()
+        ) { isGranted ->
+            if (isGranted) {
+                onGranted()
+            } else {
+                Toast.makeText(this, resources.getString(R.string.notification_permission_denied), Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        if (checkSelfPermission(Manifest.permission.POST_NOTIFICATIONS) == android.content.pm.PackageManager.PERMISSION_GRANTED) {
+            onGranted()
+        } else {
+            permissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
+        }
+    } else {
+        onGranted()
+    }
+}
+
+fun Context.showLogoutDialog(
+    onClick: () -> Unit
+) {
+    val dialog = Dialog(this)
+    val binding = DialogLogoutAppBinding.inflate(LayoutInflater.from(this))
+
+    dialog.setContentView(binding.root)
+    dialog.setCancelable(true)
+
+    dialog.window?.setBackgroundDrawable(Color.TRANSPARENT.toDrawable())
+
+    binding.btnCancel.setOnClickListener {
+        dialog.dismiss()
+    }
+
+    binding.btnDelete.setOnClickListener {
+        dialog.dismiss()
+        onClick()
+    }
+
+    dialog.window?.setLayout(
+        ViewGroup.LayoutParams.MATCH_PARENT,
+        ViewGroup.LayoutParams.WRAP_CONTENT
+    )
+
+    dialog.show()
+
+    val layoutParams = WindowManager.LayoutParams().apply {
+        copyFrom(dialog.window?.attributes)
+        width = (resources.displayMetrics.widthPixels * 0.90).toInt() // 85% of screen width
+        height = WindowManager.LayoutParams.WRAP_CONTENT
+    }
+    dialog.window?.attributes = layoutParams
+}
+
+fun Context.showDeleteDialog(
+    onDeleteClick: () -> Unit
+) {
+    val dialog = Dialog(this)
+    val binding = DialogDeleteAppBinding.inflate(LayoutInflater.from(this))
+
+    dialog.setContentView(binding.root)
+    dialog.setCancelable(true)
+
+    dialog.window?.setBackgroundDrawable(Color.TRANSPARENT.toDrawable())
+
+    binding.btnCancel.setOnClickListener {
+        dialog.dismiss()
+    }
+
+    binding.btnDelete.setOnClickListener {
+        dialog.dismiss()
+        onDeleteClick()
+    }
+
+    dialog.window?.setLayout(
+        ViewGroup.LayoutParams.MATCH_PARENT,
+        ViewGroup.LayoutParams.WRAP_CONTENT
+    )
+
+    dialog.show()
+
+    val layoutParams = WindowManager.LayoutParams().apply {
+        copyFrom(dialog.window?.attributes)
+        width = (resources.displayMetrics.widthPixels * 0.90).toInt() // 85% of screen width
+        height = WindowManager.LayoutParams.WRAP_CONTENT
+    }
+    dialog.window?.attributes = layoutParams
+}

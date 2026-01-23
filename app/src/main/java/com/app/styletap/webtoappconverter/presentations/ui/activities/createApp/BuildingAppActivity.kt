@@ -8,7 +8,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.isVisible
+import androidx.core.net.toUri
 import com.app.styletap.webtoappconverter.R
 import com.app.styletap.webtoappconverter.databinding.ActivityBuildingAppBinding
 import com.app.styletap.webtoappconverter.extentions.adjustBottomHeight
@@ -23,6 +23,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.messaging.FirebaseMessaging
 import com.google.firebase.storage.storage
+import java.io.File
 
 class BuildingAppActivity : AppCompatActivity() {
     lateinit var binding: ActivityBuildingAppBinding
@@ -35,7 +36,8 @@ class BuildingAppActivity : AppCompatActivity() {
 
     var primaryColor = ""
     var secondaryColor = ""
-    var imageUri: Uri? = null
+    //var imageUri: Uri? = null
+    var filePath: String? = ""
 
     var enableFeatured = ""
 
@@ -83,13 +85,14 @@ class BuildingAppActivity : AppCompatActivity() {
             primaryColor = it.getString("primaryColor", "")
             secondaryColor = it.getString("secondaryColor", "")
             appOrientation1 = it.getString("appOrientation1", "")
+            filePath = it.getString("filePath", "")
 
-            imageUri = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            /*imageUri = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 intent.getParcelableExtra("imageUri", Uri::class.java)
             } else {
                 @Suppress("DEPRECATION")
                 intent.getParcelableExtra<Uri>("imageUri")
-            }
+            }*/
 
             enableFeatured = it.getString("enableFeatured", "")
 
@@ -118,17 +121,17 @@ class BuildingAppActivity : AppCompatActivity() {
     fun initView(){
         binding.apply {
             toolbar.titleTv.text = resources.getString(R.string.generate_app)
-            toolbar.backBtn.isVisible = true
+            /*toolbar.backBtn.isVisible = true
             toolbar.backBtn.setOnClickListener {
                 onBack()
-            }
+            }*/
 
             progressBar.progress = 25
             progressTv.text = "25"
 
             if (isEditMode){
-                imageUri?.let {
-                    uploadAppIcon(imageUri!!) { downloadUrl ->
+                filePath?.let {
+                    uploadAppIcon(it) { downloadUrl ->
                         progressBar.progress = 50
                         binding.progressTv.text = "50"
                         updateAppDetails(appId,downloadUrl)
@@ -143,16 +146,18 @@ class BuildingAppActivity : AppCompatActivity() {
 
             } else {
 
-                uploadAppIcon(imageUri!!) { downloadUrl ->
+                uploadAppIcon(filePath!!) { downloadUrl ->
                     progressBar.progress = 50
                     binding.progressTv.text = "50"
                     if (downloadUrl != null) {
                         saveAppDetails(downloadUrl)
                     } else {
                         isClickable = true
-                        Toast.makeText(this@BuildingAppActivity, "Failed to upload app icon", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@BuildingAppActivity, resources.getString(R.string.failed_to_upload_app_icon), Toast.LENGTH_SHORT).show()
+                        sendBroadcast(Intent(ACTION_FINISH_ACTIVITY).apply { setPackage(packageName) })
+                        startActivity(Intent(this@BuildingAppActivity, MainActivity::class.java))
+                        finish()
                     }
-
                 }
             }
 
@@ -160,7 +165,7 @@ class BuildingAppActivity : AppCompatActivity() {
     }
 
 
-    fun uploadAppIcon(imageUri: Uri, onComplete: (downloadUrl: String?) -> Unit) {
+    /*fun uploadAppIcon(imageUri: Uri, onComplete: (downloadUrl: String?) -> Unit) {
         val storageRef = Firebase.storage.reference
         val timestamp = System.currentTimeMillis()
         val fileRef = storageRef.child("app_icons/app_icon_$timestamp.png")
@@ -177,7 +182,37 @@ class BuildingAppActivity : AppCompatActivity() {
             .addOnFailureListener {
                 onComplete(null)
             }
+    }*/
+
+    fun uploadAppIcon(
+        filePath: String,
+        onComplete: (downloadUrl: String?) -> Unit
+    ) {
+        val storageRef = Firebase.storage.reference
+        val timestamp = System.currentTimeMillis()
+        val fileRef = storageRef.child("app_icons/app_icon_$timestamp.png")
+
+        val file = File(filePath)
+        if (!file.exists()) {
+            onComplete(null)
+            return
+        }
+
+        fileRef.putFile(file.toUri())
+            .addOnSuccessListener {
+                fileRef.downloadUrl
+                    .addOnSuccessListener { uri ->
+                        onComplete(uri.toString())
+                    }
+                    .addOnFailureListener {
+                        onComplete(null)
+                    }
+            }
+            .addOnFailureListener {
+                onComplete(null)
+            }
     }
+
 
     fun saveAppDetails(
         appIconUrl: String

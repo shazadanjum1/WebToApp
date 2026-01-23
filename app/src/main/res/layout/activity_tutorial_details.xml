@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:layoutDirection="ltr"
     android:background="@color/white"
-    tools:context=".presentations.ui.activities.services.ServiceDetailsActivity">
+    tools:context=".presentations.ui.activities.tutorials.TutorialDetailsActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/toolbarLL"
@@ -67,7 +67,7 @@
                         android:id="@+id/app_icon_iv"
                         android:layout_width="@dimen/_45sdp"
                         android:layout_height="@dimen/_45sdp"
-                        app:srcCompat="@drawable/ic_publish_app"
+                        app:srcCompat="@drawable/ic_home_create_app"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
@@ -81,7 +81,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/app_icon_iv"
                         android:textColor="@color/black_3"
-                        android:text="@string/publish_app_on_google_play"
+                        android:text="@string/how_to_create_an_app"
                         android:textAlignment="center"
                         android:fontFamily="@font/arimo_regular"
                         android:textSize="@dimen/_16ssp"
@@ -98,7 +98,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/app_title"
                         android:textColor="@color/grey_1"
-                        android:text="@string/we_will_publish_your_app_on_google_play_store"
+                        android:text="@string/step_by_step_guide_to_create_your_first_web_to_app_conversion"
                         android:textAlignment="center"
                         android:fontFamily="@font/arimo_regular"
                         android:textSize="@dimen/_11ssp"
@@ -122,6 +122,7 @@
                 app:cardCornerRadius="@dimen/_16sdp"
                 android:layout_marginHorizontal="@dimen/_12sdp"
                 android:layout_marginTop="@dimen/_14sdp"
+                android:layout_marginBottom="@dimen/_4sdp"
                 app:cardBackgroundColor="@color/white"
                 >
 
@@ -137,7 +138,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black_1"
-                        android:text="@string/what_included"
+                        android:text="@string/step_by_step_guide"
                         android:fontFamily="@font/arimo_regular"
                         android:textSize="@dimen/_14ssp"
                         android:textStyle="bold"
@@ -151,14 +152,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black_1"
-                        android:text="@string/app_store_optimization"
+                        android:text="@string/enter_your_website_url"
                         android:fontFamily="@font/arimo_regular"
                         android:textSize="@dimen/_11ssp"
                         android:includeFontPadding="false"
                         android:layout_marginHorizontal="@dimen/_8sdp"
                         android:layout_marginTop="@dimen/_14sdp"
                         android:drawablePadding="@dimen/_8sdp"
-                        app:drawableStartCompat="@drawable/ic_checked"
+                        app:drawableStartCompat="@drawable/count_1"
                         />
 
 
@@ -167,14 +168,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black_1"
-                        android:text="@string/professional_results"
+                        android:text="@string/fill_in_app_basic_information"
                         android:fontFamily="@font/arimo_regular"
                         android:textSize="@dimen/_11ssp"
                         android:includeFontPadding="false"
                         android:layout_marginHorizontal="@dimen/_8sdp"
                         android:layout_marginTop="@dimen/_8sdp"
                         android:drawablePadding="@dimen/_8sdp"
-                        app:drawableStartCompat="@drawable/ic_checked"
+                        app:drawableStartCompat="@drawable/count_2"
                         />
 
 
@@ -183,14 +184,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black_1"
-                        android:text="@string/app_description_writing"
+                        android:text="@string/customize_branding_and_colors"
                         android:fontFamily="@font/arimo_regular"
                         android:textSize="@dimen/_11ssp"
                         android:includeFontPadding="false"
                         android:layout_marginHorizontal="@dimen/_8sdp"
                         android:layout_marginTop="@dimen/_8sdp"
                         android:drawablePadding="@dimen/_8sdp"
-                        app:drawableStartCompat="@drawable/ic_checked"
+                        app:drawableStartCompat="@drawable/count_3"
                         />
 
 
@@ -199,14 +200,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black_1"
-                        android:text="@string/category_selection"
+                        android:text="@string/configure_app_features"
                         android:fontFamily="@font/arimo_regular"
                         android:textSize="@dimen/_11ssp"
                         android:includeFontPadding="false"
                         android:layout_marginHorizontal="@dimen/_8sdp"
                         android:layout_marginTop="@dimen/_8sdp"
                         android:drawablePadding="@dimen/_8sdp"
-                        app:drawableStartCompat="@drawable/ic_checked"
+                        app:drawableStartCompat="@drawable/count_4"
                         />
 
 
@@ -215,14 +216,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black_1"
-                        android:text="@string/privacy_policy_creation"
+                        android:text="@string/generate_and_download_apk"
                         android:fontFamily="@font/arimo_regular"
                         android:textSize="@dimen/_11ssp"
                         android:includeFontPadding="false"
                         android:layout_marginHorizontal="@dimen/_8sdp"
                         android:layout_marginTop="@dimen/_8sdp"
                         android:drawablePadding="@dimen/_8sdp"
-                        app:drawableStartCompat="@drawable/ic_checked"
+                        app:drawableStartCompat="@drawable/count_5"
                         />
 
 
@@ -232,47 +233,6 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/orderBtn"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_47sdp"
-                app:cardCornerRadius="@dimen/_14sdp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginHorizontal="@dimen/_12sdp"
-                app:cardBackgroundColor="@color/white"
-                app:strokeWidth="0dp"
-                android:layout_marginTop="@dimen/_14sdp"
-                android:layout_marginBottom="@dimen/_8sdp"
-                >
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/gradient_btn_bg"
-                    android:foreground="?attr/selectableItemBackground"
-                    >
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/order_now"
-                        android:textColor="@color/white"
-                        android:fontFamily="@font/arimo_regular"
-                        android:textSize="@dimen/_14ssp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
-            </com.google.android.material.card.MaterialCardView>
 
 
         </androidx.appcompat.widget.LinearLayoutCompat>

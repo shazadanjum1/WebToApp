@@ -29,7 +29,6 @@
             app:layout_constraintTop_toTopOf="parent"
             />
 
-
         <TextView
             android:id="@+id/appNameTv"
             android:layout_width="0dp"
@@ -45,7 +44,6 @@
             android:layout_marginTop="@dimen/_3sdp"
             android:includeFontPadding="false"
             />
-
 
         <TextView
             android:id="@+id/dateTv"
@@ -63,9 +61,6 @@
             android:layout_marginTop="@dimen/_5sdp"
             />
 
-
-
-
         <TextView
             android:id="@+id/versionTv"
             android:layout_width="0dp"
@@ -81,9 +76,6 @@
             android:layout_marginStart="@dimen/_8sdp"
             android:layout_marginTop="@dimen/_3sdp"
             />
-
-
-
 
         <TextView
             android:id="@+id/statusTv"
@@ -102,6 +94,50 @@
             />
 
 
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/downloadBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_34sdp"
+            app:cardCornerRadius="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintStart_toEndOf="@+id/apkIV"
+            app:layout_constraintTop_toBottomOf="@+id/statusTv"
+            android:layout_marginHorizontal="@dimen/_4sdp"
+            app:cardBackgroundColor="@color/white"
+            app:strokeWidth="@dimen/_1sdp"
+            app:strokeColor="@color/blue"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:foreground="?attr/selectableItemBackground"
+                android:minWidth="@dimen/_120sdp"
+                >
+
+                <TextView
+                    android:id="@+id/downloadTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/arimo_regular"
+                    android:maxLines="1"
+                    android:paddingHorizontal="@dimen/_8sdp"
+                    android:text="@string/btn_download_bundle"
+                    android:textColor="@color/blue"
+                    android:textSize="@dimen/_13ssp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+
 
         <androidx.appcompat.widget.AppCompatImageView
             tools:visibility="visible"
@@ -114,10 +150,6 @@
             app:layout_constraintTop_toTopOf="parent"
             android:foreground="?attr/selectableItemBackground"
             />
-
-
-
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

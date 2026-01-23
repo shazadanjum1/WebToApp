@@ -28,9 +28,11 @@ import androidx.core.view.get
 import androidx.core.view.isVisible
 import com.app.styletap.webtoappconverter.extentions.decorateStatus
 import com.app.styletap.webtoappconverter.extentions.isNetworkAvailable
+import com.app.styletap.webtoappconverter.extentions.showDeleteDialog
 import com.app.styletap.webtoappconverter.presentations.ui.activities.myApps.EditAppActivity
 import com.app.styletap.webtoappconverter.presentations.ui.activities.myApps.MyAppsActivity
 import com.app.styletap.webtoappconverter.presentations.ui.activities.myApps.ViewAppDetailsActivity
+import com.app.styletap.webtoappconverter.presentations.utils.Contants.READY_TO_DOWNLOAD_BUNDLE
 import com.bumptech.glide.Glide
 
 class MyAppsAdapter(
@@ -38,6 +40,9 @@ class MyAppsAdapter(
     private val apps: List<AppModel>,
     private val onItemClick: (AppModel) -> Unit
 ) : RecyclerView.Adapter<MyAppsAdapter.AppViewHolder>() {
+
+    var isClickable = true
+
 
     inner class AppViewHolder(
         val binding: MyAppsItemBinding
@@ -64,10 +69,19 @@ class MyAppsAdapter(
             // Status
             statusTv.decorateStatus(statusTv.context,app.status ?: DRAFT)
 
-            if (app.status == READY_TO_DOWNLOAD){
+            if (app.status == READY_TO_DOWNLOAD || app.status == READY_TO_DOWNLOAD_BUNDLE){
                 optionMenuBtn.isVisible = true
+                downloadBtn.isVisible = true
+
+                if (app.status == READY_TO_DOWNLOAD){
+                    downloadTv.text = activity.resources.getString(R.string.btn_generate_bundle)
+                } else if (app.status == READY_TO_DOWNLOAD_BUNDLE){
+                    downloadTv.text = activity.resources.getString(R.string.btn_download_bundle)
+                }
+
             } else {
                 optionMenuBtn.isVisible = false
+                downloadBtn.isVisible = false
             }
 
             app.appIconUrl?.let {
@@ -86,6 +100,21 @@ class MyAppsAdapter(
                             putExtra("appId", appId)
                         }
                         activity.startActivity(mIntent)
+                    }
+                }
+            }
+
+            downloadBtn.setOnClickListener {
+                if (activity is MyAppsActivity){
+                    if (!activity.isNetworkAvailable()){
+                        Toast.makeText(activity, activity.resources.getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show()
+                    } else {
+                        if (app.status == READY_TO_DOWNLOAD){
+                            isClickable = false
+                            app.id?.let { appId -> activity.generateBundle(appId){isClickable = true } }
+                        } else if (app.status == READY_TO_DOWNLOAD_BUNDLE){
+                            app.bundleUrl?.let { appUrl -> activity.startDownload(appUrl, app.appName ?: "app") }
+                        }
                     }
                 }
             }
@@ -151,7 +180,9 @@ class MyAppsAdapter(
                             Toast.makeText(activity1, activity1.resources.getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show()
                         } else {
                             if (activity1 is MyAppsActivity){
-                                activity1.deleteApp(appId)
+                                activity1.showDeleteDialog{
+                                    activity1.deleteApp(appId)
+                                }
                             }
                         }
                     }

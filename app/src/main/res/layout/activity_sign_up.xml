@@ -163,7 +163,7 @@
                             android:hint="@string/enter_full_name"
                             android:paddingHorizontal="@dimen/_12sdp"
                             android:layout_gravity="center_vertical"
-                            android:drawableLeft="@drawable/ic_email"
+                            android:drawableLeft="@drawable/ic_person2"
                             android:drawablePadding="@dimen/_8sdp"
                             android:background="@color/white"
                             android:maxLines="1"
