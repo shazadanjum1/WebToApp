@@ -216,7 +216,7 @@
     <string name="message">Message</string>
     <string name="describe_your_issue_in_detail">Describe your issue in detail...</string>
     <string name="other_ways_to_reach_us">Other Ways to Reach Us</string>
-    <string name="email_">📧 Email: support@webtoapp.com</string>
+    <string name="email_">📧 Email: appsmagic2952@gmail.com</string>
     <string name="phone_">📞 Phone: +1512 300 5526</string>
     <string name="support_hours">⏰ Support Hours: 9 AM - 6 PM (Mon-Fri)</string>
 
@@ -365,6 +365,8 @@
     <string name="choose_app_language">Choose app language</string>
 
     <string name="already_selected">Already selected</string>
+
+    <string name="btn_download_apk">Download apk</string>
 
 
 </resources>

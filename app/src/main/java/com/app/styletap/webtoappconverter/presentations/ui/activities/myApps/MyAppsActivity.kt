@@ -28,11 +28,14 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.app.styletap.webtoappconverter.extentions.hasStoragePermission
 import com.app.styletap.webtoappconverter.extentions.showStorageRationaleDialog
+import com.app.styletap.webtoappconverter.extentions.toMillis
 import com.app.styletap.webtoappconverter.presentations.ui.activities.home.MainActivity
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.ACTION_FINISH_ACTIVITY
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.ACTION_REFRESH_ACTIVITY
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.DRAFT_BUNDLE
+import com.google.firebase.Timestamp
 import com.google.firebase.firestore.Filter
+import com.google.firebase.firestore.Query
 
 class MyAppsActivity : AppCompatActivity() {
     lateinit var binding: ActivityMyAppsBinding
@@ -138,8 +141,6 @@ class MyAppsActivity : AppCompatActivity() {
         val db = FirebaseFirestore.getInstance()
 
         db.collection("apps")
-            //.whereEqualTo("userId", userId)
-            //.whereEqualTo("guestId", userId)
             .where(
                 Filter.or(
                 Filter.equalTo("userId", userId),
@@ -147,8 +148,14 @@ class MyAppsActivity : AppCompatActivity() {
             ))
             .get()
             .addOnSuccessListener { snapshot ->
+                //val appList = snapshot.documents.mapNotNull { it.toObject(AppModel::class.java) }
+
                 val appList = snapshot.documents
                     .mapNotNull { it.toObject(AppModel::class.java) }
+                    .sortedByDescending { app ->
+                        app.updatedAt.toMillis() ?: 0L
+                    }
+
                 isClickable = true
 
                 binding.reFetchBtn.isVisible = true
@@ -173,6 +180,7 @@ class MyAppsActivity : AppCompatActivity() {
             }
             .addOnFailureListener {
                 isClickable = true
+                binding.progressBar.isVisible = false
                 binding.emptyMsgTv.isVisible = true
                 binding.reFetchBtn.isVisible = false
                 binding.recyclerView.isVisible = false

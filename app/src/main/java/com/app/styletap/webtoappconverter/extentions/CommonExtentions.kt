@@ -743,7 +743,7 @@ fun incrementVersion(version: String): String {
 
 
 
-fun Context.openWhatsApp(phoneNumber: String) {
+fun Context.openWhatsApp1(phoneNumber: String) {
     try {
         val cleanNumber = phoneNumber
             .replace("+", "")
@@ -760,7 +760,51 @@ fun Context.openWhatsApp(phoneNumber: String) {
     }
 }
 
+fun Context.openWhatsApp(phoneNumber: String) {
+    val cleanNumber = phoneNumber
+        .replace("+", "")
+        .replace(" ", "")
 
+    val uri = Uri.parse("https://wa.me/$cleanNumber")
+
+    val intents = mutableListOf<Intent>()
+
+    // Normal WhatsApp
+    val whatsappIntent = Intent(Intent.ACTION_VIEW, uri).apply {
+        setPackage("com.whatsapp")
+    }
+
+    // WhatsApp Business
+    val businessIntent = Intent(Intent.ACTION_VIEW, uri).apply {
+        setPackage("com.whatsapp.w4b")
+    }
+
+    //if (whatsappIntent.resolveActivity(packageManager) != null) {
+        intents.add(whatsappIntent)
+    //}
+
+    //if (businessIntent.resolveActivity(packageManager) != null) {
+        intents.add(businessIntent)
+    //}
+
+    if (intents.isEmpty()) {
+        Toast.makeText(
+            this,
+            getString(R.string.whatsapp_not_installed),
+            Toast.LENGTH_SHORT
+        ).show()
+        return
+    }
+
+    val chooser = Intent.createChooser(
+        intents.removeAt(0),
+        "Open with WhatsApp"
+    )
+
+    chooser.putExtra(Intent.EXTRA_INITIAL_INTENTS, intents.toTypedArray())
+
+    startActivity(chooser)
+}
 fun Context.openEmail1(
     email: String,
     subject: String,

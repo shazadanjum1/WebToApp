@@ -71,7 +71,8 @@ class MyAppsAdapter(
 
             if (app.status == READY_TO_DOWNLOAD || app.status == READY_TO_DOWNLOAD_BUNDLE){
                 optionMenuBtn.isVisible = true
-                downloadBtn.isVisible = true
+                downloadBundleBtn.isVisible = true
+                downloadApkBtn.isVisible = true
 
                 if (app.status == READY_TO_DOWNLOAD){
                     downloadTv.text = activity.resources.getString(R.string.btn_generate_bundle)
@@ -81,7 +82,8 @@ class MyAppsAdapter(
 
             } else {
                 optionMenuBtn.isVisible = false
-                downloadBtn.isVisible = false
+                downloadBundleBtn.isVisible = false
+                downloadApkBtn.isVisible = false
             }
 
             app.appIconUrl?.let {
@@ -104,7 +106,7 @@ class MyAppsAdapter(
                 }
             }
 
-            downloadBtn.setOnClickListener {
+            downloadBundleBtn.setOnClickListener {
                 if (activity is MyAppsActivity){
                     if (!activity.isNetworkAvailable()){
                         Toast.makeText(activity, activity.resources.getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show()
@@ -114,6 +116,18 @@ class MyAppsAdapter(
                             app.id?.let { appId -> activity.generateBundle(appId){isClickable = true } }
                         } else if (app.status == READY_TO_DOWNLOAD_BUNDLE){
                             app.bundleUrl?.let { appUrl -> activity.startDownload(appUrl, app.appName ?: "app") }
+                        }
+                    }
+                }
+            }
+
+            downloadApkBtn.setOnClickListener {
+                app.apkUrl?.let { appUrl->
+                    if (!activity.isNetworkAvailable()){
+                        Toast.makeText(activity, activity.resources.getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show()
+                    } else {
+                        if (activity is MyAppsActivity){
+                            activity.startDownload(appUrl, app.appName ?: "app")
                         }
                     }
                 }
@@ -162,7 +176,8 @@ class MyAppsAdapter(
                 /*R.id.action_download_aab -> {
                     true
                 }*/
-                R.id.action_download_apk -> {
+
+                /*R.id.action_download_apk -> {
                     app.apkUrl?.let { appUrl->
                         if (!activity1.isNetworkAvailable()){
                             Toast.makeText(activity1, activity1.resources.getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show()
@@ -173,7 +188,7 @@ class MyAppsAdapter(
                         }
                     }
                     true
-                }
+                }*/
                 R.id.action_delete_app -> {
                     app.id?.let { appId->
                         if (!activity1.isNetworkAvailable()){
