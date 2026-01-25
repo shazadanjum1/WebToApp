@@ -137,7 +137,7 @@ class AppBrandingActivity : AppCompatActivity() {
 
             nextBtn.setOnClickListener {
 
-                if (filePath == null){
+                if (filePath.isNullOrEmpty()){
                     binding.iconErrorTv.isVisible = true
                     return@setOnClickListener
                 }

@@ -13,7 +13,9 @@ import com.app.styletap.webtoappconverter.extentions.adjustTopHeight
 import com.app.styletap.webtoappconverter.extentions.changeLocale
 import com.app.styletap.webtoappconverter.extentions.customEnableEdgeToEdge
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.CREATE_APP
-import com.app.styletap.webtoappconverter.presentations.utils.Contants.CREATE_BUNDLE
+import com.app.styletap.webtoappconverter.presentations.utils.Contants.CUSTOM_DOMAIN
+import com.app.styletap.webtoappconverter.presentations.utils.Contants.ENABLE_MONITIZATION
+import com.app.styletap.webtoappconverter.presentations.utils.Contants.ENABLE_NOTIFICATIONS
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.UPLOAD_APP
 
 class TutorialsActivity : AppCompatActivity() {
@@ -58,14 +60,22 @@ class TutorialsActivity : AppCompatActivity() {
                 moveNext(CREATE_APP)
             }
 
-            createBundleBtn.setOnClickListener {
-                moveNext(CREATE_BUNDLE)
-            }
 
             uploadAppBtn.setOnClickListener {
                 moveNext(UPLOAD_APP)
             }
 
+            enableNotificationBtn.setOnClickListener {
+                moveNext(ENABLE_NOTIFICATIONS)
+            }
+
+            customDomainBtn.setOnClickListener {
+                moveNext(CUSTOM_DOMAIN)
+            }
+
+            admobBtn.setOnClickListener {
+                moveNext(ENABLE_MONITIZATION)
+            }
 
         }
     }

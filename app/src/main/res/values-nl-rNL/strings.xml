@@ -293,68 +293,114 @@
 <string name="logout_app">App uitloggen</string>
 <string name="are_you_sure_you_want_to_logout">Weet u zeker dat u wilt uitloggen?</string>
 
-    <string name="how_to_create_an_app">如何创建应用</string>
-    <string name="step_by_step_guide_to_create_your_first_web_to_app_conversion">创建您的第一个 Web 转 App 的分步指南</string>
+    <string name="btn_download_apk">APK downloaden</string>
+    <string name="getting_started">Aan de slag</string>
+    <string name="publishing">Publiceren</string>
+    <string name="features">Functies</string>
+    <string name="how_to_enable_notifications">Hoe meldingen in te schakelen</string>
+    <string name="setup_push_notifications_for_your_android_app">Pushmeldingen instellen voor je Android-app</string>
+    <string name="advanced">Geavanceerd</string>
+    <string name="how_to_add_custom_domain">Hoe een aangepast domein toe te voegen</string>
+    <string name="connect_your_own_domain_to_your_app">Verbind je eigen domein met je app</string>
+    <string name="monetization">Monetisatie</string>
+    <string name="how_to_use_admob">Hoe AdMob te gebruiken</string>
+    <string name="monetize_your_app_with_google_admob">Monetiseer je app met Google AdMob</string>
 
-    <string name="how_to_create_an_app_bundle">如何创建应用 Bundle</string>
-    <string name="step_by_step_guide_to_create_your_app_bundle">创建应用 Bundle 的分步指南</string>
 
-    <string name="how_to_upload_to_play_store">如何上传到 Play 商店</string>
-    <string name="complete_guide_to_publish_your_app_on_google_play_store">在 Google Play 商店发布应用的完整指南</string>
+    <string name="frequently_asked_questions">Veelgestelde vragen</string>
+    <string name="how_long_does_it_take">Hoe lang duurt het?</string>
+    <string name="the_process_typically_takes_5_10_minutes_depending_on_your_website_size_and_complexity">Het proces duurt meestal 5-10 minuten, afhankelijk van de grootte en complexiteit van je website.</string>
+    <string name="do_i_need_coding_knowledge">Heb ik programmeerkennis nodig?</string>
+    <string name="no_coding_knowledge_is_required_our_platform_handles_everything_automatically">Programmeerkennis is niet nodig! Ons platform regelt alles automatisch.</string>
+    <string name="can_i_customize_the_app">Kan ik de app aanpassen?</string>
+    <string name="yes_you_can_customize_colors_icons_splash_screens_and_various_app_features">Ja, je kunt kleuren, iconen, splashscreens en verschillende app-functies aanpassen.</string>
 
-    <string name="step_by_step_guide">分步指南</string>
 
-    <string name="enter_your_website_url">输入您的网站 URL</string>
-    <string name="fill_in_app_basic_information">填写应用基本信息</string>
-    <string name="customize_branding_and_colors">自定义品牌和颜色</string>
-    <string name="configure_app_features">配置应用功能</string>
-    <string name="generate_and_download_apk">生成并下载 APK</string>
+    <string name="create_firebase_project">Firebase-project maken</string>
+    <string name="add_firebase_to_your_app">Voeg Firebase toe aan je app</string>
+    <string name="configure_notification_settings">Meldingsinstellingen configureren</string>
+    <string name="test_notifications">Test meldingen</string>
+    <string name="schedule_automated_notifications">Geautomatiseerde meldingen plannen</string>
 
-    <string name="open_my_apps">打开我的应用</string>
-    <string name="start_bundle_generation">点击生成 Bundle</string>
-    <string name="bundle_generation_in_progress">Bundle 正在生成中</string>
-    <string name="bundle_ready_for_download">Bundle 已准备好下载</string>
-    <string name="download_generated_bundle">下载 Bundle</string>
 
-    <string name="create_a_google_play_developer_account">创建 Google Play 开发者账户</string>
-    <string name="prepare_app_assets_and_screenshots">准备应用资源和截图</string>
-    <string name="fill_in_store_listing_details">填写商店列表详情</string>
-    <string name="set_up_pricing_and_distribution">设置定价和分发</string>
-    <string name="submit_for_review">提交审核</string>
+    <string name="purchase_your_domain">Koop je domein</string>
+    <string name="access_domain_dns_settings">Toegang tot domein-DNS-instellingen</string>
+    <string name="add_required_dns_records">Voeg de vereiste DNS-records toe</string>
+    <string name="verify_domain_ownership">Verifieer domeineigendom</string>
+    <string name="update_app_configuration">App-configuratie bijwerken</string>
 
-    <string name="profile">个人资料</string>
-    <string name="account_information">账户信息</string>
-    <string name="member_since">注册时间</string>
-    <string name="phone">电话</string>
-    <string name="add">添加</string>
-    <string name="settings">设置</string>
-    <string name="account_settings">账户设置</string>
-    <string name="update_your_account_preferences">更新账户偏好设置</string>
-    <string name="privacy_security">隐私与安全</string>
-    <string name="manage_your_privacy_settings">管理隐私设置</string>
-    <string name="save_changes">保存更改</string>
-    <string name="change_password">更改密码</string>
-    <string name="current_password">当前密码</string>
-    <string name="enter_current_password">输入当前密码</string>
-    <string name="new_password">新密码</string>
-    <string name="enter_new_password">输入新密码</string>
-    <string name="confirm_new_password">确认新密码</string>
-    <string name="update_password">更新密码</string>
-    <string name="read_our_privacy_policy">阅读我们的隐私政策</string>
 
-    <string name="Email">电子邮件</string>
-    <string name="password_should_be_at_least_6_characters">密码至少需要 6 个字符</string>
-    <string name="passwords_do_not_match">密码不匹配</string>
-    <string name="password_updated_successfully">密码更新成功</string>
-    <string name="current_password_is_incorrect">当前密码不正确</string>
+    <string name="create_admob_account">Maak een AdMob-account</string>
+    <string name="create_ad_units">Maak advertentie-eenheden</string>
+    <string name="integrate_admob_sdk">Integreer AdMob SDK</string>
+    <string name="implement_different_ad_formats">Implementeer verschillende advertentieformaten</string>
+    <string name="track_revenue_and_performance">Volg inkomsten en prestaties</string>
 
-    <string name="updated_successfully">更新成功</string>
 
-    <string name="select_languages">选择语言</string>
-    <string name="search_language">搜索语言…</string>
-    <string name="languages">语言</string>
-    <string name="choose_app_language">选择应用语言</string>
+    <string name="how_to_create_an_app">Hoe maak je een app</string>
+    <string name="step_by_step_guide_to_create_your_first_web_to_app_conversion">Stapsgewijze handleiding om je eerste web-naar-app conversie te maken</string>
 
-    <string name="already_selected">已选择</string>
+    <string name="how_to_create_an_app_bundle">Hoe maak je een app-bundel</string>
+    <string name="step_by_step_guide_to_create_your_app_bundle">Stapsgewijze handleiding om je app-bundel te maken</string>
+
+    <string name="how_to_upload_to_play_store">Hoe upload je naar de Play Store</string>
+    <string name="complete_guide_to_publish_your_app_on_google_play_store">Complete handleiding om je app te publiceren op Google Play Store</string>
+
+    <string name="step_by_step_guide">Stapsgewijze handleiding</string>
+
+    <string name="enter_your_website_url">Voer je website-URL in</string>
+    <string name="fill_in_app_basic_information">Vul de basisinformatie van de app in</string>
+    <string name="customize_branding_and_colors">Pas branding en kleuren aan</string>
+    <string name="configure_app_features">Configureer app-functies</string>
+    <string name="generate_and_download_apk">Genereer en download APK</string>
+
+    <string name="open_my_apps">Open Mijn Apps</string>
+    <string name="start_bundle_generation">Klik op Bundel genereren</string>
+    <string name="bundle_generation_in_progress">Bundel generatie in uitvoering</string>
+    <string name="bundle_ready_for_download">Bundel klaar voor download</string>
+    <string name="download_generated_bundle">Download bundel</string>
+
+    <string name="create_a_google_play_developer_account">Maak een Google Play Developer-account aan</string>
+    <string name="prepare_app_assets_and_screenshots">Bereid app-assets en screenshots voor</string>
+    <string name="fill_in_store_listing_details">Vul winkelvermeldingsgegevens in</string>
+    <string name="set_up_pricing_and_distribution">Stel prijzen en distributie in</string>
+    <string name="submit_for_review">Indienen ter beoordeling</string>
+
+    <string name="profile">Profiel</string>
+    <string name="account_information">Accountinformatie</string>
+    <string name="member_since">Lid sinds</string>
+    <string name="phone">Telefoon</string>
+    <string name="add">Toevoegen</string>
+    <string name="settings">Instellingen</string>
+    <string name="account_settings">Accountinstellingen</string>
+    <string name="update_your_account_preferences">Werk je accountvoorkeuren bij</string>
+    <string name="privacy_security">Privacy &amp; Beveiliging</string>
+    <string name="manage_your_privacy_settings">Beheer je privacy-instellingen</string>
+    <string name="save_changes">Wijzigingen opslaan</string>
+    <string name="change_password">Wachtwoord wijzigen</string>
+    <string name="current_password">Huidig wachtwoord</string>
+    <string name="enter_current_password">Voer huidig wachtwoord in</string>
+    <string name="new_password">Nieuw wachtwoord</string>
+    <string name="enter_new_password">Voer nieuw wachtwoord in</string>
+    <string name="confirm_new_password">Bevestig nieuw wachtwoord</string>
+    <string name="update_password">Werk wachtwoord bij</string>
+    <string name="read_our_privacy_policy">Lees ons privacybeleid</string>
+
+    <string name="Email">E-mail</string>
+    <string name="password_should_be_at_least_6_characters">Wachtwoord moet minimaal 6 tekens zijn</string>
+    <string name="passwords_do_not_match">Wachtwoorden komen niet overeen</string>
+    <string name="password_updated_successfully">Wachtwoord succesvol bijgewerkt</string>
+    <string name="current_password_is_incorrect">Huidig wachtwoord is onjuist</string>
+
+    <string name="updated_successfully">Succesvol bijgewerkt</string>
+
+    <string name="select_languages">Selecteer talen</string>
+    <string name="search_language">Zoek taal...</string>
+    <string name="languages">Talen</string>
+    <string name="choose_app_language">Kies app-taal</string>
+
+    <string name="already_selected">Al geselecteerd</string>
+
+
 
 </resources>

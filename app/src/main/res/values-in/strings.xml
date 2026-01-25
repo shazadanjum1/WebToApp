@@ -482,4 +482,44 @@ Hapus watermark dan dapatkan fitur premium
     <string name="failed_to_upload_app_icon">Gagal mengunggah ikon aplikasi</string>
 
     <string name="already_selected">Sudah dipilih</string>
+
+    <string name="btn_download_apk">Unduh APK</string>
+    <string name="getting_started">Memulai</string>
+    <string name="publishing">Menerbitkan</string>
+    <string name="features">Fitur</string>
+    <string name="how_to_enable_notifications">Cara Mengaktifkan Notifikasi</string>
+    <string name="setup_push_notifications_for_your_android_app">Atur notifikasi push untuk aplikasi Android Anda</string>
+    <string name="advanced">Lanjutan</string>
+    <string name="how_to_add_custom_domain">Cara Menambahkan Domain Kustom</string>
+    <string name="connect_your_own_domain_to_your_app">Hubungkan domain Anda ke aplikasi</string>
+    <string name="monetization">Monetisasi</string>
+    <string name="how_to_use_admob">Cara Menggunakan AdMob</string>
+    <string name="monetize_your_app_with_google_admob">Monetisasi aplikasi Anda dengan Google AdMob</string>
+
+    <string name="frequently_asked_questions">Pertanyaan yang Sering Diajukan</string>
+    <string name="how_long_does_it_take">Berapa lama prosesnya?</string>
+    <string name="the_process_typically_takes_5_10_minutes_depending_on_your_website_size_and_complexity">Proses biasanya memakan waktu 5-10 menit tergantung ukuran dan kompleksitas situs web Anda.</string>
+    <string name="do_i_need_coding_knowledge">Apakah saya perlu pengetahuan coding?</string>
+    <string name="no_coding_knowledge_is_required_our_platform_handles_everything_automatically">Tidak perlu pengetahuan coding! Platform kami menangani semuanya secara otomatis.</string>
+    <string name="can_i_customize_the_app">Apakah saya bisa menyesuaikan aplikasi?</string>
+    <string name="yes_you_can_customize_colors_icons_splash_screens_and_various_app_features">Ya, Anda dapat menyesuaikan warna, ikon, layar splash, dan berbagai fitur aplikasi.</string>
+
+    <string name="create_firebase_project">Buat proyek Firebase</string>
+    <string name="add_firebase_to_your_app">Tambahkan Firebase ke aplikasi Anda</string>
+    <string name="configure_notification_settings">Konfigurasikan pengaturan notifikasi</string>
+    <string name="test_notifications">Uji notifikasi</string>
+    <string name="schedule_automated_notifications">Jadwalkan notifikasi otomatis</string>
+
+    <string name="purchase_your_domain">Beli domain Anda</string>
+    <string name="access_domain_dns_settings">Akses pengaturan DNS domain</string>
+    <string name="add_required_dns_records">Tambahkan catatan DNS yang diperlukan</string>
+    <string name="verify_domain_ownership">Verifikasi kepemilikan domain</string>
+    <string name="update_app_configuration">Perbarui konfigurasi aplikasi</string>
+
+    <string name="create_admob_account">Buat akun AdMob</string>
+    <string name="create_ad_units">Buat unit iklan</string>
+    <string name="integrate_admob_sdk">Integrasikan SDK AdMob</string>
+    <string name="implement_different_ad_formats">Terapkan berbagai format iklan</string>
+    <string name="track_revenue_and_performance">Lacak pendapatan dan kinerja</string>
+
 </resources>

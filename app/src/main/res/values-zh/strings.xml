@@ -359,4 +359,47 @@
 
     <string name="already_selected">已选择</string>
 
+    <string name="btn_download_apk">下载 APK</string>
+    <string name="getting_started">入门指南</string>
+    <string name="publishing">发布</string>
+    <string name="features">功能</string>
+    <string name="how_to_enable_notifications">如何启用通知</string>
+    <string name="setup_push_notifications_for_your_android_app">为您的 Android 应用设置推送通知</string>
+    <string name="advanced">高级</string>
+    <string name="how_to_add_custom_domain">如何添加自定义域名</string>
+    <string name="connect_your_own_domain_to_your_app">将您自己的域名连接到应用</string>
+    <string name="monetization">变现</string>
+    <string name="how_to_use_admob">如何使用 AdMob</string>
+    <string name="monetize_your_app_with_google_admob">使用 Google AdMob 为应用变现</string>
+
+
+    <string name="frequently_asked_questions">常见问题</string>
+    <string name="how_long_does_it_take">需要多长时间？</string>
+    <string name="the_process_typically_takes_5_10_minutes_depending_on_your_website_size_and_complexity">根据网站的大小和复杂度，通常需要 5-10 分钟。</string>
+    <string name="do_i_need_coding_knowledge">我需要编程知识吗？</string>
+    <string name="no_coding_knowledge_is_required_our_platform_handles_everything_automatically">不需要编程知识！我们的平台会自动处理一切。</string>
+    <string name="can_i_customize_the_app">我可以自定义应用吗？</string>
+    <string name="yes_you_can_customize_colors_icons_splash_screens_and_various_app_features">是的，您可以自定义颜色、图标、启动画面以及各种应用功能。</string>
+
+
+    <string name="create_firebase_project">创建 Firebase 项目</string>
+    <string name="add_firebase_to_your_app">将 Firebase 添加到您的应用</string>
+    <string name="configure_notification_settings">配置通知设置</string>
+    <string name="test_notifications">测试通知</string>
+    <string name="schedule_automated_notifications">安排自动通知</string>
+
+
+    <string name="purchase_your_domain">购买您的域名</string>
+    <string name="access_domain_dns_settings">访问域名 DNS 设置</string>
+    <string name="add_required_dns_records">添加所需的 DNS 记录</string>
+    <string name="verify_domain_ownership">验证域名所有权</string>
+    <string name="update_app_configuration">更新应用配置</string>
+
+
+    <string name="create_admob_account">创建 AdMob 帐户</string>
+    <string name="create_ad_units">创建广告单元</string>
+    <string name="integrate_admob_sdk">集成 AdMob SDK</string>
+    <string name="implement_different_ad_formats">实现不同的广告格式</string>
+    <string name="track_revenue_and_performance">跟踪收入和性能</string>
+
 </resources>

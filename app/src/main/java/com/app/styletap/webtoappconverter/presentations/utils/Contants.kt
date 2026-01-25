@@ -20,8 +20,10 @@ object Contants {
     const val PREMIUM_BUILD = "PREMIUM_BUILD"
 
     const val CREATE_APP = "CREATE_APP"
-    const val CREATE_BUNDLE = "CREATE_BUNDLE"
     const val UPLOAD_APP = "UPLOAD_APP"
+    const val ENABLE_NOTIFICATIONS = "ENABLE_NOTIFICATIONS"
+    const val CUSTOM_DOMAIN = "CUSTOM_DOMAIN"
+    const val ENABLE_MONITIZATION = "ENABLE_MONITIZATION"
 
 
     const val isShowOnBoarding = "isShowOnBoarding"

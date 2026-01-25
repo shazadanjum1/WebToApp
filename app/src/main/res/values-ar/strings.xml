@@ -356,4 +356,43 @@
     <string name="choose_app_language">اختر لغة التطبيق</string>
 
     <string name="already_selected">تم الاختيار بالفعل</string>
+
+<string name="btn_download_apk">تنزيل APK</string>
+<string name="getting_started">البدء</string>
+<string name="publishing">النشر</string>
+<string name="features">الميزات</string>
+<string name="how_to_enable_notifications">كيفية تفعيل الإشعارات</string>
+<string name="setup_push_notifications_for_your_android_app">إعداد إشعارات الدفع لتطبيق أندرويد الخاص بك</string>
+<string name="advanced">متقدم</string>
+<string name="how_to_add_custom_domain">كيفية إضافة نطاق مخصص</string>
+<string name="connect_your_own_domain_to_your_app">ربط نطاقك الخاص بتطبيقك</string>
+<string name="monetization">تحقيق الدخل</string>
+<string name="how_to_use_admob">كيفية استخدام AdMob</string>
+<string name="monetize_your_app_with_google_admob">حقق الدخل من تطبيقك باستخدام Google AdMob</string>
+
+<string name="frequently_asked_questions">الأسئلة الشائعة</string>
+<string name="how_long_does_it_take">كم من الوقت يستغرق؟</string>
+<string name="the_process_typically_takes_5_10_minutes_depending_on_your_website_size_and_complexity">تستغرق العملية عادةً من 5 إلى 10 دقائق حسب حجم موقعك وتعقيده.</string>
+<string name="do_i_need_coding_knowledge">هل أحتاج إلى معرفة بالبرمجة؟</string>
+<string name="no_coding_knowledge_is_required_our_platform_handles_everything_automatically">لا حاجة لأي معرفة بالبرمجة! منصتنا تتولى كل شيء تلقائيًا.</string>
+<string name="can_i_customize_the_app">هل يمكنني تخصيص التطبيق؟</string>
+<string name="yes_you_can_customize_colors_icons_splash_screens_and_various_app_features">نعم، يمكنك تخصيص الألوان والأيقونات وشاشات البداية والعديد من ميزات التطبيق.</string>
+
+<string name="create_firebase_project">إنشاء مشروع Firebase</string>
+<string name="add_firebase_to_your_app">إضافة Firebase إلى تطبيقك</string>
+<string name="configure_notification_settings">تهيئة إعدادات الإشعارات</string>
+<string name="test_notifications">اختبار الإشعارات</string>
+<string name="schedule_automated_notifications">جدولة الإشعارات التلقائية</string>
+
+<string name="purchase_your_domain">شراء النطاق الخاص بك</string>
+<string name="access_domain_dns_settings">الوصول إلى إعدادات DNS للنطاق</string>
+<string name="add_required_dns_records">إضافة سجلات DNS المطلوبة</string>
+<string name="verify_domain_ownership">التحقق من ملكية النطاق</string>
+<string name="update_app_configuration">تحديث إعدادات التطبيق</string>
+
+<string name="create_admob_account">إنشاء حساب AdMob</string>
+<string name="create_ad_units">إنشاء وحدات إعلانية</string>
+<string name="integrate_admob_sdk">دمج SDK الخاص بـ AdMob</string>
+<string name="implement_different_ad_formats">تنفيذ صيغ إعلانية مختلفة</string>
+<string name="track_revenue_and_performance">تتبع الإيرادات والأداء</string>
 </resources>

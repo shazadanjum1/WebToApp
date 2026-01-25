@@ -357,4 +357,44 @@
     <string name="choose_app_language">Wybierz język aplikacji</string>
 
     <string name="already_selected">Już wybrane</string>
+
+    <string name="btn_download_apk">Pobierz apk</string>
+    <string name="getting_started">Pierwsze kroki</string>
+    <string name="publishing">Publikacja</string>
+    <string name="features">Funkcje</string>
+    <string name="how_to_enable_notifications">Jak włączyć powiadomienia</string>
+    <string name="setup_push_notifications_for_your_android_app">Skonfiguruj powiadomienia push w swojej aplikacji Android</string>
+    <string name="advanced">Zaawansowane</string>
+    <string name="how_to_add_custom_domain">Jak dodać własną domenę</string>
+    <string name="connect_your_own_domain_to_your_app">Połącz własną domenę z aplikacją</string>
+    <string name="monetization">Monetyzacja</string>
+    <string name="how_to_use_admob">Jak korzystać z AdMob</string>
+    <string name="monetize_your_app_with_google_admob">Monetyzuj swoją aplikację z Google AdMob</string>
+
+    <string name="frequently_asked_questions">Najczęściej zadawane pytania</string>
+    <string name="how_long_does_it_take">Ile to trwa?</string>
+    <string name="the_process_typically_takes_5_10_minutes_depending_on_your_website_size_and_complexity">Proces zazwyczaj trwa 5–10 minut, w zależności od wielkości i złożoności strony.</string>
+    <string name="do_i_need_coding_knowledge">Czy potrzebuję znajomości programowania?</string>
+    <string name="no_coding_knowledge_is_required_our_platform_handles_everything_automatically">Nie wymagana jest znajomość programowania! Nasza platforma obsługuje wszystko automatycznie.</string>
+    <string name="can_i_customize_the_app">Czy mogę dostosować aplikację?</string>
+    <string name="yes_you_can_customize_colors_icons_splash_screens_and_various_app_features">Tak, możesz dostosować kolory, ikony, ekrany powitalne i różne funkcje aplikacji.</string>
+
+    <string name="create_firebase_project">Utwórz projekt Firebase</string>
+    <string name="add_firebase_to_your_app">Dodaj Firebase do swojej aplikacji</string>
+    <string name="configure_notification_settings">Skonfiguruj ustawienia powiadomień</string>
+    <string name="test_notifications">Testuj powiadomienia</string>
+    <string name="schedule_automated_notifications">Zaplanowane powiadomienia automatyczne</string>
+
+    <string name="purchase_your_domain">Kup własną domenę</string>
+    <string name="access_domain_dns_settings">Uzyskaj dostęp do ustawień DNS domeny</string>
+    <string name="add_required_dns_records">Dodaj wymagane rekordy DNS</string>
+    <string name="verify_domain_ownership">Zweryfikuj własność domeny</string>
+    <string name="update_app_configuration">Zaktualizuj konfigurację aplikacji</string>
+
+    <string name="create_admob_account">Utwórz konto AdMob</string>
+    <string name="create_ad_units">Utwórz jednostki reklamowe</string>
+    <string name="integrate_admob_sdk">Zintegruj SDK AdMob</string>
+    <string name="implement_different_ad_formats">Zaimplementuj różne formaty reklam</string>
+    <string name="track_revenue_and_performance">Śledź przychody i wyniki</string>
+
 </resources>

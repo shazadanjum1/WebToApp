@@ -358,4 +358,43 @@
 
     <string name="already_selected">Уже выбрано</string>
 
+    <string name="btn_download_apk">Скачать APK</string>
+    <string name="getting_started">Начало работы</string>
+    <string name="publishing">Публикация</string>
+    <string name="features">Функции</string>
+    <string name="how_to_enable_notifications">Как включить уведомления</string>
+    <string name="setup_push_notifications_for_your_android_app">Настройка push-уведомлений для вашего Android-приложения</string>
+    <string name="advanced">Расширенные настройки</string>
+    <string name="how_to_add_custom_domain">Как добавить собственный домен</string>
+    <string name="connect_your_own_domain_to_your_app">Подключите свой домен к приложению</string>
+    <string name="monetization">Монетизация</string>
+    <string name="how_to_use_admob">Как использовать AdMob</string>
+    <string name="monetize_your_app_with_google_admob">Монетизируйте приложение с помощью Google AdMob</string>
+
+    <string name="frequently_asked_questions">Часто задаваемые вопросы</string>
+    <string name="how_long_does_it_take">Сколько это занимает времени?</string>
+    <string name="the_process_typically_takes_5_10_minutes_depending_on_your_website_size_and_complexity">Процесс обычно занимает 5-10 минут в зависимости от размера и сложности вашего сайта.</string>
+    <string name="do_i_need_coding_knowledge">Нужны ли знания программирования?</string>
+    <string name="no_coding_knowledge_is_required_our_platform_handles_everything_automatically">Знания программирования не требуются! Наша платформа делает всё автоматически.</string>
+    <string name="can_i_customize_the_app">Можно ли настроить приложение?</string>
+    <string name="yes_you_can_customize_colors_icons_splash_screens_and_various_app_features">Да, вы можете настраивать цвета, иконки, заставки и различные функции приложения.</string>
+
+    <string name="create_firebase_project">Создать проект Firebase</string>
+    <string name="add_firebase_to_your_app">Добавить Firebase в ваше приложение</string>
+    <string name="configure_notification_settings">Настроить параметры уведомлений</string>
+    <string name="test_notifications">Тестировать уведомления</string>
+    <string name="schedule_automated_notifications">Запланировать автоматические уведомления</string>
+
+    <string name="purchase_your_domain">Приобрести домен</string>
+    <string name="access_domain_dns_settings">Доступ к настройкам DNS домена</string>
+    <string name="add_required_dns_records">Добавить необходимые записи DNS</string>
+    <string name="verify_domain_ownership">Подтвердить владение доменом</string>
+    <string name="update_app_configuration">Обновить конфигурацию приложения</string>
+
+    <string name="create_admob_account">Создать аккаунт AdMob</string>
+    <string name="create_ad_units">Создать рекламные блоки</string>
+    <string name="integrate_admob_sdk">Интегрировать SDK AdMob</string>
+    <string name="implement_different_ad_formats">Использовать различные форматы рекламы</string>
+    <string name="track_revenue_and_performance">Отслеживать доход и эффективность</string>
+
 </resources>

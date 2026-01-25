@@ -358,4 +358,43 @@
 
     <string name="already_selected">Zaten seçildi</string>
 
+    <string name="btn_download_apk">APK indir</string>
+    <string name="getting_started">Başlarken</string>
+    <string name="publishing">Yayınlama</string>
+    <string name="features">Özellikler</string>
+    <string name="how_to_enable_notifications">Bildirimler Nasıl Etkinleştirilir</string>
+    <string name="setup_push_notifications_for_your_android_app">Android uygulamanız için push bildirimlerini ayarlayın</string>
+    <string name="advanced">Gelişmiş</string>
+    <string name="how_to_add_custom_domain">Özel Alan Adı Nasıl Eklenir</string>
+    <string name="connect_your_own_domain_to_your_app">Kendi alan adınızı uygulamanıza bağlayın</string>
+    <string name="monetization">Para Kazanma</string>
+    <string name="how_to_use_admob">AdMob Nasıl Kullanılır</string>
+    <string name="monetize_your_app_with_google_admob">Uygulamanızı Google AdMob ile monetize edin</string>
+
+    <string name="frequently_asked_questions">Sık Sorulan Sorular</string>
+    <string name="how_long_does_it_take">Ne kadar sürer?</string>
+    <string name="the_process_typically_takes_5_10_minutes_depending_on_your_website_size_and_complexity">Süre genellikle web sitenizin boyutuna ve karmaşıklığına bağlı olarak 5-10 dakika sürer.</string>
+    <string name="do_i_need_coding_knowledge">Kodlama bilgisine ihtiyacım var mı?</string>
+    <string name="no_coding_knowledge_is_required_our_platform_handles_everything_automatically">Kodlama bilgisi gerekmez! Platformumuz her şeyi otomatik olarak halleder.</string>
+    <string name="can_i_customize_the_app">Uygulamayı özelleştirebilir miyim?</string>
+    <string name="yes_you_can_customize_colors_icons_splash_screens_and_various_app_features">Evet, renkleri, simgeleri, açılış ekranlarını ve çeşitli uygulama özelliklerini özelleştirebilirsiniz.</string>
+
+    <string name="create_firebase_project">Firebase projesi oluştur</string>
+    <string name="add_firebase_to_your_app">Firebase’i uygulamanıza ekleyin</string>
+    <string name="configure_notification_settings">Bildirim ayarlarını yapılandırın</string>
+    <string name="test_notifications">Bildirimleri test edin</string>
+    <string name="schedule_automated_notifications">Otomatik bildirimleri planlayın</string>
+
+    <string name="purchase_your_domain">Alan adınızı satın alın</string>
+    <string name="access_domain_dns_settings">Alan adı DNS ayarlarına erişin</string>
+    <string name="add_required_dns_records">Gerekli DNS kayıtlarını ekleyin</string>
+    <string name="verify_domain_ownership">Alan adı sahipliğini doğrulayın</string>
+    <string name="update_app_configuration">Uygulama yapılandırmasını güncelleyin</string>
+
+    <string name="create_admob_account">AdMob hesabı oluştur</string>
+    <string name="create_ad_units">Reklam birimleri oluştur</string>
+    <string name="integrate_admob_sdk">AdMob SDK’yı entegre edin</string>
+    <string name="implement_different_ad_formats">Farklı reklam formatlarını uygulayın</string>
+    <string name="track_revenue_and_performance">Gelir ve performansı takip edin</string>
+
 </resources>
