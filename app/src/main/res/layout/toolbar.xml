@@ -30,6 +30,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:text="@string/app_name1"
+        android:textAlignment="viewStart"
         android:includeFontPadding="false"
         android:layout_marginHorizontal="@dimen/_12sdp"
         android:fontFamily="@font/arimo_regular"

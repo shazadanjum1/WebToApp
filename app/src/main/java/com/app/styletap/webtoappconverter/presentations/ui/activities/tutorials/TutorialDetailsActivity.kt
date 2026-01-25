@@ -9,6 +9,7 @@ import com.app.styletap.webtoappconverter.R
 import com.app.styletap.webtoappconverter.databinding.ActivityTutorialDetailsBinding
 import com.app.styletap.webtoappconverter.extentions.adjustBottomHeight
 import com.app.styletap.webtoappconverter.extentions.adjustTopHeight
+import com.app.styletap.webtoappconverter.extentions.changeLocale
 import com.app.styletap.webtoappconverter.extentions.customEnableEdgeToEdge
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.CREATE_APP
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.CREATE_BUNDLE
@@ -21,6 +22,7 @@ class TutorialDetailsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        changeLocale()
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         binding = ActivityTutorialDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)

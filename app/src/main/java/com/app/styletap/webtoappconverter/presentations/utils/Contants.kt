@@ -25,5 +25,7 @@ object Contants {
 
 
     const val isShowOnBoarding = "isShowOnBoarding"
+    const val languageCode = "languageCode"
+    const val isLanguageSelected = "isLanguageSelected"
 
 }

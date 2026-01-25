@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="convert_websites_to_mobile_apps">Web sitelerini mobil uygulamalara dönüştürün</string>
+
+    <string name="convert_any_website_to_app">Herhangi Bir Web Sitesini Uygulamaya Dönüştürün</string>
+    <string name="transform_your_website_into_a_fully_functional_android_app_in_just_a_few_minutes_no_coding_required">Web sitenizi sadece birkaç dakikada tamamen işlevsel bir Android uygulamasına dönüştürün. Kodlama gerekmez!</string>
+    <string name="easy_url_input">Kolay URL girişi</string>
+    <string name="quick_conversion">Hızlı dönüştürme</string>
+    <string name="professional_results">Profesyonel sonuçlar</string>
+
+    <string name="customize_your_app">Uygulamanızı Özelleştirin</string>
+    <string name="personalize_your_app_with_custom_icons_splash_screens_colors_and_branding_to_match_your_style">Uygulamanızı özel simgeler, açılış ekranları, renkler ve marka öğeleriyle stilinize uygun şekilde kişiselleştirin.</string>
+    <string name="custom_branding">Özel marka</string>
+    <string name="color_themes">Renk temaları</string>
+    <string name="app_icons_logos">Uygulama simgeleri ve logoları</string>
+
+    <string name="build_publish">Oluştur &amp; Yayınla</string>
+    <string name="generate_your_apk_instantly_and_get_help_publishing_to_google_play_store_your_app_ready_to_go">APK\'nizi anında oluşturun ve Google Play Store\'a yayınlama konusunda yardım alın. Uygulamanız hazır!</string>
+    <string name="instant_apk_generation">Anında APK oluşturma</string>
+    <string name="play_store_support">Play Store desteği</string>
+    <string name="ongoing_updates">Sürekli güncellemeler</string>
+
+    <string name="skip">Atla</string>
+    <string name="next">İleri</string>
+    <string name="get_started">Başlayın</string>
+
+    <string name="welcome">Hoşgeldiniz</string>
+    <string name="web_to_app_converter">Web to App Dönüştürücü</string>
+    <string name="sign_in_to_continue">Devam etmek için giriş yapın</string>
+    <string name="email_address">E-posta Adresi</string>
+    <string name="password">Şifre</string>
+    <string name="enter_your_email">E-postanızı girin</string>
+    <string name="enter_your_password">Şifrenizi girin</string>
+    <string name="remember_me">Beni Hatırla</string>
+    <string name="forgot_password">Şifremi Unuttum?</string>
+    <string name="sign_in">Giriş Yap</string>
+    <string name="login">Giriş</string>
+
+    <string name="dont_have_an_account">Hesabınız yok mu? %1$s</string>
+    <string name="sign_up_for_free">Ücretsiz Kaydol</string>
+
+    <string name="create_account">Hesap Oluştur</string>
+    <string name="create_your_free_account">Ücretsiz hesabınızı oluşturun</string>
+    <string name="full_name">Tam Adı</string>
+    <string name="enter_full_name">Tam adınızı girin</string>
+    <string name="create_a_password">Bir şifre oluşturun</string>
+    <string name="confirm_password">Şifreyi Onayla</string>
+    <string name="confirm_your_password">Şifrenizi onaylayın</string>
+
+    <string name="i_agree_to_the_terms_of_service_and_privacy_policy">%1$s ve %2$s\'yi kabul ediyorum</string>
+
+    <string name="privacy_policy">Gizlilik Politikası</string>
+    <string name="terms_of_service">Hizmet Şartları</string>
+    <string name="already_have_an_account">Zaten hesabınız var mı?  %1$s</string>
+    <string name="sign_in_s">Giriş Yap</string>
+
+    <string name="name_is_required">İsim gerekli</string>
+    <string name="email_is_required">E-posta gerekli</string>
+    <string name="please_enter_a_valid_email">Geçerli bir e-posta girin</string>
+    <string name="password_is_required">Şifre gerekli</string>
+    <string name="password_must_be_at_least_6_characters">Şifre en az 6 karakter olmalıdır</string>
+
+    <string name="registered_successfully">Başarıyla kayıt olundu</string>
+    <string name="login_successful">Giriş başarılı</string>
+
+    <string name="forgot_password_">Şifremi unuttum</string>
+    <string name="reset_password">Şifreyi sıfırla</string>
+    <string name="reset_password_email_sent">Şifre sıfırlama e-postası gönderildi</string>
+
+    <string name="no_internet_connection">İnternet bağlantısı yok</string>
+
+    <string name="dashboard">Kontrol Paneli</string>
+    <string name="create_app">Uygulama Oluştur</string>
+    <string name="web_to_app">Web to App</string>
+    <string name="my_apps">Uygulamalarım</string>
+    <string name="manage_apps">Uygulamaları Yönet</string>
+    <string name="wa_support">WhatsApp Desteği</string>
+    <string name="chat_with_us">Bizimle sohbet edin</string>
+    <string name="services">Hizmetler</string>
+    <string name="extra_features">Ekstra Özellikler</string>
+    <string name="ask_features">Özellik Sor</string>
+    <string name="send_feedback">Geri Bildirim Gönder</string>
+    <string name="feedback">Geri Bildirim</string>
+    <string name="tutorials">Eğitimler</string>
+    <string name="learn_more">Daha Fazla Bilgi</string>
+    <string name="looking_for_ios_apps">iOS Uygulamaları mı arıyorsunuz?</string>
+    <string name="request_us_for_ios_apps_conversions">iOS Uygulama Dönüşümleri için bize başvurun</string>
+
+    <string name="enter_website_url">Web Sitesi URL\'sini Girin</string>
+    <string name="step_1_of_5">Adım 1 / 5</string>
+    <string name="step_2_of_5">Adım 2 / 5</string>
+    <string name="step_3_of_5">Adım 3 / 5</string>
+    <string name="step_4_of_5">Adım 4 / 5</string>
+    <string name="step_5_of_5">Adım 5 / 5</string>
+
+    <string name="website_url">Web Sitesi URL\'si</string>
+    <string name="_continue">Devam Et</string>
+
+    <string name="app_basic_info">Uygulama Temel Bilgileri</string>
+    <string name="basic_information">Temel Bilgiler</string>
+    <string name="_app_name">Uygulama Adı</string>
+    <string name="package_name">Paket Adı</string>
+    <string name="short_description">Kısa Açıklama</string>
+    <string name="describe_your_app_in_a_few_words">Uygulamanızı birkaç kelimeyle tanımlayın…</string>
+    <string name="category">Kategori</string>
+    <string name="orientation">Yönlendirme</string>
+    <string name="portrait">Dikey</string>
+    <string name="landscape">Yatay</string>
+
+    <string name="app_branding">Uygulama Markası</string>
+
+    <string name="customize_branding">Markayı Özelleştir</string>
+    <string name="app_icon">Uygulama Simgesi</string>
+    <string name="upload_icon">Simgeleri Yükle</string>
+    <string name="primary_color">Ana Renk</string>
+    <string name="secondary_color">İkincil Renk</string>
+    <string name="show_preview">Önizlemeyi Göster</string>
+
+    <string name="choose_color">Renk Seçin</string>
+    <string name="ok">Tamam</string>
+    <string name="cancel">İptal</string>
+
+    <string name="app_features">Uygulama Özellikleri</string>
+    <string name="configure_features">Özellikleri Yapılandır</string>
+    <string name="pull_to_refresh">Yenilemek için çek</string>
+    <string name="enable_pull_down_refresh_gesture">Aşağı çekme yenileme hareketini etkinleştir</string>
+    <string name="loader_screen">Yükleme Ekranı</string>
+    <string name="show_loading_animation">Yükleme animasyonunu göster</string>
+    <string name="fullscreen_mode">Tam Ekran Modu</string>
+    <string name="hide_system_status_bar">Sistem durum çubuğunu gizle</string>
+    <string name="navigation_buttons">Gezinme Butonları</string>
+    <string name="show_back_forward_buttons">Geri/ileri butonlarını göster</string>
+    <string name="external_links_in_browser">Tarayıcıda Dış Bağlantılar</string>
+    <string name="open_external_urls_in_browser">Dış URL’leri tarayıcıda aç</string>
+    <string name="notification_support">Bildirim Desteği</string>
+    <string name="enable_push_notifications">Push bildirimlerini etkinleştir</string>
+    <string name="continue_to_generate">Oluşturmaya devam et</string>
+
+    <string name="generate_app">Uygulama Oluştur</string>
+    <string name="review_app_summary">Uygulama Özetini İncele</string>
+    <string name="url">URL</string>
+    <string name="enabled_features">Etkin Özellikler</string>
+    <string name="build_app">Uygulamayı Oluştur</string>
+
+    <string name="please_enter_url">Lütfen URL girin</string>
+    <string name="url_must_start_with_http_or_https">URL http:// veya https:// ile başlamalıdır</string>
+    <string name="invalid_web_url">Geçersiz web URL’si</string>
+
+    <string name="app_name_must_be_at_least_3_letters_and_contain_only_alphabets">Uygulama adı en az 3 harf olmalı ve yalnızca harf içermelidir</string>
+    <string name="the_package_name_must_follow_the_format_com_example_app">Paket adı com.example.app formatına uymalıdır.</string>
+
+    <string name="please_select_app_icon">Lütfen uygulama simgesini seçin</string>
+
+    <string name="building_your_app">Uygulamanız Oluşturuluyor</string>
+    <string name="please_wait_while_we_generate_your_apk">APK’niz oluşturulurken lütfen bekleyin...</string>
+    <string name="progress">İlerleme</string>
+
+    <string name="app_details_saved_successfully">Uygulama detayları başarıyla kaydedildi</string>
+    <string name="no_app_found">Uygulama bulunamadı</string>
+
+    <string name="view_details">Detayları Görüntüle</string>
+    <string name="edit_app">Uygulamayı Düzenle</string>
+    <string name="download_aab">AAB İndir</string>
+    <string name="download_apk">APK İndir</string>
+    <string name="delete_app">Uygulamayı Sil</string>
+
+    <string name="date">Tarih</string>
+    <string name="version">Sürüm</string>
+    <string name="status">Durum</string>
+
+    <string name="ready_to_download">İndirmeye hazır</string>
+    <string name="processing">İşleniyor</string>
+    <string name="draft">Taslak</string>
+    <string name="something_went_wrong_please_contact_support">Bir hata oluştu. Lütfen destek ile iletişime geçin</string>
+
+    <string name="failed_to_delete">Silme başarısız</string>
+    <string name="app_deleted">Uygulama silindi</string>
+
+    <string name="downloaded">İndirildi</string>
+    <string name="storage_permission_is_required_to_save_the_file">Dosyayı kaydetmek için depolama izni gerekli</string>
+
+    <string name="storage_permission_required">Depolama İzni Gerekli</string>
+    <string name="this_permission_is_needed_to_save_the_downloaded_file_in_your_downloads_folder">İndirilen dosyayı İndirilenler klasörüne kaydetmek için bu izin gereklidir.</string>
+    <string name="allow">İzin Ver</string>
+    <string name="downloading">İndiriliyor...</string>
+    <string name="failed_to_downloading">İndirme başarısız</string>
+
+    <string name="app_details">Uygulama Detayları</string>
+    <string name="something_went_wrong_try_again">Bir hata oluştu, tekrar deneyin</string>
+
+    <string name="app_information">Uygulama Bilgisi</string>
+    <string name="created">Oluşturuldu</string>
+    <string name="build_version">Yapı Sürümü</string>
+
+    <string name="theme_colors">Tema Renkleri</string>
+    <string name="edit_rebuild">Düzenle &amp; Yeniden Oluştur</string>
+    <string name="download">İndir</string>
+    <string name="share">Paylaş</string>
+
+    <string name="update_app">Uygulamayı Güncelle</string>
+
+    <string name="get_instant_support_via_whatsApp">WhatsApp üzerinden anında destek al</string>
+    <string name="open_whatsApp">WhatsApp’ı Aç</string>
+
+    <string name="support">Destek</string>
+    <string name="submit_issue">Sorun Gönder</string>
+    <string name="tell_us_about_your_problem">Sorununuzu bize anlatın</string>
+    <string name="issue_type">Sorun Türü</string>
+    <string name="message">Mesaj</string>
+    <string name="describe_your_issue_in_detail">Sorununuzu detaylı şekilde anlatın...</string>
+    <string name="other_ways_to_reach_us">Bize Ulaşmanın Diğer Yolları</string>
+    <string name="email_">📧 E-posta: support@webtoapp.com</string>
+    <string name="phone_">📞 Telefon: +1512 300 5526</string>
+    <string name="support_hours">⏰ Destek Saatleri: 09:00 - 18:00 (Pzt-Cum)</string>
+
+    <string name="whatsapp_not_installed">WhatsApp yüklü değil</string>
+    <string name="no_email_app_found">E-posta uygulaması bulunamadı</string>
+
+    <string name="service_request">Hizmet Talebi</string>
+    <string name="tell_us_about_your_app">Uygulamanız hakkında bize bilgi verin</string>
+    <string name="service_type">Hizmet Türü</string>
+    <string name="submit">Gönder</string>
+
+    <string name="publish_app_on_google_play">Uygulamayı Google Play’de Yayınla</string>
+    <string name="we_will_publish_your_app_on_google_play_store">Uygulamanızı Google Play Store’da yayınlayacağız</string>
+
+    <string name="custom_android_app_development">Özel Android Uygulama Geliştirme</string>
+    <string name="get_a_fully_customized_android_app_built_for_you">Sizin için tamamen özelleştirilmiş bir Android uygulaması oluşturun</string>
+    <string name="push_notifications_setup">Push Bildirim Ayarları</string>
+    <string name="enable_push_notifications_for_your_app">Uygulamanız için push bildirimlerini etkinleştirin</string>
+
+    <string name="admob_monetization">AdMob Gelir Elde Etme</string>
+    <string name="integrate_ads_and_start_earning_from_your_app">Reklamları entegre edin ve uygulamanızdan kazanmaya başlayın</string>
+    <string name="premium_build_no_watermark">Premium Sürüm (Filigran Yok)</string>
+    <string name="remove_watermark_and_get_premium_features">Filigranı kaldırın ve premium özelliklere erişin</string>
+
+    <string name="service_details">Hizmet Detayları</string>
+    <string name="what_included">Dahil Olanlar</string>
+
+    <string name="app_store_optimization">Uygulama Mağazası Optimizasyonu</string>
+    <string name="professional_screenshots">Profesyonel Ekran Görüntüleri</string>
+    <string name="app_description_writing">Uygulama Açıklaması Yazma</string>
+    <string name="category_selection">Kategori Seçimi</string>
+    <string name="privacy_policy_creation">Gizlilik Politikası Oluşturma</string>
+    <string name="order_now">Şimdi Sipariş Ver</string>
+
+    <string name="custom_uiux_design">Özel UI/UX Tasarımı</string>
+    <string name="native_android_development">Native Android Geliştirme</string>
+    <string name="api_integration">API Entegrasyonu</string>
+    <string name="database_setup">Veritabanı Kurulumu</string>
+    <string name="ongoing_support">Sürekli Destek</string>
+
+    <string name="firebase_setup">Firebase Kurulumu</string>
+    <string name="notification_templates">Bildirim Şablonları</string>
+    <string name="scheduling_support">Zamanlama Desteği</string>
+    <string name="analytics_dashboard">Analitik Paneli</string>
+    <string name="user_segmentation">Kullanıcı Segmentasyonu</string>
+
+    <string name="banner_ads_integration">Banner Reklam Entegrasyonu</string>
+    <string name="interstitial_ads">Geçiş Reklamları</string>
+    <string name="reward_ads">Ödüllü Reklamlar</string>
+    <string name="admob_account_setup">AdMob Hesap Kurulumu</string>
+    <string name="revenue_optimization">Gelir Optimizasyonu</string>
+
+    <string name="no_watermark">Filigran Yok</string>
+    <string name="priority_support">Öncelikli Destek</string>
+    <string name="custom_domain">Özel Alan Adı</string>
+    <string name="advanced_analytics">Gelişmiş Analitik</string>
+    <string name="unlimited_rebuilds">Sınırsız Yeniden Oluşturma</string>
+
+    <string name="successfully_logged_out">Başarıyla çıkış yapıldı.</string>
+
+    <string name="continue_as_guest">Misafir olarak devam et</string>
+    <string name="guest_login">Misafir Girişi</string>
+    <string name="delete">Sil</string>
+
+    <string name="failed_to_upload_app_icon">Uygulama simgesi yüklenemedi</string>
+
+    <string name="bundle_draft">Bundle taslak halinde</string>
+    <string name="bundle_processing">Bundle işleniyor</string>
+    <string name="bundle_ready_to_download">Bundle indirilmeye hazır</string>
+
+    <string name="btn_generate_bundle">Bundle oluştur</string>
+    <string name="btn_download_bundle">Bundle indir</string>
+
+    <string name="bundle_request_submitted">Bundle talebiniz gönderildi</string>
+
+    <string name="are_you_sure_you_want_to_delete_this_app">Bu uygulamayı silmek istediğinizden emin misiniz?</string>
+
+    <string name="notification_permission_denied">Bildirim izni reddedildi</string>
+
+    <string name="logout">Çıkış Yap</string>
+    <string name="logout_app">Uygulamadan Çıkış</string>
+    <string name="are_you_sure_you_want_to_logout">Çıkış yapmak istediğinizden emin misiniz?</string>
+
+    <string name="how_to_create_an_app">Uygulama Nasıl Oluşturulur</string>
+    <string name="step_by_step_guide_to_create_your_first_web_to_app_conversion">İlk Web-to-App dönüşümünüzü oluşturmak için adım adım rehber</string>
+
+    <string name="how_to_create_an_app_bundle">Uygulama Bundle’ı Nasıl Oluşturulur</string>
+    <string name="step_by_step_guide_to_create_your_app_bundle">Uygulama Bundle’ınızı oluşturmak için adım adım rehber</string>
+
+    <string name="how_to_upload_to_play_store">Play Store’a Nasıl Yüklenir</string>
+    <string name="complete_guide_to_publish_your_app_on_google_play_store">Uygulamanızı Google Play Store’da yayınlamak için tam rehber</string>
+
+    <string name="step_by_step_guide">Adım Adım Rehber</string>
+
+    <string name="enter_your_website_url">Web sitesi URL’sini girin</string>
+    <string name="fill_in_app_basic_information">Uygulama temel bilgilerini doldurun</string>
+    <string name="customize_branding_and_colors">Marka ve renkleri özelleştir</string>
+    <string name="configure_app_features">Uygulama özelliklerini yapılandır</string>
+    <string name="generate_and_download_apk">APK oluştur ve indir</string>
+
+    <string name="open_my_apps">Uygulamalarımı Aç</string>
+    <string name="start_bundle_generation">Bundle Oluştur’a tıklayın</string>
+    <string name="bundle_generation_in_progress">Bundle oluşturuluyor</string>
+    <string name="bundle_ready_for_download">Bundle indirilmeye hazır</string>
+    <string name="download_generated_bundle">Bundle’ı indir</string>
+
+    <string name="create_a_google_play_developer_account">Google Play Geliştirici hesabı oluştur</string>
+    <string name="prepare_app_assets_and_screenshots">Uygulama varlıklarını ve ekran görüntülerini hazırla</string>
+    <string name="fill_in_store_listing_details">Mağaza listeleme detaylarını doldurun</string>
+    <string name="set_up_pricing_and_distribution">Fiyatlandırma ve dağıtımı ayarlayın</string>
+    <string name="submit_for_review">İnceleme için gönder</string>
+
+    <string name="profile">Profil</string>
+    <string name="account_information">Hesap Bilgileri</string>
+    <string name="member_since">Üyelik Tarihi</string>
+    <string name="phone">Telefon</string>
+    <string name="add">Ekle</string>
+    <string name="settings">Ayarlar</string>
+    <string name="account_settings">Hesap Ayarları</string>
+    <string name="update_your_account_preferences">Hesap tercihlerinizi güncelleyin</string>
+    <string name="privacy_security">Gizlilik &amp; Güvenlik</string>
+    <string name="manage_your_privacy_settings">Gizlilik ayarlarınızı yönetin</string>
+    <string name="save_changes">Değişiklikleri Kaydet</string>
+    <string name="change_password">Şifreyi Değiştir</string>
+    <string name="current_password">Mevcut Şifre</string>
+    <string name="enter_current_password">Mevcut şifreyi girin</string>
+    <string name="new_password">Yeni Şifre</string>
+    <string name="enter_new_password">Yeni şifreyi girin</string>
+    <string name="confirm_new_password">Yeni Şifreyi Onayla</string>
+    <string name="update_password">Şifreyi Güncelle</string>
+    <string name="read_our_privacy_policy">Gizlilik politikamızı okuyun</string>
+
+    <string name="Email">E-posta</string>
+    <string name="password_should_be_at_least_6_characters">Şifre en az 6 karakter olmalıdır</string>
+    <string name="passwords_do_not_match">Şifreler eşleşmiyor</string>
+    <string name="password_updated_successfully">Şifre başarıyla güncellendi</string>
+    <string name="current_password_is_incorrect">Mevcut şifre yanlış</string>
+
+    <string name="updated_successfully">başarıyla güncellendi</string>
+
+    <string name="select_languages">Dilleri Seçin</string>
+    <string name="search_language">Dil ara...</string>
+    <string name="languages">Diller</string>
+    <string name="choose_app_language">Uygulama dilini seçin</string>
+
+    <string name="already_selected">Zaten seçildi</string>
+
+</resources>

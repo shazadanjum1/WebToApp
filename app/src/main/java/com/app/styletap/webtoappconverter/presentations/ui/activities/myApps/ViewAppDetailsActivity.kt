@@ -20,6 +20,7 @@ import com.app.styletap.webtoappconverter.databinding.ActivityViewAppDetailsBind
 import com.app.styletap.webtoappconverter.extentions.addDynamicChips
 import com.app.styletap.webtoappconverter.extentions.adjustBottomHeight
 import com.app.styletap.webtoappconverter.extentions.adjustTopHeight
+import com.app.styletap.webtoappconverter.extentions.changeLocale
 import com.app.styletap.webtoappconverter.extentions.customEnableEdgeToEdge
 import com.app.styletap.webtoappconverter.extentions.decorateStatus
 import com.app.styletap.webtoappconverter.extentions.downloadFile
@@ -70,6 +71,7 @@ class ViewAppDetailsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        changeLocale()
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         binding = ActivityViewAppDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)

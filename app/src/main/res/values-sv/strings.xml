@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="convert_websites_to_mobile_apps">Konvertera webbplatser till mobilappar</string>
+
+    <string name="convert_any_website_to_app">Konvertera valfri webbplats till app</string>
+    <string name="transform_your_website_into_a_fully_functional_android_app_in_just_a_few_minutes_no_coding_required">Förvandla din webbplats till en fullt fungerande Android-app på bara några minuter. Ingen kodning krävs!</string>
+    <string name="easy_url_input">Enkel URL-inmatning</string>
+    <string name="quick_conversion">Snabb konvertering</string>
+    <string name="professional_results">Professionella resultat</string>
+
+    <string name="customize_your_app">Anpassa din app</string>
+    <string name="personalize_your_app_with_custom_icons_splash_screens_colors_and_branding_to_match_your_style">Personalisera din app med egna ikoner, startskärmar, färger och varumärkesprofil.</string>
+    <string name="custom_branding">Anpassad branding</string>
+    <string name="color_themes">Färgteman</string>
+    <string name="app_icons_logos">Appikoner &amp; logotyper</string>
+
+    <string name="build_publish">Bygg &amp; publicera</string>
+    <string name="generate_your_apk_instantly_and_get_help_publishing_to_google_play_store_your_app_ready_to_go">Generera din APK direkt och få hjälp att publicera i Google Play Store. Din app är redo!</string>
+    <string name="instant_apk_generation">Omedelbar APK-generering</string>
+    <string name="play_store_support">Play Store-support</string>
+    <string name="ongoing_updates">Löpande uppdateringar</string>
+
+    <string name="skip">Hoppa över</string>
+    <string name="next">Nästa</string>
+    <string name="get_started">Kom igång</string>
+
+    <string name="welcome">Välkommen</string>
+    <string name="web_to_app_converter">Webb till app-konverterare</string>
+    <string name="sign_in_to_continue">Logga in för att fortsätta</string>
+    <string name="email_address">E-postadress</string>
+    <string name="password">Lösenord</string>
+    <string name="enter_your_email">Ange din e-post</string>
+    <string name="enter_your_password">Ange ditt lösenord</string>
+    <string name="remember_me">Kom ihåg mig</string>
+    <string name="forgot_password">Glömt lösenord?</string>
+    <string name="sign_in">Logga in</string>
+    <string name="login">Inloggning</string>
+
+    <string name="dont_have_an_account">Har du inget konto? %1$s</string>
+    <string name="sign_up_for_free">Registrera dig gratis</string>
+
+    <string name="create_account">Skapa konto</string>
+    <string name="create_your_free_account">Skapa ditt gratis konto</string>
+    <string name="full_name">Fullständigt namn</string>
+    <string name="enter_full_name">Ange fullständigt namn</string>
+    <string name="create_a_password">Skapa ett lösenord</string>
+    <string name="confirm_password">Bekräfta lösenord</string>
+    <string name="confirm_your_password">Bekräfta ditt lösenord</string>
+
+    <string name="i_agree_to_the_terms_of_service_and_privacy_policy">Jag godkänner %1$s och %2$s</string>
+
+    <string name="privacy_policy">Integritetspolicy</string>
+    <string name="terms_of_service">Användarvillkor</string>
+    <string name="already_have_an_account">Har du redan ett konto? %1$s</string>
+    <string name="sign_in_s">Logga in</string>
+
+    <string name="name_is_required">Namn krävs</string>
+    <string name="email_is_required">E-post krävs</string>
+    <string name="please_enter_a_valid_email">Ange en giltig e-postadress</string>
+    <string name="password_is_required">Lösenord krävs</string>
+    <string name="password_must_be_at_least_6_characters">Lösenordet måste vara minst 6 tecken</string>
+
+    <string name="registered_successfully">Registrering lyckades</string>
+    <string name="login_successful">Inloggning lyckades</string>
+
+    <string name="forgot_password_">Glömt lösenord</string>
+    <string name="reset_password">Återställ lösenord</string>
+    <string name="reset_password_email_sent">E-post för lösenordsåterställning skickad</string>
+
+    <string name="no_internet_connection">Ingen internetanslutning</string>
+
+    <string name="dashboard">Instrumentpanel</string>
+    <string name="create_app">Skapa app</string>
+    <string name="web_to_app">Webb till app</string>
+    <string name="my_apps">Mina appar</string>
+    <string name="manage_apps">Hantera appar</string>
+    <string name="wa_support">WA-support</string>
+    <string name="chat_with_us">Chatta med oss</string>
+    <string name="services">Tjänster</string>
+    <string name="extra_features">Extra funktioner</string>
+    <string name="ask_features">Föreslå funktioner</string>
+    <string name="send_feedback">Skicka feedback</string>
+    <string name="feedback">Feedback</string>
+    <string name="tutorials">Guider</string>
+    <string name="learn_more">Läs mer</string>
+    <string name="looking_for_ios_apps">Letar du efter iOS-appar?</string>
+    <string name="request_us_for_ios_apps_conversions">Begär iOS-appkonvertering</string>
+
+    <string name="enter_website_url">Ange webbplatsens URL</string>
+    <string name="step_1_of_5">Steg 1 av 5</string>
+    <string name="step_2_of_5">Steg 2 av 5</string>
+    <string name="step_3_of_5">Steg 3 av 5</string>
+    <string name="step_4_of_5">Steg 4 av 5</string>
+    <string name="step_5_of_5">Steg 5 av 5</string>
+
+    <string name="website_url">Webbplatsens URL</string>
+    <string name="_continue">Fortsätt</string>
+
+    <string name="app_basic_info">Grundläggande appinformation</string>
+    <string name="basic_information">Grundläggande information</string>
+    <string name="_app_name">Appnamn</string>
+    <string name="package_name">Paketnamn</string>
+    <string name="short_description">Kort beskrivning</string>
+    <string name="describe_your_app_in_a_few_words">Beskriv din app med några ord…</string>
+    <string name="category">Kategori</string>
+    <string name="orientation">Orientering</string>
+    <string name="portrait">Porträtt</string>
+    <string name="landscape">Landskap</string>
+
+    <string name="app_branding">App-branding</string>
+
+    <string name="customize_branding">Anpassa branding</string>
+    <string name="app_icon">Appikon</string>
+    <string name="upload_icon">Ladda upp ikon</string>
+    <string name="primary_color">Primär färg</string>
+    <string name="secondary_color">Sekundär färg</string>
+    <string name="show_preview">Visa förhandsgranskning</string>
+
+    <string name="choose_color">Välj färg</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Avbryt</string>
+
+    <string name="app_features">Appfunktioner</string>
+    <string name="configure_features">Konfigurera funktioner</string>
+    <string name="pull_to_refresh">Dra för att uppdatera</string>
+    <string name="enable_pull_down_refresh_gesture">Aktivera dra-ned-för-att-uppdatera</string>
+    <string name="loader_screen">Laddningsskärm</string>
+    <string name="show_loading_animation">Visa laddningsanimation</string>
+    <string name="fullscreen_mode">Helskärmsläge</string>
+    <string name="hide_system_status_bar">Dölj systemets statusfält</string>
+    <string name="navigation_buttons">Navigeringsknappar</string>
+    <string name="show_back_forward_buttons">Visa bakåt-/framåtknappar</string>
+    <string name="external_links_in_browser">Externa länkar i webbläsare</string>
+    <string name="open_external_urls_in_browser">Öppna externa URL:er i webbläsare</string>
+    <string name="notification_support">Notisstödd</string>
+    <string name="enable_push_notifications">Aktivera push-notiser</string>
+    <string name="continue_to_generate">Fortsätt till generering</string>
+
+    <string name="generate_app">Generera app</string>
+    <string name="review_app_summary">Granska appsammanfattning</string>
+    <string name="url">URL</string>
+    <string name="enabled_features">Aktiverade funktioner</string>
+    <string name="build_app">Bygg app</string>
+
+    <string name="please_enter_url">Ange URL</string>
+    <string name="url_must_start_with_http_or_https">URL måste börja med http:// eller https://</string>
+    <string name="invalid_web_url">Ogiltig webb-URL</string>
+
+    <string name="app_name_must_be_at_least_3_letters_and_contain_only_alphabets">Appnamnet måste vara minst 3 bokstäver och endast innehålla bokstäver</string>
+    <string name="the_package_name_must_follow_the_format_com_example_app">Paketnamnet måste följa formatet com.example.app.</string>
+
+    <string name="please_select_app_icon">Välj appikon</string>
+
+    <string name="building_your_app">Bygger din app</string>
+    <string name="please_wait_while_we_generate_your_apk">Vänta medan vi genererar din APK…</string>
+    <string name="progress">Förlopp</string>
+
+    <string name="app_details_saved_successfully">Appdetaljer sparades</string>
+    <string name="no_app_found">Ingen app hittades</string>
+
+    <string name="view_details">Visa detaljer</string>
+    <string name="edit_app">Redigera app</string>
+    <string name="download_aab">Ladda ner AAB</string>
+    <string name="download_apk">Ladda ner APK</string>
+    <string name="delete_app">Ta bort app</string>
+
+    <string name="date">Datum</string>
+    <string name="version">Version</string>
+    <string name="status">Status</string>
+
+    <string name="ready_to_download">Redo att laddas ner</string>
+    <string name="processing">Bearbetas</string>
+    <string name="draft">Utkast</string>
+    <string name="something_went_wrong_please_contact_support">Något gick fel. Kontakta supporten</string>
+
+    <string name="failed_to_delete">Misslyckades att ta bort</string>
+    <string name="app_deleted">Appen togs bort</string>
+
+    <string name="downloaded">Nedladdad</string>
+    <string name="storage_permission_is_required_to_save_the_file">Lagringsbehörighet krävs för att spara filen</string>
+
+    <string name="storage_permission_required">Lagringsbehörighet krävs</string>
+    <string name="this_permission_is_needed_to_save_the_downloaded_file_in_your_downloads_folder">Denna behörighet krävs för att spara den nedladdade filen i mappen Hämtade filer.</string>
+    <string name="allow">Tillåt</string>
+    <string name="downloading">Laddar ner…</string>
+    <string name="failed_to_downloading">Misslyckades att ladda ner</string>
+
+    <string name="app_details">Appdetaljer</string>
+    <string name="something_went_wrong_try_again">Något gick fel, försök igen</string>
+
+    <string name="app_information">Appinformation</string>
+    <string name="created">Skapad</string>
+    <string name="build_version">Byggversion</string>
+
+    <string name="theme_colors">Temafärger</string>
+    <string name="edit_rebuild">Redigera &amp; bygg om</string>
+    <string name="download">Ladda ner</string>
+    <string name="share">Dela</string>
+
+    <string name="update_app">Uppdatera app</string>
+
+    <string name="get_instant_support_via_whatsApp">Få omedelbar support via WhatsApp</string>
+    <string name="open_whatsApp">Öppna WhatsApp</string>
+
+    <string name="support">Support</string>
+    <string name="submit_issue">Skicka ärende</string>
+    <string name="tell_us_about_your_problem">Berätta om ditt problem</string>
+    <string name="issue_type">Ärendetyp</string>
+    <string name="message">Meddelande</string>
+    <string name="describe_your_issue_in_detail">Beskriv ditt ärende i detalj…</string>
+    <string name="other_ways_to_reach_us">Andra sätt att kontakta oss</string>
+
+    <string name="whatsapp_not_installed">WhatsApp är inte installerat</string>
+    <string name="no_email_app_found">Ingen e-postapp hittades</string>
+
+    <string name="service_request">Tjänsteförfrågan</string>
+    <string name="tell_us_about_your_app">Berätta om din app</string>
+    <string name="service_type">Tjänstetyp</string>
+    <string name="submit">Skicka</string>
+
+    <string name="successfully_logged_out">Du har loggats ut</string>
+
+    <string name="continue_as_guest">Fortsätt som gäst</string>
+    <string name="guest_login">Gästinloggning</string>
+    <string name="delete">Ta bort</string>
+
+    <string name="bundle_draft">Bundle är i utkastläge</string>
+    <string name="bundle_processing">Bundle bearbetas</string>
+    <string name="bundle_ready_to_download">Bundle är redo att laddas ner</string>
+
+    <string name="btn_generate_bundle">Generera bundle</string>
+    <string name="btn_download_bundle">Ladda ner bundle</string>
+
+    <string name="bundle_request_submitted">Din bundle-förfrågan har skickats</string>
+
+    <string name="are_you_sure_you_want_to_delete_this_app">Är du säker på att du vill ta bort denna app?</string>
+
+    <string name="notification_permission_denied">Notisbehörighet nekad</string>
+
+    <string name="logout">Logga ut</string>
+    <string name="logout_app">Logga ut från appen</string>
+    <string name="are_you_sure_you_want_to_logout">Är du säker på att du vill logga ut?</string>
+
+    <string name="how_to_create_an_app">Hur man skapar en app</string>
+    <string name="step_by_step_guide_to_create_your_first_web_to_app_conversion">Steg-för-steg-guide för att skapa din första webb-till-app-konvertering</string>
+
+    <string name="step_by_step_guide">Steg-för-steg-guide</string>
+
+    <string name="select_languages">Välj språk</string>
+    <string name="search_language">Sök språk…</string>
+    <string name="languages">Språk</string>
+    <string name="choose_app_language">Välj appens språk</string>
+
+    <string name="already_selected">Redan valt</string>
+
+    <string name="how_to_create_an_app_bundle">Hur man skapar ett app-paket</string>
+    <string name="step_by_step_guide_to_create_your_app_bundle">Steg-för-steg-guide för att skapa ditt app-paket</string>
+
+    <string name="how_to_upload_to_play_store">Hur man laddar upp till Play Store</string>
+    <string name="complete_guide_to_publish_your_app_on_google_play_store">Fullständig guide för att publicera din app på Google Play Store</string>
+
+
+    <string name="enter_your_website_url">Ange din webbplats-URL</string>
+    <string name="fill_in_app_basic_information">Fyll i grundläggande appinformation</string>
+    <string name="customize_branding_and_colors">Anpassa varumärke och färger</string>
+    <string name="configure_app_features">Konfigurera appfunktioner</string>
+    <string name="generate_and_download_apk">Generera och ladda ner APK</string>
+
+    <string name="open_my_apps">Öppna Mina appar</string>
+    <string name="start_bundle_generation">Klicka på Generera paket</string>
+    <string name="bundle_generation_in_progress">Generering av paket pågår</string>
+    <string name="bundle_ready_for_download">Paketet är redo för nedladdning</string>
+    <string name="download_generated_bundle">Ladda ner paket</string>
+
+    <string name="create_a_google_play_developer_account">Skapa ett Google Play-utvecklarkonto</string>
+    <string name="prepare_app_assets_and_screenshots">Förbered appresurser och skärmdumpar</string>
+    <string name="fill_in_store_listing_details">Fyll i uppgifter för butikssidan</string>
+    <string name="set_up_pricing_and_distribution">Ställ in prissättning och distribution</string>
+    <string name="submit_for_review">Skicka in för granskning</string>
+
+    <string name="profile">Profil</string>
+    <string name="account_information">Kontoinformation</string>
+    <string name="member_since">Medlem sedan</string>
+    <string name="phone">Telefon</string>
+    <string name="add">Lägg till</string>
+    <string name="settings">Inställningar</string>
+    <string name="account_settings">Kontoinställningar</string>
+    <string name="update_your_account_preferences">Uppdatera dina kontoinställningar</string>
+    <string name="privacy_security">Sekretess &amp; säkerhet</string>
+    <string name="manage_your_privacy_settings">Hantera dina sekretessinställningar</string>
+    <string name="save_changes">Spara ändringar</string>
+    <string name="change_password">Ändra lösenord</string>
+    <string name="current_password">Nuvarande lösenord</string>
+    <string name="enter_current_password">Ange nuvarande lösenord</string>
+    <string name="new_password">Nytt lösenord</string>
+    <string name="enter_new_password">Ange nytt lösenord</string>
+    <string name="confirm_new_password">Bekräfta nytt lösenord</string>
+    <string name="update_password">Uppdatera lösenord</string>
+    <string name="read_our_privacy_policy">Läs vår integritetspolicy</string>
+
+    <string name="Email">E-post</string>
+    <string name="password_should_be_at_least_6_characters">Lösenordet måste vara minst 6 tecken</string>
+    <string name="passwords_do_not_match">Lösenorden matchar inte</string>
+    <string name="password_updated_successfully">Lösenordet har uppdaterats</string>
+    <string name="current_password_is_incorrect">Nuvarande lösenord är felaktigt</string>
+
+    <string name="updated_successfully">Uppdaterades framgångsrikt</string>
+
+    <string name="email_">📧 E-post: support@webtoapp.com</string>
+    <string name="phone_">📞 Telefon: +1512 300 5526</string>
+    <string name="support_hours">⏰ Supporttider: 9.00–18.00 (mån–fre)</string>
+
+    <string name="publish_app_on_google_play">Publicera app på Google Play</string>
+    <string name="we_will_publish_your_app_on_google_play_store">Vi publicerar din app på Google Play Store</string>
+
+    <string name="custom_android_app_development">Anpassad Android-apputveckling</string>
+    <string name="get_a_fully_customized_android_app_built_for_you">Få en helt anpassad Android-app byggd för dig</string>
+    <string name="push_notifications_setup">Konfiguration av push-notiser</string>
+    <string name="enable_push_notifications_for_your_app">Aktivera push-notiser för din app</string>
+
+    <string name="admob_monetization">AdMob-monetisering</string>
+    <string name="integrate_ads_and_start_earning_from_your_app">Integrera annonser och börja tjäna pengar på din app</string>
+    <string name="premium_build_no_watermark">Premiumversion (ingen vattenstämpel)</string>
+    <string name="remove_watermark_and_get_premium_features">Ta bort vattenstämpeln och få premiumfunktioner</string>
+
+    <string name="service_details">Tjänstedetaljer</string>
+    <string name="what_included">Vad som ingår</string>
+
+    <string name="app_store_optimization">App Store-optimering</string>
+    <string name="professional_screenshots">Professionella skärmdumpar</string>
+    <string name="app_description_writing">Skrivning av appbeskrivning</string>
+    <string name="category_selection">Val av kategori</string>
+    <string name="privacy_policy_creation">Skapande av integritetspolicy</string>
+    <string name="order_now">Beställ nu</string>
+
+    <string name="custom_uiux_design">Anpassad UI/UX-design</string>
+    <string name="native_android_development">Native Android-utveckling</string>
+    <string name="api_integration">API-integration</string>
+    <string name="database_setup">Databaskonfiguration</string>
+    <string name="ongoing_support">Löpande support</string>
+
+    <string name="firebase_setup">Firebase-konfiguration</string>
+    <string name="notification_templates">Notismallar</string>
+    <string name="scheduling_support">Stöd för schemaläggning</string>
+    <string name="analytics_dashboard">Analysinstrumentpanel</string>
+    <string name="user_segmentation">Användarsegmentering</string>
+
+    <string name="banner_ads_integration">Integration av bannerannonser</string>
+    <string name="interstitial_ads">Mellanliggande annonser</string>
+    <string name="reward_ads">Belöningsannonser</string>
+    <string name="admob_account_setup">Konfiguration av AdMob-konto</string>
+    <string name="revenue_optimization">Intäktsoptimering</string>
+
+    <string name="no_watermark">Ingen vattenstämpel</string>
+    <string name="priority_support">Prioriterad support</string>
+    <string name="custom_domain">Egen domän</string>
+    <string name="advanced_analytics">Avancerad analys</string>
+    <string name="unlimited_rebuilds">Obegränsade ombyggnader</string>
+
+    <string name="failed_to_upload_app_icon">Det gick inte att ladda upp appikonen</string>
+
+</resources>

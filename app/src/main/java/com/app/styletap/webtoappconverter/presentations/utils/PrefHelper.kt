@@ -30,5 +30,17 @@ class PrefHelper(context: Context) {
         return prefHelper?.getBoolean(key, true) ?: true
     }
 
+    fun getString(key: String): String? {
+        return prefHelper?.getString(key, null)
+    }
+
+    fun setString(key: String, value: String) {
+        prefHelper?.edit()?.putString(key, value)?.apply()
+    }
+
+
+    fun getString(key: String, defValue: String): String {
+        return prefHelper?.getString(key,defValue) ?: defValue
+    }
 
 }

@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="convert_websites_to_mobile_apps">웹사이트를 모바일 앱으로 변환</string>
+    <string name="convert_any_website_to_app">모든 웹사이트를 앱으로 변환</string>
+    <string name="transform_your_website_into_a_fully_functional_android_app_in_just_a_few_minutes_no_coding_required">몇 분 만에 웹사이트를 완전한 Android 앱으로 변환하세요. 코딩 불필요!</string>
+    <string name="easy_url_input">간편한 URL 입력</string>
+    <string name="quick_conversion">빠른 변환</string>
+    <string name="professional_results">전문적인 결과</string>
+
+    <string name="customize_your_app">앱 맞춤 설정</string>
+    <string name="personalize_your_app_with_custom_icons_splash_screens_colors_and_branding_to_match_your_style">사용자 맞춤 아이콘, 스플래시 화면, 색상 및 브랜딩으로 앱을 개인화하세요.</string>
+    <string name="custom_branding">맞춤 브랜딩</string>
+    <string name="color_themes">색상 테마</string>
+    <string name="app_icons_logos">앱 아이콘 &amp; 로고</string>
+
+    <string name="build_publish">빌드 &amp; 게시</string>
+    <string name="generate_your_apk_instantly_and_get_help_publishing_to_google_play_store_your_app_ready_to_go">APK를 즉시 생성하고 Google Play Store에 게시하는 도움을 받으세요. 앱 준비 완료!</string>
+    <string name="instant_apk_generation">즉시 APK 생성</string>
+    <string name="play_store_support">Play 스토어 지원</string>
+    <string name="ongoing_updates">지속적인 업데이트</string>
+
+    <string name="skip">건너뛰기</string>
+    <string name="next">다음</string>
+    <string name="get_started">시작하기</string>
+
+    <string name="welcome">환영합니다</string>
+    <string name="web_to_app_converter">웹 투 앱 변환기</string>
+    <string name="sign_in_to_continue">계속하려면 로그인하세요</string>
+    <string name="email_address">이메일 주소</string>
+    <string name="password">비밀번호</string>
+    <string name="enter_your_email">이메일을 입력하세요</string>
+    <string name="enter_your_password">비밀번호를 입력하세요</string>
+    <string name="remember_me">로그인 상태 유지</string>
+    <string name="forgot_password">비밀번호를 잊으셨나요?</string>
+    <string name="sign_in">로그인</string>
+    <string name="login">로그인</string>
+
+    <string name="dont_have_an_account">계정이 없으신가요? %1$s</string>
+    <string name="sign_up_for_free">무료로 가입</string>
+
+    <string name="create_account">계정 생성</string>
+    <string name="create_your_free_account">무료 계정을 생성하세요</string>
+    <string name="full_name">전체 이름</string>
+    <string name="enter_full_name">전체 이름을 입력하세요</string>
+    <string name="create_a_password">비밀번호 생성</string>
+    <string name="confirm_password">비밀번호 확인</string>
+    <string name="confirm_your_password">비밀번호를 확인하세요</string>
+
+    <string name="i_agree_to_the_terms_of_service_and_privacy_policy">%1$s 및 %2$s에 동의합니다</string>
+
+    <string name="privacy_policy">개인정보 처리방침</string>
+    <string name="terms_of_service">이용 약관</string>
+    <string name="already_have_an_account">이미 계정이 있으신가요? %1$s</string>
+    <string name="sign_in_s">로그인</string>
+
+    <string name="name_is_required">이름을 입력하세요</string>
+    <string name="email_is_required">이메일을 입력하세요</string>
+    <string name="please_enter_a_valid_email">유효한 이메일을 입력하세요</string>
+    <string name="password_is_required">비밀번호를 입력하세요</string>
+    <string name="password_must_be_at_least_6_characters">비밀번호는 최소 6자 이상이어야 합니다</string>
+
+    <string name="registered_successfully">회원가입 성공</string>
+    <string name="login_successful">로그인 성공</string>
+
+    <string name="forgot_password_">비밀번호 재설정</string>
+    <string name="reset_password">비밀번호 재설정</string>
+    <string name="reset_password_email_sent">비밀번호 재설정 이메일이 발송되었습니다</string>
+
+    <string name="no_internet_connection">인터넷 연결이 없습니다</string>
+
+    <string name="dashboard">대시보드</string>
+    <string name="create_app">앱 생성</string>
+    <string name="web_to_app">웹 투 앱</string>
+    <string name="my_apps">내 앱</string>
+    <string name="manage_apps">앱 관리</string>
+    <string name="wa_support">WA 지원</string>
+    <string name="chat_with_us">채팅하기</string>
+    <string name="services">서비스</string>
+    <string name="extra_features">추가 기능</string>
+    <string name="ask_features">기능 요청</string>
+    <string name="send_feedback">피드백 보내기</string>
+    <string name="feedback">피드백</string>
+    <string name="tutorials">튜토리얼</string>
+    <string name="learn_more">자세히 알아보기</string>
+    <string name="looking_for_ios_apps">iOS 앱을 찾고 계신가요?</string>
+    <string name="request_us_for_ios_apps_conversions">iOS 앱 변환을 요청하세요</string>
+
+    <string name="enter_website_url">웹사이트 URL 입력</string>
+    <string name="step_1_of_5">1단계 / 5</string>
+    <string name="step_2_of_5">2단계 / 5</string>
+    <string name="step_3_of_5">3단계 / 5</string>
+    <string name="step_4_of_5">4단계 / 5</string>
+    <string name="step_5_of_5">5단계 / 5</string>
+
+    <string name="website_url">웹사이트 URL</string>
+    <string name="_continue">계속</string>
+
+    <string name="app_basic_info">앱 기본 정보</string>
+    <string name="basic_information">기본 정보</string>
+    <string name="_app_name">앱 이름</string>
+    <string name="package_name">패키지 이름</string>
+    <string name="short_description">간단한 설명</string>
+    <string name="describe_your_app_in_a_few_words">앱을 간단히 설명하세요…</string>
+    <string name="category">카테고리</string>
+    <string name="orientation">화면 방향</string>
+    <string name="portrait">세로</string>
+    <string name="landscape">가로</string>
+
+    <string name="app_branding">앱 브랜딩</string>
+
+    <string name="customize_branding">브랜딩 맞춤 설정</string>
+    <string name="app_icon">앱 아이콘</string>
+    <string name="upload_icon">아이콘 업로드</string>
+    <string name="primary_color">기본 색상</string>
+    <string name="secondary_color">보조 색상</string>
+    <string name="show_preview">미리보기</string>
+
+    <string name="choose_color">색상 선택</string>
+    <string name="ok">확인</string>
+    <string name="cancel">취소</string>
+
+    <string name="app_features">앱 기능</string>
+    <string name="configure_features">기능 설정</string>
+    <string name="pull_to_refresh">당겨서 새로고침</string>
+    <string name="enable_pull_down_refresh_gesture">당겨서 새로고침 제스처 활성화</string>
+    <string name="loader_screen">로딩 화면</string>
+    <string name="show_loading_animation">로딩 애니메이션 표시</string>
+    <string name="fullscreen_mode">전체 화면 모드</string>
+    <string name="hide_system_status_bar">상태 표시줄 숨기기</string>
+    <string name="navigation_buttons">네비게이션 버튼</string>
+    <string name="show_back_forward_buttons">뒤로/앞으로 버튼 표시</string>
+    <string name="external_links_in_browser">외부 링크 브라우저 열기</string>
+    <string name="open_external_urls_in_browser">브라우저에서 외부 URL 열기</string>
+    <string name="notification_support">알림 지원</string>
+    <string name="enable_push_notifications">푸시 알림 활성화</string>
+    <string name="continue_to_generate">생성 계속</string>
+
+    <string name="generate_app">앱 생성</string>
+    <string name="review_app_summary">앱 요약 확인</string>
+    <string name="url">URL</string>
+    <string name="enabled_features">활성화된 기능</string>
+    <string name="build_app">앱 빌드</string>
+
+    <string name="please_enter_url">URL을 입력하세요</string>
+    <string name="url_must_start_with_http_or_https">URL은 http:// 또는 https://로 시작해야 합니다</string>
+    <string name="invalid_web_url">잘못된 웹 URL</string>
+
+    <string name="app_name_must_be_at_least_3_letters_and_contain_only_alphabets">앱 이름은 최소 3자 이상이어야 하며 알파벳만 포함해야 합니다</string>
+    <string name="the_package_name_must_follow_the_format_com_example_app">패키지 이름은 com.example.app 형식을 따라야 합니다</string>
+
+    <string name="please_select_app_icon">앱 아이콘을 선택하세요</string>
+
+    <string name="building_your_app">앱 생성 중</string>
+    <string name="please_wait_while_we_generate_your_apk">APK 생성 중이니 잠시 기다려주세요…</string>
+    <string name="progress">진행률</string>
+
+    <string name="app_details_saved_successfully">앱 정보가 성공적으로 저장되었습니다</string>
+    <string name="no_app_found">앱을 찾을 수 없습니다</string>
+
+    <string name="view_details">상세보기</string>
+    <string name="edit_app">앱 수정</string>
+    <string name="download_aab">AAB 다운로드</string>
+    <string name="download_apk">APK 다운로드</string>
+    <string name="delete_app">앱 삭제</string>
+
+    <string name="date">날짜</string>
+    <string name="version">버전</string>
+    <string name="status">상태</string>
+
+    <string name="ready_to_download">다운로드 준비 완료</string>
+    <string name="processing">처리 중</string>
+    <string name="draft">임시 저장</string>
+    <string name="something_went_wrong_please_contact_support">문제가 발생했습니다. 지원팀에 문의하세요</string>
+
+    <string name="failed_to_delete">삭제 실패</string>
+    <string name="app_deleted">앱이 삭제되었습니다</string>
+
+    <string name="downloaded">다운로드됨</string>
+    <string name="storage_permission_is_required_to_save_the_file">파일 저장을 위해 저장소 권한이 필요합니다</string>
+
+    <string name="storage_permission_required">저장소 권한 필요</string>
+    <string name="this_permission_is_needed_to_save_the_downloaded_file_in_your_downloads_folder">다운로드한 파일을 저장하려면 이 권한이 필요합니다</string>
+    <string name="allow">허용</string>
+    <string name="downloading">다운로드 중...</string>
+    <string name="failed_to_downloading">다운로드 실패</string>
+
+    <string name="app_details">앱 정보</string>
+    <string name="something_went_wrong_try_again">문제가 발생했습니다. 다시 시도하세요</string>
+
+    <string name="app_information">앱 정보</string>
+    <string name="created">생성됨</string>
+    <string name="build_version">빌드 버전</string>
+
+    <string name="theme_colors">테마 색상</string>
+    <string name="edit_rebuild">수정 &amp; 재빌드</string>
+    <string name="download">다운로드</string>
+    <string name="share">공유</string>
+
+    <string name="update_app">앱 업데이트</string>
+
+    <string name="get_instant_support_via_whatsApp">WhatsApp으로 즉시 지원 받기</string>
+    <string name="open_whatsApp">WhatsApp 열기</string>
+
+    <string name="support">지원</string>
+    <string name="submit_issue">문제 제출</string>
+    <string name="tell_us_about_your_problem">문제에 대해 알려주세요</string>
+    <string name="issue_type">문제 유형</string>
+    <string name="message">메시지</string>
+    <string name="describe_your_issue_in_detail">문제를 자세히 설명하세요…</string>
+    <string name="other_ways_to_reach_us">기타 연락 방법</string>
+    <string name="email_">📧 이메일: support@webtoapp.com</string>
+    <string name="phone_">📞 전화: +1512 300 5526</string>
+    <string name="support_hours">⏰ 지원 시간: 월~금 09:00 - 18:00</string>
+
+    <string name="whatsapp_not_installed">WhatsApp이 설치되어 있지 않습니다</string>
+    <string name="no_email_app_found">이메일 앱을 찾을 수 없습니다</string>
+
+    <string name="service_request">서비스 요청</string>
+    <string name="tell_us_about_your_app">앱에 대해 알려주세요</string>
+    <string name="service_type">서비스 유형</string>
+    <string name="submit">제출</string>
+
+    <string name="publish_app_on_google_play">Google Play에 앱 게시</string>
+    <string name="we_will_publish_your_app_on_google_play_store">앱을 Google Play 스토어에 게시합니다</string>
+
+    <string name="custom_android_app_development">맞춤 Android 앱 개발</string>
+    <string name="get_a_fully_customized_android_app_built_for_you">맞춤형 Android 앱을 제작해드립니다</string>
+    <string name="push_notifications_setup">푸시 알림 설정</string>
+    <string name="enable_push_notifications_for_your_app">앱의 푸시 알림 활성화</string>
+
+    <string name="admob_monetization">AdMob 수익화</string>
+    <string name="integrate_ads_and_start_earning_from_your_app">광고를 통합하고 앱에서 수익을 창출하세요</string>
+    <string name="premium_build_no_watermark">프리미엄 빌드 (워터마크 없음)</string>
+    <string name="remove_watermark_and_get_premium_features">워터마크 제거 및 프리미엄 기능 사용</string>
+
+    <string name="service_details">서비스 상세</string>
+    <string name="what_included">포함 항목</string>
+
+    <string name="app_store_optimization">앱 스토어 최적화</string>
+    <string name="professional_screenshots">전문가용 스크린샷</string>
+    <string name="app_description_writing">앱 설명 작성</string>
+    <string name="category_selection">카테고리 선택</string>
+    <string name="privacy_policy_creation">개인정보 처리방침 생성</string>
+    <string name="order_now">지금 주문</string>
+
+    <string name="custom_uiux_design">맞춤 UI/UX 디자인</string>
+    <string name="native_android_development">네이티브 Android 개발</string>
+    <string name="api_integration">API 통합</string>
+    <string name="database_setup">데이터베이스 설정</string>
+    <string name="ongoing_support">지속적인 지원</string>
+
+    <string name="firebase_setup">Firebase 설정</string>
+    <string name="notification_templates">알림 템플릿</string>
+    <string name="scheduling_support">일정 지원</string>
+    <string name="analytics_dashboard">분석 대시보드</string>
+    <string name="user_segmentation">사용자 세분화</string>
+
+    <string name="banner_ads_integration">배너 광고 통합</string>
+    <string name="interstitial_ads">전면 광고</string>
+    <string name="reward_ads">보상형 광고</string>
+    <string name="admob_account_setup">AdMob 계정 설정</string>
+    <string name="revenue_optimization">수익 최적화</string>
+
+    <string name="no_watermark">워터마크 없음</string>
+    <string name="priority_support">우선 지원</string>
+    <string name="custom_domain">맞춤 도메인</string>
+    <string name="advanced_analytics">고급 분석</string>
+    <string name="unlimited_rebuilds">무제한 재빌드</string>
+
+    <string name="successfully_logged_out">성공적으로 로그아웃되었습니다.</string>
+
+    <string name="continue_as_guest">게스트로 계속하기</string>
+    <string name="guest_login">게스트 로그인</string>
+    <string name="delete">삭제</string>
+
+    <string name="failed_to_upload_app_icon">앱 아이콘 업로드 실패</string>
+
+    <string name="bundle_draft">번들이 임시 저장 상태입니다</string>
+    <string name="bundle_processing">번들 처리 중</string>
+    <string name="bundle_ready_to_download">번들 다운로드 준비 완료</string>
+
+    <string name="btn_generate_bundle">번들 생성</string>
+    <string name="btn_download_bundle">번들 다운로드</string>
+
+    <string name="bundle_request_submitted">번들 요청이 제출되었습니다</string>
+
+    <string name="are_you_sure_you_want_to_delete_this_app">정말 이 앱을 삭제하시겠습니까?</string>
+
+    <string name="notification_permission_denied">알림 권한 거부됨</string>
+
+    <string name="logout">로그아웃</string>
+    <string name="logout_app">앱 로그아웃</string>
+    <string name="are_you_sure_you_want_to_logout">정말 로그아웃하시겠습니까?</string>
+
+    <string name="how_to_create_an_app">앱 생성 방법</string>
+    <string name="step_by_step_guide_to_create_your_first_web_to_app_conversion">첫 번째 웹 투 앱 변환 단계별 가이드</string>
+
+    <string name="how_to_create_an_app_bundle">앱 번들 생성 방법</string>
+    <string name="step_by_step_guide_to_create_your_app_bundle">앱 번들 생성 단계별 가이드</string>
+
+    <string name="how_to_upload_to_play_store">Play 스토어에 업로드하는 방법</string>
+    <string name="complete_guide_to_publish_your_app_on_google_play_store">Google Play 스토어에 앱 게시 완벽 가이드</string>
+
+    <string name="step_by_step_guide">단계별 가이드</string>
+
+    <string name="enter_your_website_url">웹사이트 URL 입력</string>
+    <string name="fill_in_app_basic_information">앱 기본 정보 입력</string>
+    <string name="customize_branding_and_colors">브랜딩 및 색상 맞춤 설정</string>
+    <string name="configure_app_features">앱 기능 설정</string>
+    <string name="generate_and_download_apk">APK 생성 및 다운로드</string>
+
+    <string name="open_my_apps">내 앱 열기</string>
+    <string name="start_bundle_generation">번들 생성 클릭</string>
+    <string name="bundle_generation_in_progress">번들 생성 진행 중</string>
+    <string name="bundle_ready_for_download">번들 다운로드 준비 완료</string>
+    <string name="download_generated_bundle">번들 다운로드</string>
+
+    <string name="create_a_google_play_developer_account">Google Play 개발자 계정 생성</string>
+    <string name="prepare_app_assets_and_screenshots">앱 자산 및 스크린샷 준비</string>
+    <string name="fill_in_store_listing_details">스토어 등록 정보 입력</string>
+    <string name="set_up_pricing_and_distribution">가격 및 배포 설정</string>
+    <string name="submit_for_review">검토 제출</string>
+
+    <string name="profile">프로필</string>
+    <string name="account_information">계정 정보</string>
+    <string name="member_since">가입일</string>
+    <string name="phone">전화</string>
+    <string name="add">추가</string>
+    <string name="settings">설정</string>
+    <string name="account_settings">계정 설정</string>
+    <string name="update_your_account_preferences">계정 설정 업데이트</string>
+    <string name="privacy_security">개인정보 &amp; 보안</string>
+    <string name="manage_your_privacy_settings">개인정보 설정 관리</string>
+    <string name="save_changes">변경 사항 저장</string>
+    <string name="change_password">비밀번호 변경</string>
+    <string name="current_password">현재 비밀번호</string>
+    <string name="enter_current_password">현재 비밀번호 입력</string>
+    <string name="new_password">새 비밀번호</string>
+    <string name="enter_new_password">새 비밀번호 입력</string>
+    <string name="confirm_new_password">새 비밀번호 확인</string>
+    <string name="update_password">비밀번호 업데이트</string>
+    <string name="read_our_privacy_policy">개인정보 처리방침 읽기</string>
+
+    <string name="Email">이메일</string>
+    <string name="password_should_be_at_least_6_characters">비밀번호는 최소 6자 이상이어야 합니다</string>
+    <string name="passwords_do_not_match">비밀번호가 일치하지 않습니다</string>
+    <string name="password_updated_successfully">비밀번호가 성공적으로 변경되었습니다</string>
+    <string name="current_password_is_incorrect">현재 비밀번호가 올바르지 않습니다</string>
+
+    <string name="updated_successfully">성공적으로 업데이트됨</string>
+
+    <string name="select_languages">언어 선택</string>
+    <string name="search_language">언어 검색...</string>
+    <string name="languages">언어</string>
+    <string name="choose_app_language">앱 언어 선택</string>
+
+    <string name="already_selected">이미 선택됨</string>
+
+</resources>

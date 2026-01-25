@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="convert_websites_to_mobile_apps">ウェブサイトをモバイルアプリに変換</string>
+    <string name="convert_any_website_to_app">任意のウェブサイトをアプリに変換</string>
+    <string name="transform_your_website_into_a_fully_functional_android_app_in_just_a_few_minutes_no_coding_required">数分でウェブサイトを完全なAndroidアプリに変換。コーディング不要！</string>
+    <string name="easy_url_input">簡単なURL入力</string>
+    <string name="quick_conversion">迅速な変換</string>
+    <string name="professional_results">プロフェッショナルな結果</string>
+
+    <string name="customize_your_app">アプリをカスタマイズ</string>
+    <string name="personalize_your_app_with_custom_icons_splash_screens_colors_and_branding_to_match_your_style">カスタムアイコン、スプラッシュ画面、色、ブランドでアプリをあなたのスタイルに合わせてパーソナライズ</string>
+    <string name="custom_branding">カスタムブランディング</string>
+    <string name="color_themes">カラーテーマ</string>
+    <string name="app_icons_logos">アプリアイコン &amp; ロゴ</string>
+
+    <string name="build_publish">ビルド &amp; 公開</string>
+    <string name="generate_your_apk_instantly_and_get_help_publishing_to_google_play_store_your_app_ready_to_go">APKを即座に生成し、Google Playストアで公開するサポートを受けられます。アプリはすぐに使用可能！</string>
+    <string name="instant_apk_generation">即時APK生成</string>
+    <string name="play_store_support">Playストアサポート</string>
+    <string name="ongoing_updates">継続的な更新</string>
+
+    <string name="skip">スキップ</string>
+    <string name="next">次へ</string>
+    <string name="get_started">始める</string>
+
+    <string name="welcome">ようこそ</string>
+    <string name="web_to_app_converter">Web to App コンバーター</string>
+    <string name="sign_in_to_continue">続行するにはサインイン</string>
+    <string name="email_address">メールアドレス</string>
+    <string name="password">パスワード</string>
+    <string name="enter_your_email">メールアドレスを入力</string>
+    <string name="enter_your_password">パスワードを入力</string>
+    <string name="remember_me">ログイン情報を記憶</string>
+    <string name="forgot_password">パスワードを忘れた場合</string>
+    <string name="sign_in">サインイン</string>
+    <string name="login">ログイン</string>
+
+    <string name="dont_have_an_account">アカウントをお持ちでないですか？ %1$s</string>
+    <string name="sign_up_for_free">無料で登録</string>
+
+    <string name="create_account">アカウント作成</string>
+    <string name="create_your_free_account">無料アカウントを作成</string>
+    <string name="full_name">氏名</string>
+    <string name="enter_full_name">氏名を入力</string>
+    <string name="create_a_password">パスワードを作成</string>
+    <string name="confirm_password">パスワード確認</string>
+    <string name="confirm_your_password">パスワードを確認</string>
+
+    <string name="i_agree_to_the_terms_of_service_and_privacy_policy">%1$s と %2$s に同意します</string>
+    <string name="privacy_policy">プライバシーポリシー</string>
+    <string name="terms_of_service">利用規約</string>
+    <string name="already_have_an_account">すでにアカウントをお持ちですか？ %1$s</string>
+    <string name="sign_in_s">サインイン</string>
+
+    <string name="name_is_required">名前は必須です</string>
+    <string name="email_is_required">メールアドレスは必須です</string>
+    <string name="please_enter_a_valid_email">有効なメールアドレスを入力してください</string>
+    <string name="password_is_required">パスワードは必須です</string>
+    <string name="password_must_be_at_least_6_characters">パスワードは6文字以上である必要があります</string>
+
+    <string name="registered_successfully">登録に成功しました</string>
+    <string name="login_successful">ログイン成功</string>
+
+    <string name="forgot_password_">パスワードを忘れた場合</string>
+    <string name="reset_password">パスワードリセット</string>
+    <string name="reset_password_email_sent">パスワードリセットメールを送信しました</string>
+
+    <string name="no_internet_connection">インターネット接続がありません</string>
+
+    <string name="dashboard">ダッシュボード</string>
+    <string name="create_app">アプリ作成</string>
+    <string name="web_to_app">Web to App</string>
+    <string name="my_apps">マイアプリ</string>
+    <string name="manage_apps">アプリ管理</string>
+    <string name="wa_support">WAサポート</string>
+    <string name="chat_with_us">チャット</string>
+    <string name="services">サービス</string>
+    <string name="extra_features">追加機能</string>
+    <string name="ask_features">機能リクエスト</string>
+    <string name="send_feedback">フィードバック送信</string>
+    <string name="feedback">フィードバック</string>
+    <string name="tutorials">チュートリアル</string>
+    <string name="learn_more">詳しく知る</string>
+    <string name="looking_for_ios_apps">iOSアプリをお探しですか？</string>
+    <string name="request_us_for_ios_apps_conversions">iOSアプリ変換を依頼</string>
+
+    <string name="enter_website_url">ウェブサイトURLを入力</string>
+    <string name="step_1_of_5">ステップ 1 / 5</string>
+    <string name="step_2_of_5">ステップ 2 / 5</string>
+    <string name="step_3_of_5">ステップ 3 / 5</string>
+    <string name="step_4_of_5">ステップ 4 / 5</string>
+    <string name="step_5_of_5">ステップ 5 / 5</string>
+
+    <string name="website_url">ウェブサイトURL</string>
+    <string name="_continue">続ける</string>
+
+        <string name="app_basic_info">アプリ基本情報</string>
+        <string name="basic_information">基本情報</string>
+        <string name="_app_name">アプリ名</string>
+        <string name="package_name">パッケージ名</string>
+        <string name="short_description">短い説明</string>
+        <string name="describe_your_app_in_a_few_words">アプリを簡単に説明してください…</string>
+        <string name="category">カテゴリ</string>
+        <string name="orientation">画面の向き</string>
+        <string name="portrait">縦向き</string>
+        <string name="landscape">横向き</string>
+
+        <string name="app_branding">アプリブランディング</string>
+
+        <string name="customize_branding">ブランディングをカスタマイズ</string>
+        <string name="app_icon">アプリアイコン</string>
+        <string name="upload_icon">アイコンをアップロード</string>
+        <string name="primary_color">メインカラー</string>
+        <string name="secondary_color">サブカラー</string>
+        <string name="show_preview">プレビューを表示</string>
+
+        <string name="choose_color">色を選択</string>
+        <string name="ok">OK</string>
+        <string name="cancel">キャンセル</string>
+
+        <string name="app_features">アプリ機能</string>
+        <string name="configure_features">機能を設定</string>
+        <string name="pull_to_refresh">引っ張って更新</string>
+        <string name="enable_pull_down_refresh_gesture">引き下げて更新ジェスチャーを有効にする</string>
+        <string name="loader_screen">ロード画面</string>
+        <string name="show_loading_animation">読み込みアニメーションを表示</string>
+        <string name="fullscreen_mode">フルスクリーンモード</string>
+        <string name="hide_system_status_bar">システムステータスバーを隠す</string>
+        <string name="navigation_buttons">ナビゲーションボタン</string>
+        <string name="show_back_forward_buttons">戻る/進むボタンを表示</string>
+        <string name="external_links_in_browser">ブラウザで外部リンクを開く</string>
+        <string name="open_external_urls_in_browser">外部URLをブラウザで開く</string>
+        <string name="notification_support">通知サポート</string>
+        <string name="enable_push_notifications">プッシュ通知を有効にする</string>
+        <string name="continue_to_generate">生成を続行</string>
+
+        <string name="generate_app">アプリ生成</string>
+        <string name="review_app_summary">アプリ概要を確認</string>
+        <string name="url">URL</string>
+        <string name="enabled_features">有効な機能</string>
+        <string name="build_app">アプリをビルド</string>
+
+        <string name="please_enter_url">URLを入力してください</string>
+        <string name="url_must_start_with_http_or_https">URLは http:// または https:// で始める必要があります</string>
+        <string name="invalid_web_url">無効なURLです</string>
+
+        <string name="app_name_must_be_at_least_3_letters_and_contain_only_alphabets">アプリ名は3文字以上のアルファベットで入力してください</string>
+        <string name="the_package_name_must_follow_the_format_com_example_app">パッケージ名は com.example.app の形式に従う必要があります</string>
+
+        <string name="please_select_app_icon">アプリアイコンを選択してください</string>
+
+        <string name="building_your_app">アプリを構築中</string>
+        <string name="please_wait_while_we_generate_your_apk">APKを生成中です。しばらくお待ちください…</string>
+        <string name="progress">進行状況</string>
+
+        <string name="app_details_saved_successfully">アプリ情報が保存されました</string>
+        <string name="no_app_found">アプリが見つかりません</string>
+
+        <string name="view_details">詳細を表示</string>
+        <string name="edit_app">アプリを編集</string>
+        <string name="download_aab">AABをダウンロード</string>
+        <string name="download_apk">APKをダウンロード</string>
+        <string name="delete_app">アプリを削除</string>
+
+        <string name="date">日付</string>
+        <string name="version">バージョン</string>
+        <string name="status">状態</string>
+
+        <string name="ready_to_download">ダウンロード準備完了</string>
+        <string name="processing">処理中</string>
+        <string name="draft">下書き</string>
+        <string name="something_went_wrong_please_contact_support">問題が発生しました。サポートに連絡してください</string>
+
+        <string name="failed_to_delete">削除に失敗しました</string>
+        <string name="app_deleted">アプリが削除されました</string>
+
+        <string name="downloaded">ダウンロード済み</string>
+        <string name="storage_permission_is_required_to_save_the_file">ファイルを保存するにはストレージ権限が必要です</string>
+
+        <string name="storage_permission_required">ストレージ権限が必要です</string>
+        <string name="this_permission_is_needed_to_save_the_downloaded_file_in_your_downloads_folder">この権限は、ダウンロードしたファイルを「ダウンロード」フォルダに保存するために必要です</string>
+        <string name="allow">許可</string>
+        <string name="downloading">ダウンロード中…</string>
+        <string name="failed_to_downloading">ダウンロードに失敗しました</string>
+
+        <string name="app_details">アプリ情報</string>
+        <string name="something_went_wrong_try_again">問題が発生しました。もう一度お試しください</string>
+
+        <string name="app_information">アプリ情報</string>
+        <string name="created">作成日</string>
+        <string name="build_version">ビルドバージョン</string>
+
+        <string name="theme_colors">テーマカラー</string>
+        <string name="edit_rebuild">編集 &amp; 再構築</string>
+        <string name="download">ダウンロード</string>
+        <string name="share">共有</string>
+
+        <string name="update_app">アプリを更新</string>
+
+        <string name="get_instant_support_via_whatsApp">WhatsAppで即時サポートを受ける</string>
+        <string name="open_whatsApp">WhatsAppを開く</string>
+
+        <string name="support">サポート</string>
+        <string name="submit_issue">問題を報告</string>
+        <string name="tell_us_about_your_problem">問題について教えてください</string>
+        <string name="issue_type">問題の種類</string>
+        <string name="message">メッセージ</string>
+        <string name="describe_your_issue_in_detail">問題の詳細を説明してください…</string>
+        <string name="other_ways_to_reach_us">その他の連絡方法</string>
+        <string name="email_">📧 メール: support@webtoapp.com</string>
+        <string name="phone_">📞 電話: +1512 300 5526</string>
+        <string name="support_hours">⏰ サポート時間: 9時～18時 (月-金)</string>
+
+        <string name="whatsapp_not_installed">WhatsAppがインストールされていません</string>
+        <string name="no_email_app_found">メールアプリが見つかりません</string>
+
+    <string name="service_request">サービスリクエスト</string>
+    <string name="tell_us_about_your_app">アプリについて教えてください</string>
+    <string name="service_type">サービスの種類</string>
+    <string name="submit">送信</string>
+
+    <string name="publish_app_on_google_play">Google Playでアプリを公開</string>
+    <string name="we_will_publish_your_app_on_google_play_store">アプリをGoogle Playストアに公開します</string>
+
+    <string name="custom_android_app_development">カスタムAndroidアプリ開発</string>
+    <string name="get_a_fully_customized_android_app_built_for_you">完全にカスタマイズされたAndroidアプリを作成します</string>
+    <string name="push_notifications_setup">プッシュ通知設定</string>
+    <string name="enable_push_notifications_for_your_app">アプリのプッシュ通知を有効にする</string>
+
+    <string name="admob_monetization">AdMob収益化</string>
+    <string name="integrate_ads_and_start_earning_from_your_app">広告を統合してアプリから収益を得る</string>
+    <string name="premium_build_no_watermark">プレミアムビルド（透かしなし）</string>
+    <string name="remove_watermark_and_get_premium_features">透かしを削除してプレミアム機能を利用</string>
+
+    <string name="service_details">サービス詳細</string>
+    <string name="what_included">含まれる内容</string>
+
+    <string name="app_store_optimization">アプリストア最適化</string>
+    <string name="professional_screenshots">プロフェッショナルなスクリーンショット</string>
+    <string name="app_description_writing">アプリ説明作成</string>
+    <string name="category_selection">カテゴリ選択</string>
+    <string name="privacy_policy_creation">プライバシーポリシー作成</string>
+    <string name="order_now">今すぐ注文</string>
+
+    <string name="custom_uiux_design">カスタムUI/UXデザイン</string>
+    <string name="native_android_development">ネイティブAndroid開発</string>
+    <string name="api_integration">API統合</string>
+    <string name="database_setup">データベース設定</string>
+    <string name="ongoing_support">継続的サポート</string>
+
+    <string name="firebase_setup">Firebase設定</string>
+    <string name="notification_templates">通知テンプレート</string>
+    <string name="scheduling_support">スケジュールサポート</string>
+    <string name="analytics_dashboard">分析ダッシュボード</string>
+    <string name="user_segmentation">ユーザーセグメンテーション</string>
+
+    <string name="banner_ads_integration">バナー広告統合</string>
+    <string name="interstitial_ads">全画面広告</string>
+    <string name="reward_ads">報酬型広告</string>
+    <string name="admob_account_setup">AdMobアカウント設定</string>
+    <string name="revenue_optimization">収益最適化</string>
+
+    <string name="no_watermark">透かしなし</string>
+    <string name="priority_support">優先サポート</string>
+    <string name="custom_domain">カスタムドメイン</string>
+    <string name="advanced_analytics">高度な分析</string>
+    <string name="unlimited_rebuilds">無制限再ビルド</string>
+
+    <string name="successfully_logged_out">ログアウトしました</string>
+
+    <string name="continue_as_guest">ゲストとして続行</string>
+    <string name="guest_login">ゲストログイン</string>
+    <string name="delete">削除</string>
+
+    <string name="failed_to_upload_app_icon">アプリアイコンのアップロードに失敗しました</string>
+
+    <string name="bundle_draft">バンドルは下書きです</string>
+    <string name="bundle_processing">バンドル処理中</string>
+    <string name="bundle_ready_to_download">バンドルのダウンロード準備完了</string>
+
+    <string name="btn_generate_bundle">バンドルを生成</string>
+    <string name="btn_download_bundle">バンドルをダウンロード</string>
+
+    <string name="bundle_request_submitted">バンドルリクエストが送信されました</string>
+
+    <string name="are_you_sure_you_want_to_delete_this_app">本当にこのアプリを削除しますか？</string>
+
+    <string name="notification_permission_denied">通知の権限が拒否されました</string>
+
+    <string name="logout">ログアウト</string>
+    <string name="logout_app">アプリからログアウト</string>
+    <string name="are_you_sure_you_want_to_logout">本当にログアウトしますか？</string>
+
+    <string name="how_to_create_an_app">アプリの作成方法</string>
+    <string name="step_by_step_guide_to_create_your_first_web_to_app_conversion">初めてのWeb→アプリ変換のステップバイステップガイド</string>
+
+    <string name="how_to_create_an_app_bundle">アプリバンドルの作成方法</string>
+    <string name="step_by_step_guide_to_create_your_app_bundle">アプリバンドル作成のステップバイステップガイド</string>
+
+    <string name="how_to_upload_to_play_store">Playストアへのアップロード方法</string>
+    <string name="complete_guide_to_publish_your_app_on_google_play_store">Google Playストアでアプリを公開する完全ガイド</string>
+
+    <string name="step_by_step_guide">ステップバイステップガイド</string>
+
+    <string name="enter_your_website_url">ウェブサイトのURLを入力</string>
+    <string name="fill_in_app_basic_information">アプリの基本情報を入力</string>
+    <string name="customize_branding_and_colors">ブランディングと色をカスタマイズ</string>
+    <string name="configure_app_features">アプリ機能を設定</string>
+    <string name="generate_and_download_apk">APKを生成してダウンロード</string>
+
+    <string name="open_my_apps">マイアプリを開く</string>
+    <string name="start_bundle_generation">「バンドル生成」をクリック</string>
+    <string name="bundle_generation_in_progress">バンドル生成中</string>
+    <string name="bundle_ready_for_download">バンドルのダウンロード準備完了</string>
+    <string name="download_generated_bundle">バンドルをダウンロード</string>
+
+    <string name="create_a_google_play_developer_account">Google Play開発者アカウントを作成</string>
+    <string name="prepare_app_assets_and_screenshots">アプリのアセットとスクリーンショットを準備</string>
+    <string name="fill_in_store_listing_details">ストア掲載情報を入力</string>
+    <string name="set_up_pricing_and_distribution">価格と配信設定</string>
+    <string name="submit_for_review">レビュー提出</string>
+
+    <string name="profile">プロフィール</string>
+    <string name="account_information">アカウント情報</string>
+    <string name="member_since">登録日</string>
+    <string name="phone">電話番号</string>
+    <string name="add">追加</string>
+    <string name="settings">設定</string>
+    <string name="account_settings">アカウント設定</string>
+    <string name="update_your_account_preferences">アカウント設定を更新</string>
+    <string name="privacy_security">プライバシー &amp; セキュリティ</string>
+    <string name="manage_your_privacy_settings">プライバシー設定を管理</string>
+    <string name="save_changes">変更を保存</string>
+    <string name="change_password">パスワード変更</string>
+    <string name="current_password">現在のパスワード</string>
+    <string name="enter_current_password">現在のパスワードを入力</string>
+    <string name="new_password">新しいパスワード</string>
+    <string name="enter_new_password">新しいパスワードを入力</string>
+    <string name="confirm_new_password">新しいパスワードを確認</string>
+    <string name="update_password">パスワードを更新</string>
+    <string name="read_our_privacy_policy">プライバシーポリシーを読む</string>
+
+    <string name="Email">メール</string>
+    <string name="password_should_be_at_least_6_characters">パスワードは6文字以上である必要があります</string>
+    <string name="passwords_do_not_match">パスワードが一致しません</string>
+    <string name="password_updated_successfully">パスワードが正常に更新されました</string>
+    <string name="current_password_is_incorrect">現在のパスワードが正しくありません</string>
+
+    <string name="updated_successfully">正常に更新されました</string>
+
+    <string name="select_languages">言語を選択</string>
+    <string name="search_language">言語を検索...</string>
+    <string name="languages">言語</string>
+    <string name="choose_app_language">アプリの言語を選択</string>
+
+    <string name="already_selected">すでに選択済み</string>
+    </resources>

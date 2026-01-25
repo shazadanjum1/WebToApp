@@ -399,6 +399,67 @@
 
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/languageBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:paddingVertical="@dimen/_4sdp"
+                        android:foreground="?attr/selectableItemBackground"
+                        >
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/lgIv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_language"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/LL5"
+                            app:layout_constraintBottom_toBottomOf="@+id/LL5"
+                            />
+
+                        <LinearLayout
+                            android:id="@+id/LL5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintStart_toEndOf="@+id/lgIv"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_marginHorizontal="@dimen/_12sdp"
+                            >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black_3"
+                                android:text="@string/languages"
+                                android:fontFamily="@font/arimo_regular"
+                                android:textSize="@dimen/_11ssp"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/grey_1"
+                                android:text="@string/choose_app_language"
+                                android:fontFamily="@font/arimo_regular"
+                                android:textSize="@dimen/_12ssp"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                />
+
+
+                        </LinearLayout>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/privacyBtn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -457,8 +518,6 @@
 
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 
 
                 </androidx.appcompat.widget.LinearLayoutCompat>

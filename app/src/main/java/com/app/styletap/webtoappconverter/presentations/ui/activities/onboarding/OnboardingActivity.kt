@@ -8,6 +8,7 @@ import androidx.core.view.isVisible
 import com.app.styletap.webtoappconverter.R
 import com.app.styletap.webtoappconverter.databinding.ActivityOnboardingBinding
 import com.app.styletap.webtoappconverter.extentions.adjustBottomHeight
+import com.app.styletap.webtoappconverter.extentions.changeLocale
 import com.app.styletap.webtoappconverter.extentions.customEnableEdgeToEdge
 import com.app.styletap.webtoappconverter.presentations.ui.activities.authorization.LoginActivity
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.isShowOnBoarding
@@ -22,6 +23,7 @@ class OnboardingActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        changeLocale()
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         binding = ActivityOnboardingBinding.inflate(layoutInflater)
         setContentView(binding.root)

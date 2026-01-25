@@ -761,7 +761,7 @@ fun Context.openWhatsApp(phoneNumber: String) {
 }
 
 
-fun Context.openEmail(
+fun Context.openEmail1(
     email: String,
     subject: String,
     message: String
@@ -776,6 +776,25 @@ fun Context.openEmail(
 
         startActivity(Intent.createChooser(intent, "Send email"))
     } catch (_: Exception) {
+        Toast.makeText(this, getString(R.string.no_email_app_found), Toast.LENGTH_SHORT).show()
+    }
+}
+
+fun Context.openEmail(
+    email: String,
+    subject: String,
+    message: String
+) {
+    try {
+        val intent = Intent(Intent.ACTION_SEND).apply {
+            type = "text/plain"
+            putExtra(Intent.EXTRA_EMAIL, arrayOf(email))
+            putExtra(Intent.EXTRA_SUBJECT, subject)
+            putExtra(Intent.EXTRA_TEXT, message)
+            setPackage("com.google.android.gm") // 👈 force Gmail
+        }
+        startActivity(intent)
+    } catch (e: Exception) {
         Toast.makeText(this, getString(R.string.no_email_app_found), Toast.LENGTH_SHORT).show()
     }
 }

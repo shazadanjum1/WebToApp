@@ -21,6 +21,9 @@
         android:theme="@style/Theme.WebToAppConverter"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".presentations.ui.activities.language.LanguageActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentations.ui.activities.profile.AccountSettingsActivity"
             android:exported="false" />
         <activity

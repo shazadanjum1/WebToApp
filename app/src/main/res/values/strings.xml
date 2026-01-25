@@ -86,6 +86,7 @@
     <string name="extra_features">Extra features</string>
     <string name="ask_features">Ask Features</string>
     <string name="send_feedback">Send feedback</string>
+    <string name="feedback">Feedback</string>
     <string name="tutorials">Tutorials</string>
     <string name="learn_more">Learn more</string>
     <string name="looking_for_ios_apps">Looking for iOS Apps?</string>
@@ -274,13 +275,15 @@
     <string name="advanced_analytics">Advanced Analytics</string>
     <string name="unlimited_rebuilds">Unlimited Rebuilds</string>
 
+    <string name="failed_to_upload_app_icon">Failed to upload app icon</string>
+
+
     <string name="successfully_logged_out">Successfully logged out.</string>
 
     <string name="continue_as_guest">Continue as Guest</string>
     <string name="guest_login">Guest Login</string>
     <string name="delete">Delete</string>
 
-    <string name="failed_to_upload_app_icon">Failed to upload app icon</string>
 
     <string name="bundle_draft">Bundle is in draft</string>
     <string name="bundle_processing">Bundle is processing</string>
@@ -355,6 +358,13 @@
     <string name="current_password_is_incorrect">Current password is incorrect</string>
 
     <string name="updated_successfully">updated successfully</string>
+
+    <string name="select_languages">Select Languages</string>
+    <string name="search_language">Search language...</string>
+    <string name="languages">Languages</string>
+    <string name="choose_app_language">Choose app language</string>
+
+    <string name="already_selected">Already selected</string>
 
 
 </resources>

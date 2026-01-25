@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">Web to App</string>
+    <string name="app_name1" translatable="false">Web to App</string>
+    <string name="phone_number" translatable="false">+15123005526</string>
+    <string name="email" translatable="false">appsmagic2952@gmail.com</string>
+    <string name="privacy_policy_link" translatable="false">https://appsmagic360.blogspot.com/2026/01/privacy-policy-web-to-app.html</string>
+
+    <string name="convert_websites_to_mobile_apps">Ubah situs web menjadi aplikasi mobile</string>
+
+    <string name="convert_any_website_to_app">Ubah Website Apa Pun Menjadi Aplikasi</string>
+    <string name="transform_your_website_into_a_fully_functional_android_app_in_just_a_few_minutes_no_coding_required">
+        Ubah website Anda menjadi aplikasi Android yang berfungsi penuh hanya dalam beberapa menit. Tanpa perlu coding!
+    </string>
+    <string name="easy_url_input">Input URL mudah</string>
+    <string name="quick_conversion">Konversi cepat</string>
+    <string name="professional_results">Hasil profesional</string>
+
+    <string name="customize_your_app">Sesuaikan Aplikasi Anda</string>
+    <string name="personalize_your_app_with_custom_icons_splash_screens_colors_and_branding_to_match_your_style">
+        Personalisasi aplikasi Anda dengan ikon kustom, splash screen, warna, dan branding sesuai gaya Anda.
+    </string>
+    <string name="custom_branding">Branding kustom</string>
+    <string name="color_themes">Tema warna</string>
+    <string name="app_icons_logos">Ikon &amp; logo aplikasi</string>
+
+    <string name="build_publish">Build &amp; Publikasikan</string>
+    <string name="generate_your_apk_instantly_and_get_help_publishing_to_google_play_store_your_app_ready_to_go">
+        Hasilkan APK secara instan dan dapatkan bantuan untuk publikasi ke Google Play Store. Aplikasi Anda siap digunakan!
+    </string>
+    <string name="instant_apk_generation">Pembuatan APK instan</string>
+    <string name="play_store_support">Dukungan Play Store</string>
+    <string name="ongoing_updates">Pembaruan berkelanjutan</string>
+
+    <string name="skip">Lewati</string>
+    <string name="next">Berikutnya</string>
+    <string name="get_started">Mulai</string>
+
+    <string name="welcome">Selamat Datang</string>
+    <string name="web_to_app_converter">Konverter Web ke Aplikasi</string>
+    <string name="sign_in_to_continue">Masuk untuk melanjutkan</string>
+    <string name="email_address">Alamat Email</string>
+    <string name="password">Kata Sandi</string>
+    <string name="enter_your_email">Masukkan email Anda</string>
+    <string name="enter_your_password">Masukkan kata sandi Anda</string>
+    <string name="remember_me">Ingat saya</string>
+    <string name="forgot_password">Lupa Kata Sandi?</string>
+    <string name="sign_in">Masuk</string>
+    <string name="login">Login</string>
+
+    <string name="dont_have_an_account">Belum punya akun? %1$s</string>
+    <string name="sign_up_for_free">Daftar gratis</string>
+
+    <string name="create_account">Buat Akun</string>
+    <string name="create_your_free_account">Buat akun gratis Anda</string>
+    <string name="full_name">Nama Lengkap</string>
+    <string name="enter_full_name">Masukkan nama lengkap</string>
+    <string name="create_a_password">Buat kata sandi</string>
+    <string name="confirm_password">Konfirmasi Kata Sandi</string>
+    <string name="confirm_your_password">Konfirmasi kata sandi Anda</string>
+
+    <string name="i_agree_to_the_terms_of_service_and_privacy_policy">
+        Saya setuju dengan %1$s dan %2$s
+    </string>
+
+    <string name="privacy_policy">Kebijakan Privasi</string>
+    <string name="terms_of_service">Syarat Layanan</string>
+    <string name="already_have_an_account">Sudah punya akun? %1$s</string>
+    <string name="sign_in_s">Masuk</string>
+
+    <string name="name_is_required">Nama wajib diisi</string>
+    <string name="email_is_required">Email wajib diisi</string>
+    <string name="please_enter_a_valid_email">Silakan masukkan email yang valid</string>
+    <string name="password_is_required">Kata sandi wajib diisi</string>
+    <string name="password_must_be_at_least_6_characters">
+        Kata sandi harus minimal 6 karakter
+    </string>
+
+    <string name="registered_successfully">Berhasil terdaftar</string>
+    <string name="login_successful">Login berhasil</string>
+
+    <string name="forgot_password_">Lupa kata sandi</string>
+    <string name="reset_password">Atur ulang kata sandi</string>
+    <string name="reset_password_email_sent">Email reset kata sandi telah dikirim</string>
+
+    <string name="no_internet_connection">Tidak ada koneksi internet</string>
+
+    <string name="dashboard">Dashboard</string>
+    <string name="create_app">Buat Aplikasi</string>
+    <string name="web_to_app">Web ke Aplikasi</string>
+    <string name="my_apps">Aplikasi Saya</string>
+    <string name="manage_apps">Kelola Aplikasi</string>
+    <string name="wa_support">Dukungan WA</string>
+    <string name="chat_with_us">Chat dengan kami</string>
+    <string name="services">Layanan</string>
+    <string name="extra_features">Fitur tambahan</string>
+    <string name="ask_features">Minta fitur</string>
+    <string name="send_feedback">Kirim masukan</string>
+    <string name="feedback">Masukan</string>
+    <string name="tutorials">Tutorial</string>
+    <string name="learn_more">Pelajari lebih lanjut</string>
+    <string name="looking_for_ios_apps">Mencari Aplikasi iOS?</string>
+    <string name="request_us_for_ios_apps_conversions">
+        Minta kami untuk konversi aplikasi iOS
+    </string>
+
+    <string name="enter_website_url">Masukkan URL Website</string>
+    <string name="step_1_of_5">Langkah 1 dari 5</string>
+    <string name="step_2_of_5">Langkah 2 dari 5</string>
+    <string name="step_3_of_5">Langkah 3 dari 5</string>
+    <string name="step_4_of_5">Langkah 4 dari 5</string>
+    <string name="step_5_of_5">Langkah 5 dari 5</string>
+
+    <string name="website_url">URL Website</string>
+    <string name="_continue">Lanjutkan</string>
+
+    <string name="app_basic_info">Info Dasar Aplikasi</string>
+    <string name="basic_information">Informasi Dasar</string>
+    <string name="_app_name">Nama Aplikasi</string>
+    <string name="package_name">Nama Paket</string>
+    <string name="short_description">Deskripsi Singkat</string>
+    <string name="describe_your_app_in_a_few_words">
+        Jelaskan aplikasi Anda dalam beberapa kata…
+    </string>
+    <string name="category">Kategori</string>
+    <string name="orientation">Orientasi</string>
+    <string name="portrait">Potret</string>
+    <string name="landscape">Lanskap</string>
+
+    <string name="app_branding">Branding Aplikasi</string>
+    <string name="customize_branding">Sesuaikan Branding</string>
+    <string name="app_icon">Ikon Aplikasi</string>
+    <string name="upload_icon">Unggah Ikon</string>
+    <string name="primary_color">Warna Utama</string>
+    <string name="secondary_color">Warna Sekunder</string>
+    <string name="show_preview">Tampilkan Pratinjau</string>
+
+    <string name="choose_color">Pilih Warna</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Batal</string>
+
+    <string name="app_features">Fitur Aplikasi</string>
+    <string name="configure_features">Konfigurasi Fitur</string>
+    <string name="pull_to_refresh">Tarik untuk menyegarkan</string>
+    <string name="enable_pull_down_refresh_gesture">
+        Aktifkan gesture tarik ke bawah untuk refresh
+    </string>
+    <string name="loader_screen">Layar Loading</string>
+    <string name="show_loading_animation">
+        Tampilkan animasi loading
+    </string>
+    <string name="fullscreen_mode">Mode Layar Penuh</string>
+    <string name="hide_system_status_bar">
+        Sembunyikan status bar sistem
+    </string>
+    <string name="navigation_buttons">Tombol Navigasi</string>
+    <string name="show_back_forward_buttons">
+        Tampilkan tombol kembali/maju
+    </string>
+    <string name="external_links_in_browser">
+        Tautan Eksternal di Browser
+    </string>
+    <string name="open_external_urls_in_browser">
+        Buka URL eksternal di browser
+    </string>
+    <string name="notification_support">Dukungan Notifikasi</string>
+    <string name="enable_push_notifications">
+        Aktifkan notifikasi push
+    </string>
+    <string name="continue_to_generate">Lanjutkan untuk Generate</string>
+
+    <string name="generate_app">Generate Aplikasi</string>
+    <string name="review_app_summary">Tinjau Ringkasan Aplikasi</string>
+    <string name="url">URL</string>
+    <string name="enabled_features">Fitur Aktif</string>
+    <string name="build_app">Build Aplikasi</string>
+
+    <string name="please_enter_url">Silakan masukkan URL</string>
+    <string name="url_must_start_with_http_or_https">
+        URL harus diawali dengan http:// atau https://
+    </string>
+    <string name="invalid_web_url">URL web tidak valid</string>
+
+    <string name="app_name_must_be_at_least_3_letters_and_contain_only_alphabets">
+        Nama aplikasi minimal 3 huruf dan hanya boleh berisi alfabet
+    </string>
+    <string name="the_package_name_must_follow_the_format_com_example_app">
+        Nama paket harus mengikuti format com.example.app.
+    </string>
+
+    <string name="please_select_app_icon">
+        Silakan pilih ikon aplikasi
+    </string>
+
+    <string name="building_your_app">Membangun Aplikasi Anda</string>
+    <string name="please_wait_while_we_generate_your_apk">
+        Mohon tunggu sementara kami membuat APK Anda...
+    </string>
+    <string name="progress">Progres</string>
+
+    <string name="app_details_saved_successfully">
+        Detail aplikasi berhasil disimpan
+    </string>
+    <string name="no_app_found">Aplikasi tidak ditemukan</string>
+
+    <string name="view_details">Lihat Detail</string>
+    <string name="edit_app">Edit Aplikasi</string>
+    <string name="download_aab">Unduh AAB</string>
+    <string name="download_apk">Unduh APK</string>
+    <string name="delete_app">Hapus Aplikasi</string>
+
+    <string name="date">Tanggal</string>
+    <string name="version">Versi</string>
+    <string name="status">Status</string>
+
+    <string name="ready_to_download">Siap diunduh</string>
+    <string name="processing">Diproses</string>
+    <string name="draft">Draf</string>
+    <string name="something_went_wrong_please_contact_support">
+        Terjadi kesalahan. Silakan hubungi dukungan
+    </string>
+
+    <string name="failed_to_delete">Gagal menghapus</string>
+    <string name="app_deleted">Aplikasi dihapus</string>
+
+    <string name="downloaded">Diunduh</string>
+    <string name="storage_permission_is_required_to_save_the_file">
+        Izin penyimpanan diperlukan untuk menyimpan file
+    </string>
+
+    <string name="storage_permission_required">
+        Izin Penyimpanan Diperlukan
+    </string>
+    <string name="this_permission_is_needed_to_save_the_downloaded_file_in_your_downloads_folder">
+        Izin ini diperlukan untuk menyimpan file yang diunduh ke folder Unduhan Anda.
+    </string>
+    <string name="allow">Izinkan</string>
+    <string name="downloading">Mengunduh...</string>
+    <string name="failed_to_downloading">Gagal mengunduh</string>
+
+    <string name="app_details">Detail Aplikasi</string>
+    <string name="something_went_wrong_try_again">
+        Terjadi kesalahan, coba lagi
+    </string>
+
+    <string name="app_information">Informasi Aplikasi</string>
+    <string name="created">Dibuat</string>
+    <string name="build_version">Versi Build</string>
+
+    <string name="theme_colors">Warna Tema</string>
+    <string name="edit_rebuild">Edit &amp; Build Ulang</string>
+    <string name="download">Unduh</string>
+    <string name="share">Bagikan</string>
+
+    <string name="update_app">Perbarui Aplikasi</string>
+
+    <string name="get_instant_support_via_whatsApp">
+        Dapatkan dukungan instan melalui WhatsApp
+    </string>
+    <string name="open_whatsApp">Buka WhatsApp</string>
+
+    <string name="support">Dukungan</string>
+    <string name="submit_issue">Kirim Masalah</string>
+    <string name="tell_us_about_your_problem">
+        Ceritakan masalah Anda
+    </string>
+    <string name="issue_type">Jenis Masalah</string>
+    <string name="message">Pesan</string>
+    <string name="describe_your_issue_in_detail">
+        Jelaskan masalah Anda secara detail...
+    </string>
+    <string name="other_ways_to_reach_us">
+        Cara lain untuk menghubungi kami
+    </string>
+    <string name="email_">📧 Email: support@webtoapp.com</string>
+    <string name="phone_">📞 Telepon: +1512 300 5526</string>
+    <string name="support_hours">
+        ⏰ Jam Dukungan: 09.00 - 18.00 (Senin–Jumat)
+    </string>
+
+    <string name="whatsapp_not_installed">
+        WhatsApp tidak terinstal
+    </string>
+    <string name="no_email_app_found">
+        Aplikasi email tidak ditemukan
+    </string>
+
+    <string name="service_request">Permintaan Layanan</string>
+    <string name="tell_us_about_your_app">
+        Ceritakan tentang aplikasi Anda
+    </string>
+    <string name="service_type">Jenis Layanan</string>
+    <string name="submit">Kirim</string>
+
+    <string name="publish_app_on_google_play">
+        Publikasikan Aplikasi di Google Play
+    </string>
+    <string name="we_will_publish_your_app_on_google_play_store">
+        Kami akan mempublikasikan aplikasi Anda di Google Play Store
+    </string>
+
+    <string name="successfully_logged_out">
+        Berhasil keluar.
+    </string>
+
+    <string name="continue_as_guest">
+        Lanjutkan sebagai Tamu
+    </string>
+    <string name="guest_login">Login Tamu</string>
+    <string name="delete">Hapus</string>
+
+    <string name="bundle_draft">Bundle dalam status draf</string>
+    <string name="bundle_processing">Bundle sedang diproses</string>
+    <string name="bundle_ready_to_download">
+        Bundle siap diunduh
+    </string>
+
+    <string name="btn_generate_bundle">Generate bundle</string>
+    <string name="btn_download_bundle">Unduh bundle</string>
+
+    <string name="bundle_request_submitted">
+        Permintaan bundle Anda telah dikirim
+    </string>
+
+    <string name="are_you_sure_you_want_to_delete_this_app">
+        Apakah Anda yakin ingin menghapus aplikasi ini?
+    </string>
+
+    <string name="notification_permission_denied">
+        Izin notifikasi ditolak
+    </string>
+
+    <string name="logout">Keluar</string>
+    <string name="logout_app">Keluar dari Aplikasi</string>
+    <string name="are_you_sure_you_want_to_logout">
+        Apakah Anda yakin ingin keluar?
+    </string>
+
+    <string name="select_languages">Pilih Bahasa</string>
+    <string name="search_language">Cari bahasa...</string>
+    <string name="languages">Bahasa</string>
+    <string name="choose_app_language">
+        Pilih bahasa aplikasi
+    </string>
+
+    <string name="how_to_create_an_app">Cara Membuat Aplikasi</string>
+    <string name="step_by_step_guide_to_create_your_first_web_to_app_conversion">
+Panduan langkah demi langkah untuk membuat konversi web ke aplikasi pertama Anda
+</string>
+
+
+    <string name="how_to_create_an_app_bundle">Cara Membuat App Bundle</string>
+    <string name="step_by_step_guide_to_create_your_app_bundle">
+Panduan langkah demi langkah untuk membuat App Bundle Anda
+</string>
+
+
+    <string name="how_to_upload_to_play_store">Cara Mengunggah ke Play Store</string>
+    <string name="complete_guide_to_publish_your_app_on_google_play_store">
+Panduan lengkap untuk mempublikasikan aplikasi Anda di Google Play Store
+</string>
+
+
+    <string name="step_by_step_guide">Panduan Langkah demi Langkah</string>
+
+
+    <string name="enter_your_website_url">Masukkan URL Website Anda</string>
+    <string name="fill_in_app_basic_information">Isi informasi dasar aplikasi</string>
+    <string name="customize_branding_and_colors">Sesuaikan branding dan warna</string>
+    <string name="configure_app_features">Konfigurasi fitur aplikasi</string>
+    <string name="generate_and_download_apk">Generate dan unduh APK</string>
+
+
+    <string name="open_my_apps">Buka Aplikasi Saya</string>
+    <string name="start_bundle_generation">Klik untuk Generate Bundle</string>
+    <string name="bundle_generation_in_progress">Proses pembuatan bundle sedang berlangsung</string>
+    <string name="bundle_ready_for_download">Bundle siap untuk diunduh</string>
+    <string name="download_generated_bundle">Unduh bundle</string>
+
+
+    <string name="create_a_google_play_developer_account">Buat akun Google Play Developer</string>
+    <string name="prepare_app_assets_and_screenshots">Siapkan aset aplikasi dan screenshot</string>
+    <string name="fill_in_store_listing_details">Isi detail listing di Play Store</string>
+    <string name="set_up_pricing_and_distribution">Atur harga dan distribusi</string>
+    <string name="submit_for_review">Kirim untuk ditinjau</string>
+
+
+    <string name="profile">Profil</string>
+    <string name="account_information">Informasi Akun</string>
+    <string name="member_since">Member Sejak</string>
+    <string name="phone">Telepon</string>
+    <string name="add">Tambah</string>
+    <string name="settings">Pengaturan</string>
+    <string name="account_settings">Pengaturan Akun</string>
+    <string name="update_your_account_preferences">Perbarui preferensi akun Anda</string>
+    <string name="privacy_security">Privasi &amp; Keamanan</string>
+    <string name="manage_your_privacy_settings">Kelola pengaturan privasi Anda</string>
+    <string name="save_changes">Simpan Perubahan</string>
+    <string name="change_password">Ganti Kata Sandi</string>
+    <string name="current_password">Kata Sandi Saat Ini</string>
+    <string name="enter_current_password">Masukkan kata sandi saat ini</string>
+    <string name="new_password">Kata Sandi Baru</string>
+    <string name="enter_new_password">Masukkan kata sandi baru</string>
+    <string name="confirm_new_password">Konfirmasi Kata Sandi Baru</string>
+    <string name="update_password">Perbarui Kata Sandi</string>
+    <string name="read_our_privacy_policy">Baca kebijakan privasi kami</string>
+
+
+    <string name="Email">Email</string>
+    <string name="password_should_be_at_least_6_characters">Kata sandi minimal 6 karakter</string>
+    <string name="passwords_do_not_match">Kata sandi tidak cocok</string>
+    <string name="password_updated_successfully">Kata sandi berhasil diperbarui</string>
+    <string name="current_password_is_incorrect">Kata sandi saat ini salah</string>
+
+
+    <string name="updated_successfully">berhasil diperbarui</string>
+
+    <string name="custom_android_app_development">Pengembangan Aplikasi Android Kustom</string>
+    <string name="get_a_fully_customized_android_app_built_for_you">
+Dapatkan aplikasi Android yang sepenuhnya kustom dibuat untuk Anda
+</string>
+
+
+    <string name="push_notifications_setup">Pengaturan Notifikasi Push</string>
+    <string name="enable_push_notifications_for_your_app">
+Aktifkan notifikasi push untuk aplikasi Anda
+</string>
+
+
+    <string name="admob_monetization">Monetisasi AdMob</string>
+    <string name="integrate_ads_and_start_earning_from_your_app">
+Integrasikan iklan dan mulai menghasilkan dari aplikasi Anda
+</string>
+
+
+    <string name="premium_build_no_watermark">Build Premium (Tanpa Watermark)</string>
+    <string name="remove_watermark_and_get_premium_features">
+Hapus watermark dan dapatkan fitur premium
+</string>
+
+
+    <string name="service_details">Detail Layanan</string>
+    <string name="what_included">Yang Termasuk</string>
+
+
+    <string name="app_store_optimization">Optimasi Play Store</string>
+    <string name="professional_screenshots">Screenshot Profesional</string>
+    <string name="app_description_writing">Penulisan Deskripsi Aplikasi</string>
+    <string name="category_selection">Pemilihan Kategori</string>
+    <string name="privacy_policy_creation">Pembuatan Kebijakan Privasi</string>
+    <string name="order_now">Pesan Sekarang</string>
+
+
+    <string name="custom_uiux_design">Desain UI/UX Kustom</string>
+    <string name="native_android_development">Pengembangan Android Native</string>
+    <string name="api_integration">Integrasi API</string>
+    <string name="database_setup">Pengaturan Database</string>
+    <string name="ongoing_support">Dukungan Berkelanjutan</string>
+
+
+    <string name="firebase_setup">Pengaturan Firebase</string>
+    <string name="notification_templates">Template Notifikasi</string>
+    <string name="scheduling_support">Dukungan Penjadwalan</string>
+    <string name="analytics_dashboard">Dashboard Analitik</string>
+    <string name="user_segmentation">Segmentasi Pengguna</string>
+
+
+    <string name="banner_ads_integration">Integrasi Iklan Banner</string>
+    <string name="interstitial_ads">Iklan Interstisial</string>
+    <string name="reward_ads">Iklan Reward</string>
+    <string name="admob_account_setup">Pengaturan Akun AdMob</string>
+    <string name="revenue_optimization">Optimasi Pendapatan</string>
+
+
+    <string name="no_watermark">Tanpa Watermark</string>
+    <string name="priority_support">Dukungan Prioritas</string>
+    <string name="custom_domain">Domain Kustom</string>
+    <string name="advanced_analytics">Analitik Lanjutan</string>
+    <string name="unlimited_rebuilds">Build Ulang Tanpa Batas</string>
+
+
+    <string name="failed_to_upload_app_icon">Gagal mengunggah ikon aplikasi</string>
+
+    <string name="already_selected">Sudah dipilih</string>
+</resources>

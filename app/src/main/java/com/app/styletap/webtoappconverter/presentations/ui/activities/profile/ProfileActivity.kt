@@ -14,6 +14,7 @@ import com.app.styletap.webtoappconverter.R
 import com.app.styletap.webtoappconverter.databinding.ActivityProfileBinding
 import com.app.styletap.webtoappconverter.extentions.adjustBottomHeight
 import com.app.styletap.webtoappconverter.extentions.adjustTopHeight
+import com.app.styletap.webtoappconverter.extentions.changeLocale
 import com.app.styletap.webtoappconverter.extentions.customEnableEdgeToEdge
 import com.app.styletap.webtoappconverter.extentions.formatDate
 import com.app.styletap.webtoappconverter.extentions.getInitials
@@ -22,6 +23,7 @@ import com.app.styletap.webtoappconverter.extentions.logoutUser
 import com.app.styletap.webtoappconverter.extentions.openLink
 import com.app.styletap.webtoappconverter.extentions.showLogoutDialog
 import com.app.styletap.webtoappconverter.models.User
+import com.app.styletap.webtoappconverter.presentations.ui.activities.language.LanguageActivity
 import com.app.styletap.webtoappconverter.presentations.ui.activities.services.ServiceDetailsActivity
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.ACTION_REFRESH_ACTIVITY
 import com.google.firebase.auth.FirebaseAuth
@@ -43,6 +45,7 @@ class ProfileActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        changeLocale()
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         binding = ActivityProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -105,6 +108,14 @@ class ProfileActivity : AppCompatActivity() {
 
             initCard.setOnClickListener {
                 startActivity(Intent(this@ProfileActivity, AccountSettingsActivity::class.java))
+            }
+
+            languageBtn.setOnClickListener {
+                startActivity(
+                    Intent(this@ProfileActivity, LanguageActivity::class.java).apply {
+                        putExtra("from", "profile")
+                    }
+                )
             }
 
             privacyBtn.setOnClickListener {

@@ -20,6 +20,7 @@ import com.app.styletap.webtoappconverter.databinding.ActivityEditAppBinding
 import com.app.styletap.webtoappconverter.extentions.adjustBottomHeight
 import com.app.styletap.webtoappconverter.extentions.adjustTopHeight
 import com.app.styletap.webtoappconverter.extentions.changeIcon
+import com.app.styletap.webtoappconverter.extentions.changeLocale
 import com.app.styletap.webtoappconverter.extentions.customEnableEdgeToEdge
 import com.app.styletap.webtoappconverter.extentions.incrementVersion
 import com.app.styletap.webtoappconverter.extentions.isNetworkAvailable
@@ -76,6 +77,7 @@ class EditAppActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        changeLocale()
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         binding = ActivityEditAppBinding.inflate(layoutInflater)
         setContentView(binding.root)

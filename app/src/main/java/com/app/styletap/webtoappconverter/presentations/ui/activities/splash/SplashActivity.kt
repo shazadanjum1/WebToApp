@@ -5,10 +5,13 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.app.styletap.webtoappconverter.R
+import com.app.styletap.webtoappconverter.extentions.changeLocale
 import com.app.styletap.webtoappconverter.extentions.customEnableEdgeToEdge
 import com.app.styletap.webtoappconverter.presentations.ui.activities.authorization.LoginActivity
 import com.app.styletap.webtoappconverter.presentations.ui.activities.home.MainActivity
+import com.app.styletap.webtoappconverter.presentations.ui.activities.language.LanguageActivity
 import com.app.styletap.webtoappconverter.presentations.ui.activities.onboarding.OnboardingActivity
+import com.app.styletap.webtoappconverter.presentations.utils.Contants.isLanguageSelected
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.isShowOnBoarding
 import com.app.styletap.webtoappconverter.presentations.utils.PrefHelper
 import com.google.firebase.auth.FirebaseAuth
@@ -27,6 +30,7 @@ class SplashActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        changeLocale()
         setContentView(R.layout.activity_splash)
         customEnableEdgeToEdge()
 
@@ -57,7 +61,9 @@ class SplashActivity : AppCompatActivity() {
             if (user?.isAnonymous == true) {
                 Intent(this, MainActivity::class.java)
             } else if (user == null) {
-                if (prefHelper.getBooleanDefultTrue(isShowOnBoarding)){
+                if (!prefHelper.getBoolean(isLanguageSelected)){
+                    Intent(this@SplashActivity, LanguageActivity::class.java)
+                } else if (prefHelper.getBooleanDefultTrue(isShowOnBoarding)){
                     Intent(this, OnboardingActivity::class.java)
                 } else {
                     Intent(this, LoginActivity::class.java)

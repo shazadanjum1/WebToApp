@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="convert_websites_to_mobile_apps">Converta sites em aplicativos móveis</string>
+
+    <string name="convert_any_website_to_app">Converta qualquer site em app</string>
+    <string name="transform_your_website_into_a_fully_functional_android_app_in_just_a_few_minutes_no_coding_required">Transforme seu site em um aplicativo Android totalmente funcional em apenas alguns minutos. Não é necessário programar!</string>
+    <string name="easy_url_input">Entrada de URL fácil</string>
+    <string name="quick_conversion">Conversão rápida</string>
+    <string name="professional_results">Resultados profissionais</string>
+
+    <string name="customize_your_app">Personalize seu app</string>
+    <string name="personalize_your_app_with_custom_icons_splash_screens_colors_and_branding_to_match_your_style">Personalize seu app com ícones, telas de inicialização, cores e branding personalizados para combinar com seu estilo.</string>
+    <string name="custom_branding">Branding personalizado</string>
+    <string name="color_themes">Temas de cores</string>
+    <string name="app_icons_logos">Ícones e logos do app</string>
+
+    <string name="build_publish">Criar &amp; Publicar</string>
+    <string name="generate_your_apk_instantly_and_get_help_publishing_to_google_play_store_your_app_ready_to_go">Gere seu APK instantaneamente e obtenha ajuda para publicar no Google Play Store. Seu app pronto para usar!</string>
+    <string name="instant_apk_generation">Geração instantânea de APK</string>
+    <string name="play_store_support">Suporte Play Store</string>
+    <string name="ongoing_updates">Atualizações contínuas</string>
+
+    <string name="skip">Pular</string>
+    <string name="next">Próximo</string>
+    <string name="get_started">Começar</string>
+
+    <string name="welcome">Bem-vindo</string>
+    <string name="web_to_app_converter">Conversor Web to App</string>
+    <string name="sign_in_to_continue">Entre para continuar</string>
+    <string name="email_address">Endereço de Email</string>
+    <string name="password">Senha</string>
+    <string name="enter_your_email">Digite seu email</string>
+    <string name="enter_your_password">Digite sua senha</string>
+    <string name="remember_me">Lembrar-me</string>
+    <string name="forgot_password">Esqueceu a senha?</string>
+    <string name="sign_in">Entrar</string>
+    <string name="login">Login</string>
+
+    <string name="dont_have_an_account">Não tem uma conta? %1$s</string>
+    <string name="sign_up_for_free">Cadastre-se gratuitamente</string>
+
+    <string name="create_account">Criar Conta</string>
+    <string name="create_your_free_account">Crie sua conta gratuita</string>
+    <string name="full_name">Nome completo</string>
+    <string name="enter_full_name">Digite o nome completo</string>
+    <string name="create_a_password">Crie uma senha</string>
+    <string name="confirm_password">Confirmar senha</string>
+    <string name="confirm_your_password">Confirme sua senha</string>
+
+    <string name="i_agree_to_the_terms_of_service_and_privacy_policy">Eu concordo com os %1$s e %2$s</string>
+
+    <string name="privacy_policy">Política de Privacidade</string>
+    <string name="terms_of_service">Termos de Serviço</string>
+    <string name="already_have_an_account">Já tem uma conta? %1$s</string>
+    <string name="sign_in_s">Entrar</string>
+
+    <string name="name_is_required">Nome é obrigatório</string>
+    <string name="email_is_required">Email é obrigatório</string>
+    <string name="please_enter_a_valid_email">Digite um email válido</string>
+    <string name="password_is_required">Senha é obrigatória</string>
+    <string name="password_must_be_at_least_6_characters">A senha deve ter pelo menos 6 caracteres</string>
+
+    <string name="registered_successfully">Registrado com sucesso</string>
+    <string name="login_successful">Login realizado com sucesso</string>
+
+    <string name="forgot_password_">Esqueceu a senha</string>
+    <string name="reset_password">Redefinir senha</string>
+    <string name="reset_password_email_sent">Email de redefinição de senha enviado</string>
+
+    <string name="no_internet_connection">Sem conexão com a internet</string>
+
+    <string name="dashboard">Painel</string>
+    <string name="create_app">Criar App</string>
+    <string name="web_to_app">Web to App</string>
+    <string name="my_apps">Meus Apps</string>
+    <string name="manage_apps">Gerenciar Apps</string>
+    <string name="wa_support">Suporte WA</string>
+    <string name="chat_with_us">Converse conosco</string>
+    <string name="services">Serviços</string>
+    <string name="extra_features">Recursos extras</string>
+    <string name="ask_features">Solicitar recursos</string>
+    <string name="send_feedback">Enviar feedback</string>
+    <string name="feedback">Feedback</string>
+    <string name="tutorials">Tutoriais</string>
+    <string name="learn_more">Saiba mais</string>
+    <string name="looking_for_ios_apps">Procurando apps iOS?</string>
+    <string name="request_us_for_ios_apps_conversions">Solicite-nos conversões para apps iOS</string>
+
+    <string name="enter_website_url">Digite o URL do site</string>
+    <string name="step_1_of_5">Passo 1 de 5</string>
+    <string name="step_2_of_5">Passo 2 de 5</string>
+    <string name="step_3_of_5">Passo 3 de 5</string>
+    <string name="step_4_of_5">Passo 4 de 5</string>
+    <string name="step_5_of_5">Passo 5 de 5</string>
+
+    <string name="website_url">URL do site</string>
+    <string name="_continue">Continuar</string>
+
+    <string name="app_basic_info">Informações básicas do app</string>
+    <string name="basic_information">Informações básicas</string>
+    <string name="_app_name">Nome do App</string>
+    <string name="package_name">Nome do pacote</string>
+    <string name="short_description">Descrição curta</string>
+    <string name="describe_your_app_in_a_few_words">Descreva seu app em poucas palavras…</string>
+    <string name="category">Categoria</string>
+    <string name="orientation">Orientação</string>
+    <string name="portrait">Retrato</string>
+    <string name="landscape">Paisagem</string>
+
+    <string name="app_branding">Branding do App</string>
+
+    <string name="customize_branding">Personalizar Branding</string>
+    <string name="app_icon">Ícone do App</string>
+    <string name="upload_icon">Carregar ícone</string>
+    <string name="primary_color">Cor primária</string>
+    <string name="secondary_color">Cor secundária</string>
+    <string name="show_preview">Mostrar pré-visualização</string>
+
+    <string name="choose_color">Escolher cor</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancelar</string>
+
+    <string name="app_features">Recursos do App</string>
+    <string name="configure_features">Configurar recursos</string>
+    <string name="pull_to_refresh">Puxe para atualizar</string>
+    <string name="enable_pull_down_refresh_gesture">Ativar gesto de puxar para atualizar</string>
+    <string name="loader_screen">Tela de carregamento</string>
+    <string name="show_loading_animation">Mostrar animação de carregamento</string>
+    <string name="fullscreen_mode">Modo tela cheia</string>
+    <string name="hide_system_status_bar">Ocultar barra de status</string>
+    <string name="navigation_buttons">Botões de navegação</string>
+    <string name="show_back_forward_buttons">Mostrar botões de voltar/avançar</string>
+    <string name="external_links_in_browser">Links externos no navegador</string>
+    <string name="open_external_urls_in_browser">Abrir URLs externas no navegador</string>
+    <string name="notification_support">Suporte a notificações</string>
+    <string name="enable_push_notifications">Ativar notificações push</string>
+    <string name="continue_to_generate">Continuar para gerar</string>
+
+    <string name="generate_app">Gerar App</string>
+    <string name="review_app_summary">Revisar resumo do app</string>
+    <string name="url">URL</string>
+    <string name="enabled_features">Recursos habilitados</string>
+    <string name="build_app">Criar App</string>
+
+    <string name="please_enter_url">Por favor, insira a URL</string>
+    <string name="url_must_start_with_http_or_https">A URL deve começar com http:// ou https://</string>
+    <string name="invalid_web_url">URL inválida</string>
+
+    <string name="app_name_must_be_at_least_3_letters_and_contain_only_alphabets">O nome do app deve ter pelo menos 3 letras e conter apenas letras</string>
+    <string name="the_package_name_must_follow_the_format_com_example_app">O nome do pacote deve seguir o formato com.example.app</string>
+
+    <string name="please_select_app_icon">Por favor, selecione um ícone para o app</string>
+
+    <string name="building_your_app">Criando seu app</string>
+    <string name="please_wait_while_we_generate_your_apk">Aguarde enquanto geramos seu APK...</string>
+    <string name="progress">Progresso</string>
+
+    <string name="app_details_saved_successfully">Detalhes do app salvos com sucesso</string>
+    <string name="no_app_found">Nenhum app encontrado</string>
+
+    <string name="view_details">Ver detalhes</string>
+    <string name="edit_app">Editar App</string>
+    <string name="download_aab">Baixar AAB</string>
+    <string name="download_apk">Baixar APK</string>
+    <string name="delete_app">Excluir App</string>
+
+    <string name="date">Data</string>
+    <string name="version">Versão</string>
+    <string name="status">Status</string>
+
+    <string name="ready_to_download">Pronto para baixar</string>
+    <string name="processing">Processando</string>
+    <string name="draft">Rascunho</string>
+    <string name="something_went_wrong_please_contact_support">Algo deu errado. Por favor, contate o suporte</string>
+
+    <string name="failed_to_delete">Falha ao excluir</string>
+    <string name="app_deleted">App excluído</string>
+
+    <string name="downloaded">Baixado</string>
+    <string name="storage_permission_is_required_to_save_the_file">Permissão de armazenamento necessária para salvar o arquivo</string>
+
+    <string name="storage_permission_required">Permissão de armazenamento necessária</string>
+    <string name="this_permission_is_needed_to_save_the_downloaded_file_in_your_downloads_folder">Esta permissão é necessária para salvar o arquivo baixado na pasta Downloads</string>
+    <string name="allow">Permitir</string>
+    <string name="downloading">Baixando...</string>
+    <string name="failed_to_downloading">Falha ao baixar</string>
+
+    <string name="app_details">Detalhes do App</string>
+    <string name="something_went_wrong_try_again">Algo deu errado, tente novamente</string>
+
+    <string name="app_information">Informações do App</string>
+    <string name="created">Criado</string>
+    <string name="build_version">Versão da build</string>
+
+    <string name="theme_colors">Cores do tema</string>
+    <string name="edit_rebuild">Editar &amp; Reconstruir</string>
+    <string name="download">Baixar</string>
+    <string name="share">Compartilhar</string>
+
+    <string name="update_app">Atualizar App</string>
+
+    <string name="get_instant_support_via_whatsApp">Obtenha suporte instantâneo via WhatsApp</string>
+    <string name="open_whatsApp">Abrir WhatsApp</string>
+
+    <string name="support">Suporte</string>
+    <string name="submit_issue">Enviar problema</string>
+    <string name="tell_us_about_your_problem">Conte-nos sobre seu problema</string>
+    <string name="issue_type">Tipo de problema</string>
+    <string name="message">Mensagem</string>
+    <string name="describe_your_issue_in_detail">Descreva seu problema em detalhes...</string>
+    <string name="other_ways_to_reach_us">Outras formas de nos contatar</string>
+    <string name="email_">📧 Email: support@webtoapp.com</string>
+    <string name="phone_">📞 Telefone: +1512 300 5526</string>
+    <string name="support_hours">⏰ Horário de suporte: 9h - 18h (Seg-Sex)</string>
+
+    <string name="whatsapp_not_installed">WhatsApp não instalado</string>
+    <string name="no_email_app_found">Nenhum app de email encontrado</string>
+
+    <string name="service_request">Solicitação de Serviço</string>
+    <string name="tell_us_about_your_app">Conte-nos sobre seu app</string>
+    <string name="service_type">Tipo de Serviço</string>
+    <string name="submit">Enviar</string>
+
+    <string name="publish_app_on_google_play">Publicar App no Google Play</string>
+    <string name="we_will_publish_your_app_on_google_play_store">Vamos publicar seu app no Google Play Store</string>
+
+    <string name="custom_android_app_development">Desenvolvimento de App Android Personalizado</string>
+    <string name="get_a_fully_customized_android_app_built_for_you">Obtenha um app Android totalmente personalizado criado para você</string>
+    <string name="push_notifications_setup">Configuração de notificações push</string>
+    <string name="enable_push_notifications_for_your_app">Ativar notificações push para seu app</string>
+
+    <string name="admob_monetization">Monetização AdMob</string>
+    <string name="integrate_ads_and_start_earning_from_your_app">Integre anúncios e comece a ganhar com seu app</string>
+    <string name="premium_build_no_watermark">Build Premium (Sem Marca d\'água)</string>
+    <string name="remove_watermark_and_get_premium_features">Remova a marca d\'água e obtenha recursos premium</string>
+
+    <string name="service_details">Detalhes do Serviço</string>
+    <string name="what_included">O que está incluído</string>
+
+    <string name="app_store_optimization">Otimização na App Store</string>
+    <string name="professional_screenshots">Capturas de tela profissionais</string>
+    <string name="app_description_writing">Redação da descrição do app</string>
+    <string name="category_selection">Seleção de categoria</string>
+    <string name="privacy_policy_creation">Criação de Política de Privacidade</string>
+    <string name="order_now">Peça agora</string>
+
+    <string name="custom_uiux_design">Design UI/UX personalizado</string>
+    <string name="native_android_development">Desenvolvimento Android nativo</string>
+    <string name="api_integration">Integração de API</string>
+    <string name="database_setup">Configuração de Banco de Dados</string>
+    <string name="ongoing_support">Suporte contínuo</string>
+
+    <string name="firebase_setup">Configuração do Firebase</string>
+    <string name="notification_templates">Modelos de Notificação</string>
+    <string name="scheduling_support">Suporte a agendamento</string>
+    <string name="analytics_dashboard">Painel de Análise</string>
+    <string name="user_segmentation">Segmentação de usuários</string>
+
+    <string name="banner_ads_integration">Integração de anúncios em banner</string>
+    <string name="interstitial_ads">Anúncios intersticiais</string>
+    <string name="reward_ads">Anúncios recompensados</string>
+    <string name="admob_account_setup">Configuração da conta AdMob</string>
+    <string name="revenue_optimization">Otimização de receita</string>
+
+    <string name="no_watermark">Sem marca d\'água</string>
+    <string name="priority_support">Suporte prioritário</string>
+    <string name="custom_domain">Domínio personalizado</string>
+    <string name="advanced_analytics">Análises avançadas</string>
+    <string name="unlimited_rebuilds">Reconstruções ilimitadas</string>
+
+    <string name="successfully_logged_out">Logout realizado com sucesso.</string>
+
+    <string name="continue_as_guest">Continuar como convidado</string>
+    <string name="guest_login">Login como convidado</string>
+    <string name="delete">Excluir</string>
+
+    <string name="failed_to_upload_app_icon">Falha ao enviar o ícone do app</string>
+
+    <string name="bundle_draft">O bundle está em rascunho</string>
+    <string name="bundle_processing">O bundle está sendo processado</string>
+    <string name="bundle_ready_to_download">O bundle está pronto para download</string>
+
+    <string name="btn_generate_bundle">Gerar bundle</string>
+    <string name="btn_download_bundle">Baixar bundle</string>
+
+    <string name="bundle_request_submitted">Sua solicitação de bundle foi enviada</string>
+
+    <string name="are_you_sure_you_want_to_delete_this_app">Tem certeza de que deseja excluir este app?</string>
+
+    <string name="notification_permission_denied">Permissão de notificações negada</string>
+
+    <string name="logout">Logout</string>
+    <string name="logout_app">Sair do app</string>
+    <string name="are_you_sure_you_want_to_logout">Tem certeza de que deseja sair?</string>
+
+    <string name="how_to_create_an_app">Como criar um app</string>
+    <string name="step_by_step_guide_to_create_your_first_web_to_app_conversion">Guia passo a passo para criar sua primeira conversão Web to App</string>
+
+    <string name="how_to_create_an_app_bundle">Como criar um App Bundle</string>
+    <string name="step_by_step_guide_to_create_your_app_bundle">Guia passo a passo para criar seu App Bundle</string>
+
+    <string name="how_to_upload_to_play_store">Como enviar para Play Store</string>
+    <string name="complete_guide_to_publish_your_app_on_google_play_store">Guia completo para publicar seu app no Google Play Store</string>
+
+    <string name="step_by_step_guide">Guia passo a passo</string>
+
+    <string name="enter_your_website_url">Digite o URL do seu site</string>
+    <string name="fill_in_app_basic_information">Preencha as informações básicas do app</string>
+    <string name="customize_branding_and_colors">Personalize branding e cores</string>
+    <string name="configure_app_features">Configure os recursos do app</string>
+    <string name="generate_and_download_apk">Gerar e baixar APK</string>
+
+    <string name="open_my_apps">Abrir meus apps</string>
+    <string name="start_bundle_generation">Clique em Gerar Bundle</string>
+    <string name="bundle_generation_in_progress">Geração do bundle em andamento</string>
+    <string name="bundle_ready_for_download">O bundle está pronto para download</string>
+    <string name="download_generated_bundle">Baixar bundle</string>
+
+    <string name="create_a_google_play_developer_account">Criar uma conta de desenvolvedor Google Play</string>
+    <string name="prepare_app_assets_and_screenshots">Preparar recursos e capturas de tela do app</string>
+    <string name="fill_in_store_listing_details">Preencher detalhes da listagem na loja</string>
+    <string name="set_up_pricing_and_distribution">Configurar preços e distribuição</string>
+    <string name="submit_for_review">Enviar para revisão</string>
+
+    <string name="profile">Perfil</string>
+    <string name="account_information">Informações da conta</string>
+    <string name="member_since">Membro desde</string>
+    <string name="phone">Telefone</string>
+    <string name="add">Adicionar</string>
+    <string name="settings">Configurações</string>
+    <string name="account_settings">Configurações da conta</string>
+    <string name="update_your_account_preferences">Atualize suas preferências da conta</string>
+    <string name="privacy_security">Privacidade &amp; Segurança</string>
+    <string name="manage_your_privacy_settings">Gerencie suas configurações de privacidade</string>
+    <string name="save_changes">Salvar alterações</string>
+    <string name="change_password">Alterar senha</string>
+    <string name="current_password">Senha atual</string>
+    <string name="enter_current_password">Digite a senha atual</string>
+    <string name="new_password">Nova senha</string>
+    <string name="enter_new_password">Digite a nova senha</string>
+    <string name="confirm_new_password">Confirme a nova senha</string>
+    <string name="update_password">Atualizar senha</string>
+    <string name="read_our_privacy_policy">Leia nossa política de privacidade</string>
+
+    <string name="Email">Email</string>
+    <string name="password_should_be_at_least_6_characters">A senha deve ter pelo menos 6 caracteres</string>
+    <string name="passwords_do_not_match">As senhas não coincidem</string>
+    <string name="password_updated_successfully">Senha atualizada com sucesso</string>
+    <string name="current_password_is_incorrect">Senha atual incorreta</string>
+
+    <string name="updated_successfully">atualizado com sucesso</string>
+
+    <string name="select_languages">Selecionar idiomas</string>
+    <string name="search_language">Pesquisar idioma...</string>
+    <string name="languages">Idiomas</string>
+    <string name="choose_app_language">Escolher idioma do app</string>
+
+    <string name="already_selected">Já selecionado</string>
+
+</resources>

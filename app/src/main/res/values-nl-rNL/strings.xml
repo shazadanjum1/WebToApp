@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="convert_websites_to_mobile_apps">Converteer websites naar mobiele apps</string>
+    <string name="convert_any_website_to_app">Converteer elke website naar een app</string>
+    <string name="transform_your_website_into_a_fully_functional_android_app_in_just_a_few_minutes_no_coding_required">Transformeer uw website in slechts enkele minuten naar een volledig functionele Android-app. Geen codering vereist!</string>
+    <string name="easy_url_input">Eenvoudige URL-invoer</string>
+    <string name="quick_conversion">Snelle conversie</string>
+    <string name="professional_results">Professionele resultaten</string>
+
+    <string name="customize_your_app">Pas uw app aan</string>
+    <string name="personalize_your_app_with_custom_icons_splash_screens_colors_and_branding_to_match_your_style">Personaliseer uw app met aangepaste iconen, splashscreens, kleuren en branding die bij uw stijl passen.</string>
+    <string name="custom_branding">Aangepaste branding</string>
+    <string name="color_themes">Kleuren thema’s</string>
+    <string name="app_icons_logos">App-iconen &amp; logo’s</string>
+
+    <string name="build_publish">Bouwen &amp; Publiceren</string>
+    <string name="generate_your_apk_instantly_and_get_help_publishing_to_google_play_store_your_app_ready_to_go">Genereer direct uw APK en krijg hulp bij het publiceren op de Google Play Store. Uw app, klaar voor gebruik!</string>
+    <string name="instant_apk_generation">Directe APK-generatie</string>
+    <string name="play_store_support">Play Store-ondersteuning</string>
+    <string name="ongoing_updates">Doorlopende updates</string>
+
+    <string name="skip">Overslaan</string>
+    <string name="next">Volgende</string>
+    <string name="get_started">Aan de slag</string>
+
+    <string name="welcome">Welkom</string>
+    <string name="web_to_app_converter">Web naar App Converter</string>
+    <string name="sign_in_to_continue">Log in om door te gaan</string>
+    <string name="email_address">E-mailadres</string>
+    <string name="password">Wachtwoord</string>
+    <string name="enter_your_email">Voer uw e-mailadres in</string>
+    <string name="enter_your_password">Voer uw wachtwoord in</string>
+    <string name="remember_me">Onthoud mij</string>
+    <string name="forgot_password">Wachtwoord vergeten?</string>
+    <string name="sign_in">Inloggen</string>
+    <string name="login">Login</string>
+
+    <string name="dont_have_an_account">Heeft u nog geen account? %1$s</string>
+    <string name="sign_up_for_free">Meld u gratis aan</string>
+
+    <string name="create_account">Account aanmaken</string>
+    <string name="create_your_free_account">Maak uw gratis account aan</string>
+    <string name="full_name">Volledige naam</string>
+    <string name="enter_full_name">Voer uw volledige naam in</string>
+    <string name="create_a_password">Maak een wachtwoord aan</string>
+    <string name="confirm_password">Bevestig wachtwoord</string>
+    <string name="confirm_your_password">Bevestig uw wachtwoord</string>
+
+    <string name="i_agree_to_the_terms_of_service_and_privacy_policy">Ik ga akkoord met de %1$s en %2$s</string>
+
+    <string name="privacy_policy">Privacybeleid</string>
+    <string name="terms_of_service">Gebruiksvoorwaarden</string>
+    <string name="already_have_an_account">Heeft u al een account? %1$s</string>
+    <string name="sign_in_s">Inloggen</string>
+
+    <string name="name_is_required">Naam is verplicht</string>
+    <string name="email_is_required">E-mail is verplicht</string>
+    <string name="please_enter_a_valid_email">Voer een geldig e-mailadres in</string>
+    <string name="password_is_required">Wachtwoord is verplicht</string>
+    <string name="password_must_be_at_least_6_characters">Wachtwoord moet minimaal 6 tekens bevatten</string>
+
+    <string name="registered_successfully">Succesvol geregistreerd</string>
+    <string name="login_successful">Succesvol ingelogd</string>
+
+<string name="forgot_password_">Wachtwoord vergeten</string>
+<string name="reset_password">Wachtwoord resetten</string>
+<string name="reset_password_email_sent">Wachtwoord reset e-mail verzonden</string>
+
+<string name="no_internet_connection">Geen internetverbinding</string>
+
+<string name="dashboard">Dashboard</string>
+<string name="create_app">App maken</string>
+<string name="web_to_app">Web naar App</string>
+<string name="my_apps">Mijn apps</string>
+<string name="manage_apps">Apps beheren</string>
+<string name="wa_support">WA-ondersteuning</string>
+<string name="chat_with_us">Chat met ons</string>
+<string name="services">Diensten</string>
+<string name="extra_features">Extra functies</string>
+<string name="ask_features">Vraag functies</string>
+<string name="send_feedback">Feedback sturen</string>
+<string name="feedback">Feedback</string>
+<string name="tutorials">Handleidingen</string>
+<string name="learn_more">Meer leren</string>
+<string name="looking_for_ios_apps">Op zoek naar iOS-apps?</string>
+<string name="request_us_for_ios_apps_conversions">Vraag ons voor iOS-appconversies</string>
+
+<string name="enter_website_url">Voer website-URL in</string>
+<string name="step_1_of_5">Stap 1 van 5</string>
+<string name="step_2_of_5">Stap 2 van 5</string>
+<string name="step_3_of_5">Stap 3 van 5</string>
+<string name="step_4_of_5">Stap 4 van 5</string>
+<string name="step_5_of_5">Stap 5 van 5</string>
+
+<string name="website_url">Website-URL</string>
+<string name="_continue">Doorgaan</string>
+
+<string name="app_basic_info">App Basisinformatie</string>
+<string name="basic_information">Basisinformatie</string>
+<string name="_app_name">App-naam</string>
+<string name="package_name">Pakketnaam</string>
+<string name="short_description">Korte beschrijving</string>
+<string name="describe_your_app_in_a_few_words">Beschrijf uw app in een paar woorden…</string>
+<string name="category">Categorie</string>
+<string name="orientation">Oriëntatie</string>
+<string name="portrait">Portret</string>
+<string name="landscape">Landschap</string>
+
+<string name="app_branding">App-branding</string>
+<string name="customize_branding">Pas branding aan</string>
+<string name="app_icon">App-icoon</string>
+<string name="upload_icon">Icoon uploaden</string>
+<string name="primary_color">Primaire kleur</string>
+<string name="secondary_color">Secundaire kleur</string>
+<string name="show_preview">Voorbeeld weergeven</string>
+
+<string name="choose_color">Kleur kiezen</string>
+<string name="ok">Oké</string>
+<string name="cancel">Annuleren</string>
+
+<string name="app_features">App-functies</string>
+<string name="configure_features">Functies configureren</string>
+<string name="pull_to_refresh">Omlaag trekken om te vernieuwen</string>
+<string name="enable_pull_down_refresh_gesture">Trek-om-te-verversen gebaar inschakelen</string>
+<string name="loader_screen">Laadscherm</string>
+<string name="show_loading_animation">Laadananimatie weergeven</string>
+<string name="fullscreen_mode">Volledig scherm</string>
+<string name="hide_system_status_bar">Systeemstatusbalk verbergen</string>
+<string name="navigation_buttons">Navigatieknoppen</string>
+<string name="show_back_forward_buttons">Terug/vooruit knoppen weergeven</string>
+<string name="external_links_in_browser">Externe links in browser</string>
+<string name="open_external_urls_in_browser">Externe URL’s in browser openen</string>
+<string name="notification_support">Meldingsondersteuning</string>
+<string name="enable_push_notifications">Pushmeldingen inschakelen</string>
+<string name="continue_to_generate">Doorgaan met genereren</string>
+
+<string name="generate_app">App genereren</string>
+<string name="review_app_summary">App-samenvatting bekijken</string>
+<string name="url">URL</string>
+<string name="enabled_features">Ingeschakelde functies</string>
+<string name="build_app">App bouwen</string>
+
+<string name="please_enter_url">Voer URL in</string>
+<string name="url_must_start_with_http_or_https">URL moet beginnen met http:// of https://</string>
+<string name="invalid_web_url">Ongeldige web-URL</string>
+
+<string name="app_name_must_be_at_least_3_letters_and_contain_only_alphabets">App-naam moet minimaal 3 letters bevatten en alleen letters gebruiken</string>
+<string name="the_package_name_must_follow_the_format_com_example_app">De pakketnaam moet het formaat com.example.app volgen.</string>
+
+<string name="please_select_app_icon">Selecteer alstublieft een app-icoon</string>
+
+<string name="building_your_app">Uw app wordt gebouwd</string>
+<string name="please_wait_while_we_generate_your_apk">Even geduld terwijl we uw APK genereren...</string>
+<string name="progress">Voortgang</string>
+
+<string name="app_details_saved_successfully">App-gegevens succesvol opgeslagen</string>
+<string name="no_app_found">Geen app gevonden</string>
+
+<string name="view_details">Bekijk details</string>
+<string name="edit_app">App bewerken</string>
+<string name="download_aab">Download AAB</string>
+<string name="download_apk">Download APK</string>
+<string name="delete_app">App verwijderen</string>
+
+<string name="date">Datum</string>
+<string name="version">Versie</string>
+<string name="status">Status</string>
+
+<string name="ready_to_download">Klaar om te downloaden</string>
+<string name="processing">Bezig met verwerken</string>
+<string name="draft">Concept</string>
+<string name="something_went_wrong_please_contact_support">Er is iets misgegaan. Neem contact op met ondersteuning</string>
+
+<string name="failed_to_delete">Verwijderen mislukt</string>
+<string name="app_deleted">App verwijderd</string>
+
+
+<string name="downloaded">Gedownload</string>
+<string name="storage_permission_is_required_to_save_the_file">Opslagtoestemming is vereist om het bestand op te slaan</string>
+
+<string name="storage_permission_required">Opslagtoestemming vereist</string>
+<string name="this_permission_is_needed_to_save_the_downloaded_file_in_your_downloads_folder">Deze toestemming is nodig om het gedownloade bestand in uw map Downloads op te slaan.</string>
+<string name="allow">Toestaan</string>
+<string name="downloading">Bezig met downloaden...</string>
+<string name="failed_to_downloading">Downloaden mislukt</string>
+
+<string name="app_details">App-gegevens</string>
+<string name="something_went_wrong_try_again">Er is iets misgegaan, probeer het opnieuw</string>
+
+<string name="app_information">App-informatie</string>
+<string name="created">Gemaakt</string>
+<string name="build_version">Build-versie</string>
+
+<string name="theme_colors">Themakleuren</string>
+<string name="edit_rebuild">Bewerken &amp; Opnieuw bouwen</string>
+<string name="download">Downloaden</string>
+<string name="share">Delen</string>
+
+<string name="update_app">App bijwerken</string>
+
+<string name="get_instant_support_via_whatsApp">Direct ondersteuning via WhatsApp</string>
+<string name="open_whatsApp">Open WhatsApp</string>
+
+<string name="support">Ondersteuning</string>
+<string name="submit_issue">Probleem indienen</string>
+<string name="tell_us_about_your_problem">Vertel ons over uw probleem</string>
+<string name="issue_type">Type probleem</string>
+<string name="message">Bericht</string>
+<string name="describe_your_issue_in_detail">Beschrijf uw probleem in detail...</string>
+<string name="other_ways_to_reach_us">Andere manieren om ons te bereiken</string>
+<string name="email_">📧 E-mail: support@webtoapp.com</string>
+<string name="phone_">📞 Telefoon: +1512 300 5526</string>
+<string name="support_hours">⏰ Ondersteuning: 9:00 - 18:00 (ma-vr)</string>
+
+<string name="whatsapp_not_installed">WhatsApp niet geïnstalleerd</string>
+<string name="no_email_app_found">Geen e-mailapp gevonden</string>
+
+<string name="service_request">Dienstverzoek</string>
+<string name="tell_us_about_your_app">Vertel ons over uw app</string>
+<string name="service_type">Type dienst</string>
+<string name="submit">Verzenden</string>
+
+<string name="publish_app_on_google_play">Publiceer app op Google Play</string>
+<string name="we_will_publish_your_app_on_google_play_store">We publiceren uw app op de Google Play Store</string>
+
+<string name="custom_android_app_development">Maatwerk Android-appontwikkeling</string>
+<string name="get_a_fully_customized_android_app_built_for_you">Een volledig op maat gemaakte Android-app voor u laten bouwen</string>
+<string name="push_notifications_setup">Pushmeldingen instellen</string>
+<string name="enable_push_notifications_for_your_app">Pushmeldingen inschakelen voor uw app</string>
+
+<string name="admob_monetization">AdMob-monetisatie</string>
+<string name="integrate_ads_and_start_earning_from_your_app">Integreer advertenties en begin met verdienen via uw app</string>
+<string name="premium_build_no_watermark">Premium Build (zonder watermerk)</string>
+<string name="remove_watermark_and_get_premium_features">Verwijder watermerk en krijg premiumfuncties</string>
+
+<string name="service_details">Dienstgegevens</string>
+<string name="what_included">Wat is inbegrepen</string>
+
+<string name="app_store_optimization">App Store-optimalisatie</string>
+<string name="professional_screenshots">Professionele screenshots</string>
+<string name="app_description_writing">App-beschrijving schrijven</string>
+<string name="category_selection">Categorie selectie</string>
+<string name="privacy_policy_creation">Privacybeleid maken</string>
+<string name="order_now">Bestel nu</string>
+
+<string name="custom_uiux_design">Maatwerk UI/UX-ontwerp</string>
+<string name="native_android_development">Native Android-ontwikkeling</string>
+<string name="api_integration">API-integratie</string>
+<string name="database_setup">Databaseconfiguratie</string>
+<string name="ongoing_support">Doorlopende ondersteuning</string>
+
+<string name="firebase_setup">Firebase-configuratie</string>
+<string name="notification_templates">Meldingssjablonen</string>
+<string name="scheduling_support">Planning ondersteuning</string>
+<string name="analytics_dashboard">Analyse-dashboard</string>
+<string name="user_segmentation">Gebruikerssegmentatie</string>
+
+<string name="banner_ads_integration">Banneradvertenties integratie</string>
+<string name="interstitial_ads">Tussenliggende advertenties</string>
+<string name="reward_ads">Beloningsadvertenties</string>
+<string name="admob_account_setup">AdMob-account instellen</string>
+<string name="revenue_optimization">Omzetoptimalisatie</string>
+
+<string name="no_watermark">Geen watermerk</string>
+<string name="priority_support">Prioriteitsondersteuning</string>
+<string name="custom_domain">Aangepast domein</string>
+<string name="advanced_analytics">Geavanceerde analyse</string>
+<string name="unlimited_rebuilds">Onbeperkt opnieuw bouwen</string>
+
+<string name="successfully_logged_out">Succesvol uitgelogd</string>
+
+<string name="continue_as_guest">Doorgaan als gast</string>
+<string name="guest_login">Gastlogin</string>
+<string name="delete">Verwijderen</string>
+
+<string name="failed_to_upload_app_icon">Uploaden van app-icoon mislukt</string>
+
+<string name="bundle_draft">Bundle is een concept</string>
+<string name="bundle_processing">Bundle wordt verwerkt</string>
+<string name="bundle_ready_to_download">Bundle is klaar om te downloaden</string>
+
+<string name="btn_generate_bundle">Bundle genereren</string>
+<string name="btn_download_bundle">Bundle downloaden</string>
+
+<string name="bundle_request_submitted">Uw bundelaanvraag is ingediend</string>
+
+<string name="are_you_sure_you_want_to_delete_this_app">Weet u zeker dat u deze app wilt verwijderen?</string>
+
+<string name="notification_permission_denied">Meldingstoestemming geweigerd</string>
+
+<string name="logout">Uitloggen</string>
+<string name="logout_app">App uitloggen</string>
+<string name="are_you_sure_you_want_to_logout">Weet u zeker dat u wilt uitloggen?</string>
+
+    <string name="how_to_create_an_app">如何创建应用</string>
+    <string name="step_by_step_guide_to_create_your_first_web_to_app_conversion">创建您的第一个 Web 转 App 的分步指南</string>
+
+    <string name="how_to_create_an_app_bundle">如何创建应用 Bundle</string>
+    <string name="step_by_step_guide_to_create_your_app_bundle">创建应用 Bundle 的分步指南</string>
+
+    <string name="how_to_upload_to_play_store">如何上传到 Play 商店</string>
+    <string name="complete_guide_to_publish_your_app_on_google_play_store">在 Google Play 商店发布应用的完整指南</string>
+
+    <string name="step_by_step_guide">分步指南</string>
+
+    <string name="enter_your_website_url">输入您的网站 URL</string>
+    <string name="fill_in_app_basic_information">填写应用基本信息</string>
+    <string name="customize_branding_and_colors">自定义品牌和颜色</string>
+    <string name="configure_app_features">配置应用功能</string>
+    <string name="generate_and_download_apk">生成并下载 APK</string>
+
+    <string name="open_my_apps">打开我的应用</string>
+    <string name="start_bundle_generation">点击生成 Bundle</string>
+    <string name="bundle_generation_in_progress">Bundle 正在生成中</string>
+    <string name="bundle_ready_for_download">Bundle 已准备好下载</string>
+    <string name="download_generated_bundle">下载 Bundle</string>
+
+    <string name="create_a_google_play_developer_account">创建 Google Play 开发者账户</string>
+    <string name="prepare_app_assets_and_screenshots">准备应用资源和截图</string>
+    <string name="fill_in_store_listing_details">填写商店列表详情</string>
+    <string name="set_up_pricing_and_distribution">设置定价和分发</string>
+    <string name="submit_for_review">提交审核</string>
+
+    <string name="profile">个人资料</string>
+    <string name="account_information">账户信息</string>
+    <string name="member_since">注册时间</string>
+    <string name="phone">电话</string>
+    <string name="add">添加</string>
+    <string name="settings">设置</string>
+    <string name="account_settings">账户设置</string>
+    <string name="update_your_account_preferences">更新账户偏好设置</string>
+    <string name="privacy_security">隐私与安全</string>
+    <string name="manage_your_privacy_settings">管理隐私设置</string>
+    <string name="save_changes">保存更改</string>
+    <string name="change_password">更改密码</string>
+    <string name="current_password">当前密码</string>
+    <string name="enter_current_password">输入当前密码</string>
+    <string name="new_password">新密码</string>
+    <string name="enter_new_password">输入新密码</string>
+    <string name="confirm_new_password">确认新密码</string>
+    <string name="update_password">更新密码</string>
+    <string name="read_our_privacy_policy">阅读我们的隐私政策</string>
+
+    <string name="Email">电子邮件</string>
+    <string name="password_should_be_at_least_6_characters">密码至少需要 6 个字符</string>
+    <string name="passwords_do_not_match">密码不匹配</string>
+    <string name="password_updated_successfully">密码更新成功</string>
+    <string name="current_password_is_incorrect">当前密码不正确</string>
+
+    <string name="updated_successfully">更新成功</string>
+
+    <string name="select_languages">选择语言</string>
+    <string name="search_language">搜索语言…</string>
+    <string name="languages">语言</string>
+    <string name="choose_app_language">选择应用语言</string>
+
+    <string name="already_selected">已选择</string>
+
+</resources>
