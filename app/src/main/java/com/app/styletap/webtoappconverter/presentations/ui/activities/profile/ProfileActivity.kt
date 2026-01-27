@@ -23,10 +23,13 @@ import com.app.styletap.webtoappconverter.extentions.logoutUser
 import com.app.styletap.webtoappconverter.extentions.openLink
 import com.app.styletap.webtoappconverter.extentions.showLogoutDialog
 import com.app.styletap.webtoappconverter.models.User
+import com.app.styletap.webtoappconverter.presentations.ui.activities.authorization.LoginActivity
+import com.app.styletap.webtoappconverter.presentations.ui.activities.home.MainActivity
 import com.app.styletap.webtoappconverter.presentations.ui.activities.language.LanguageActivity
 import com.app.styletap.webtoappconverter.presentations.ui.activities.services.ServiceDetailsActivity
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.ACTION_REFRESH_ACTIVITY
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 
 
@@ -34,6 +37,9 @@ class ProfileActivity : AppCompatActivity() {
     lateinit var binding: ActivityProfileBinding
 
     var isClickable = true
+
+    private lateinit var auth: FirebaseAuth
+    var user: FirebaseUser? = null
 
     private val refreshReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
@@ -53,6 +59,9 @@ class ProfileActivity : AppCompatActivity() {
 
         adjustTopHeight(binding.toolbarLL)
         adjustBottomHeight(binding.container)
+
+        auth = FirebaseAuth.getInstance()
+        user = auth.currentUser
 
         onBackPressedDispatcher.addCallback(
             this,
@@ -93,6 +102,22 @@ class ProfileActivity : AppCompatActivity() {
                 onBack()
             }
 
+            if (user?.isAnonymous == true) {
+                guestCard.isVisible = true
+                accountInfoCard.isVisible = false
+                accountSettingsBtn.isVisible = false
+                editIv.isVisible = false
+                initCard.isClickable = false
+                btnLogout.isVisible = false
+            } else {
+                guestCard.isVisible = false
+                accountInfoCard.isVisible = true
+                accountSettingsBtn.isVisible = true
+                editIv.isVisible = true
+                initCard.isClickable = true
+                btnLogout.isVisible = true
+            }
+
             fetchMyDetails()
 
             try {
@@ -127,6 +152,13 @@ class ProfileActivity : AppCompatActivity() {
                     logoutUser()
                 }
             }
+
+            guestCard.setOnClickListener {
+                val intent = Intent(this@ProfileActivity, LoginActivity::class.java)
+                //intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
+                //finish()
+            }
         }
     }
 
@@ -134,11 +166,10 @@ class ProfileActivity : AppCompatActivity() {
         isClickable = false
         binding.progressBar.isVisible = true
 
-        val userId = FirebaseAuth.getInstance().currentUser?.uid ?: run {
+        val userId = user?.uid ?: run {
             finish()
             return
         }
-
 
         FirebaseFirestore.getInstance()
             .collection("users")
@@ -148,15 +179,19 @@ class ProfileActivity : AppCompatActivity() {
                 isClickable = true
                 binding.progressBar.isVisible = false
 
-                val user = document.toObject(User::class.java)
-                if (user != null) {
+                val userModel = document.toObject(User::class.java)
+                if (userModel != null) {
                     binding.apply {
-                        avatarText.text = getInitials(user.name)
+                        if (user?.isAnonymous == true) {
+                            avatarText.text = "GU"
+                            fullNameTv.text = "Guest User"
+                        } else {
+                            avatarText.text = getInitials(userModel.name)
+                            fullNameTv.text = userModel.name
+                            emailTv.text = userModel.email
+                            dateTv.text = formatDate(getTimeInMillis(userModel.signupDate))
 
-                        fullNameTv.text = user.name
-                        emailTv.text = user.email
-
-                        dateTv.text = formatDate(getTimeInMillis(user.signupDate))
+                        }
 
                     }
                 } else {

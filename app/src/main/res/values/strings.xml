@@ -405,5 +405,9 @@
     <string name="implement_different_ad_formats">Implement different ad formats</string>
     <string name="track_revenue_and_performance">Track revenue and performance</string>
 
+    <string name="you_are_browsing_as_guest">You are browsing as Guest</string>
+    <string name="sign_up_to_save_your_apps_access_profile_manage_settings">Sign up to save your apps, access profile &amp; manage settings</string>
+    <string name="sign_up_login">Sign Up / Login</string>
+
 
 </resources>

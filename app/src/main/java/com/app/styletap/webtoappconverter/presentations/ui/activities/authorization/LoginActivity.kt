@@ -185,7 +185,7 @@ class LoginActivity : AppCompatActivity() {
                                 .addOnSuccessListener {
                                     Toast.makeText(this, resources.getString(R.string.login_successful), Toast.LENGTH_SHORT).show()
                                     startActivity(Intent(this, MainActivity::class.java))
-                                    finish()
+                                    finishAffinity()
                                 }
                                 .addOnFailureListener { e ->
                                     isClickable = true
@@ -235,7 +235,7 @@ class LoginActivity : AppCompatActivity() {
                                 binding.progressBar.isVisible = false
                                 Toast.makeText(this, resources.getString(R.string.login_successful), Toast.LENGTH_SHORT).show()
                                 startActivity(Intent(this, MainActivity::class.java))
-                                finish()
+                                finishAffinity()
                             }
                             .addOnFailureListener { e ->
                                 isClickable = true

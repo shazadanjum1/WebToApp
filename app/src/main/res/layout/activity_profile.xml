@@ -90,6 +90,7 @@
                     </com.google.android.material.card.MaterialCardView>
 
                     <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/editIv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintBottom_toBottomOf="@+id/initCard"
@@ -124,6 +125,7 @@
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
+                android:id="@+id/accountInfoCard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:strokeWidth="0dp"
@@ -301,6 +303,108 @@
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
             </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                tools:visibility="visible"
+                android:visibility="gone"
+                android:id="@+id/guestCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:strokeWidth="0dp"
+                app:cardElevation="@dimen/_2sdp"
+                app:cardCornerRadius="@dimen/_16sdp"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                app:cardBackgroundColor="@color/white"
+                >
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginVertical="@dimen/_18sdp"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/app_icon_iv"
+                        android:textColor="@color/black_3"
+                        android:text="@string/you_are_browsing_as_guest"
+                        android:fontFamily="@font/arimo_regular"
+                        android:textSize="@dimen/_16ssp"
+                        android:textStyle="bold"
+                        android:includeFontPadding="false"
+                        android:textAlignment="center"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/app_icon_iv"
+                        android:textColor="@color/grey_1"
+                        android:text="@string/sign_up_to_save_your_apps_access_profile_manage_settings"
+                        android:fontFamily="@font/arimo_regular"
+                        android:textSize="@dimen/_12ssp"
+                        android:includeFontPadding="false"
+                        android:textAlignment="center"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/btnSignUp"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_47sdp"
+                        app:cardCornerRadius="@dimen/_14sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginHorizontal="@dimen/_4sdp"
+                        app:cardBackgroundColor="@color/white"
+                        app:strokeWidth="0dp"
+                        android:layout_marginTop="@dimen/_18sdp"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        >
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/gradient_btn_bg"
+                            android:foreground="?attr/selectableItemBackground"
+                            >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/sign_up_login"
+                                android:textColor="@color/white"
+                                android:fontFamily="@font/arimo_regular"
+                                android:textSize="@dimen/_14ssp"
+                                android:maxLines="1"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </com.google.android.material.card.MaterialCardView>
+
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
@@ -536,7 +640,6 @@
                 app:cardBackgroundColor="@color/white"
                 app:strokeWidth="0dp"
                 android:layout_marginTop="@dimen/_18sdp"
-                android:layout_marginBottom="@dimen/_8sdp"
 
                 >
 
@@ -550,7 +653,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/sign_in"
+                        android:text="@string/logout"
                         android:textColor="@color/white"
                         android:fontFamily="@font/arimo_regular"
                         android:textSize="@dimen/_14ssp"
@@ -582,6 +685,7 @@
                 android:includeFontPadding="false"
                 android:maxLines="1"
                 android:textAlignment="center"
+                android:layout_marginTop="@dimen/_8sdp"
                 />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
