@@ -396,5 +396,8 @@
     <string name="implement_different_ad_formats">Implementar diferentes formatos de anúncio</string>
     <string name="track_revenue_and_performance">Acompanhar receita e desempenho</string>
 
+    <string name="you_are_browsing_as_guest">Está a navegar como Convidado</string>
+    <string name="sign_up_to_save_your_apps_access_profile_manage_settings">Registe-se para guardar as suas apps, aceder ao perfil e gerir definições</string>
+    <string name="sign_up_login">Registar / Iniciar Sessão</string>
 
 </resources>

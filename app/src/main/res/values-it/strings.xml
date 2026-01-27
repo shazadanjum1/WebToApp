@@ -396,4 +396,10 @@
     <string name="implement_different_ad_formats">Implementa diversi formati pubblicitari</string>
     <string name="track_revenue_and_performance">Monitora entrate e prestazioni</string>
 
+    <string name="you_are_browsing_as_guest">Stai navigando come Ospite</string>
+    <string name="sign_up_to_save_your_apps_access_profile_manage_settings">
+    Registrati per salvare le tue app, accedere al profilo e gestire le impostazioni
+</string>
+    <string name="sign_up_login">Registrati / Accedi</string>
+
 </resources>

@@ -18,7 +18,6 @@ class MyApplication : Application() {
         CoroutineScope(Dispatchers.IO).launch {
             FirebaseApp.initializeApp(this@MyApplication)
             FirebaseAnalytics.getInstance(this@MyApplication)
-            //FirebaseCrashlytics.getInstance().isCrashlyticsCollectionEnabled = true
             FirebaseCrashlytics.getInstance().isCrashlyticsCollectionEnabled = false
         }
 

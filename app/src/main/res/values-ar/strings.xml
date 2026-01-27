@@ -395,4 +395,11 @@
 <string name="integrate_admob_sdk">دمج SDK الخاص بـ AdMob</string>
 <string name="implement_different_ad_formats">تنفيذ صيغ إعلانية مختلفة</string>
 <string name="track_revenue_and_performance">تتبع الإيرادات والأداء</string>
+
+    <string name="you_are_browsing_as_guest">أنت تتصفح كضيف</string>
+    <string name="sign_up_to_save_your_apps_access_profile_manage_settings">
+    سجّل لإنشاء حساب لحفظ تطبيقاتك، والوصول إلى الملف الشخصي، وإدارة الإعدادات
+</string>
+    <string name="sign_up_login">إنشاء حساب / تسجيل الدخول</string>
+
 </resources>

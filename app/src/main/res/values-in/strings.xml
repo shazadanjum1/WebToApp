@@ -522,4 +522,10 @@ Hapus watermark dan dapatkan fitur premium
     <string name="implement_different_ad_formats">Terapkan berbagai format iklan</string>
     <string name="track_revenue_and_performance">Lacak pendapatan dan kinerja</string>
 
+    <string name="you_are_browsing_as_guest">Anda sedang menjelajah sebagai Tamu</string>
+    <string name="sign_up_to_save_your_apps_access_profile_manage_settings">
+    Daftar untuk menyimpan aplikasi Anda, mengakses profil &amp; mengelola pengaturan
+</string>
+    <string name="sign_up_login">Daftar / Masuk</string>
+
 </resources>

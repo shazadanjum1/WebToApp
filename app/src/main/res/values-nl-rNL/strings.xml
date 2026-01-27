@@ -401,6 +401,9 @@
 
     <string name="already_selected">Al geselecteerd</string>
 
+    <string name="you_are_browsing_as_guest">Je bladert als gast</string>
+    <string name="sign_up_to_save_your_apps_access_profile_manage_settings">Meld je aan om je apps op te slaan, je profiel te openen en instellingen te beheren</string>
+    <string name="sign_up_login">Registreren / Inloggen</string>
 
 
 </resources>

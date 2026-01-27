@@ -403,4 +403,8 @@
     <string name="implement_different_ad_formats">Implementera olika annonsformat</string>
     <string name="track_revenue_and_performance">Spåra intäkter och prestanda</string>
 
+    <string name="you_are_browsing_as_guest">Du surfar som gäst</string>
+    <string name="sign_up_to_save_your_apps_access_profile_manage_settings">Registrera dig för att spara dina appar, få åtkomst till profil och hantera inställningar</string>
+    <string name="sign_up_login">Registrera / Logga in</string>
+
 </resources>

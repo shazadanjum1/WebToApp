@@ -402,4 +402,8 @@
     <string name="implement_different_ad_formats">实现不同的广告格式</string>
     <string name="track_revenue_and_performance">跟踪收入和性能</string>
 
+    <string name="you_are_browsing_as_guest">您正在以游客身份浏览</string>
+    <string name="sign_up_to_save_your_apps_access_profile_manage_settings">注册以保存您的应用、访问个人资料并管理设置</string>
+    <string name="sign_up_login">注册 / 登录</string>
+
 </resources>

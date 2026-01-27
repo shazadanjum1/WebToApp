@@ -396,4 +396,8 @@
     <string name="implement_different_ad_formats">다양한 광고 형식 구현</string>
     <string name="track_revenue_and_performance">수익 및 성과 추적</string>
 
+    <string name="you_are_browsing_as_guest">게스트로 탐색 중입니다</string>
+    <string name="sign_up_to_save_your_apps_access_profile_manage_settings">앱을 저장하고 프로필에 접근하며 설정을 관리하려면 회원가입하세요</string>
+    <string name="sign_up_login">회원가입 / 로그인</string>
+
 </resources>

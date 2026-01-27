@@ -400,4 +400,10 @@
     <string name="implement_different_ad_formats">Implémenter différents formats d’annonces</string>
     <string name="track_revenue_and_performance">Suivre les revenus et les performances</string>
 
+    <string name="you_are_browsing_as_guest">Vous naviguez en tant qu’invité</string>
+    <string name="sign_up_to_save_your_apps_access_profile_manage_settings">
+    Inscrivez-vous pour sauvegarder vos applications, accéder à votre profil et gérer les paramètres
+</string>
+    <string name="sign_up_login">S’inscrire / Se connecter</string>
+
 </resources>

@@ -396,4 +396,8 @@
     <string name="implement_different_ad_formats">विभिन्न विज्ञापन प्रारूप लागू करें</string>
     <string name="track_revenue_and_performance">राजस्व और प्रदर्शन ट्रैक करें</string>
 
+    <string name="you_are_browsing_as_guest">आप अतिथि के रूप में ब्राउज़ कर रहे हैं</string>
+    <string name="sign_up_to_save_your_apps_access_profile_manage_settings">अपने ऐप्स को सेव करने, प्रोफ़ाइल एक्सेस करने और सेटिंग्स प्रबंधित करने के लिए साइन अप करें</string>
+    <string name="sign_up_login">साइन अप / लॉगिन</string>
+
 </resources>

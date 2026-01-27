@@ -397,4 +397,8 @@
     <string name="implement_different_ad_formats">Использовать различные форматы рекламы</string>
     <string name="track_revenue_and_performance">Отслеживать доход и эффективность</string>
 
+    <string name="you_are_browsing_as_guest">Вы просматриваете как Гость</string>
+    <string name="sign_up_to_save_your_apps_access_profile_manage_settings">Зарегистрируйтесь, чтобы сохранить ваши приложения, получить доступ к профилю и управлять настройками</string>
+    <string name="sign_up_login">Регистрация / Вход</string>
+
 </resources>

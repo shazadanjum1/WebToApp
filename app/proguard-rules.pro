@@ -19,3 +19,13 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+# Keep all model classes and their public no-arg constructors
+-keepclassmembers class com.app.styletap.webtoappconverter.models.** {
+    public <init>();
+}
+
+# Optional: keep all fields as well (Firestore uses reflection)
+-keepclassmembers class com.app.styletap.webtoappconverter.models.** {
+    <fields>;
+}

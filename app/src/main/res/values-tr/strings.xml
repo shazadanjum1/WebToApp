@@ -397,4 +397,8 @@
     <string name="implement_different_ad_formats">Farklı reklam formatlarını uygulayın</string>
     <string name="track_revenue_and_performance">Gelir ve performansı takip edin</string>
 
+    <string name="you_are_browsing_as_guest">Misafir olarak göz atıyorsunuz</string>
+    <string name="sign_up_to_save_your_apps_access_profile_manage_settings">Uygulamalarınızı kaydetmek, profile erişmek ve ayarları yönetmek için kaydolun</string>
+    <string name="sign_up_login">Kaydol / Giriş Yap</string>
+
 </resources>

@@ -15,18 +15,27 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.example.webtoappconverter"
+        applicationId = "com.webtoapp.converter"
         minSdk = 26
         targetSdk = 36
         versionCode = 1
-        versionName = "1.0"
+        versionName = "1.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
-        release {
+        debug {
+            isShrinkResources = false
             isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+        release {
+            isShrinkResources = true
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -49,6 +58,12 @@ android {
     bundle {
         language {
             enableSplit = false
+        }
+    }
+
+    packaging {
+        jniLibs {
+            useLegacyPackaging = false
         }
     }
 
@@ -80,7 +95,11 @@ dependencies {
     implementation("com.github.bumptech.glide:glide:5.0.5")
     kapt ("com.github.bumptech.glide:compiler:4.15.1")
 
-
     //Color Picker
     implementation ("com.github.QuadFlask:colorpicker:0.0.15")
+
+    // billing
+    implementation("com.android.billingclient:billing:8.1.0")
+    implementation("com.google.guava:guava:31.1-android")
+
 }

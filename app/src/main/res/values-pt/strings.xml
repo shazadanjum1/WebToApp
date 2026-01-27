@@ -397,4 +397,8 @@
     <string name="implement_different_ad_formats">Implementar diferentes formatos de anúncio</string>
     <string name="track_revenue_and_performance">Acompanhar receita e desempenho</string>
 
+    <string name="you_are_browsing_as_guest">Você está navegando como Convidado</string>
+    <string name="sign_up_to_save_your_apps_access_profile_manage_settings">Cadastre-se para salvar seus apps, acessar o perfil e gerenciar configurações</string>
+    <string name="sign_up_login">Cadastre-se / Entrar</string>
+
 </resources>

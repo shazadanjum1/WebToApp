@@ -402,4 +402,10 @@
     <string name="implement_different_ad_formats">Verschiedene Anzeigenformate implementieren</string>
     <string name="track_revenue_and_performance">Umsatz und Leistung verfolgen</string>
 
+    <string name="you_are_browsing_as_guest">Sie durchsuchen die App als Gast</string>
+    <string name="sign_up_to_save_your_apps_access_profile_manage_settings">
+    Registrieren Sie sich, um Ihre Apps zu speichern, auf Ihr Profil zuzugreifen und Einstellungen zu verwalten
+</string>
+    <string name="sign_up_login">Registrieren / Anmelden</string>
+
 </resources>

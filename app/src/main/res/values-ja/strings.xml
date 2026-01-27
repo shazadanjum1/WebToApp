@@ -394,4 +394,8 @@
     <string name="implement_different_ad_formats">さまざまな広告フォーマットを実装</string>
     <string name="track_revenue_and_performance">収益とパフォーマンスを追跡</string>
 
+    <string name="you_are_browsing_as_guest">ゲストとして閲覧しています</string>
+    <string name="sign_up_to_save_your_apps_access_profile_manage_settings">サインアップしてアプリを保存し、プロフィールにアクセスし、設定を管理しましょう</string>
+    <string name="sign_up_login">サインアップ / ログイン</string>
+
 </resources>
