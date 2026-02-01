@@ -5,19 +5,25 @@ import android.content.pm.ActivityInfo
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.net.toUri
+import com.app.styletap.ads.NativeAdManager
 import com.app.styletap.webtoappconverter.R
 import com.app.styletap.webtoappconverter.databinding.ActivityBuildingAppBinding
 import com.app.styletap.webtoappconverter.extentions.adjustBottomHeight
 import com.app.styletap.webtoappconverter.extentions.adjustTopHeight
 import com.app.styletap.webtoappconverter.extentions.changeLocale
 import com.app.styletap.webtoappconverter.extentions.customEnableEdgeToEdge
+import com.app.styletap.webtoappconverter.extentions.isNetworkAvailable
 import com.app.styletap.webtoappconverter.presentations.ui.activities.home.MainActivity
 import com.app.styletap.webtoappconverter.presentations.ui.activities.myApps.MyAppsActivity
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.ACTION_FINISH_ACTIVITY
+import com.app.styletap.webtoappconverter.presentations.utils.Contants.generateapp_native
+import com.app.styletap.webtoappconverter.presentations.utils.Contants.myapps_native
+import com.app.styletap.webtoappconverter.presentations.utils.PrefHelper
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -29,6 +35,8 @@ import java.io.File
 class BuildingAppActivity : AppCompatActivity() {
     lateinit var binding: ActivityBuildingAppBinding
     var isClickable = false
+
+    lateinit var prefHelper: PrefHelper
 
     var webUrl = ""
     var appName = ""
@@ -67,6 +75,7 @@ class BuildingAppActivity : AppCompatActivity() {
         adjustTopHeight(binding.toolbarLL)
         adjustBottomHeight(binding.container)
 
+        prefHelper = PrefHelper(this)
         auth = FirebaseAuth.getInstance()
         user = auth.currentUser
 
@@ -112,6 +121,7 @@ class BuildingAppActivity : AppCompatActivity() {
         }
 
         initView()
+        showNativeAd()
     }
 
     fun onBack() {
@@ -442,4 +452,16 @@ class BuildingAppActivity : AppCompatActivity() {
     }
 
 
+    fun showNativeAd(){
+        if (isNetworkAvailable() && prefHelper.getBooleanDefultTrue(generateapp_native) && !prefHelper.getIsPurchased()){
+            binding.adParentLayout.visibility = View.VISIBLE
+            binding.nativeLayout.visibility = View.VISIBLE
+            binding.shimmerContainer.nativeShimmerView.startShimmer()
+            binding.shimmerContainer.nativeShimmerView.visibility = View.VISIBLE
+            NativeAdManager(this).loadAndPopulateNativeAdView(this,resources.getString(R.string.generateAppScreenNativeId),binding.adFrame, R.layout.native_ad_medium, binding.shimmerContainer.nativeShimmerView)
+        } else {
+            binding.adParentLayout.visibility = View.GONE
+            binding.shimmerContainer.nativeShimmerView.stopShimmer()
+        }
+    }
 }

@@ -18,14 +18,35 @@ android {
         applicationId = "com.webtoapp.converter"
         minSdk = 26
         targetSdk = 36
-        versionCode = 1
-        versionName = "1.0.0"
+        versionCode = 1//2
+        versionName = "0.0"//"2.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         debug {
+            resValue("string", "appId", "ca-app-pub-3940256099942544~3347511713")
+            resValue("string", "appOpenId", "ca-app-pub-3940256099942544/9257395921")
+            resValue("string", "homeBannerId", "ca-app-pub-3940256099942544/9214589741")
+
+            resValue("string", "interstitialId", "ca-app-pub-3940256099942544/1033173712")
+            resValue("string", "nativeId", "ca-app-pub-3940256099942544/2247696110")
+
+
+            resValue("string", "splashInterstitialId", "ca-app-pub-3940256099942544/1033173712")
+            resValue("string", "buildAppInterstitialId", "ca-app-pub-3940256099942544/1033173712")
+            resValue("string", "downloadApkInterstitialId", "ca-app-pub-3940256099942544/1033173712")
+
+            resValue("string", "languageNativeId", "ca-app-pub-3940256099942544/2247696110")
+            resValue("string", "onboardingNativeId", "ca-app-pub-3940256099942544/2247696110")
+            resValue("string", "createAppScreenNativeId", "ca-app-pub-3940256099942544/2247696110")
+            resValue("string", "myAppScreenNativeId", "ca-app-pub-3940256099942544/2247696110")
+            resValue("string", "generateAppScreenNativeId", "ca-app-pub-3940256099942544/2247696110")
+            resValue("string", "servicesScreenNativeId", "ca-app-pub-3940256099942544/2247696110")
+            resValue("string", "turtorialsScreenNativeId", "ca-app-pub-3940256099942544/2247696110")
+
+
             isShrinkResources = false
             isMinifyEnabled = false
             proguardFiles(
@@ -34,8 +55,26 @@ android {
             )
         }
         release {
-            isShrinkResources = true
-            isMinifyEnabled = true
+
+            resValue("string", "appId", "ca-app-pub-5471933816484694~8077984612")
+            resValue("string", "appOpenId", "ca-app-pub-5471933816484694/6127008072")
+            resValue("string", "homeBannerId", "ca-app-pub-5471933816484694/4322971812")
+
+            resValue("string", "splashInterstitialId", "ca-app-pub-5471933816484694/4138739605")
+            resValue("string", "buildAppInterstitialId", "ca-app-pub-5471933816484694/2658536357")
+            resValue("string", "downloadApkInterstitialId", "ca-app-pub-5471933816484694/1881415382")
+
+            resValue("string", "languageNativeId", "ca-app-pub-5471933816484694/9199494596")
+            resValue("string", "onboardingNativeId", "ca-app-pub-5471933816484694/2658136971")
+            resValue("string", "createAppScreenNativeId", "ca-app-pub-5471933816484694/9874681391")
+            resValue("string", "myAppScreenNativeId", "ca-app-pub-5471933816484694/6645882824")
+            resValue("string", "generateAppScreenNativeId", "ca-app-pub-5471933816484694/5260249585")
+            resValue("string", "servicesScreenNativeId", "ca-app-pub-5471933816484694/7133742061")
+            resValue("string", "turtorialsScreenNativeId", "ca-app-pub-5471933816484694/5820660395")
+
+
+            isShrinkResources = false
+            isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -102,4 +141,17 @@ dependencies {
     implementation("com.android.billingclient:billing:8.1.0")
     implementation("com.google.guava:guava:31.1-android")
 
+    // ads
+    implementation("com.google.android.gms:play-services-ads:24.4.0")
+    implementation("com.google.android.ump:user-messaging-platform:4.0.0")
+
+    // lifecycle
+    implementation ("androidx.lifecycle:lifecycle-process:2.8.3")
+    implementation ("androidx.lifecycle:lifecycle-common-java8:2.8.3")
+
+    //shimmar
+    implementation("com.facebook.shimmer:shimmer:0.5.0")
+
+    // Lottie Animation
+    implementation("com.airbnb.android:lottie:6.5.0")
 }

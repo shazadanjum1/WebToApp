@@ -3,10 +3,12 @@ package com.app.styletap.webtoappconverter.presentations.ui.activities.home
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+import com.app.styletap.ads.BannerAdManager
 import com.app.styletap.webtoappconverter.R
 import com.app.styletap.webtoappconverter.databinding.ActivityMainBinding
 import com.app.styletap.webtoappconverter.extentions.adjustBottomHeight
@@ -25,6 +27,8 @@ import com.app.styletap.webtoappconverter.presentations.ui.activities.serviceReq
 import com.app.styletap.webtoappconverter.presentations.ui.activities.services.ServicesActivity
 import com.app.styletap.webtoappconverter.presentations.ui.activities.support.SupportActivity
 import com.app.styletap.webtoappconverter.presentations.ui.activities.tutorials.TutorialsActivity
+import com.app.styletap.webtoappconverter.presentations.utils.Contants.home_banner
+import com.app.styletap.webtoappconverter.presentations.utils.PrefHelper
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import kotlin.system.exitProcess
@@ -34,6 +38,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
     var user: FirebaseUser? = null
+    private lateinit var prefHelper: PrefHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,12 +59,16 @@ class MainActivity : AppCompatActivity() {
                 }
             })
 
+        prefHelper = PrefHelper(this.applicationContext)
+
         auth = FirebaseAuth.getInstance()
         user = auth.currentUser
 
         initView()
 
         withNotificationPermission{}
+
+        showBannerAd()
     }
 
     fun onBack(){
@@ -139,5 +148,17 @@ class MainActivity : AppCompatActivity() {
 
     fun moveNext(intent: Intent){
         startActivity(intent)
+    }
+
+    fun showBannerAd(){
+        if (isNetworkAvailable() && prefHelper.getBooleanDefultTrue(home_banner) && !prefHelper.getIsPurchased()){
+            binding.adLayout.visibility = View.VISIBLE
+            binding.bannerShimmerView.root.visibility = View.VISIBLE
+            binding.bannerShimmerView.bannerShimmerView.startShimmer()
+            BannerAdManager(this).loadAndShowBannerAd(resources.getString(R.string.homeBannerId) , binding.adFrame, binding.adLayout, binding.bannerShimmerView.bannerShimmerView)
+        } else {
+            binding.adLayout.visibility = View.GONE
+            binding.bannerShimmerView.bannerShimmerView.stopShimmer()
+        }
     }
 }

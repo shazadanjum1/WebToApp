@@ -1,11 +1,11 @@
 package com.app.styletap.webtoappconverter.models
 
 data class User(
-    val uid: String = "",
-    val name: String = "",
-    val email: String = "",
-    val phone: String = "",
-    val fcmToken: String = "",
-    val signupDate: Any? = null,
-    val lastLoginDate: Any? = null
+    var uid: String = "",
+    var name: String = "",
+    var email: String = "",
+    var phone: String = "",
+    var fcmToken: String = "",
+    var signupDate: Any? = null,
+    var lastLoginDate: Any? = null
 )

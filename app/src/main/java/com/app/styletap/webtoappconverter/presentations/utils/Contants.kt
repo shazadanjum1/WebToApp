@@ -2,6 +2,9 @@ package com.app.styletap.webtoappconverter.presentations.utils
 
 object Contants {
 
+    var isIntertialAdshowing = false
+    var isShowApOpenAd = true
+
     const val ACTION_FINISH_ACTIVITY = "ACTION_FINISH_ACTIVITY"
     const val ACTION_REFRESH_ACTIVITY = "ACTION_REFRESH_ACTIVITY"
 
@@ -29,5 +32,20 @@ object Contants {
     const val isShowOnBoarding = "isShowOnBoarding"
     const val languageCode = "languageCode"
     const val isLanguageSelected = "isLanguageSelected"
+
+
+    const val splash_inter = "splash_inter"
+    const val app_open = "app_open"
+    const val language_native = "language_native"
+    const val onboarding_native = "onboarding_native"
+    const val home_banner = "home_banner"
+    const val createapp_native = "createapp_native"
+    const val myapps_native = "myapps_native"
+    const val generateapp_native = "generateapp_native"
+    const val services_native = "services_native"
+    const val turtorial_native = "turtorial_native"
+    const val buildapp_inter = "buildapp_inter"
+    const val apkdownload_inter = "apkdownload_inter"
+
 
 }

@@ -31,4 +31,14 @@
     <color name="green_2">#00A63E</color>
 
 
+    <color name="grey">#9C9EAA</color>
+    <color name="grey1">#7D7D7D</color>
+    <color name="white2">#99FFFFFF</color>
+
+    <color name="a4">#FFC73C</color>
+
+    <color name="c1">#676565</color>
+    <color name="c6">#D9D9D9</color>
+    <color name="c9">#E5E5E5</color>
+
 </resources>

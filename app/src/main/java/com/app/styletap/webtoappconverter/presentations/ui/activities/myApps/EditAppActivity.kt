@@ -15,6 +15,8 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.graphics.toColorInt
 import androidx.core.view.isVisible
+import com.app.styletap.ads.InterstitialAdManager
+import com.app.styletap.interfaces.InterstitialLoadCallback
 import com.app.styletap.webtoappconverter.R
 import com.app.styletap.webtoappconverter.databinding.ActivityEditAppBinding
 import com.app.styletap.webtoappconverter.extentions.adjustBottomHeight
@@ -31,11 +33,14 @@ import com.app.styletap.webtoappconverter.models.AppModel
 import com.app.styletap.webtoappconverter.presentations.ui.activities.createApp.BuildingAppActivity
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.ACTION_FINISH_ACTIVITY
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.ACTION_REFRESH_ACTIVITY
+import com.app.styletap.webtoappconverter.presentations.utils.Contants.buildapp_inter
+import com.app.styletap.webtoappconverter.presentations.utils.PrefHelper
 import com.bumptech.glide.Glide
 import com.google.firebase.firestore.FirebaseFirestore
 
 class EditAppActivity : AppCompatActivity() {
     lateinit var binding: ActivityEditAppBinding
+    lateinit var prefHelper: PrefHelper
     var appId = ""
     var appModel: AppModel? = null
 
@@ -85,6 +90,8 @@ class EditAppActivity : AppCompatActivity() {
 
         adjustTopHeight(binding.toolbarLL)
         adjustBottomHeight(binding.container)
+
+        prefHelper = PrefHelper(this)
 
         onBackPressedDispatcher.addCallback(
             this,
@@ -329,7 +336,25 @@ class EditAppActivity : AppCompatActivity() {
     }
 
     fun moveNext(intent: Intent){
-        startActivity(intent)
+
+        if (prefHelper.getIsPurchased() || !prefHelper.getBooleanDefultTrue(buildapp_inter)){
+            startActivity(intent)
+        } else {
+            InterstitialAdManager(this).loadAndShowAd(
+                getString(R.string.buildAppInterstitialId),
+                prefHelper.getBooleanDefultTrue(buildapp_inter),
+                object : InterstitialLoadCallback{
+                    override fun onFailedToLoad() {
+                        Toast.makeText(this@EditAppActivity, resources.getString(R.string.failed_to_load_ads_please_try_again), Toast.LENGTH_SHORT).show()
+                    }
+                    override fun onLoaded() {
+                        startActivity(intent)
+                    }
+                }
+            )
+        }
+
+
     }
 
     fun invalidateUrl(url: String): Boolean {

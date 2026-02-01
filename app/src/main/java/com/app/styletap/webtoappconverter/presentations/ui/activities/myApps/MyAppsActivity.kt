@@ -8,6 +8,7 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.content.pm.ActivityInfo
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.contract.ActivityResultContracts
@@ -15,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.app.styletap.ads.NativeAdManager
 import com.app.styletap.webtoappconverter.R
 import com.app.styletap.webtoappconverter.databinding.ActivityMyAppsBinding
 import com.app.styletap.webtoappconverter.extentions.adjustBottomHeight
@@ -27,24 +29,29 @@ import com.app.styletap.webtoappconverter.presentations.ui.activities.myApps.ada
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.app.styletap.webtoappconverter.extentions.hasStoragePermission
+import com.app.styletap.webtoappconverter.extentions.isNetworkAvailable
 import com.app.styletap.webtoappconverter.extentions.showStorageRationaleDialog
 import com.app.styletap.webtoappconverter.extentions.toMillis
 import com.app.styletap.webtoappconverter.presentations.ui.activities.home.MainActivity
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.ACTION_FINISH_ACTIVITY
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.ACTION_REFRESH_ACTIVITY
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.DRAFT_BUNDLE
+import com.app.styletap.webtoappconverter.presentations.utils.Contants.myapps_native
+import com.app.styletap.webtoappconverter.presentations.utils.Contants.onboarding_native
+import com.app.styletap.webtoappconverter.presentations.utils.PrefHelper
 import com.google.firebase.Timestamp
 import com.google.firebase.firestore.Filter
 import com.google.firebase.firestore.Query
 
 class MyAppsActivity : AppCompatActivity() {
     lateinit var binding: ActivityMyAppsBinding
+    var isApk = true
 
     private val storagePermissionLauncher =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
             if (granted) {
                 pendingDownload?.let {
-                    downloadFile(it.first, it.second, false)
+                    downloadFile(it.first, it.second, false, isApk)
                 }
             } else {
                 Toast.makeText(this, resources.getString(R.string.storage_permission_is_required_to_save_the_file), Toast.LENGTH_LONG).show()
@@ -66,6 +73,10 @@ class MyAppsActivity : AppCompatActivity() {
     var isClickable = true
 
 
+    var isAdCalled = false
+    lateinit var prefHelper: PrefHelper
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         changeLocale()
@@ -77,6 +88,7 @@ class MyAppsActivity : AppCompatActivity() {
         adjustTopHeight(binding.toolbarLL)
         adjustBottomHeight(binding.container)
 
+        prefHelper = PrefHelper(this)
 
         onBackPressedDispatcher.addCallback(
             this,
@@ -164,8 +176,10 @@ class MyAppsActivity : AppCompatActivity() {
                     binding.emptyMsgTv.isVisible = true
                     binding.recyclerView.isVisible = false
                     binding.progressBar.isVisible = false
+                    binding.adParentLayout.visibility = View.GONE
 
                 } else {
+                    showNativeAd()
                     binding.emptyMsgTv.isVisible = false
                     binding.recyclerView.isVisible = true
                     binding.progressBar.isVisible = false
@@ -209,9 +223,10 @@ class MyAppsActivity : AppCompatActivity() {
 
 
 
-    fun startDownload(url: String, appName: String) {
+    fun startDownload(url: String, appName: String, isApkDownload: Boolean) {
+        isApk = isApkDownload
         if (hasStoragePermission()) {
-            downloadFile(url, appName, false)
+            downloadFile(url, appName, false, isApk)
             return
         }
 
@@ -269,5 +284,21 @@ class MyAppsActivity : AppCompatActivity() {
     }
 
 
+    fun showNativeAd(){
+        if (isAdCalled){
+            return
+        }
+        if (isNetworkAvailable() && prefHelper.getBooleanDefultTrue(myapps_native) && !prefHelper.getIsPurchased()){
+            isAdCalled = true
+            binding.adParentLayout.visibility = View.VISIBLE
+            binding.nativeLayout.visibility = View.VISIBLE
+            binding.shimmerContainer.nativeShimmerView.startShimmer()
+            binding.shimmerContainer.nativeShimmerView.visibility = View.VISIBLE
+            NativeAdManager(this).loadAndPopulateNativeAdView(this,resources.getString(R.string.myAppScreenNativeId),binding.adFrame, R.layout.native_ad_medium, binding.shimmerContainer.nativeShimmerView)
+        } else {
+            binding.adParentLayout.visibility = View.GONE
+            binding.shimmerContainer.nativeShimmerView.stopShimmer()
+        }
+    }
 
 }

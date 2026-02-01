@@ -43,4 +43,14 @@ class PrefHelper(context: Context) {
         return prefHelper?.getString(key,defValue) ?: defValue
     }
 
+    fun getIsPurchased(): Boolean {
+        return prefHelper?.getBoolean("IsPurchased", false) ?: false
+    }
+
+    fun setIsPurchased(value: Boolean){
+        prefHelper?.edit()?.remove("IsPurchased")?.apply()
+        prefHelper?.edit()?.putBoolean("IsPurchased", value)?.apply()
+    }
+
+
 }

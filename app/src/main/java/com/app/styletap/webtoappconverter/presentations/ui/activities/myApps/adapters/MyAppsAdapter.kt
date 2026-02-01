@@ -115,7 +115,7 @@ class MyAppsAdapter(
                             isClickable = false
                             app.id?.let { appId -> activity.generateBundle(appId){isClickable = true } }
                         } else if (app.status == READY_TO_DOWNLOAD_BUNDLE){
-                            app.bundleUrl?.let { appUrl -> activity.startDownload(appUrl, app.appName ?: "app") }
+                            app.bundleUrl?.let { appUrl -> activity.startDownload(appUrl, app.appName ?: "app", false) }
                         }
                     }
                 }
@@ -127,7 +127,7 @@ class MyAppsAdapter(
                         Toast.makeText(activity, activity.resources.getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show()
                     } else {
                         if (activity is MyAppsActivity){
-                            activity.startDownload(appUrl, app.appName ?: "app")
+                            activity.startDownload(appUrl, app.appName ?: "app", true)
                         }
                     }
                 }

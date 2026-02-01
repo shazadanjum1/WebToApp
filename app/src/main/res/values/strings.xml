@@ -409,5 +409,8 @@
     <string name="sign_up_to_save_your_apps_access_profile_manage_settings">Sign up to save your apps, access profile &amp; manage settings</string>
     <string name="sign_up_login">Sign Up / Login</string>
 
+    <string name="ad_is_loading">Ad is Loading</string>
+    <string name="failed_to_load_ads_please_try_again">Please check your internet connection and try again.</string>
+
 
 </resources>

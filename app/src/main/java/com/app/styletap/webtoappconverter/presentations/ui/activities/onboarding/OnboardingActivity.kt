@@ -3,15 +3,19 @@ package com.app.styletap.webtoappconverter.presentations.ui.activities.onboardin
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+import com.app.styletap.ads.NativeAdManager
 import com.app.styletap.webtoappconverter.R
 import com.app.styletap.webtoappconverter.databinding.ActivityOnboardingBinding
 import com.app.styletap.webtoappconverter.extentions.adjustBottomHeight
 import com.app.styletap.webtoappconverter.extentions.changeLocale
 import com.app.styletap.webtoappconverter.extentions.customEnableEdgeToEdge
+import com.app.styletap.webtoappconverter.extentions.isNetworkAvailable
 import com.app.styletap.webtoappconverter.presentations.ui.activities.authorization.LoginActivity
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.isShowOnBoarding
+import com.app.styletap.webtoappconverter.presentations.utils.Contants.onboarding_native
 import com.app.styletap.webtoappconverter.presentations.utils.PrefHelper
 
 class OnboardingActivity : AppCompatActivity() {
@@ -33,6 +37,7 @@ class OnboardingActivity : AppCompatActivity() {
         prefHelper = PrefHelper(this.applicationContext)
 
         initiView()
+        showNativeAd()
     }
 
     fun initiView() {
@@ -94,5 +99,17 @@ class OnboardingActivity : AppCompatActivity() {
         }
     }
 
+    fun showNativeAd(){
+        if (isNetworkAvailable() && prefHelper.getBooleanDefultTrue(onboarding_native) && !prefHelper.getIsPurchased()){
+            binding.adParentLayout.visibility = View.VISIBLE
+            binding.nativeLayout.visibility = View.VISIBLE
+            binding.shimmerContainer.nativeShimmerView.startShimmer()
+            binding.shimmerContainer.nativeShimmerView.visibility = View.VISIBLE
+            NativeAdManager(this).loadAndPopulateNativeAdView(this,resources.getString(R.string.onboardingNativeId),binding.adFrame, R.layout.native_ad_medium, binding.shimmerContainer.nativeShimmerView)
+        } else {
+            binding.adParentLayout.visibility = View.GONE
+            binding.shimmerContainer.nativeShimmerView.stopShimmer()
+        }
+    }
 
 }

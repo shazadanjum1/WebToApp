@@ -21,6 +21,15 @@
 #-renamesourcefileattribute SourceFile
 
 # Keep all model classes and their public no-arg constructors
+-keepclassmembers class com.webtoapp.converter.models.** {
+    public <init>();
+}
+
+# Optional: keep all fields as well (Firestore uses reflection)
+-keepclassmembers class com.webtoapp.converter.models.** {
+    <fields>;
+}
+# Keep all model classes and their public no-arg constructors
 -keepclassmembers class com.app.styletap.webtoappconverter.models.** {
     public <init>();
 }

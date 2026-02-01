@@ -73,7 +73,12 @@ import androidx.core.graphics.drawable.toDrawable
 
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.ComponentActivity
+import com.app.styletap.ads.InterstitialAdManager
+import com.app.styletap.interfaces.InterstitialLoadCallback
 import com.app.styletap.webtoappconverter.databinding.DialogLogoutAppBinding
+import com.app.styletap.webtoappconverter.presentations.utils.Contants.apkdownload_inter
+import com.app.styletap.webtoappconverter.presentations.utils.Contants.buildapp_inter
+import com.app.styletap.webtoappconverter.presentations.utils.PrefHelper
 
 
 fun Context.isNetworkAvailable(): Boolean {
@@ -678,11 +683,33 @@ fun Context.showStorageRationaleDialog(storagePermissionLauncher: ActivityResult
         .show()
 }
 
-fun AppCompatActivity.downloadFile(url: String, appName: String, isShare: Boolean = false) {
+fun AppCompatActivity.downloadFile(url: String, appName: String, isShare: Boolean = false, isApk: Boolean) {
     val timestamp = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(Date())
     val fileName = "${appName}_$timestamp.zip"
 
-    downloadWithProgress(url, fileName, isShare)
+    if (isApk){
+        val prefHelper = PrefHelper(this)
+        if (prefHelper.getIsPurchased() || !prefHelper.getBooleanDefultTrue(apkdownload_inter)){
+            downloadWithProgress(url, fileName, isShare)
+        } else {
+            InterstitialAdManager(this).loadAndShowAd(
+                getString(R.string.downloadApkInterstitialId),
+                prefHelper.getBooleanDefultTrue(buildapp_inter),
+                object : InterstitialLoadCallback{
+                    override fun onFailedToLoad() {
+                        Toast.makeText(this@downloadFile, resources.getString(R.string.failed_to_load_ads_please_try_again), Toast.LENGTH_SHORT).show()
+                    }
+                    override fun onLoaded() {
+                        downloadWithProgress(url, fileName, isShare)
+                    }
+                }
+            )
+        }
+
+    } else {
+        downloadWithProgress(url, fileName, isShare)
+    }
+
 
 }
 
@@ -996,4 +1023,24 @@ fun Context.showDeleteDialog(
         height = WindowManager.LayoutParams.WRAP_CONTENT
     }
     dialog.window?.attributes = layoutParams
+}
+
+
+@SuppressLint("MissingInflatedId")
+fun Activity.adLoadingDialog(): android.app.AlertDialog? {
+    var alertDialog: android.app.AlertDialog? = null
+
+    try {
+        val builder = android.app.AlertDialog.Builder(this)
+        builder.setCancelable(false)
+        val inflate = LayoutInflater.from(this).inflate(R.layout.dialog_ad_loading, null as ViewGroup?)
+
+        builder.setView(inflate)
+        alertDialog = builder.create()
+
+        alertDialog?.window!!.setBackgroundDrawableResource(android.R.color.transparent)
+        alertDialog?.show()
+    } catch (_: Exception){}
+
+    return alertDialog
 }

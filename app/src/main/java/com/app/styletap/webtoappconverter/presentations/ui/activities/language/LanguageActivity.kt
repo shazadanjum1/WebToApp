@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.os.LocaleList
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.View
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
@@ -16,6 +17,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.GridLayoutManager
+import com.app.styletap.ads.NativeAdManager
 import com.app.styletap.webtoappconverter.R
 import com.app.styletap.webtoappconverter.databinding.ActivityLanguageBinding
 import com.app.styletap.webtoappconverter.extentions.adjustBottomHeight
@@ -23,6 +25,7 @@ import com.app.styletap.webtoappconverter.extentions.adjustTopHeight
 import com.app.styletap.webtoappconverter.extentions.changeLocale
 import com.app.styletap.webtoappconverter.extentions.customEnableEdgeToEdge
 import com.app.styletap.webtoappconverter.extentions.getLanguageData
+import com.app.styletap.webtoappconverter.extentions.isNetworkAvailable
 import com.app.styletap.webtoappconverter.models.LanguageModel
 import com.app.styletap.webtoappconverter.presentations.ui.activities.authorization.LoginActivity
 import com.app.styletap.webtoappconverter.presentations.ui.activities.home.MainActivity
@@ -31,6 +34,7 @@ import com.app.styletap.webtoappconverter.presentations.ui.activities.onboarding
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.isLanguageSelected
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.isShowOnBoarding
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.languageCode
+import com.app.styletap.webtoappconverter.presentations.utils.Contants.language_native
 import com.app.styletap.webtoappconverter.presentations.utils.PrefHelper
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -70,6 +74,7 @@ class LanguageActivity : AppCompatActivity() {
 
 
         setView()
+        showNativeAd()
     }
 
     fun setView(){
@@ -233,6 +238,20 @@ class LanguageActivity : AppCompatActivity() {
             val mIntent = Intent(this@LanguageActivity, MainActivity::class.java)
             startActivity(mIntent)
             finishAffinity()
+        }
+    }
+
+
+    fun showNativeAd(){
+        if (isNetworkAvailable() && prefHelper.getBooleanDefultTrue(language_native) && !prefHelper.getIsPurchased()){
+            binding.adParentLayout.visibility = View.VISIBLE
+            binding.nativeLayout.visibility = View.VISIBLE
+            binding.shimmerContainer.nativeShimmerView.startShimmer()
+            binding.shimmerContainer.nativeShimmerView.visibility = View.VISIBLE
+            NativeAdManager(this).loadAndPopulateNativeAdView(this,resources.getString(R.string.languageNativeId),binding.adFrame, R.layout.native_ad_medium, binding.shimmerContainer.nativeShimmerView)
+        } else {
+            binding.adParentLayout.visibility = View.GONE
+            binding.shimmerContainer.nativeShimmerView.stopShimmer()
         }
     }
 

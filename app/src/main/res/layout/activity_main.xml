@@ -28,14 +28,42 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <RelativeLayout
+        android:id="@+id/adLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/grey"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarLL"
+        android:paddingVertical="@dimen/_2sdp"
+        android:layout_marginTop="@dimen/_1sdp"
+        >
+
+        <include
+            android:id="@+id/bannerShimmerView"
+            layout="@layout/banner_shimmer_view"
+            android:visibility="visible" />
+
+        <FrameLayout
+            android:id="@+id/adFrame"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            />
+
+
+    </RelativeLayout>
+
 
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarLL"
+        app:layout_constraintTop_toBottomOf="@+id/adLayout"
         app:layout_constraintBottom_toTopOf="@+id/container"
+        android:layout_marginTop="@dimen/_8sdp"
         >
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -56,7 +84,7 @@
                 app:cardCornerRadius="@dimen/_16sdp"
                 android:layout_marginStart="@dimen/_12sdp"
                 android:layout_marginEnd="@dimen/_6sdp"
-                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_8sdp"
                 app:cardBackgroundColor="@color/white"
                 android:foreground="?attr/selectableItemBackground"
                 android:focusable="true"
@@ -121,7 +149,7 @@
                 app:cardCornerRadius="@dimen/_16sdp"
                 android:layout_marginEnd="@dimen/_12sdp"
                 android:layout_marginStart="@dimen/_6sdp"
-                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_8sdp"
                 app:cardBackgroundColor="@color/white"
                 android:foreground="?attr/selectableItemBackground"
                 android:focusable="true"

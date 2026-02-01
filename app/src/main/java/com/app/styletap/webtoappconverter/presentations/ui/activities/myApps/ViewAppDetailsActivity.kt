@@ -51,12 +51,13 @@ class ViewAppDetailsActivity : AppCompatActivity() {
     var appId = ""
 
     var appModel: AppModel? = null
+    var isApk = true
 
     private val storagePermissionLauncher =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
             if (granted) {
                 pendingDownload?.let {
-                    downloadFile(it.first, it.second,isShareFile)
+                    downloadFile(it.first, it.second,isShareFile, isApk)
                 }
             } else {
                 Toast.makeText(this, resources.getString(R.string.storage_permission_is_required_to_save_the_file), Toast.LENGTH_LONG).show()
@@ -214,6 +215,7 @@ class ViewAppDetailsActivity : AppCompatActivity() {
 
                             shareBtn.setOnClickListener {
                                 isShareFile = true
+                                isApk = false
                                 app.apkUrl?.let { appUrl->
                                     if (!isNetworkAvailable()){
                                         Toast.makeText(this@ViewAppDetailsActivity, resources.getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show()
@@ -225,6 +227,7 @@ class ViewAppDetailsActivity : AppCompatActivity() {
 
                             downloadBtn.setOnClickListener {
                                 isShareFile = false
+                                isApk = true
                                 app.apkUrl?.let { appUrl->
                                     if (!isNetworkAvailable()){
                                         Toast.makeText(this@ViewAppDetailsActivity, resources.getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show()
@@ -251,7 +254,7 @@ class ViewAppDetailsActivity : AppCompatActivity() {
 
     fun startDownload(url: String, appName: String) {
         if (hasStoragePermission()) {
-            downloadFile(url, appName, isShareFile)
+            downloadFile(url, appName, isShareFile, isApk)
             return
         }
 

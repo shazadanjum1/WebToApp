@@ -82,7 +82,7 @@
         app:cardCornerRadius="@dimen/_14sdp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/container"
+        app:layout_constraintBottom_toTopOf="@+id/adParentLayout"
         android:layout_marginHorizontal="@dimen/_12sdp"
         app:cardBackgroundColor="@color/white"
         app:strokeWidth="0dp"
@@ -118,6 +118,41 @@
 
 
     </com.google.android.material.card.MaterialCardView>
+
+
+
+    <RelativeLayout
+        android:id="@+id/adParentLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/container"
+        android:background="@color/white"
+        >
+
+
+        <RelativeLayout
+            android:visibility="visible"
+            android:id="@+id/nativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <include
+                android:id="@+id/shimmerContainer"
+                layout="@layout/native_ad_medium_shimmer"
+                android:visibility="visible" />
+
+        </RelativeLayout>
+        <FrameLayout
+            android:id="@+id/ad_frame"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            />
+
+
+    </RelativeLayout>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
