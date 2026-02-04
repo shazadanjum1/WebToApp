@@ -401,4 +401,49 @@
     <string name="sign_up_to_save_your_apps_access_profile_manage_settings">Uygulamalarınızı kaydetmek, profile erişmek ve ayarları yönetmek için kaydolun</string>
     <string name="sign_up_login">Kaydol / Giriş Yap</string>
 
+    <string name="ad_is_loading">Reklam yükleniyor</string>
+    <string name="failed_to_load_ads_please_try_again">Lütfen internet bağlantınızı kontrol edin ve tekrar deneyin.</string>
+
+    <string name="turn_your_website_into_an_app">Web sitenizi bir uygulamaya dönüştürün</string>
+    <string name="professional_mobile_apps_made_simple">Profesyonel mobil uygulamalar artık çok kolay</string>
+    <string name="website_to_app">Web sitesi → Uygulama</string>
+    <string name="no_coding">Kodlama yok</string>
+    <string name="fast_creation">Hızlı oluşturma</string>
+    <string name="auto_updates">Otomatik güncellemeler</string>
+    <string name="YEARLY">YILLIK</string>
+    <string name="year">/ Yıl</string>
+    <string name="per_month">aylık</string>
+
+    <string name="WEEKLY">HAFTALIK</string>
+    <string name="week">/ Hafta</string>
+    <string name="continue_with_ads">Reklamlarla devam et</string>
+    <string name="cancel_anytime_secure_payment_7_day_money_back">İstediğiniz zaman iptal edin • Güvenli ödeme • 7 gün para iade garantisi</string>
+    <string name="save">Kaydet</string>
+    <string name="go_premium">Premium’a geç</string>
+    <string name="unlock_all_features_remove_ads">Tüm özellikleri aç &amp; reklamları kaldır</string>
+
+    <string name="unlock">Kilidi aç</string>
+    <string name="pay_just_once">Sadece bir kez ödeyin</string>
+    <string name="full_access_forever_no_recurring_charges">Sonsuza kadar tam erişim. Tekrarlayan ücret yok.</string>
+    <string name="complete_ownership_from_day_one">İlk günden tam sahiplik.</string>
+    <string name="unlimited_apps">Sınırsız uygulama</string>
+    <string name="no_usage_limits">Kullanım sınırı yok</string>
+    <string name="instant_setup">Anında kurulum</string>
+    <string name="ready_in_minutes">Dakikalar içinde hazır</string>
+    <string name="always_available">Her zaman erişilebilir</string>
+    <string name="free_updates">Ücretsiz güncellemeler</string>
+    <string name="forever_included">Sonsuza kadar dahil</string>
+    <string name="LIFETIME_ACCESS">ÖMÜR BOYU ERİŞİM</string>
+    <string name="one_payment_forever_yours">Tek ödeme • Sonsuza kadar sizin</string>
+    <string name="save_amount_today">Bugün %1$s tasarruf edin</string>
+    <string name="never_pay_a_subscription_again">Bir daha asla abonelik ücreti ödemeyin</string>
+    <string name="build_unlimited_apps_instantly">Anında sınırsız uygulama oluşturun</string>
+    <string name="every_feature_every_update_included">Her özellik, her güncelleme dahil</string>
+    <string name="get_lifetime_access_now">Şimdi ömür boyu erişim alın</string>
+    <string name="one_payment">Tek ödeme</string>
+    <string name="secure_payment">Güvenli ödeme</string>
+    <string name="_30_day_guarantee">30 gün garanti</string>
+    <string name="trusted_by_10000_creators_worldwide">Dünya çapında 10.000’den fazla yaratıcı tarafından güveniliyor</string>
+
+
 </resources>

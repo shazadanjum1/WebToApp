@@ -412,5 +412,45 @@
     <string name="ad_is_loading">Ad is Loading</string>
     <string name="failed_to_load_ads_please_try_again">Please check your internet connection and try again.</string>
 
+    <string name="turn_your_website_into_an_app">Turn Your Website Into an App</string>
+    <string name="professional_mobile_apps_made_simple">Professional mobile apps made simple</string>
+    <string name="website_to_app">Website to App</string>
+    <string name="no_coding">No Coding</string>
+    <string name="fast_creation">Fast Creation</string>
+    <string name="auto_updates">Auto Updates</string>
+    <string name="YEARLY">YEARLY</string>
+    <string name="year">/ Year</string>
+    <string name="per_month">per month</string>
+
+    <string name="WEEKLY">WEEKLY</string>
+    <string name="week">/ week</string>
+    <string name="continue_with_ads">Continue with Ads</string>
+    <string name="cancel_anytime_secure_payment_7_day_money_back">Cancel anytime • Secure payment • 7-day money back</string>
+    <string name="save">Save</string>
+    <string name="go_premium">Go Premium</string>
+    <string name="unlock_all_features_remove_ads">Unlock all features &amp; remove ads</string>
+
+    <string name="unlock">Unlock</string>
+    <string name="pay_just_once">Pay Just Once</string>
+    <string name="full_access_forever_no_recurring_charges">Full access forever. No recurring charges.</string>
+    <string name="complete_ownership_from_day_one">Complete ownership from day one.</string>
+    <string name="unlimited_apps">Unlimited Apps</string>
+    <string name="no_usage_limits">No usage limits</string>
+    <string name="instant_setup">Instant Setup</string>
+    <string name="ready_in_minutes">Ready in minutes</string>
+    <string name="always_available">Always available</string>
+    <string name="free_updates">Free Updates</string>
+    <string name="forever_included">Forever included</string>
+    <string name="LIFETIME_ACCESS">LIFETIME ACCESS</string>
+    <string name="one_payment_forever_yours">One Payment • Forever Yours</string>
+    <string name="save_amount_today">Save %1$s Today</string>
+    <string name="never_pay_a_subscription_again">Never pay a subscription again</string>
+    <string name="build_unlimited_apps_instantly">Build unlimited apps instantly</string>
+    <string name="every_feature_every_update_included">Every feature, every update included</string>
+    <string name="get_lifetime_access_now">Get Lifetime Access Now</string>
+    <string name="one_payment">One Payment</string>
+    <string name="secure_payment">Secure Payment</string>
+    <string name="_30_day_guarantee">30-Day Guarantee</string>
+    <string name="trusted_by_10000_creators_worldwide">Trusted by 10,000+ creators worldwide</string>
 
 </resources>

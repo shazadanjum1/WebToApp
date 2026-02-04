@@ -398,4 +398,49 @@
     <string name="sign_up_to_save_your_apps_access_profile_manage_settings">サインアップしてアプリを保存し、プロフィールにアクセスし、設定を管理しましょう</string>
     <string name="sign_up_login">サインアップ / ログイン</string>
 
+    <string name="ad_is_loading">広告を読み込み中</string>
+    <string name="failed_to_load_ads_please_try_again">インターネット接続を確認して、もう一度お試しください。</string>
+
+    <string name="turn_your_website_into_an_app">あなたのウェブサイトをアプリに変換</string>
+    <string name="professional_mobile_apps_made_simple">プロ仕様のモバイルアプリを簡単に</string>
+    <string name="website_to_app">ウェブサイトからアプリへ</string>
+    <string name="no_coding">コーディング不要</string>
+    <string name="fast_creation">迅速な作成</string>
+    <string name="auto_updates">自動更新</string>
+    <string name="YEARLY">年間</string>
+    <string name="year">/ 年</string>
+    <string name="per_month">月額</string>
+
+    <string name="WEEKLY">週単位</string>
+    <string name="week">/ 週</string>
+    <string name="continue_with_ads">広告付きで続行</string>
+    <string name="cancel_anytime_secure_payment_7_day_money_back">いつでも解約可能 • 安全な支払い • 7日間返金保証</string>
+    <string name="save">保存</string>
+    <string name="go_premium">プレミアムに移行</string>
+    <string name="unlock_all_features_remove_ads">すべての機能を解放し、広告を削除</string>
+
+    <string name="unlock">解除</string>
+    <string name="pay_just_once">一度だけ支払う</string>
+    <string name="full_access_forever_no_recurring_charges">永久にフルアクセス。定期的な料金なし。</string>
+    <string name="complete_ownership_from_day_one">初日から完全な所有権。</string>
+    <string name="unlimited_apps">無制限のアプリ</string>
+    <string name="no_usage_limits">利用制限なし</string>
+    <string name="instant_setup">即時セットアップ</string>
+    <string name="ready_in_minutes">数分で準備完了</string>
+    <string name="always_available">常に利用可能</string>
+    <string name="free_updates">無料アップデート</string>
+    <string name="forever_included">永久に含まれる</string>
+    <string name="LIFETIME_ACCESS">生涯アクセス</string>
+    <string name="one_payment_forever_yours">一度の支払い • 永久にあなたのもの</string>
+    <string name="save_amount_today">今日 %1$s 節約</string>
+    <string name="never_pay_a_subscription_again">もう二度とサブスクリプションを支払わない</string>
+    <string name="build_unlimited_apps_instantly">無制限のアプリを即座に作成</string>
+    <string name="every_feature_every_update_included">すべての機能、すべての更新を含む</string>
+    <string name="get_lifetime_access_now">今すぐ生涯アクセスを取得</string>
+    <string name="one_payment">一度の支払い</string>
+    <string name="secure_payment">安全な支払い</string>
+    <string name="_30_day_guarantee">30日間保証</string>
+    <string name="trusted_by_10000_creators_worldwide">世界中の10,000人以上のクリエイターに信頼されています</string>
+
+
 </resources>

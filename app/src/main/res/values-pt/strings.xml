@@ -401,4 +401,49 @@
     <string name="sign_up_to_save_your_apps_access_profile_manage_settings">Cadastre-se para salvar seus apps, acessar o perfil e gerenciar configurações</string>
     <string name="sign_up_login">Cadastre-se / Entrar</string>
 
+    <string name="ad_is_loading">Anúncio está carregando</string>
+    <string name="failed_to_load_ads_please_try_again">Verifique sua conexão com a Internet e tente novamente.</string>
+
+    <string name="turn_your_website_into_an_app">Transforme seu site em um aplicativo</string>
+    <string name="professional_mobile_apps_made_simple">Aplicativos móveis profissionais de forma simples</string>
+    <string name="website_to_app">Site para aplicativo</string>
+    <string name="no_coding">Sem programação</string>
+    <string name="fast_creation">Criação rápida</string>
+    <string name="auto_updates">Atualizações automáticas</string>
+    <string name="YEARLY">ANUAL</string>
+    <string name="year">/ Ano</string>
+    <string name="per_month">por mês</string>
+
+    <string name="WEEKLY">SEMANAL</string>
+    <string name="week">/ Semana</string>
+    <string name="continue_with_ads">Continuar com anúncios</string>
+    <string name="cancel_anytime_secure_payment_7_day_money_back">Cancele a qualquer momento • Pagamento seguro • Garantia de reembolso em 7 dias</string>
+    <string name="save">Salvar</string>
+    <string name="go_premium">Torne-se Premium</string>
+    <string name="unlock_all_features_remove_ads">Desbloqueie todos os recursos e remova anúncios</string>
+
+    <string name="unlock">Desbloquear</string>
+    <string name="pay_just_once">Pague apenas uma vez</string>
+    <string name="full_access_forever_no_recurring_charges">Acesso total para sempre. Sem cobranças recorrentes.</string>
+    <string name="complete_ownership_from_day_one">Propriedade completa desde o primeiro dia.</string>
+    <string name="unlimited_apps">Aplicativos ilimitados</string>
+    <string name="no_usage_limits">Sem limites de uso</string>
+    <string name="instant_setup">Configuração instantânea</string>
+    <string name="ready_in_minutes">Pronto em minutos</string>
+    <string name="always_available">Sempre disponível</string>
+    <string name="free_updates">Atualizações gratuitas</string>
+    <string name="forever_included">Incluído para sempre</string>
+    <string name="LIFETIME_ACCESS">ACESSO VITALÍCIO</string>
+    <string name="one_payment_forever_yours">Um pagamento • Para sempre seu</string>
+    <string name="save_amount_today">Economize %1$s hoje</string>
+    <string name="never_pay_a_subscription_again">Nunca mais pague uma assinatura</string>
+    <string name="build_unlimited_apps_instantly">Crie aplicativos ilimitados instantaneamente</string>
+    <string name="every_feature_every_update_included">Cada recurso, cada atualização incluída</string>
+    <string name="get_lifetime_access_now">Obtenha acesso vitalício agora</string>
+    <string name="one_payment">Um pagamento</string>
+    <string name="secure_payment">Pagamento seguro</string>
+    <string name="_30_day_guarantee">Garantia de 30 dias</string>
+    <string name="trusted_by_10000_creators_worldwide">Confiado por mais de 10.000 criadores em todo o mundo</string>
+
+
 </resources>

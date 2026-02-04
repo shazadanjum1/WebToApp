@@ -28,32 +28,26 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+
     <RelativeLayout
-        android:id="@+id/adParentLayout"
+        android:id="@+id/adLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@color/grey"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbarLL"
-        android:background="@color/white"
+        android:paddingVertical="@dimen/_2sdp"
         android:layout_marginTop="@dimen/_1sdp"
         >
 
+        <include
+            android:id="@+id/bannerShimmerView"
+            layout="@layout/banner_shimmer_view"
+            android:visibility="visible" />
 
-        <RelativeLayout
-            android:visibility="visible"
-            android:id="@+id/nativeLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
-            <include
-                android:id="@+id/shimmerContainer"
-                layout="@layout/native_ad_medium_shimmer"
-                android:visibility="visible" />
-
-        </RelativeLayout>
         <FrameLayout
-            android:id="@+id/ad_frame"
+            android:id="@+id/adFrame"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
@@ -63,12 +57,13 @@
     </RelativeLayout>
 
 
+
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/adParentLayout"
+        app:layout_constraintTop_toBottomOf="@+id/adLayout"
         app:layout_constraintBottom_toTopOf="@+id/container"
         android:layout_marginTop="@dimen/_8sdp"
         >

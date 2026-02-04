@@ -253,7 +253,7 @@ class BuildingAppActivity : AppCompatActivity() {
         fetchFcmToken(_userId) { fcmToken ->
             binding.progressBar.progress = 75
             binding.progressTv.text = "75"
-// Generate a new UID for this app
+
             val uid = db.collection("apps").document().id
 
             // Complete data as a new record
@@ -301,6 +301,9 @@ class BuildingAppActivity : AppCompatActivity() {
                 "websiteUrl" to webUrl
             )
 
+        /*binding.progressBar.progress = 75
+        binding.progressTv.text = "75"*/
+
             db.collection("apps")
                 .document(uid)  // use generated UID
                 .set(appDetails)
@@ -325,47 +328,6 @@ class BuildingAppActivity : AppCompatActivity() {
         }
     }
 
-
-    private fun fetchFcmToken(
-        userId: String?,
-        callback: (String) -> Unit
-    ) {
-        if (userId == null) {
-            callback("")
-            return
-        }
-        val db = FirebaseFirestore.getInstance()
-
-        db.collection("users").document(userId)
-            .get()
-            .addOnSuccessListener { snapshot ->
-
-                val storedToken = snapshot.getString("fcmToken")
-
-                if (!storedToken.isNullOrBlank()) {
-                    // ✅ Token exists in DB
-                    callback(storedToken)
-                } else {
-                    // 🔁 Token missing → generate new
-                    FirebaseMessaging.getInstance().token
-                        .addOnSuccessListener { newToken ->
-
-                            // save it back to Firestore
-                            db.collection("users")
-                                .document(userId)
-                                .update("fcmToken", newToken)
-
-                            callback(newToken)
-                        }
-                }
-            }
-            .addOnFailureListener {
-                FirebaseMessaging.getInstance().token
-                    .addOnSuccessListener { token ->
-                        callback(token)
-                    }
-            }
-    }
 
 
     fun updateAppDetails(
@@ -425,7 +387,8 @@ class BuildingAppActivity : AppCompatActivity() {
                 appDetails["appIconUrl"] = it
             }
 
-
+        /*binding.progressBar.progress = 75
+        binding.progressTv.text = "75"*/
 
             db.collection("apps")
                 .document(appId)  // use generated UID
@@ -450,6 +413,50 @@ class BuildingAppActivity : AppCompatActivity() {
                 }
         }
     }
+
+
+
+    private fun fetchFcmToken(
+        userId: String?,
+        callback: (String) -> Unit
+    ) {
+        if (userId == null) {
+            callback("")
+            return
+        }
+        val db = FirebaseFirestore.getInstance()
+
+        db.collection("users").document(userId)
+            .get()
+            .addOnSuccessListener { snapshot ->
+
+                val storedToken = snapshot.getString("fcmToken")
+
+                if (!storedToken.isNullOrBlank()) {
+                    // ✅ Token exists in DB
+                    callback(storedToken)
+                } else {
+                    // 🔁 Token missing → generate new
+                    FirebaseMessaging.getInstance().token
+                        .addOnSuccessListener { newToken ->
+
+                            // save it back to Firestore
+                            db.collection("users")
+                                .document(userId)
+                                .update("fcmToken", newToken)
+
+                            callback(newToken)
+                        }
+                }
+            }
+            .addOnFailureListener {
+                FirebaseMessaging.getInstance().token
+                    .addOnSuccessListener { token ->
+                        callback(token)
+                    }
+            }
+    }
+
 
 
     fun showNativeAd(){

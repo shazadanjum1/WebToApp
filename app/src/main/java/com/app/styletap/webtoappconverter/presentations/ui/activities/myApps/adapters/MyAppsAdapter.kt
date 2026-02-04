@@ -28,11 +28,13 @@ import androidx.core.view.get
 import androidx.core.view.isVisible
 import com.app.styletap.webtoappconverter.extentions.decorateStatus
 import com.app.styletap.webtoappconverter.extentions.isNetworkAvailable
+import com.app.styletap.webtoappconverter.extentions.proLifeTimeIntent
 import com.app.styletap.webtoappconverter.extentions.showDeleteDialog
 import com.app.styletap.webtoappconverter.presentations.ui.activities.myApps.EditAppActivity
 import com.app.styletap.webtoappconverter.presentations.ui.activities.myApps.MyAppsActivity
 import com.app.styletap.webtoappconverter.presentations.ui.activities.myApps.ViewAppDetailsActivity
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.READY_TO_DOWNLOAD_BUNDLE
+import com.app.styletap.webtoappconverter.presentations.utils.PrefHelper
 import com.bumptech.glide.Glide
 
 class MyAppsAdapter(
@@ -42,7 +44,7 @@ class MyAppsAdapter(
 ) : RecyclerView.Adapter<MyAppsAdapter.AppViewHolder>() {
 
     var isClickable = true
-
+    private var prefHelper: PrefHelper = PrefHelper(activity.applicationContext)
 
     inner class AppViewHolder(
         val binding: MyAppsItemBinding
@@ -111,11 +113,15 @@ class MyAppsAdapter(
                     if (!activity.isNetworkAvailable()){
                         Toast.makeText(activity, activity.resources.getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show()
                     } else {
-                        if (app.status == READY_TO_DOWNLOAD){
-                            isClickable = false
-                            app.id?.let { appId -> activity.generateBundle(appId){isClickable = true } }
-                        } else if (app.status == READY_TO_DOWNLOAD_BUNDLE){
-                            app.bundleUrl?.let { appUrl -> activity.startDownload(appUrl, app.appName ?: "app", false) }
+                        if (prefHelper.getIsPurchasedLifeTime()){
+                            if (app.status == READY_TO_DOWNLOAD){
+                                isClickable = false
+                                app.id?.let { appId -> activity.generateBundle(appId){isClickable = true } }
+                            } else if (app.status == READY_TO_DOWNLOAD_BUNDLE){
+                                app.bundleUrl?.let { appUrl -> activity.startDownload(appUrl, app.appName ?: "app", false) }
+                            }
+                        } else {
+                            activity.startActivity(activity.proLifeTimeIntent().apply { putExtra("from", "home") })
                         }
                     }
                 }

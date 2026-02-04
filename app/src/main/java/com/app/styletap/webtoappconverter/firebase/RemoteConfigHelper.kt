@@ -5,6 +5,7 @@ import com.app.styletap.interfaces.RemoteConfigCallbackListiner
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.apkdownload_inter
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.app_open
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.buildapp_inter
+import com.app.styletap.webtoappconverter.presentations.utils.Contants.createapp_banner
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.createapp_native
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.generateapp_native
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.home_banner
@@ -52,6 +53,8 @@ class RemoteConfigHelper(val activity: Activity) {
                         prefHelper.setBoolean(turtorial_native, firebaseRemoteConfig.getBoolean(turtorial_native))
                         prefHelper.setBoolean(buildapp_inter, firebaseRemoteConfig.getBoolean(buildapp_inter))
                         prefHelper.setBoolean(apkdownload_inter, firebaseRemoteConfig.getBoolean(apkdownload_inter))
+
+                        prefHelper.setBoolean(createapp_banner, firebaseRemoteConfig.getBoolean(createapp_banner))
 
 
                         remoteConfigCallback.onSuccess()

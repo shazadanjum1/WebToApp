@@ -402,4 +402,49 @@
 </string>
     <string name="sign_up_login">إنشاء حساب / تسجيل الدخول</string>
 
+    <string name="ad_is_loading">الإعلان جارٍ التحميل</string>
+    <string name="failed_to_load_ads_please_try_again">يرجى التحقق من اتصال الإنترنت والمحاولة مرة أخرى.</string>
+
+    <string name="turn_your_website_into_an_app">حوّل موقعك الإلكتروني إلى تطبيق</string>
+    <string name="professional_mobile_apps_made_simple">تطبيقات جوال احترافية بطريقة بسيطة</string>
+    <string name="website_to_app">من موقع إلى تطبيق</string>
+    <string name="no_coding">بدون برمجة</string>
+    <string name="fast_creation">إنشاء سريع</string>
+    <string name="auto_updates">تحديثات تلقائية</string>
+    <string name="YEARLY">سنوياً</string>
+    <string name="year">/ سنة</string>
+    <string name="per_month">شهرياً</string>
+
+    <string name="WEEKLY">أسبوعياً</string>
+    <string name="week">/ أسبوع</string>
+    <string name="continue_with_ads">استمر مع الإعلانات</string>
+    <string name="cancel_anytime_secure_payment_7_day_money_back">إلغاء في أي وقت • دفع آمن • استرجاع خلال 7 أيام</string>
+    <string name="save">حفظ</string>
+    <string name="go_premium">ترقية إلى بريميوم</string>
+    <string name="unlock_all_features_remove_ads">افتح جميع الميزات وأزل الإعلانات</string>
+
+    <string name="unlock">فتح</string>
+    <string name="pay_just_once">ادفع مرة واحدة فقط</string>
+    <string name="full_access_forever_no_recurring_charges">وصول كامل للأبد. بدون رسوم متكررة.</string>
+    <string name="complete_ownership_from_day_one">ملكية كاملة من اليوم الأول.</string>
+    <string name="unlimited_apps">تطبيقات غير محدودة</string>
+    <string name="no_usage_limits">بدون حدود استخدام</string>
+    <string name="instant_setup">إعداد فوري</string>
+    <string name="ready_in_minutes">جاهز خلال دقائق</string>
+    <string name="always_available">متاح دائماً</string>
+    <string name="free_updates">تحديثات مجانية</string>
+    <string name="forever_included">مضمنة للأبد</string>
+    <string name="LIFETIME_ACCESS">وصول مدى الحياة</string>
+    <string name="one_payment_forever_yours">دفعة واحدة • ملكك للأبد</string>
+    <string name="save_amount_today">وفّر %1$s اليوم</string>
+    <string name="never_pay_a_subscription_again">لن تدفع اشتراكاً مرة أخرى</string>
+    <string name="build_unlimited_apps_instantly">أنشئ تطبيقات غير محدودة فوراً</string>
+    <string name="every_feature_every_update_included">كل ميزة، كل تحديث مشمول</string>
+    <string name="get_lifetime_access_now">احصل على وصول مدى الحياة الآن</string>
+    <string name="one_payment">دفعة واحدة</string>
+    <string name="secure_payment">دفع آمن</string>
+    <string name="_30_day_guarantee">ضمان 30 يوماً</string>
+    <string name="trusted_by_10000_creators_worldwide">موثوق من أكثر من 10,000 منشئ حول العالم</string>
+
+
 </resources>

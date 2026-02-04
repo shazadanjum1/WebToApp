@@ -1,6 +1,7 @@
 package com.app.styletap.webtoappconverter.extentions
 
 import android.Manifest
+import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.AlertDialog
@@ -76,6 +77,8 @@ import androidx.activity.ComponentActivity
 import com.app.styletap.ads.InterstitialAdManager
 import com.app.styletap.interfaces.InterstitialLoadCallback
 import com.app.styletap.webtoappconverter.databinding.DialogLogoutAppBinding
+import com.app.styletap.webtoappconverter.presentations.ui.activities.Premium.LifeTimePremiumActivity
+import com.app.styletap.webtoappconverter.presentations.ui.activities.Premium.SubscriptionPremiumActivity
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.apkdownload_inter
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.buildapp_inter
 import com.app.styletap.webtoappconverter.presentations.utils.PrefHelper
@@ -1044,3 +1047,41 @@ fun Activity.adLoadingDialog(): android.app.AlertDialog? {
 
     return alertDialog
 }
+
+fun View.animateViewXaxis() {
+    val translationX = ObjectAnimator.ofFloat(this, "translationX", -50f, 50f)
+    translationX.duration = 1000
+    translationX.repeatCount = ObjectAnimator.INFINITE
+    translationX.repeatMode = ObjectAnimator.REVERSE
+    translationX.start()
+}
+
+fun Activity.proIntent(): Intent {
+    val mIntent = Intent(this, SubscriptionPremiumActivity::class.java)
+    return mIntent
+}
+
+fun Activity.proLifeTimeIntent(): Intent {
+    val mIntent = Intent(this, LifeTimePremiumActivity::class.java)
+    return mIntent
+}
+
+fun extractNumericValue(formattedPrice: String): Double {
+    val numericValue = formattedPrice.replace("[^\\d.]".toRegex(), "")
+    return numericValue.toDouble()
+}
+
+fun extractPriceUnit(formattedPrice: String): String? {
+    val regex = "^[^\\d\\s]+".toRegex()
+    val matchResult = regex.find(formattedPrice)
+    return matchResult?.value
+}
+
+fun calculateMonthlyPriceFromFormattedPrice(formattedPrice: String): Double {
+    val yearlyPrice = extractNumericValue(formattedPrice)
+    val monthInYear = 12
+    return yearlyPrice / monthInYear
+}
+
+fun Int.dpToPx(context: Context): Int =
+    (this * context.resources.displayMetrics.density).toInt()

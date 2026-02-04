@@ -5,6 +5,11 @@ object Contants {
     var isIntertialAdshowing = false
     var isShowApOpenAd = true
 
+    const val WEEKLY_PRICE = "WEEKLY_PRICE"
+    const val YEARLY_PRICE = "YEARLY_PRICE"
+
+    const val LIFETIME_PRICE = "LIFETIME_PRICE"
+
     const val ACTION_FINISH_ACTIVITY = "ACTION_FINISH_ACTIVITY"
     const val ACTION_REFRESH_ACTIVITY = "ACTION_REFRESH_ACTIVITY"
 
@@ -39,6 +44,7 @@ object Contants {
     const val language_native = "language_native"
     const val onboarding_native = "onboarding_native"
     const val home_banner = "home_banner"
+    const val createapp_banner = "createapp_banner"
     const val createapp_native = "createapp_native"
     const val myapps_native = "myapps_native"
     const val generateapp_native = "generateapp_native"

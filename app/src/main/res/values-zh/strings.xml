@@ -406,4 +406,49 @@
     <string name="sign_up_to_save_your_apps_access_profile_manage_settings">注册以保存您的应用、访问个人资料并管理设置</string>
     <string name="sign_up_login">注册 / 登录</string>
 
+    <string name="ad_is_loading">广告加载中</string>
+    <string name="failed_to_load_ads_please_try_again">请检查您的互联网连接并重试。</string>
+
+    <string name="turn_your_website_into_an_app">将您的网站变成应用</string>
+    <string name="professional_mobile_apps_made_simple">专业移动应用，简单实现</string>
+    <string name="website_to_app">网站转应用</string>
+    <string name="no_coding">无需编码</string>
+    <string name="fast_creation">快速创建</string>
+    <string name="auto_updates">自动更新</string>
+    <string name="YEARLY">每年</string>
+    <string name="year">/ 年</string>
+    <string name="per_month">每月</string>
+
+    <string name="WEEKLY">每周</string>
+    <string name="week">/ 周</string>
+    <string name="continue_with_ads">继续带广告</string>
+    <string name="cancel_anytime_secure_payment_7_day_money_back">随时取消 • 安全支付 • 7天退款保证</string>
+    <string name="save">保存</string>
+    <string name="go_premium">升级为高级版</string>
+    <string name="unlock_all_features_remove_ads">解锁所有功能并移除广告</string>
+
+    <string name="unlock">解锁</string>
+    <string name="pay_just_once">只需支付一次</string>
+    <string name="full_access_forever_no_recurring_charges">永久完整访问。无重复收费。</string>
+    <string name="complete_ownership_from_day_one">从第一天起完全拥有。</string>
+    <string name="unlimited_apps">无限应用</string>
+    <string name="no_usage_limits">无使用限制</string>
+    <string name="instant_setup">即时设置</string>
+    <string name="ready_in_minutes">几分钟即可完成</string>
+    <string name="always_available">始终可用</string>
+    <string name="free_updates">免费更新</string>
+    <string name="forever_included">永久包含</string>
+    <string name="LIFETIME_ACCESS">终身访问</string>
+    <string name="one_payment_forever_yours">一次付款 • 永远属于您</string>
+    <string name="save_amount_today">今天节省 %1$s</string>
+    <string name="never_pay_a_subscription_again">再也不用支付订阅费</string>
+    <string name="build_unlimited_apps_instantly">立即创建无限应用</string>
+    <string name="every_feature_every_update_included">所有功能，所有更新均包含</string>
+    <string name="get_lifetime_access_now">立即获取终身访问</string>
+    <string name="one_payment">一次付款</string>
+    <string name="secure_payment">安全支付</string>
+    <string name="_30_day_guarantee">30天保证</string>
+    <string name="trusted_by_10000_creators_worldwide">全球超过10,000位创作者的信赖</string>
+
+
 </resources>

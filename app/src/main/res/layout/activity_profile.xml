@@ -125,6 +125,77 @@
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
+                tools:visibility="visible"
+                android:visibility="gone"
+                android:id="@+id/proCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:strokeWidth="0dp"
+                app:cardElevation="@dimen/_2sdp"
+                app:cardCornerRadius="@dimen/_16sdp"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                app:cardBackgroundColor="@color/white"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:minHeight="@dimen/_60sdp"
+                    android:orientation="vertical"
+                    android:background="@drawable/ic_settings_pro_bg"
+                    android:padding="@dimen/_16sdp"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/proIV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_pro_settings"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/proIV"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:text="@string/go_premium"
+                            android:fontFamily="@font/arimo_regular"
+                            android:includeFontPadding="false"
+                            android:textSize="@dimen/_16ssp"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:text="@string/unlock_all_features_remove_ads"
+                            android:fontFamily="@font/arimo_regular"
+                            android:includeFontPadding="false"
+                            android:textSize="@dimen/_12ssp"
+                            android:layout_marginTop="@dimen/_6sdp"
+                            />
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/accountInfoCard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

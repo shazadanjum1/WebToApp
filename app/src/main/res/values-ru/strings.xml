@@ -401,4 +401,48 @@
     <string name="sign_up_to_save_your_apps_access_profile_manage_settings">Зарегистрируйтесь, чтобы сохранить ваши приложения, получить доступ к профилю и управлять настройками</string>
     <string name="sign_up_login">Регистрация / Вход</string>
 
+    <string name="ad_is_loading">Реклама загружается</string>
+    <string name="failed_to_load_ads_please_try_again">Пожалуйста, проверьте подключение к интернету и попробуйте снова.</string>
+
+    <string name="turn_your_website_into_an_app">Превратите свой сайт в приложение</string>
+    <string name="professional_mobile_apps_made_simple">Профессиональные мобильные приложения — просто</string>
+    <string name="website_to_app">Сайт в приложение</string>
+    <string name="no_coding">Без программирования</string>
+    <string name="fast_creation">Быстрое создание</string>
+    <string name="auto_updates">Автоматические обновления</string>
+    <string name="YEARLY">ЕЖЕГОДНО</string>
+    <string name="year">/ Год</string>
+    <string name="per_month">в месяц</string>
+
+    <string name="WEEKLY">ЕЖЕНЕДЕЛЬНО</string>
+    <string name="week">/ Неделя</string>
+    <string name="continue_with_ads">Продолжить с рекламой</string>
+    <string name="cancel_anytime_secure_payment_7_day_money_back">Отмена в любое время • Безопасная оплата • Возврат в течение 7 дней</string>
+    <string name="save">Сохранить</string>
+    <string name="go_premium">Перейти на Premium</string>
+    <string name="unlock_all_features_remove_ads">Откройте все функции и уберите рекламу</string>
+
+    <string name="unlock">Открыть</string>
+    <string name="pay_just_once">Оплатите только один раз</string>
+    <string name="full_access_forever_no_recurring_charges">Полный доступ навсегда. Без регулярных платежей.</string>
+    <string name="complete_ownership_from_day_one">Полное владение с первого дня.</string>
+    <string name="unlimited_apps">Неограниченные приложения</string>
+    <string name="no_usage_limits">Без ограничений использования</string>
+    <string name="instant_setup">Мгновенная настройка</string>
+    <string name="ready_in_minutes">Готово за несколько минут</string>
+    <string name="always_available">Всегда доступно</string>
+    <string name="free_updates">Бесплатные обновления</string>
+    <string name="forever_included">Включено навсегда</string>
+    <string name="LIFETIME_ACCESS">ПОЖИЗНЕННЫЙ ДОСТУП</string>
+    <string name="one_payment_forever_yours">Один платеж • Навсегда ваш</string>
+    <string name="save_amount_today">Сэкономьте %1$s сегодня</string>
+    <string name="never_pay_a_subscription_again">Больше никогда не платите за подписку</string>
+    <string name="build_unlimited_apps_instantly">Создавайте неограниченные приложения мгновенно</string>
+    <string name="every_feature_every_update_included">Все функции, все обновления включены</string>
+    <string name="get_lifetime_access_now">Получите пожизненный доступ прямо сейчас</string>
+    <string name="one_payment">Один платеж</string>
+    <string name="secure_payment">Безопасная оплата</string>
+    <string name="_30_day_guarantee">30-дневная гарантия</string>
+    <string name="trusted_by_10000_creators_worldwide">Доверяют более 10 000 создателей по всему миру</string>
+
 </resources>

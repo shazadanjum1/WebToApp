@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pro_bg"
+    android:layoutDirection="ltr"
+    tools:context=".presentations.ui.activities.Premium.SubscriptionPremiumActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/toolbarLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbarLL"
+        app:layout_constraintBottom_toTopOf="@+id/container"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/_20sdp"
+            android:paddingTop="@dimen/_16sdp"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/topIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/pro_header_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                />
+
+            <TextView
+                android:id="@+id/titleTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginHorizontal="@dimen/_26sdp"
+                app:layout_constraintTop_toBottomOf="@+id/topIcon"
+                android:layout_marginTop="-30dp"
+                android:text="@string/turn_your_website_into_an_app"
+                android:textAlignment="center"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="@dimen/_20ssp"
+                android:includeFontPadding="false"
+                />
+
+            <TextView
+                android:id="@+id/descriptionTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:layout_constraintTop_toBottomOf="@+id/titleTv"
+                android:text="@string/professional_mobile_apps_made_simple"
+                android:textAlignment="center"
+                android:fontFamily="@font/arimo_regular"
+                android:textSize="@dimen/_12ssp"
+                android:includeFontPadding="false"
+                />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/webToAppCrd"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_60sdp"
+                app:layout_constraintEnd_toStartOf="@+id/noCodingCrd"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/descriptionTv"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_6sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                app:cardCornerRadius="@dimen/_14sdp"
+                app:strokeColor="@color/pro_c1"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/pro_container1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_pro_webtoapp"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/website_to_app"
+                        android:layout_marginTop="@dimen/_6sdp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textSize="@dimen/_9ssp"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/noCodingCrd"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_60sdp"
+                app:layout_constraintStart_toEndOf="@+id/webToAppCrd"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/descriptionTv"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_marginStart="@dimen/_6sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                app:cardCornerRadius="@dimen/_14sdp"
+                app:strokeColor="@color/pro_c2"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/pro_container2"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_pro_nocoding"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/no_coding"
+                        android:layout_marginTop="@dimen/_6sdp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textSize="@dimen/_9ssp"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/fastCreationCrd"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_60sdp"
+                app:layout_constraintEnd_toStartOf="@+id/autoUpdateCrd"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/webToAppCrd"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_6sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:cardCornerRadius="@dimen/_14sdp"
+                app:strokeColor="@color/pro_c3"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/pro_container3"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_pro_fastcreation"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/fast_creation"
+                        android:layout_marginTop="@dimen/_6sdp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textSize="@dimen/_9ssp"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/autoUpdateCrd"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_60sdp"
+                app:layout_constraintStart_toEndOf="@+id/fastCreationCrd"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/webToAppCrd"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_marginStart="@dimen/_6sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:cardCornerRadius="@dimen/_14sdp"
+                app:strokeColor="@color/pro_c4"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/pro_container4"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_pro_autoupdate"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/auto_updates"
+                        android:layout_marginTop="@dimen/_6sdp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textSize="@dimen/_9ssp"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/yearlyCrd"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_80sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fastCreationCrd"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                app:cardCornerRadius="@dimen/_14sdp"
+                app:strokeColor="@color/blue"
+                app:strokeWidth="@dimen/_2sdp"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/yearlyCL"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/pro_container1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        android:id="@+id/yearlyTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/YEARLY"
+                        android:textColor="@color/blue"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textSize="@dimen/_9ssp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:maxLines="1"
+                        android:includeFontPadding="false"
+                        />
+
+                    <TextView
+                        android:id="@+id/percentageTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_percentage_bg"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/yearlyTv"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:text="Save **%"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/arimo_regular"
+                        android:textSize="@dimen/_10ssp"
+                        android:paddingHorizontal="@dimen/_6sdp"
+                        android:maxLines="1"
+                        android:includeFontPadding="false"
+                        android:paddingTop="@dimen/_1sdp"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/yearlyPriceTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="****"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textSize="@dimen/_17ssp"
+                        app:layout_constraintTop_toBottomOf="@+id/yearlyTv"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:maxLines="1"
+                        android:includeFontPadding="false"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/year"
+                        android:textColor="@color/pro_c7"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/arimo_regular"
+                        android:textSize="@dimen/_9ssp"
+                        app:layout_constraintBottom_toBottomOf="@+id/yearlyPriceTv"
+                        app:layout_constraintStart_toEndOf="@+id/yearlyPriceTv"
+                        android:layout_marginStart="@dimen/_7sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:maxLines="1"
+                        android:includeFontPadding="false"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/perMonthTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/per_month"
+                        android:textColor="@color/pro_c7"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/arimo_regular"
+                        android:textSize="@dimen/_9ssp"
+                        app:layout_constraintTop_toBottomOf="@+id/yearlyPriceTv"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:maxLines="1"
+                        android:includeFontPadding="false"
+                        />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/proCheckIv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_pro_check"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginEnd="@dimen/_12sdp"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/weeklyCrd"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_66sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/yearlyCrd"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:cardCornerRadius="@dimen/_14sdp"
+                app:strokeColor="@color/pro_c6"
+                app:strokeWidth="@dimen/_1sdp"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/weeklyCL"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        android:id="@+id/weeklyTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/WEEKLY"
+                        android:textColor="@color/pro_c7"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textSize="@dimen/_9ssp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_margin="@dimen/_12sdp"
+                        android:maxLines="1"
+                        android:includeFontPadding="false"
+                        />
+
+
+
+                    <TextView
+                        android:id="@+id/weeklyPriceTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="** **"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textSize="@dimen/_17ssp"
+                        app:layout_constraintTop_toBottomOf="@+id/weeklyTv"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:maxLines="1"
+                        android:includeFontPadding="false"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/week"
+                        android:textColor="@color/pro_c7"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/arimo_regular"
+                        android:textSize="@dimen/_9ssp"
+                        app:layout_constraintBottom_toBottomOf="@+id/weeklyPriceTv"
+                        app:layout_constraintStart_toEndOf="@+id/weeklyPriceTv"
+                        android:layout_marginStart="@dimen/_7sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:maxLines="1"
+                        android:includeFontPadding="false"
+                        />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/weeklyProCheckIv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_pro_check"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginEnd="@dimen/_12sdp"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/countinueWithAdBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/continue_with_ads"
+                android:textColor="@color/pro_c7"
+                android:textStyle="bold"
+                android:fontFamily="@font/arimo_regular"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/weeklyCrd"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:maxLines="1"
+                android:includeFontPadding="false"
+                android:padding="@dimen/_4sdp"
+                android:foreground="?attr/selectableItemBackground"
+                />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/buySubscriptionBtn"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_47sdp"
+                app:cardCornerRadius="@dimen/_14sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/countinueWithAdBtn"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                app:cardBackgroundColor="@color/white"
+                app:strokeWidth="0dp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_marginBottom="@dimen/_12sdp"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/gradient_btn_bg"
+                    android:foreground="?attr/selectableItemBackground"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/getting_started"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/arimo_regular"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/_15ssp"
+                        android:drawablePadding="@dimen/_10sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cancel_anytime_secure_payment_7_day_money_back"
+                android:textColor="@color/pro_c7"
+                android:textStyle="bold"
+                android:fontFamily="@font/arimo_regular"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/buySubscriptionBtn"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:includeFontPadding="false"
+                android:padding="@dimen/_4sdp"
+                android:foreground="?attr/selectableItemBackground"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/backBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/cross_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbarLL"
+        android:layout_margin="@dimen/_12sdp"
+        android:foreground="?attr/selectableItemBackground"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/progressBar"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:indeterminateTint="@color/blue"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

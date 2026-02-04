@@ -528,4 +528,49 @@ Hapus watermark dan dapatkan fitur premium
 </string>
     <string name="sign_up_login">Daftar / Masuk</string>
 
+    <string name="ad_is_loading">Iklan sedang dimuat</string>
+    <string name="failed_to_load_ads_please_try_again">Silakan periksa koneksi internet Anda dan coba lagi.</string>
+
+    <string name="turn_your_website_into_an_app">Ubah situs web Anda menjadi aplikasi</string>
+    <string name="professional_mobile_apps_made_simple">Aplikasi mobile profesional jadi lebih mudah</string>
+    <string name="website_to_app">Situs web ke aplikasi</string>
+    <string name="no_coding">Tanpa coding</string>
+    <string name="fast_creation">Pembuatan cepat</string>
+    <string name="auto_updates">Pembaruan otomatis</string>
+    <string name="YEARLY">TAHUNAN</string>
+    <string name="year">/ Tahun</string>
+    <string name="per_month">per bulan</string>
+
+    <string name="WEEKLY">MINGGUAN</string>
+    <string name="week">/ Minggu</string>
+    <string name="continue_with_ads">Lanjutkan dengan iklan</string>
+    <string name="cancel_anytime_secure_payment_7_day_money_back">Batalkan kapan saja • Pembayaran aman • Garansi uang kembali 7 hari</string>
+    <string name="save">Simpan</string>
+    <string name="go_premium">Jadi Premium</string>
+    <string name="unlock_all_features_remove_ads">Buka semua fitur &amp; hapus iklan</string>
+
+    <string name="unlock">Buka</string>
+    <string name="pay_just_once">Bayar sekali saja</string>
+    <string name="full_access_forever_no_recurring_charges">Akses penuh selamanya. Tanpa biaya berulang.</string>
+    <string name="complete_ownership_from_day_one">Kepemilikan penuh sejak hari pertama.</string>
+    <string name="unlimited_apps">Aplikasi tanpa batas</string>
+    <string name="no_usage_limits">Tanpa batas penggunaan</string>
+    <string name="instant_setup">Pengaturan instan</string>
+    <string name="ready_in_minutes">Siap dalam hitungan menit</string>
+    <string name="always_available">Selalu tersedia</string>
+    <string name="free_updates">Pembaruan gratis</string>
+    <string name="forever_included">Termasuk selamanya</string>
+    <string name="LIFETIME_ACCESS">AKSES SEUMUR HIDUP</string>
+    <string name="one_payment_forever_yours">Sekali bayar • Milik Anda selamanya</string>
+    <string name="save_amount_today">Hemat %1$s hari ini</string>
+    <string name="never_pay_a_subscription_again">Tidak perlu bayar langganan lagi</string>
+    <string name="build_unlimited_apps_instantly">Buat aplikasi tanpa batas seketika</string>
+    <string name="every_feature_every_update_included">Setiap fitur, setiap pembaruan termasuk</string>
+    <string name="get_lifetime_access_now">Dapatkan akses seumur hidup sekarang</string>
+    <string name="one_payment">Sekali bayar</string>
+    <string name="secure_payment">Pembayaran aman</string>
+    <string name="_30_day_guarantee">Garansi 30 hari</string>
+    <string name="trusted_by_10000_creators_worldwide">Dipercaya oleh lebih dari 10.000 kreator di seluruh dunia</string>
+
+
 </resources>

@@ -405,5 +405,49 @@
     <string name="sign_up_to_save_your_apps_access_profile_manage_settings">Meld je aan om je apps op te slaan, je profiel te openen en instellingen te beheren</string>
     <string name="sign_up_login">Registreren / Inloggen</string>
 
+    <string name="ad_is_loading">Advertentie wordt geladen</string>
+    <string name="failed_to_load_ads_please_try_again">Controleer je internetverbinding en probeer het opnieuw.</string>
+
+    <string name="turn_your_website_into_an_app">Verander je website in een app</string>
+    <string name="professional_mobile_apps_made_simple">Professionele mobiele apps eenvoudig gemaakt</string>
+    <string name="website_to_app">Website naar app</string>
+    <string name="no_coding">Geen codering</string>
+    <string name="fast_creation">Snelle creatie</string>
+    <string name="auto_updates">Automatische updates</string>
+    <string name="YEARLY">JAARLIJKS</string>
+    <string name="year">/ Jaar</string>
+    <string name="per_month">per maand</string>
+
+    <string name="WEEKLY">WEKELIJKS</string>
+    <string name="week">/ Week</string>
+    <string name="continue_with_ads">Doorgaan met advertenties</string>
+    <string name="cancel_anytime_secure_payment_7_day_money_back">Altijd opzegbaar • Veilige betaling • 7 dagen geld-terug-garantie</string>
+    <string name="save">Opslaan</string>
+    <string name="go_premium">Ga Premium</string>
+    <string name="unlock_all_features_remove_ads">Ontgrendel alle functies &amp; verwijder advertenties</string>
+
+    <string name="unlock">Ontgrendelen</string>
+    <string name="pay_just_once">Betaal slechts één keer</string>
+    <string name="full_access_forever_no_recurring_charges">Volledige toegang voor altijd. Geen terugkerende kosten.</string>
+    <string name="complete_ownership_from_day_one">Volledig eigendom vanaf dag één.</string>
+    <string name="unlimited_apps">Onbeperkte apps</string>
+    <string name="no_usage_limits">Geen gebruiksbeperkingen</string>
+    <string name="instant_setup">Directe installatie</string>
+    <string name="ready_in_minutes">Binnen enkele minuten klaar</string>
+    <string name="always_available">Altijd beschikbaar</string>
+    <string name="free_updates">Gratis updates</string>
+    <string name="forever_included">Voor altijd inbegrepen</string>
+    <string name="LIFETIME_ACCESS">LEVENSLANGE TOEGANG</string>
+    <string name="one_payment_forever_yours">Eenmalige betaling • Voor altijd van jou</string>
+    <string name="save_amount_today">Bespaar %1$s vandaag</string>
+    <string name="never_pay_a_subscription_again">Betaal nooit meer een abonnement</string>
+    <string name="build_unlimited_apps_instantly">Bouw onbeperkte apps direct</string>
+    <string name="every_feature_every_update_included">Elke functie, elke update inbegrepen</string>
+    <string name="get_lifetime_access_now">Krijg nu levenslange toegang</string>
+    <string name="one_payment">Eenmalige betaling</string>
+    <string name="secure_payment">Veilige betaling</string>
+    <string name="_30_day_guarantee">30 dagen garantie</string>
+    <string name="trusted_by_10000_creators_worldwide">Vertrouwd door meer dan 10.000 makers wereldwijd</string>
+
 
 </resources>

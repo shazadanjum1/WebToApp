@@ -407,4 +407,48 @@
     <string name="sign_up_to_save_your_apps_access_profile_manage_settings">Registrera dig för att spara dina appar, få åtkomst till profil och hantera inställningar</string>
     <string name="sign_up_login">Registrera / Logga in</string>
 
+    <string name="ad_is_loading">Annons laddas</string>
+    <string name="failed_to_load_ads_please_try_again">Kontrollera din internetanslutning och försök igen.</string>
+
+    <string name="turn_your_website_into_an_app">Förvandla din webbplats till en app</string>
+    <string name="professional_mobile_apps_made_simple">Professionella mobilappar på ett enkelt sätt</string>
+    <string name="website_to_app">Webbplats till app</string>
+    <string name="no_coding">Ingen kodning</string>
+    <string name="fast_creation">Snabb skapelse</string>
+    <string name="auto_updates">Automatiska uppdateringar</string>
+    <string name="YEARLY">ÅRLIGEN</string>
+    <string name="year">/ År</string>
+    <string name="per_month">per månad</string>
+
+    <string name="WEEKLY">VECKOVIS</string>
+    <string name="week">/ Vecka</string>
+    <string name="continue_with_ads">Fortsätt med annonser</string>
+    <string name="cancel_anytime_secure_payment_7_day_money_back">Avbryt när som helst • Säker betalning • 7 dagars pengarna-tillbaka-garanti</string>
+    <string name="save">Spara</string>
+    <string name="go_premium">Bli Premium</string>
+    <string name="unlock_all_features_remove_ads">Lås upp alla funktioner &amp; ta bort annonser</string>
+
+    <string name="unlock">Lås upp</string>
+    <string name="pay_just_once">Betala bara en gång</string>
+    <string name="full_access_forever_no_recurring_charges">Full åtkomst för alltid. Inga återkommande avgifter.</string>
+    <string name="complete_ownership_from_day_one">Fullt ägande från dag ett.</string>
+    <string name="unlimited_apps">Obegränsade appar</string>
+    <string name="no_usage_limits">Inga användningsbegränsningar</string>
+    <string name="instant_setup">Omedelbar installation</string>
+    <string name="ready_in_minutes">Klar på några minuter</string>
+    <string name="always_available">Alltid tillgänglig</string>
+    <string name="free_updates">Gratis uppdateringar</string>
+    <string name="forever_included">För alltid inkluderat</string>
+    <string name="LIFETIME_ACCESS">LIVSTIDSÅTKOMST</string>
+    <string name="one_payment_forever_yours">En betalning • För alltid din</string>
+    <string name="save_amount_today">Spara %1$s idag</string>
+    <string name="never_pay_a_subscription_again">Betala aldrig en prenumeration igen</string>
+    <string name="build_unlimited_apps_instantly">Bygg obegränsade appar direkt</string>
+    <string name="every_feature_every_update_included">Varje funktion, varje uppdatering inkluderad</string>
+    <string name="get_lifetime_access_now">Få livstidsåtkomst nu</string>
+    <string name="one_payment">En betalning</string>
+    <string name="secure_payment">Säker betalning</string>
+    <string name="_30_day_guarantee">30 dagars garanti</string>
+    <string name="trusted_by_10000_creators_worldwide">Betrodd av över 10 000 skapare världen över</string>
+
 </resources>

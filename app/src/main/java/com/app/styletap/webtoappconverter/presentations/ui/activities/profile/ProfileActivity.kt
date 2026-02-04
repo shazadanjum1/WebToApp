@@ -19,8 +19,10 @@ import com.app.styletap.webtoappconverter.extentions.customEnableEdgeToEdge
 import com.app.styletap.webtoappconverter.extentions.formatDate
 import com.app.styletap.webtoappconverter.extentions.getInitials
 import com.app.styletap.webtoappconverter.extentions.getTimeInMillis
+import com.app.styletap.webtoappconverter.extentions.isNetworkAvailable
 import com.app.styletap.webtoappconverter.extentions.logoutUser
 import com.app.styletap.webtoappconverter.extentions.openLink
+import com.app.styletap.webtoappconverter.extentions.proIntent
 import com.app.styletap.webtoappconverter.extentions.showLogoutDialog
 import com.app.styletap.webtoappconverter.models.User
 import com.app.styletap.webtoappconverter.presentations.ui.activities.authorization.LoginActivity
@@ -28,6 +30,7 @@ import com.app.styletap.webtoappconverter.presentations.ui.activities.home.MainA
 import com.app.styletap.webtoappconverter.presentations.ui.activities.language.LanguageActivity
 import com.app.styletap.webtoappconverter.presentations.ui.activities.services.ServiceDetailsActivity
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.ACTION_REFRESH_ACTIVITY
+import com.app.styletap.webtoappconverter.presentations.utils.PrefHelper
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
@@ -35,6 +38,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 
 class ProfileActivity : AppCompatActivity() {
     lateinit var binding: ActivityProfileBinding
+    private lateinit var prefHelper: PrefHelper
 
     var isClickable = true
 
@@ -59,6 +63,8 @@ class ProfileActivity : AppCompatActivity() {
 
         adjustTopHeight(binding.toolbarLL)
         adjustBottomHeight(binding.container)
+
+        prefHelper = PrefHelper(this.applicationContext)
 
         auth = FirebaseAuth.getInstance()
         user = auth.currentUser
@@ -94,12 +100,26 @@ class ProfileActivity : AppCompatActivity() {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        binding.proCard.isVisible = !prefHelper.getIsPurchased()
+
+    }
+
     fun initView(){
         binding.apply {
             toolbar.titleTv.text = resources.getString(R.string.profile)
             toolbar.backBtn.isVisible = true
             toolbar.backBtn.setOnClickListener {
                 onBack()
+            }
+
+            proCard.setOnClickListener {
+                if (isNetworkAvailable()){
+                    startActivity(proIntent().apply { putExtra("from", "home") })
+                } else {
+                    Toast.makeText(this@ProfileActivity, resources.getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show()
+                }
             }
 
             if (user?.isAnonymous == true) {

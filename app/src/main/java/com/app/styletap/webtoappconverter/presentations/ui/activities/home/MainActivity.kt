@@ -18,6 +18,7 @@ import com.app.styletap.webtoappconverter.extentions.customEnableEdgeToEdge
 import com.app.styletap.webtoappconverter.extentions.isNetworkAvailable
 import com.app.styletap.webtoappconverter.extentions.logoutUser
 import com.app.styletap.webtoappconverter.extentions.openEmail
+import com.app.styletap.webtoappconverter.extentions.proIntent
 import com.app.styletap.webtoappconverter.extentions.showLogoutDialog
 import com.app.styletap.webtoappconverter.extentions.withNotificationPermission
 import com.app.styletap.webtoappconverter.presentations.ui.activities.createApp.CreateAppActivity
@@ -76,6 +77,11 @@ class MainActivity : AppCompatActivity() {
         exitProcess(0)
     }
 
+    override fun onResume() {
+        super.onResume()
+        binding.toolbar.proBtn.isVisible = !prefHelper.getIsPurchased()
+    }
+
     fun initView(){
         binding.apply {
             toolbar.titleTv.text = resources.getString(R.string.dashboard)
@@ -97,7 +103,6 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-
             toolbar.profileBtn.setOnClickListener {
                 if (isNetworkAvailable()){
                     moveNext(Intent(this@MainActivity, ProfileActivity::class.java))
@@ -106,6 +111,13 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
+            toolbar.proBtn.setOnClickListener {
+                if (isNetworkAvailable()){
+                    moveNext(proIntent().apply { putExtra("from", "home") })
+                } else {
+                    Toast.makeText(this@MainActivity, resources.getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show()
+                }
+            }
 
             createAppBtn.setOnClickListener {
                 moveNext(Intent(this@MainActivity, CreateAppActivity::class.java))

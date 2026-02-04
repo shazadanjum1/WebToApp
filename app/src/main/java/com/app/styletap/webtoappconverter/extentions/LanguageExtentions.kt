@@ -40,6 +40,13 @@ fun Activity.changeLocale(){
     setLocale(this, selectedLanguageCode){}
 }
 
+fun Activity.changeToDeviceLocale() {
+    val deviceLocale = Locale.getDefault()              // e.g. ur_PK, en_US
+    val deviceLanguageTag = deviceLocale.toLanguageTag() // "ur-PK", "en-US"
+    setLocale(this, deviceLanguageTag) {}
+}
+
+
 fun setLocale1(activity: Activity, languageCode: String, onLocaleChanged: () -> Unit) {
 
     val config = activity.resources.configuration

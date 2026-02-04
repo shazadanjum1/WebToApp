@@ -64,12 +64,6 @@ class GenerateAppActivity : AppCompatActivity() {
 
     lateinit var prefHelper: PrefHelper
 
-    private val adObserver = {
-        runOnUiThread {
-            showNativeAd()
-        }
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         changeLocale()
@@ -82,30 +76,7 @@ class GenerateAppActivity : AppCompatActivity() {
         adjustBottomHeight(binding.container)
 
         prefHelper = PrefHelper(this)
-        val app = application as MyApplication
 
-        if (isNetworkAvailable() && prefHelper.getBooleanDefultTrue(createapp_native) && !prefHelper.getIsPurchased()) {
-
-            // Start shimmer
-            binding.shimmerContainer.nativeShimmerView.startShimmer()
-            binding.shimmerContainer.nativeShimmerView.visibility = View.VISIBLE
-            binding.adParentLayout.visibility = View.VISIBLE
-            binding.nativeLayout.visibility = View.VISIBLE
-
-            // Add observer for ad loaded
-            app.nativeAdManager.addAdLoadedListener(adObserver)
-
-            // Load ad if not already loaded
-            //app.nativeAdManager.loadNativeAdIfNeeded(this,getString(R.string.createAppScreenNativeId))
-
-            // Show immediately if already loaded
-            showNativeAd()
-
-        } else {
-            // Hide ad layout if conditions not met
-            binding.adParentLayout.visibility = View.GONE
-            binding.shimmerContainer.nativeShimmerView.stopShimmer()
-        }
 
         onBackPressedDispatcher.addCallback(
             this,
@@ -158,10 +129,6 @@ class GenerateAppActivity : AppCompatActivity() {
         super.onDestroy()
         try {
             unregisterReceiver(finishReceiver)
-        }catch (_: Exception){}
-
-        try {
-            (application as MyApplication).nativeAdManager.removeAdLoadedListener(adObserver)
         }catch (_: Exception){}
     }
 
@@ -250,25 +217,5 @@ class GenerateAppActivity : AppCompatActivity() {
             )
         }
 
-    }
-
-    private fun showNativeAd() {
-        val app = application as MyApplication
-
-        if (app.nativeAdManager.nativeAd == null) return
-
-        // Stop shimmer
-        binding.shimmerContainer.nativeShimmerView.stopShimmer()
-        binding.shimmerContainer.nativeShimmerView.visibility = View.GONE
-
-        binding.adParentLayout.visibility = View.VISIBLE
-        binding.nativeLayout.visibility = View.VISIBLE
-
-        // Populate ad
-        app.nativeAdManager.showNativeAd(
-            this,
-            binding.adFrame,
-            binding.shimmerContainer.nativeShimmerView
-        )
     }
 }

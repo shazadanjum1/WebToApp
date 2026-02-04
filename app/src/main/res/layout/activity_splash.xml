@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/splash_bg"
+    android:background="@drawable/pro_bg"
     android:layoutDirection="ltr"
     tools:context=".presentations.ui.activities.splash.SplashActivity">
 
@@ -34,8 +34,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/app_icon_iv"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:text="@string/app_name1"
+            android:textStyle="bold"
             android:textAlignment="center"
             android:fontFamily="@font/arimo_regular"
             android:textSize="@dimen/_30ssp"
@@ -51,7 +52,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/app_title"
-            android:textColor="@color/white"
+            android:textColor="@color/pro_c5"
             android:text="@string/convert_websites_to_mobile_apps"
             android:textAlignment="center"
             android:fontFamily="@font/arimo_regular"
@@ -71,7 +72,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/app_msg"
             android:layout_marginTop="@dimen/_18sdp"
-            android:indeterminateTint="@color/white"
+            android:indeterminateTint="@color/blue"
             />
 
 

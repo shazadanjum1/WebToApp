@@ -2,11 +2,17 @@ package com.app.styletap.webtoappconverter
 
 import android.app.Activity
 import android.app.Application
+import android.app.Dialog
 import android.content.Context
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
+import android.view.WindowManager
+import android.view.animation.AnimationUtils
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.Lifecycle
@@ -140,6 +146,8 @@ class MyApplication : Application(), Application.ActivityLifecycleCallbacks, Def
     }
 
     class AppOpenAdManager {
+        var loadingDialog: Dialog? = null
+        var animationIcon: ImageView? = null
 
         var appOpenAd: AppOpenAd? = null
         private var isLoadingAd = false
@@ -238,6 +246,12 @@ class MyApplication : Application(), Application.ActivityLifecycleCallbacks, Def
 
                         FirebaseAnalyticsUtils.logEventMessage("AppOpenAd_Dismissed")
 
+                        if (loadingDialog != null && loadingDialog!!.isShowing) try {
+                            loadingDialog!!.dismiss()
+                        } catch (_: Exception) {}
+
+
+
                         onShowAdCompleteListener.onShowAdComplete()
                         loadAd(activity, AD_UNIT_ID, object : AppOpenAdCallBack {
                             override fun onLoaded() {}
@@ -253,6 +267,10 @@ class MyApplication : Application(), Application.ActivityLifecycleCallbacks, Def
 
                         isShowApOpenAd = true
                         isIntertialAdshowing = false
+
+                        if (loadingDialog != null && loadingDialog!!.isShowing) try {
+                            loadingDialog!!.dismiss()
+                        } catch (_: Exception) {}
 
                         if (adError.message != "The ad can not be shown when app is not in foreground.") {
                             appOpenAd = null
@@ -276,8 +294,37 @@ class MyApplication : Application(), Application.ActivityLifecycleCallbacks, Def
 
                     }
                 }
-            isShowingAd = true
-            appOpenAd?.show(activity)
+
+            show_animation_dialoug(activity)
+
+            Handler(Looper.myLooper()!!).postDelayed({
+                appOpenAd?.show(activity)
+                isShowingAd = true
+            }, 100)
+
+            /*isShowingAd = true
+            appOpenAd?.show(activity)*/
         }
+
+        private fun show_animation_dialoug(activity: Activity?) {
+            loadingDialog = Dialog(activity!!)
+            loadingDialog!!.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            loadingDialog!!.setContentView(R.layout.loading_app_open_ad_layout)
+            loadingDialog!!.setCancelable(false)
+            loadingDialog!!.setCanceledOnTouchOutside(false)
+            loadingDialog!!.show()
+            animationIcon = loadingDialog!!.findViewById(R.id.icon_animation)
+            loadingDialog!!.window!!.setLayout(
+                WindowManager.LayoutParams.MATCH_PARENT,
+                WindowManager.LayoutParams.MATCH_PARENT
+            )
+            animationIcon!!.startAnimation(
+                AnimationUtils.loadAnimation(
+                    activity,
+                    R.anim.app_open_ad_ani
+                )
+            )
+        }
+
     }
 }

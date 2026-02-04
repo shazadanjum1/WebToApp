@@ -4,12 +4,20 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.android.billingclient.api.BillingClient
+import com.android.billingclient.api.BillingClientStateListener
+import com.android.billingclient.api.BillingResult
+import com.android.billingclient.api.PendingPurchasesParams
+import com.android.billingclient.api.Purchase
+import com.android.billingclient.api.QueryPurchasesParams
 import com.app.styletap.ads.ConsentManager
 import com.app.styletap.interfaces.RemoteConfigCallbackListiner
 import com.app.styletap.webtoappconverter.R
 import com.app.styletap.webtoappconverter.extentions.changeLocale
 import com.app.styletap.webtoappconverter.extentions.customEnableEdgeToEdge
 import com.app.styletap.webtoappconverter.extentions.isNetworkAvailable
+import com.app.styletap.webtoappconverter.extentions.proIntent
+import com.app.styletap.webtoappconverter.extentions.proLifeTimeIntent
 import com.app.styletap.webtoappconverter.firebase.RemoteConfigHelper
 import com.app.styletap.webtoappconverter.presentations.ui.activities.authorization.LoginActivity
 import com.app.styletap.webtoappconverter.presentations.ui.activities.home.MainActivity
@@ -39,9 +47,15 @@ class SplashActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     var user: FirebaseUser? = null
 
+    private val PREMIUM_LIFETIME_PACKAGE = "bundle_download"
+
 
     private lateinit var googleMobileAdsConsentManager: ConsentManager
 
+    private var billingClient: BillingClient? = null
+
+    private val PREMIUM_WEEKLY_PACKAGE = "weekly_sub"
+    private val PREMIUM_YEARLY_PACKAGE = "yearly_sub"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,9 +67,9 @@ class SplashActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         user = auth.currentUser
 
-
         if (isNetworkAvailable()){
-            fetchRemoteConfigData()
+            checkSubscription()
+            //fetchRemoteConfigData()
         } else {
             CoroutineScope(Dispatchers.Main).launch {
                 delay(1000)
@@ -100,6 +114,95 @@ class SplashActivity : AppCompatActivity() {
         moveNext()
     }
 
+    fun checkSubscription() {
+        billingClient = BillingClient.newBuilder(this)
+            .enablePendingPurchases(
+                PendingPurchasesParams.newBuilder()
+                    .enableOneTimeProducts()
+                    .enablePrepaidPlans()
+                    .build()
+            )
+            .setListener { billingResult, purchases ->
+            }.build()
+
+        establishConnection()
+    }
+
+    private fun establishConnection() {
+        billingClient?.startConnection(object : BillingClientStateListener {
+            override fun onBillingSetupFinished(billingResult: BillingResult) {
+                if (billingResult.responseCode == BillingClient.BillingResponseCode.OK) {
+                    checkUserPremiumStatus()
+                    checkInAppPurchases()
+                } else {
+                    fetchRemoteConfigData()
+                }
+            }
+
+            override fun onBillingServiceDisconnected() {
+
+            }
+        })
+    }
+
+    private fun checkUserPremiumStatus() {
+        var isPremium = false
+
+        fun finalizePremiumCheck() {
+            prefHelper.setIsPurchased(isPremium)
+            fetchRemoteConfigData()
+        }
+
+        val params = QueryPurchasesParams.newBuilder()
+            .setProductType(BillingClient.ProductType.SUBS)
+            .build()
+
+        billingClient?.queryPurchasesAsync(params) { billingResult, purchases ->
+            if (billingResult.responseCode == BillingClient.BillingResponseCode.OK && purchases != null) {
+                for (purchase in purchases) {
+                    val hasValidProduct = purchase.products.contains(PREMIUM_WEEKLY_PACKAGE) || purchase.products.contains(PREMIUM_YEARLY_PACKAGE)
+
+                    if (
+                        hasValidProduct &&
+                        purchase.purchaseState == Purchase.PurchaseState.PURCHASED &&
+                        purchase.isAcknowledged
+                    ) {
+                        isPremium = true
+                        break
+                    }
+                }
+            }
+            finalizePremiumCheck()
+        }
+    }
+
+    private fun checkInAppPurchases() {
+        val params = QueryPurchasesParams.newBuilder()
+            .setProductType(BillingClient.ProductType.INAPP)
+            .build()
+
+        billingClient?.queryPurchasesAsync(params) { billingResult, purchases ->
+            var isLifetimePurchased = false
+
+            if (billingResult.responseCode == BillingClient.BillingResponseCode.OK) {
+                purchases.forEach { purchase ->
+                    val hasLifetime =
+                        purchase.products.contains(PREMIUM_LIFETIME_PACKAGE)
+
+                    if (
+                        hasLifetime &&
+                        purchase.purchaseState == Purchase.PurchaseState.PURCHASED &&
+                        purchase.isAcknowledged
+                    ) {
+                        isLifetimePurchased = true
+                        return@forEach
+                    }
+                }
+            }
+
+            prefHelper.setIsPurchasedLifeTime(isLifetimePurchased)
+        }
+    }
 
 
     fun moveNext(){
@@ -113,7 +216,7 @@ class SplashActivity : AppCompatActivity() {
             Intent(this, MainActivity::class.java)
         }*/
 
-        val mIntent =
+        val mIntent = if (prefHelper.getIsPurchased()){
             if (user?.isAnonymous == true) {
                 Intent(this, MainActivity::class.java)
             } else if (user == null) {
@@ -127,7 +230,9 @@ class SplashActivity : AppCompatActivity() {
             } else {
                 Intent(this, MainActivity::class.java)
             }
-
+        } else {
+            proIntent()
+        }
 
         mIntent.apply {
             putExtra("from", "splash")

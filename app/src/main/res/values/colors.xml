@@ -17,6 +17,7 @@
     <color name="grey_5">#99A1AF</color>
 
     <color name="blue">#9810FA</color>
+    <color name="dark_blue">#0D47A1</color>
 
     <color name="chip_text_purple">#8200DB</color>
     <color name="chip_bg_purple">#F3E8FF</color>
@@ -40,5 +41,17 @@
     <color name="c1">#676565</color>
     <color name="c6">#D9D9D9</color>
     <color name="c9">#E5E5E5</color>
+
+
+    <color name="pro_c1">#CBC0FF</color>
+    <color name="pro_c2">#A4DBFF</color>
+    <color name="pro_c3">#7CFFE4</color>
+    <color name="pro_c4">#CCB661</color>
+    <color name="pro_c5">#45556C</color>
+    <color name="pro_c6">#E2E8F0</color>
+    <color name="pro_c7">#62748E</color>
+    <color name="pro_c8">#F1F5F9</color>
+    <color name="pro_c9">#90A1B9</color>
+    <color name="pro_c10">#314158</color>
 
 </resources>

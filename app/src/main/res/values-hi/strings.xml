@@ -400,4 +400,49 @@
     <string name="sign_up_to_save_your_apps_access_profile_manage_settings">अपने ऐप्स को सेव करने, प्रोफ़ाइल एक्सेस करने और सेटिंग्स प्रबंधित करने के लिए साइन अप करें</string>
     <string name="sign_up_login">साइन अप / लॉगिन</string>
 
+    <string name="ad_is_loading">विज्ञापन लोड हो रहा है</string>
+    <string name="failed_to_load_ads_please_try_again">कृपया अपनी इंटरनेट कनेक्शन जाँचें और पुनः प्रयास करें।</string>
+
+    <string name="turn_your_website_into_an_app">अपनी वेबसाइट को ऐप में बदलें</string>
+    <string name="professional_mobile_apps_made_simple">पेशेवर मोबाइल ऐप्स को सरल बनाया गया</string>
+    <string name="website_to_app">वेबसाइट से ऐप</string>
+    <string name="no_coding">कोडिंग नहीं</string>
+    <string name="fast_creation">तेज़ निर्माण</string>
+    <string name="auto_updates">स्वचालित अपडेट</string>
+    <string name="YEARLY">वार्षिक</string>
+    <string name="year">/ वर्ष</string>
+    <string name="per_month">प्रति माह</string>
+
+    <string name="WEEKLY">साप्ताहिक</string>
+    <string name="week">/ सप्ताह</string>
+    <string name="continue_with_ads">विज्ञापनों के साथ जारी रखें</string>
+    <string name="cancel_anytime_secure_payment_7_day_money_back">कभी भी रद्द करें • सुरक्षित भुगतान • 7 दिन की धनवापसी</string>
+    <string name="save">सहेजें</string>
+    <string name="go_premium">प्रीमियम बनें</string>
+    <string name="unlock_all_features_remove_ads">सभी सुविधाएँ अनलॉक करें और विज्ञापन हटाएँ</string>
+
+    <string name="unlock">अनलॉक करें</string>
+    <string name="pay_just_once">केवल एक बार भुगतान करें</string>
+    <string name="full_access_forever_no_recurring_charges">हमेशा के लिए पूर्ण पहुँच। कोई आवर्ती शुल्क नहीं।</string>
+    <string name="complete_ownership_from_day_one">पहले दिन से पूर्ण स्वामित्व।</string>
+    <string name="unlimited_apps">असीमित ऐप्स</string>
+    <string name="no_usage_limits">कोई उपयोग सीमा नहीं</string>
+    <string name="instant_setup">तुरंत सेटअप</string>
+    <string name="ready_in_minutes">मिनटों में तैयार</string>
+    <string name="always_available">हमेशा उपलब्ध</string>
+    <string name="free_updates">मुफ़्त अपडेट</string>
+    <string name="forever_included">हमेशा शामिल</string>
+    <string name="LIFETIME_ACCESS">आजीवन पहुँच</string>
+    <string name="one_payment_forever_yours">एक भुगतान • हमेशा के लिए आपका</string>
+    <string name="save_amount_today">आज %1$s बचाएँ</string>
+    <string name="never_pay_a_subscription_again">फिर कभी सदस्यता शुल्क न दें</string>
+    <string name="build_unlimited_apps_instantly">तुरंत असीमित ऐप्स बनाएँ</string>
+    <string name="every_feature_every_update_included">हर सुविधा, हर अपडेट शामिल</string>
+    <string name="get_lifetime_access_now">अभी आजीवन पहुँच प्राप्त करें</string>
+    <string name="one_payment">एक भुगतान</string>
+    <string name="secure_payment">सुरक्षित भुगतान</string>
+    <string name="_30_day_guarantee">30 दिन की गारंटी</string>
+    <string name="trusted_by_10000_creators_worldwide">दुनिया भर में 10,000+ निर्माताओं द्वारा विश्वसनीय</string>
+
+
 </resources>

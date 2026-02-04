@@ -53,4 +53,14 @@ class PrefHelper(context: Context) {
     }
 
 
+    fun getIsPurchasedLifeTime(): Boolean {
+        return prefHelper?.getBoolean("IsPurchasedLifeTime", false) ?: false
+    }
+
+    fun setIsPurchasedLifeTime(value: Boolean){
+        prefHelper?.edit()?.remove("IsPurchasedLifeTime")?.apply()
+        prefHelper?.edit()?.putBoolean("IsPurchasedLifeTime", value)?.apply()
+    }
+
+
 }
