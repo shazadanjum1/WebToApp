@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import com.android.billingclient.api.BillingClient
 import com.android.billingclient.api.BillingClientStateListener
 import com.android.billingclient.api.BillingResult
@@ -15,6 +17,7 @@ import com.app.styletap.interfaces.RemoteConfigCallbackListiner
 import com.app.styletap.webtoappconverter.R
 import com.app.styletap.webtoappconverter.extentions.changeLocale
 import com.app.styletap.webtoappconverter.extentions.customEnableEdgeToEdge
+import com.app.styletap.webtoappconverter.extentions.customEnableEdgeToEdge2
 import com.app.styletap.webtoappconverter.extentions.isNetworkAvailable
 import com.app.styletap.webtoappconverter.extentions.proIntent
 import com.app.styletap.webtoappconverter.extentions.proLifeTimeIntent
@@ -34,16 +37,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-/*
-pro screen (subscription)
-splash intertials ads
-pro screen locale with device locale
-pro screen (IAP)
- */
 
 class SplashActivity : AppCompatActivity() {
-    private lateinit var prefHelper: PrefHelper
-
     private lateinit var auth: FirebaseAuth
     var user: FirebaseUser? = null
 
@@ -61,9 +56,11 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         changeLocale()
         setContentView(R.layout.activity_splash)
-        customEnableEdgeToEdge()
+        //customEnableEdgeToEdge()
 
-        prefHelper = PrefHelper(this.applicationContext)
+        customEnableEdgeToEdge2()
+
+
         auth = FirebaseAuth.getInstance()
         user = auth.currentUser
 
@@ -149,7 +146,7 @@ class SplashActivity : AppCompatActivity() {
         var isPremium = false
 
         fun finalizePremiumCheck() {
-            prefHelper.setIsPurchased(isPremium)
+            PrefHelper.setIsPurchased(isPremium)
             fetchRemoteConfigData()
         }
 
@@ -200,7 +197,7 @@ class SplashActivity : AppCompatActivity() {
                 }
             }
 
-            prefHelper.setIsPurchasedLifeTime(isLifetimePurchased)
+            PrefHelper.setIsPurchasedLifeTime(isLifetimePurchased)
         }
     }
 
@@ -216,13 +213,13 @@ class SplashActivity : AppCompatActivity() {
             Intent(this, MainActivity::class.java)
         }*/
 
-        val mIntent = if (prefHelper.getIsPurchased()){
+        val mIntent = if (PrefHelper.getIsPurchased()){
             if (user?.isAnonymous == true) {
                 Intent(this, MainActivity::class.java)
             } else if (user == null) {
-                if (!prefHelper.getBoolean(isLanguageSelected)){
+                if (!PrefHelper.getBoolean(isLanguageSelected)){
                     Intent(this@SplashActivity, LanguageActivity::class.java)
-                } else if (prefHelper.getBooleanDefultTrue(isShowOnBoarding)){
+                } else if (PrefHelper.getBooleanDefultTrue(isShowOnBoarding)){
                     Intent(this, OnboardingActivity::class.java)
                 } else {
                     Intent(this, LoginActivity::class.java)

@@ -5,7 +5,6 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layoutDirection="ltr"
     android:background="@color/white"
     tools:context=".presentations.ui.activities.profile.ProfileActivity">
 
@@ -694,6 +693,127 @@
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/shareAppBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:paddingVertical="@dimen/_4sdp"
+                        android:foreground="?attr/selectableItemBackground"
+                        >
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/saIv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_share_app"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/LL7"
+                            app:layout_constraintBottom_toBottomOf="@+id/LL7"
+                            />
+
+                        <LinearLayout
+                            android:id="@+id/LL7"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintStart_toEndOf="@+id/saIv"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_marginHorizontal="@dimen/_12sdp"
+                            >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black_3"
+                                android:text="@string/share_app"
+                                android:fontFamily="@font/arimo_regular"
+                                android:textSize="@dimen/_11ssp"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/grey_1"
+                                android:text="@string/fast_easy_app_share"
+                                android:fontFamily="@font/arimo_regular"
+                                android:textSize="@dimen/_12ssp"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                />
+
+
+                        </LinearLayout>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/rateAppBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:paddingVertical="@dimen/_4sdp"
+                        android:foreground="?attr/selectableItemBackground"
+                        >
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/rpIv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_rate_app"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/LL6"
+                            app:layout_constraintBottom_toBottomOf="@+id/LL6"
+                            />
+
+                        <LinearLayout
+                            android:id="@+id/LL6"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintStart_toEndOf="@+id/rpIv"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_marginHorizontal="@dimen/_12sdp"
+                            >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black_3"
+                                android:text="@string/rate_us"
+                                android:fontFamily="@font/arimo_regular"
+                                android:textSize="@dimen/_11ssp"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/grey_1"
+                                android:text="@string/rate_our_app_with_5_stars"
+                                android:fontFamily="@font/arimo_regular"
+                                android:textSize="@dimen/_12ssp"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                />
+
+
+                        </LinearLayout>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 

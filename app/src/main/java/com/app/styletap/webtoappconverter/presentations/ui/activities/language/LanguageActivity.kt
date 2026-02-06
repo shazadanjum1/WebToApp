@@ -45,7 +45,6 @@ class LanguageActivity : AppCompatActivity() {
     private lateinit var languageAdapter : LanguageAdapter
 
     var selectedLanguage = "en"
-    lateinit var prefHelper: PrefHelper
 
     lateinit var lanuageModel: LanguageModel
     var fromWhere = "home"
@@ -66,7 +65,6 @@ class LanguageActivity : AppCompatActivity() {
         adjustBottomHeight(binding.container)
 
 
-        prefHelper = PrefHelper(this)
         auth = FirebaseAuth.getInstance()
         user = auth.currentUser
 
@@ -84,7 +82,7 @@ class LanguageActivity : AppCompatActivity() {
 
         binding.toolbar.titleTv.text = resources.getString(R.string.select_languages)
 
-        selectedLanguage = prefHelper.getString(languageCode, "en").toString()
+        selectedLanguage = PrefHelper.getString(languageCode, "en").toString()
 
         val languageList = getLanguageData()
 
@@ -141,8 +139,8 @@ class LanguageActivity : AppCompatActivity() {
     }
 
     fun setLocale(language: String) {
-        prefHelper.setBoolean(isLanguageSelected, true)
-        prefHelper.setString(languageCode,language)
+        PrefHelper.setBoolean(isLanguageSelected, true)
+        PrefHelper.setString(languageCode,language)
 
         val locale = Locale(language)
         Locale.setDefault(locale)
@@ -172,7 +170,7 @@ class LanguageActivity : AppCompatActivity() {
             return
         }
 */
-        if (fromWhere == "splash" && (prefHelper.getBooleanDefultTrue(isShowOnBoarding))){
+        if (fromWhere == "splash" && (PrefHelper.getBooleanDefultTrue(isShowOnBoarding))){
            // val mIntent = Intent(this@LanguageActivity, OnboardingActivity::class.java)
 
 
@@ -180,7 +178,7 @@ class LanguageActivity : AppCompatActivity() {
                 if (user?.isAnonymous == true) {
                     Intent(this, MainActivity::class.java)
                 } else if (user == null) {
-                    if (prefHelper.getBooleanDefultTrue(isShowOnBoarding)){
+                    if (PrefHelper.getBooleanDefultTrue(isShowOnBoarding)){
                         Intent(this, OnboardingActivity::class.java)
                     } else {
                         Intent(this, LoginActivity::class.java)
@@ -210,7 +208,7 @@ class LanguageActivity : AppCompatActivity() {
             return
         }
 
-        if (fromWhere == "splash" && (prefHelper.getBooleanDefultTrue(isShowOnBoarding))){
+        if (fromWhere == "splash" && (PrefHelper.getBooleanDefultTrue(isShowOnBoarding))){
             // val mIntent = Intent(this@LanguageActivity, OnboardingActivity::class.java)
 
 
@@ -218,7 +216,7 @@ class LanguageActivity : AppCompatActivity() {
                 if (user?.isAnonymous == true) {
                     Intent(this, MainActivity::class.java)
                 } else if (user == null) {
-                    if (prefHelper.getBooleanDefultTrue(isShowOnBoarding)){
+                    if (PrefHelper.getBooleanDefultTrue(isShowOnBoarding)){
                         Intent(this, OnboardingActivity::class.java)
                     } else {
                         Intent(this, LoginActivity::class.java)
@@ -243,7 +241,7 @@ class LanguageActivity : AppCompatActivity() {
 
 
     fun showNativeAd(){
-        if (isNetworkAvailable() && prefHelper.getBooleanDefultTrue(language_native) && !prefHelper.getIsPurchased()){
+        if (isNetworkAvailable() && PrefHelper.getBooleanDefultTrue(language_native) && !PrefHelper.getIsPurchased()){
             binding.adParentLayout.visibility = View.VISIBLE
             binding.nativeLayout.visibility = View.VISIBLE
             binding.shimmerContainer.nativeShimmerView.startShimmer()

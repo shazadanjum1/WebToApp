@@ -23,6 +23,8 @@ import com.app.styletap.webtoappconverter.extentions.adjustTopHeight
 import com.app.styletap.webtoappconverter.extentions.customEnableEdgeToEdge
 import com.app.styletap.webtoappconverter.extentions.isNetworkAvailable
 import androidx.core.graphics.toColorInt
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import com.app.styletap.ads.InterstitialAdManager
 import com.app.styletap.interfaces.InterstitialLoadCallback
 import com.app.styletap.webtoappconverter.MyApplication
@@ -30,6 +32,7 @@ import com.app.styletap.webtoappconverter.extentions.changeLocale
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.ACTION_FINISH_ACTIVITY
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.buildapp_inter
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.createapp_native
+import com.app.styletap.webtoappconverter.presentations.utils.Contants.isIntertialAdshowing
 import com.app.styletap.webtoappconverter.presentations.utils.PrefHelper
 
 class GenerateAppActivity : AppCompatActivity() {
@@ -62,8 +65,6 @@ class GenerateAppActivity : AppCompatActivity() {
         }
     }
 
-    lateinit var prefHelper: PrefHelper
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         changeLocale()
@@ -75,8 +76,18 @@ class GenerateAppActivity : AppCompatActivity() {
         adjustTopHeight(binding.toolbarLL)
         adjustBottomHeight(binding.container)
 
-        prefHelper = PrefHelper(this)
+        ViewCompat.setOnApplyWindowInsetsListener(binding.main) { _, insets ->
+            val imeInsets = insets.getInsets(WindowInsetsCompat.Type.ime())
+            val systemBarsInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
 
+            binding.scrollView.setPadding(
+                0,
+                0,
+                0,
+                imeInsets.bottom
+            )
+            insets
+        }
 
         onBackPressedDispatcher.addCallback(
             this,
@@ -200,17 +211,20 @@ class GenerateAppActivity : AppCompatActivity() {
 
     fun moveNext(intent: Intent){
 
-        if (prefHelper.getIsPurchased() || !prefHelper.getBooleanDefultTrue(buildapp_inter)){
+        if (PrefHelper.getIsPurchased() || !PrefHelper.getBooleanDefultTrue(buildapp_inter)){
             startActivity(intent)
         } else {
+            isIntertialAdshowing = true
             InterstitialAdManager(this).loadAndShowAd(
                 getString(R.string.buildAppInterstitialId),
-                prefHelper.getBooleanDefultTrue(buildapp_inter),
+                PrefHelper.getBooleanDefultTrue(buildapp_inter),
                 object : InterstitialLoadCallback{
                     override fun onFailedToLoad() {
+                        isIntertialAdshowing = false
                         Toast.makeText(this@GenerateAppActivity, resources.getString(R.string.failed_to_load_ads_please_try_again), Toast.LENGTH_SHORT).show()
                     }
                     override fun onLoaded() {
+                        isIntertialAdshowing = false
                         startActivity(intent)
                     }
                 }

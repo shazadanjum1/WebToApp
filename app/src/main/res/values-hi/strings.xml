@@ -209,7 +209,7 @@
     <string name="message">संदेश</string>
     <string name="describe_your_issue_in_detail">अपनी समस्या का विस्तार से वर्णन करें...</string>
     <string name="other_ways_to_reach_us">हम तक पहुँचने के अन्य तरीके</string>
-    <string name="email_">📧 ईमेल: appsmagic2952@gmail.com</string>
+    <string name="email_">📧 ईमेल: appsmagic2942@gmail.com</string>
     <string name="phone_">📞 फ़ोन: +1512 300 5526</string>
     <string name="support_hours">⏰ सपोर्ट समय: सुबह 9 बजे - शाम 6 बजे (सोम-शुक्र)</string>
 
@@ -444,5 +444,27 @@
     <string name="_30_day_guarantee">30 दिन की गारंटी</string>
     <string name="trusted_by_10000_creators_worldwide">दुनिया भर में 10,000+ निर्माताओं द्वारा विश्वसनीय</string>
 
+    <string name="per_week">प्रति सप्ताह</string>
+
+    <string name="confirm_password_is_required">पासवर्ड की पुष्टि आवश्यक है</string>
+    <string name="confirm_password_must_be_at_least_6_characters">पासवर्ड की पुष्टि कम से कम 6 अक्षरों की होनी चाहिए</string>
+
+    <string name="password_and_confirm_password_must_be_same">पासवर्ड और पुष्टि पासवर्ड समान होने चाहिए</string>
+    <string name="failed_to_update_password">पासवर्ड अपडेट करने में विफल</string>
+
+    <string name="exit_app">ऐप से बाहर निकलें</string>
+    <string name="are_you_sure_you_want_to_exit_the_app">क्या आप वाकई ऐप से बाहर निकलना चाहते हैं?</string>
+    <string name="exit">बाहर निकलें</string>
+
+    <string name="enjoying_our_app">क्या आपको हमारा ऐप पसंद आ रहा है?</string>
+    <string name="your_feedback_helps_us_improve_and_serve_you_better">आपकी प्रतिक्रिया हमें बेहतर बनाने और बेहतर सेवा देने में मदद करती है</string>
+    <string name="rate_now">अभी रेट करें</string>
+    <string name="maybe_later">शायद बाद में</string>
+
+    <string name="rate_us">हमें रेट करें</string>
+    <string name="rate_our_app_with_5_stars">हमारे ऐप को 5 सितारे दें</string>
+    <string name="share_app">ऐप साझा करें</string>
+    <string name="fast_easy_app_share">तेज़ और आसान ऐप साझा करें</string>
+    <string name="awesome_were_so_glad_you_love_it">शानदार! हमें खुशी है कि आपको यह पसंद आया! 🎉</string>
 
 </resources>

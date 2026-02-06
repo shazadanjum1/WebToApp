@@ -1,8 +1,11 @@
 package com.app.styletap.webtoappconverter.presentations.ui.activities.Premium
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Intent
 import android.content.pm.ActivityInfo
+import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -12,6 +15,9 @@ import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
 import com.android.billingclient.api.AcknowledgePurchaseParams
 import com.android.billingclient.api.BillingClient
@@ -33,6 +39,7 @@ import com.app.styletap.webtoappconverter.extentions.calculateMonthlyPriceFromFo
 import com.app.styletap.webtoappconverter.extentions.changeLocale
 import com.app.styletap.webtoappconverter.extentions.changeToDeviceLocale
 import com.app.styletap.webtoappconverter.extentions.customEnableEdgeToEdge
+import com.app.styletap.webtoappconverter.extentions.customEnableEdgeToEdge2
 import com.app.styletap.webtoappconverter.extentions.dpToPx
 import com.app.styletap.webtoappconverter.extentions.extractNumericValue
 import com.app.styletap.webtoappconverter.presentations.ui.activities.authorization.LoginActivity
@@ -49,6 +56,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlin.jvm.java
 
@@ -62,7 +70,6 @@ class SubscriptionPremiumActivity : AppCompatActivity() {
     private var yearlyPlanIndex = 1
 
 
-    private lateinit var sharedPreferencePremium: PrefHelper
     private var checkClickedPlan = 1
     private var billingClient: BillingClient? = null
     private var productDetailsList = mutableListOf<ProductDetails>()
@@ -80,12 +87,14 @@ class SubscriptionPremiumActivity : AppCompatActivity() {
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         binding = ActivitySubscriptionPremiumBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        customEnableEdgeToEdge()
+        /*customEnableEdgeToEdge()
 
         adjustTopHeight(binding.toolbarLL)
-        adjustBottomHeight(binding.container)
+        adjustBottomHeight(binding.container)*/
 
-        sharedPreferencePremium = PrefHelper(this.applicationContext)
+        customEnableEdgeToEdge2()
+
+
         auth = FirebaseAuth.getInstance()
         user = auth.currentUser
 
@@ -93,7 +102,7 @@ class SubscriptionPremiumActivity : AppCompatActivity() {
             this,
             object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
-                    onBack()
+                    //onBack()
                 }
             })
 
@@ -105,6 +114,10 @@ class SubscriptionPremiumActivity : AppCompatActivity() {
 
     }
 
+
+
+
+
     fun onBack() {
         if (fromWhere == "splash"){
             fromSplash()
@@ -114,12 +127,12 @@ class SubscriptionPremiumActivity : AppCompatActivity() {
     }
 
     fun fromSplash(){
-        if (sharedPreferencePremium.getIsPurchased() || !sharedPreferencePremium.getBooleanDefultTrue(splash_inter)){
+        if (PrefHelper.getIsPurchased() || !PrefHelper.getBooleanDefultTrue(splash_inter)){
             moveNext()
         } else {
             InterstitialAdManager(this).loadAndShowAd(
                 getString(R.string.splashInterstitialId),
-                sharedPreferencePremium.getBooleanDefultTrue(splash_inter),
+                PrefHelper.getBooleanDefultTrue(splash_inter),
                 object : InterstitialLoadCallback{
                     override fun onFailedToLoad() {
                         Toast.makeText(this@SubscriptionPremiumActivity, resources.getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show()
@@ -137,9 +150,9 @@ class SubscriptionPremiumActivity : AppCompatActivity() {
         val mIntent = if (user?.isAnonymous == true) {
             Intent(this, MainActivity::class.java)
         } else if (user == null) {
-            if (!sharedPreferencePremium.getBoolean(isLanguageSelected)){
+            if (!PrefHelper.getBoolean(isLanguageSelected)){
                 Intent(this, LanguageActivity::class.java)
-            } else if (sharedPreferencePremium.getBooleanDefultTrue(isShowOnBoarding)){
+            } else if (PrefHelper.getBooleanDefultTrue(isShowOnBoarding)){
                 Intent(this, OnboardingActivity::class.java)
             } else {
                 Intent(this, LoginActivity::class.java)
@@ -158,14 +171,6 @@ class SubscriptionPremiumActivity : AppCompatActivity() {
         intent?.extras?.let{
             fromWhere = it.getString("from", "home")
         }
-
-        onBackPressedDispatcher.addCallback(
-            this,
-            object : OnBackPressedCallback(true) {
-                override fun handleOnBackPressed() {
-                    onBack()
-                }
-            })
 
         /*val yearlyPrice = sharedPreferencePremium.getString(YEARLY_PRICE) ?: "*****"
         val weeklyPrice = sharedPreferencePremium.getString(WEEKLY_PRICE) ?: "*****"
@@ -199,7 +204,7 @@ class SubscriptionPremiumActivity : AppCompatActivity() {
 
         binding.countinueWithAdBtn.setOnClickListener {
 
-            if (sharedPreferencePremium.getIsPurchased() || !sharedPreferencePremium.getBooleanDefultTrue(splash_inter)){
+            if (PrefHelper.getIsPurchased() || !PrefHelper.getBooleanDefultTrue(splash_inter)){
                 if (fromWhere == "splash"){
                     moveNext()
                 } else {
@@ -208,7 +213,7 @@ class SubscriptionPremiumActivity : AppCompatActivity() {
             } else {
                 InterstitialAdManager(this).loadAndShowAd(
                     getString(R.string.splashInterstitialId),
-                    sharedPreferencePremium.getBooleanDefultTrue(splash_inter),
+                    PrefHelper.getBooleanDefultTrue(splash_inter),
                     object : InterstitialLoadCallback{
                         override fun onFailedToLoad() {
                             Toast.makeText(this@SubscriptionPremiumActivity, resources.getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show()
@@ -330,7 +335,7 @@ class SubscriptionPremiumActivity : AppCompatActivity() {
             if (billingResult.responseCode == BillingClient.BillingResponseCode.OK) {
                 val purchasedProduct = purchase.products[0]
                 if (purchasedProduct in productIdsSubscription) {
-                    sharedPreferencePremium.setIsPurchased(true)
+                    PrefHelper.setIsPurchased(true)
                     //isProUser = true
                     //finish()
                     try {
@@ -395,7 +400,7 @@ class SubscriptionPremiumActivity : AppCompatActivity() {
 
                     if (weeklyPrice != null) {
                         _WeeklyPrice = weeklyPrice
-                        sharedPreferencePremium.setString(WEEKLY_PRICE, weeklyPrice)
+                        PrefHelper.setString(WEEKLY_PRICE, weeklyPrice)
                     }
 
                 }else if (product.productId == PREMIUM_YEARLY_PACKAGE){
@@ -420,7 +425,7 @@ class SubscriptionPremiumActivity : AppCompatActivity() {
                     if (yearlyPrice != null) {
                         _YearlyPrice = yearlyPrice
 
-                        sharedPreferencePremium.setString(YEARLY_PRICE, yearlyPrice)
+                        PrefHelper.setString(YEARLY_PRICE, yearlyPrice)
                     }
 
                 }
@@ -439,7 +444,7 @@ class SubscriptionPremiumActivity : AppCompatActivity() {
     fun applyYearlyOff(_WeeklyPrice: String, _YearlyPrice: String){
         try {
             val wPricePerMonthFromYearly = calculateMonthlyPriceFromFormattedPrice(_YearlyPrice)
-            binding.perMonthTv.text = "${String.format("%.2f", wPricePerMonthFromYearly)} ${resources.getString(R.string.per_month)}"
+            binding.perMonthTv.text = "${String.format("%.2f", wPricePerMonthFromYearly)} ${resources.getString(R.string.per_week)}"
 
             val weeklyPrice = extractNumericValue(_WeeklyPrice)
             val yearlyPrice = extractNumericValue(_YearlyPrice)

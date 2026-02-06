@@ -209,7 +209,7 @@
 <string name="message">Bericht</string>
 <string name="describe_your_issue_in_detail">Beschrijf uw probleem in detail...</string>
 <string name="other_ways_to_reach_us">Andere manieren om ons te bereiken</string>
-<string name="email_">📧 E-mail: appsmagic2952@gmail.com</string>
+<string name="email_">📧 E-mail: appsmagic2942@gmail.com</string>
 <string name="phone_">📞 Telefoon: +1512 300 5526</string>
 <string name="support_hours">⏰ Ondersteuning: 9:00 - 18:00 (ma-vr)</string>
 
@@ -449,5 +449,25 @@
     <string name="_30_day_guarantee">30 dagen garantie</string>
     <string name="trusted_by_10000_creators_worldwide">Vertrouwd door meer dan 10.000 makers wereldwijd</string>
 
+    <string name="per_week">per week</string>
+    <string name="confirm_password_is_required">Bevestig wachtwoord is verplicht</string>
+    <string name="confirm_password_must_be_at_least_6_characters">Bevestig wachtwoord moet minimaal 6 tekens bevatten</string>
+
+    <string name="password_and_confirm_password_must_be_same">Wachtwoord en bevestigingswachtwoord moeten hetzelfde zijn</string>
+    <string name="failed_to_update_password">Wachtwoord bijwerken mislukt</string>
+    <string name="exit_app">App afsluiten</string>
+    <string name="are_you_sure_you_want_to_exit_the_app">Weet u zeker dat u de app wilt afsluiten?</string>
+    <string name="exit">Afsluiten</string>
+
+    <string name="enjoying_our_app">Geniet u van onze app?</string>
+    <string name="your_feedback_helps_us_improve_and_serve_you_better">Uw feedback helpt ons verbeteren en u beter van dienst te zijn</string>
+    <string name="rate_now">Nu beoordelen</string>
+    <string name="maybe_later">Misschien later</string>
+
+    <string name="rate_us">Beoordeel ons</string>
+    <string name="rate_our_app_with_5_stars">Beoordeel onze app met 5 sterren</string>
+    <string name="share_app">App delen</string>
+    <string name="fast_easy_app_share">Snelle en gemakkelijke app-deling</string>
+    <string name="awesome_were_so_glad_you_love_it">Geweldig! We zijn zo blij dat u ervan houdt! 🎉</string>
 
 </resources>

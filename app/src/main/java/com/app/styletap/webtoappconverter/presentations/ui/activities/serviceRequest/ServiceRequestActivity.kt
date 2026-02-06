@@ -4,6 +4,8 @@ import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
 import com.app.styletap.webtoappconverter.R
 import com.app.styletap.webtoappconverter.databinding.ActivityServiceRequestBinding
@@ -28,6 +30,19 @@ class ServiceRequestActivity : AppCompatActivity() {
 
         adjustTopHeight(binding.toolbarLL)
         adjustBottomHeight(binding.container)
+
+        ViewCompat.setOnApplyWindowInsetsListener(binding.main) { _, insets ->
+            val imeInsets = insets.getInsets(WindowInsetsCompat.Type.ime())
+            val systemBarsInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+
+            binding.scrollView.setPadding(
+                0,
+                0,
+                0,
+                imeInsets.bottom
+            )
+            insets
+        }
 
         onBackPressedDispatcher.addCallback(
             this,

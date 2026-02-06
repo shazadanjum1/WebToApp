@@ -209,7 +209,7 @@
     <string name="message">Nachricht</string>
     <string name="describe_your_issue_in_detail">Beschreiben Sie Ihr Problem im Detail…</string>
     <string name="other_ways_to_reach_us">Weitere Kontaktmöglichkeiten</string>
-    <string name="email_">📧 E-Mail: appsmagic2952@gmail.com</string>
+    <string name="email_">📧 E-Mail: appsmagic2942@gmail.com</string>
     <string name="phone_">📞 Telefon: +1512 300 5526</string>
     <string name="support_hours">⏰ Support-Zeiten: 9-18 Uhr (Mo-Fr)</string>
 
@@ -451,6 +451,29 @@
     <string name="secure_payment">Sichere Zahlung</string>
     <string name="_30_day_guarantee">30-Tage-Garantie</string>
     <string name="trusted_by_10000_creators_worldwide">Vertraut von über 10.000 Kreatoren weltweit</string>
+
+    <string name="per_week">pro Woche</string>
+
+    <string name="confirm_password_is_required">Bestätigung des Passworts ist erforderlich</string>
+    <string name="confirm_password_must_be_at_least_6_characters">Die Passwortbestätigung muss mindestens 6 Zeichen lang sein</string>
+
+    <string name="password_and_confirm_password_must_be_same">Passwort und Passwortbestätigung müssen übereinstimmen</string>
+    <string name="failed_to_update_password">Passwort konnte nicht aktualisiert werden</string>
+
+    <string name="exit_app">App beenden</string>
+    <string name="are_you_sure_you_want_to_exit_the_app">Möchten Sie die App wirklich beenden?</string>
+    <string name="exit">Beenden</string>
+
+    <string name="enjoying_our_app">Gefällt Ihnen unsere App?</string>
+    <string name="your_feedback_helps_us_improve_and_serve_you_better">Ihr Feedback hilft uns, die App zu verbessern und Sie besser zu unterstützen</string>
+    <string name="rate_now">Jetzt bewerten</string>
+    <string name="maybe_later">Vielleicht später</string>
+
+    <string name="rate_us">Bewerten Sie uns</string>
+    <string name="rate_our_app_with_5_stars">Bewerten Sie unsere App mit 5 Sternen</string>
+    <string name="share_app">App teilen</string>
+    <string name="fast_easy_app_share">Schnelles &amp; einfaches Teilen der App</string>
+    <string name="awesome_were_so_glad_you_love_it">Großartig! Wir freuen uns sehr, dass Ihnen die App gefällt! 🎉</string>
 
 
 </resources>

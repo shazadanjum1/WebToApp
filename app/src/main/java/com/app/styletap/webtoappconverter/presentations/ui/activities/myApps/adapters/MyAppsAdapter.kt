@@ -32,6 +32,7 @@ import com.app.styletap.webtoappconverter.extentions.proLifeTimeIntent
 import com.app.styletap.webtoappconverter.extentions.showDeleteDialog
 import com.app.styletap.webtoappconverter.presentations.ui.activities.myApps.EditAppActivity
 import com.app.styletap.webtoappconverter.presentations.ui.activities.myApps.MyAppsActivity
+import com.app.styletap.webtoappconverter.presentations.ui.activities.myApps.MyAppsActivity.Companion.isRecreateUI
 import com.app.styletap.webtoappconverter.presentations.ui.activities.myApps.ViewAppDetailsActivity
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.READY_TO_DOWNLOAD_BUNDLE
 import com.app.styletap.webtoappconverter.presentations.utils.PrefHelper
@@ -44,7 +45,6 @@ class MyAppsAdapter(
 ) : RecyclerView.Adapter<MyAppsAdapter.AppViewHolder>() {
 
     var isClickable = true
-    private var prefHelper: PrefHelper = PrefHelper(activity.applicationContext)
 
     inner class AppViewHolder(
         val binding: MyAppsItemBinding
@@ -113,7 +113,7 @@ class MyAppsAdapter(
                     if (!activity.isNetworkAvailable()){
                         Toast.makeText(activity, activity.resources.getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show()
                     } else {
-                        if (prefHelper.getIsPurchasedLifeTime()){
+                        if (PrefHelper.getIsPurchasedLifeTime()){
                             if (app.status == READY_TO_DOWNLOAD){
                                 isClickable = false
                                 app.id?.let { appId -> activity.generateBundle(appId){isClickable = true } }
@@ -121,6 +121,7 @@ class MyAppsAdapter(
                                 app.bundleUrl?.let { appUrl -> activity.startDownload(appUrl, app.appName ?: "app", false) }
                             }
                         } else {
+                            isRecreateUI = true
                             activity.startActivity(activity.proLifeTimeIntent().apply { putExtra("from", "home") })
                         }
                     }

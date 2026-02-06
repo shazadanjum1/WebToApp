@@ -19,6 +19,7 @@ import com.app.styletap.webtoappconverter.extentions.isNetworkAvailable
 import com.app.styletap.webtoappconverter.extentions.logoutUser
 import com.app.styletap.webtoappconverter.extentions.openEmail
 import com.app.styletap.webtoappconverter.extentions.proIntent
+import com.app.styletap.webtoappconverter.extentions.showExitDialog
 import com.app.styletap.webtoappconverter.extentions.showLogoutDialog
 import com.app.styletap.webtoappconverter.extentions.withNotificationPermission
 import com.app.styletap.webtoappconverter.presentations.ui.activities.createApp.CreateAppActivity
@@ -39,7 +40,6 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
     var user: FirebaseUser? = null
-    private lateinit var prefHelper: PrefHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,8 +60,6 @@ class MainActivity : AppCompatActivity() {
                 }
             })
 
-        prefHelper = PrefHelper(this.applicationContext)
-
         auth = FirebaseAuth.getInstance()
         user = auth.currentUser
 
@@ -73,13 +71,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onBack(){
-        finishAffinity()
-        exitProcess(0)
+        showExitDialog{
+            finishAffinity()
+            exitProcess(0)
+        }
     }
 
     override fun onResume() {
         super.onResume()
-        binding.toolbar.proBtn.isVisible = !prefHelper.getIsPurchased()
+        binding.toolbar.proBtn.isVisible = !PrefHelper.getIsPurchased()
+
+        changeLocale()
+
     }
 
     fun initView(){
@@ -163,7 +166,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun showBannerAd(){
-        if (isNetworkAvailable() && prefHelper.getBooleanDefultTrue(home_banner) && !prefHelper.getIsPurchased()){
+        if (isNetworkAvailable() && PrefHelper.getBooleanDefultTrue(home_banner) && !PrefHelper.getIsPurchased()){
             binding.adLayout.visibility = View.VISIBLE
             binding.bannerShimmerView.root.visibility = View.VISIBLE
             binding.bannerShimmerView.bannerShimmerView.startShimmer()

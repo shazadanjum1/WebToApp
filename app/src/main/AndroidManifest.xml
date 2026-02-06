@@ -87,9 +87,11 @@
             android:exported="false" />
         <activity
             android:name=".presentations.ui.activities.authorization.SignUpActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden"
             android:exported="false" />
         <activity
             android:name=".presentations.ui.activities.authorization.LoginActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden"
             android:exported="false" />
         <activity
             android:name=".presentations.ui.activities.onboarding.OnboardingActivity"

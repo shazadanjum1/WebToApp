@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:layoutDirection="ltr"
     tools:context=".presentations.ui.activities.onboarding.OnboardingActivity">
 
 
@@ -88,11 +87,10 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_marginEnd="@dimen/_6sdp"
-                    android:gravity="end"
                     >
 
                     <RelativeLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/slid1_chip"
                         >
@@ -119,7 +117,7 @@
                     >
 
                     <RelativeLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/slid1_chip"
                         >
@@ -141,24 +139,29 @@
 
             </LinearLayout>
 
-            <RelativeLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_marginTop="@dimen/_6sdp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/slid1_chip"
+                android:minWidth="@dimen/_120sdp"
                 >
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/professional_results"
-                    android:layout_centerInParent="true"
                     android:paddingHorizontal="@dimen/_12sdp"
                     android:paddingVertical="@dimen/_10sdp"
                     android:includeFontPadding="false"
                     android:fontFamily="@font/arimo_regular"
                     android:textSize="@dimen/_11ssp"
+                    android:layout_gravity="center"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     />
-            </RelativeLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         </LinearLayout>

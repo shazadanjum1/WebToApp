@@ -21,6 +21,7 @@ import com.app.styletap.webtoappconverter.extentions.adjustTopHeight
 import com.app.styletap.webtoappconverter.extentions.changeLocale
 import com.app.styletap.webtoappconverter.extentions.customEnableEdgeToEdge
 import com.app.styletap.webtoappconverter.extentions.isNetworkAvailable
+import com.app.styletap.webtoappconverter.extentions.isValidEmail
 import com.app.styletap.webtoappconverter.extentions.setClickableText
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -41,6 +42,19 @@ class ForgetActivity : AppCompatActivity() {
 
         adjustTopHeight(binding.toolbarLL)
         adjustBottomHeight(binding.container)
+
+        ViewCompat.setOnApplyWindowInsetsListener(binding.main) { _, insets ->
+            val imeInsets = insets.getInsets(WindowInsetsCompat.Type.ime())
+            val systemBarsInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+
+            binding.scrollView.setPadding(
+                0,
+                0,
+                0,
+                imeInsets.bottom
+            )
+            insets
+        }
 
         onBackPressedDispatcher.addCallback(
             this,
@@ -93,12 +107,17 @@ class ForgetActivity : AppCompatActivity() {
             return false
         }
 
-        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+        /*if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             binding.etEmail.error = resources.getString(R.string.please_enter_a_valid_email)
             binding.etEmail.requestFocus()
             return false
-        }
+        }*/
 
+        if (!isValidEmail(email)) {
+            binding.etEmail.error = getString(R.string.please_enter_a_valid_email)
+            binding.etEmail.requestFocus()
+            return false
+        }
         return true
     }
 

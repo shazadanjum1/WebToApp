@@ -23,7 +23,9 @@ import com.app.styletap.webtoappconverter.extentions.isNetworkAvailable
 import com.app.styletap.webtoappconverter.extentions.logoutUser
 import com.app.styletap.webtoappconverter.extentions.openLink
 import com.app.styletap.webtoappconverter.extentions.proIntent
+import com.app.styletap.webtoappconverter.extentions.shareText
 import com.app.styletap.webtoappconverter.extentions.showLogoutDialog
+import com.app.styletap.webtoappconverter.extentions.showRateUsDialog
 import com.app.styletap.webtoappconverter.models.User
 import com.app.styletap.webtoappconverter.presentations.ui.activities.authorization.LoginActivity
 import com.app.styletap.webtoappconverter.presentations.ui.activities.home.MainActivity
@@ -38,7 +40,6 @@ import com.google.firebase.firestore.FirebaseFirestore
 
 class ProfileActivity : AppCompatActivity() {
     lateinit var binding: ActivityProfileBinding
-    private lateinit var prefHelper: PrefHelper
 
     var isClickable = true
 
@@ -64,7 +65,6 @@ class ProfileActivity : AppCompatActivity() {
         adjustTopHeight(binding.toolbarLL)
         adjustBottomHeight(binding.container)
 
-        prefHelper = PrefHelper(this.applicationContext)
 
         auth = FirebaseAuth.getInstance()
         user = auth.currentUser
@@ -102,8 +102,8 @@ class ProfileActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        binding.proCard.isVisible = !prefHelper.getIsPurchased()
-
+        binding.proCard.isVisible = !PrefHelper.getIsPurchased()
+        changeLocale()
     }
 
     fun initView(){
@@ -165,6 +165,14 @@ class ProfileActivity : AppCompatActivity() {
 
             privacyBtn.setOnClickListener {
                 openLink(resources.getString(R.string.privacy_policy_link))
+            }
+
+            shareAppBtn.setOnClickListener {
+                shareText("check out this awesome app https://play.google.com/store/apps/details?id=${packageName}")
+            }
+
+            rateAppBtn.setOnClickListener {
+                showRateUsDialog()
             }
 
             btnLogout.setOnClickListener {

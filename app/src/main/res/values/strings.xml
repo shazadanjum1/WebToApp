@@ -2,7 +2,7 @@
     <string name="app_name" translatable="false">Web to App</string>
     <string name="app_name1" translatable="false">Web to App</string>
     <string name="phone_number" translatable="false">+15123005526</string>
-    <string name="email" translatable="false">appsmagic2952@gmail.com</string>
+    <string name="email" translatable="false">appsmagic2942@gmail.com</string>
     <string name="privacy_policy_link" translatable="false">https://appsmagic360.blogspot.com/2026/01/privacy-policy-web-to-app.html</string>
 
     <string name="convert_websites_to_mobile_apps">Convert websites to mobile apps</string>
@@ -216,7 +216,7 @@
     <string name="message">Message</string>
     <string name="describe_your_issue_in_detail">Describe your issue in detail...</string>
     <string name="other_ways_to_reach_us">Other Ways to Reach Us</string>
-    <string name="email_">📧 Email: appsmagic2952@gmail.com</string>
+    <string name="email_">📧 Email: appsmagic2942@gmail.com</string>
     <string name="phone_">📞 Phone: +1512 300 5526</string>
     <string name="support_hours">⏰ Support Hours: 9 AM - 6 PM (Mon-Fri)</string>
 
@@ -452,5 +452,26 @@
     <string name="secure_payment">Secure Payment</string>
     <string name="_30_day_guarantee">30-Day Guarantee</string>
     <string name="trusted_by_10000_creators_worldwide">Trusted by 10,000+ creators worldwide</string>
+
+    <string name="per_week">per week</string>
+    <string name="confirm_password_is_required">Confirm password is required</string>
+    <string name="confirm_password_must_be_at_least_6_characters">Confirm password must be at least 6 characters</string>
+
+    <string name="password_and_confirm_password_must_be_same">Password and confirm password must be the same</string>
+    <string name="failed_to_update_password">Failed to update password</string>
+    <string name="exit_app">Exit App</string>
+    <string name="are_you_sure_you_want_to_exit_the_app">Are you sure you want to exit the app?</string>
+    <string name="exit">Exit</string>
+
+    <string name="enjoying_our_app">Enjoying Our App?</string>
+    <string name="your_feedback_helps_us_improve_and_serve_you_better">Your feedback helps us improve and serve you better</string>
+    <string name="rate_now">Rate Now</string>
+    <string name="maybe_later">Maybe Later</string>
+
+    <string name="rate_us">Rate Us</string>
+    <string name="rate_our_app_with_5_stars">Rate our app with 5 stars</string>
+    <string name="share_app">Share App</string>
+    <string name="fast_easy_app_share">Fast &amp; easy app share</string>
+    <string name="awesome_were_so_glad_you_love_it">Awesome! We\'re so glad you love it! 🎉</string>
 
 </resources>

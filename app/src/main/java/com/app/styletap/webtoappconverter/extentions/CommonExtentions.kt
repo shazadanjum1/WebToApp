@@ -10,6 +10,7 @@ import android.app.DownloadManager
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
+import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -74,14 +75,22 @@ import androidx.core.graphics.drawable.toDrawable
 
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.ComponentActivity
+import androidx.core.view.isVisible
 import com.app.styletap.ads.InterstitialAdManager
 import com.app.styletap.interfaces.InterstitialLoadCallback
+import com.app.styletap.webtoappconverter.databinding.DialogExitAppBinding
 import com.app.styletap.webtoappconverter.databinding.DialogLogoutAppBinding
+import com.app.styletap.webtoappconverter.databinding.DialogRateUsBinding
 import com.app.styletap.webtoappconverter.presentations.ui.activities.Premium.LifeTimePremiumActivity
 import com.app.styletap.webtoappconverter.presentations.ui.activities.Premium.SubscriptionPremiumActivity
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.apkdownload_inter
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.buildapp_inter
+import com.app.styletap.webtoappconverter.presentations.utils.Contants.isIntertialAdshowing
 import com.app.styletap.webtoappconverter.presentations.utils.PrefHelper
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 
 fun Context.isNetworkAvailable(): Boolean {
@@ -111,6 +120,51 @@ fun Activity.customEnableEdgeToEdge() {
         window.navigationBarColor = Color.TRANSPARENT
     }
 }
+
+fun Activity.customEnableEdgeToEdge2(
+    statusBarColor: Int = Color.BLUE, // desired color
+    darkIcons: Boolean = true
+) {
+    // Edge-to-edge layout
+    WindowCompat.setDecorFitsSystemWindows(window, false)
+
+    // Insets handling
+    val rootView = findViewById<View>(R.id.main)
+    ViewCompat.setOnApplyWindowInsetsListener(rootView) { view, insets ->
+        val systemInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+        view.setPadding(systemInsets.left, systemInsets.top, systemInsets.right, systemInsets.bottom)
+        WindowInsetsCompat.CONSUMED
+    }
+
+    // Status bar color
+    val finalStatusBarColor = if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.P && darkIcons) {
+        manipulateColor(statusBarColor, 0.9f) // slightly darker for white icons
+    } else {
+        statusBarColor
+    }
+    window.statusBarColor = finalStatusBarColor
+
+    // Navigation bar color
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        window.navigationBarColor = Color.TRANSPARENT
+    }
+
+    // Status bar icons
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) { // API 29+
+        val controller = ViewCompat.getWindowInsetsController(window.decorView)
+        controller?.isAppearanceLightStatusBars = darkIcons
+        controller?.isAppearanceLightNavigationBars = false
+    }
+}
+
+fun manipulateColor(color: Int, factor: Float): Int {
+    val a = Color.alpha(color)
+    val r = (Color.red(color) * factor).coerceIn(0f, 255f).toInt()
+    val g = (Color.green(color) * factor).coerceIn(0f, 255f).toInt()
+    val b = (Color.blue(color) * factor).coerceIn(0f, 255f).toInt()
+    return Color.argb(a, r, g, b)
+}
+
 
 fun Activity.adjustBottomHeight(layout: ConstraintLayout) {
     val decorView = window.decorView
@@ -691,18 +745,20 @@ fun AppCompatActivity.downloadFile(url: String, appName: String, isShare: Boolea
     val fileName = "${appName}_$timestamp.zip"
 
     if (isApk){
-        val prefHelper = PrefHelper(this)
-        if (prefHelper.getIsPurchased() || !prefHelper.getBooleanDefultTrue(apkdownload_inter)){
+        if (PrefHelper.getIsPurchased() || !PrefHelper.getBooleanDefultTrue(apkdownload_inter)){
             downloadWithProgress(url, fileName, isShare)
         } else {
+            isIntertialAdshowing = true
             InterstitialAdManager(this).loadAndShowAd(
                 getString(R.string.downloadApkInterstitialId),
-                prefHelper.getBooleanDefultTrue(buildapp_inter),
+                PrefHelper.getBooleanDefultTrue(buildapp_inter),
                 object : InterstitialLoadCallback{
                     override fun onFailedToLoad() {
+                        isIntertialAdshowing = false
                         Toast.makeText(this@downloadFile, resources.getString(R.string.failed_to_load_ads_please_try_again), Toast.LENGTH_SHORT).show()
                     }
                     override fun onLoaded() {
+                        isIntertialAdshowing = false
                         downloadWithProgress(url, fileName, isShare)
                     }
                 }
@@ -1028,6 +1084,41 @@ fun Context.showDeleteDialog(
     dialog.window?.attributes = layoutParams
 }
 
+fun Context.showExitDialog(
+    onExitClick: () -> Unit
+) {
+    val dialog = Dialog(this)
+    val binding = DialogExitAppBinding.inflate(LayoutInflater.from(this))
+
+    dialog.setContentView(binding.root)
+    dialog.setCancelable(true)
+
+    dialog.window?.setBackgroundDrawable(Color.TRANSPARENT.toDrawable())
+
+    binding.btnCancel.setOnClickListener {
+        dialog.dismiss()
+    }
+
+    binding.btnExit.setOnClickListener {
+        dialog.dismiss()
+        onExitClick()
+    }
+
+    dialog.window?.setLayout(
+        ViewGroup.LayoutParams.MATCH_PARENT,
+        ViewGroup.LayoutParams.WRAP_CONTENT
+    )
+
+    dialog.show()
+
+    val layoutParams = WindowManager.LayoutParams().apply {
+        copyFrom(dialog.window?.attributes)
+        width = (resources.displayMetrics.widthPixels * 0.90).toInt() // 85% of screen width
+        height = WindowManager.LayoutParams.WRAP_CONTENT
+    }
+    dialog.window?.attributes = layoutParams
+}
+
 
 @SuppressLint("MissingInflatedId")
 fun Activity.adLoadingDialog(): android.app.AlertDialog? {
@@ -1079,9 +1170,133 @@ fun extractPriceUnit(formattedPrice: String): String? {
 
 fun calculateMonthlyPriceFromFormattedPrice(formattedPrice: String): Double {
     val yearlyPrice = extractNumericValue(formattedPrice)
-    val monthInYear = 12
+    val monthInYear = 52//12
     return yearlyPrice / monthInYear
 }
 
 fun Int.dpToPx(context: Context): Int =
     (this * context.resources.displayMetrics.density).toInt()
+
+
+fun isValidEmail(email: String): Boolean {
+    // Allow letters, numbers, dots, underscores, hyphens, plus, and special chars &%#$!
+    val emailRegex = "^[A-Za-z0-9+_.&%#\$!-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}\$"
+    return Regex(emailRegex).matches(email)
+}
+
+fun Context.shareText(text: String) {
+    val shareIntent = Intent(Intent.ACTION_SEND)
+    shareIntent.type = "text/plain"
+    shareIntent.putExtra(Intent.EXTRA_TEXT, text)
+    startActivity(Intent.createChooser(shareIntent, "Share text via"))
+}
+
+fun Activity.showRateUsDialog() {
+    val binding = DialogRateUsBinding.inflate(LayoutInflater.from(this))
+
+    val dialog = androidx.appcompat.app.AlertDialog.Builder(this, R.style.TransparentDialog)
+        .setView(binding.root)
+        .create()
+    var rating = 4
+    binding.apply {
+        star1.setOnClickListener {
+            msgTv.isVisible = false
+            rating = 1
+            star1.setImageResource(R.drawable.star_filled)
+            star2.setImageResource(R.drawable.star_unfilled)
+            star3.setImageResource(R.drawable.star_unfilled)
+            star4.setImageResource(R.drawable.star_unfilled)
+            star5.setImageResource(R.drawable.star_unfilled)
+        }
+        star2.setOnClickListener {
+            msgTv.isVisible = false
+            rating = 2
+            star1.setImageResource(R.drawable.star_filled)
+            star2.setImageResource(R.drawable.star_filled)
+            star3.setImageResource(R.drawable.star_unfilled)
+            star4.setImageResource(R.drawable.star_unfilled)
+            star5.setImageResource(R.drawable.star_unfilled)
+        }
+        star3.setOnClickListener {
+            msgTv.isVisible = false
+            rating = 3
+            star1.setImageResource(R.drawable.star_filled)
+            star2.setImageResource(R.drawable.star_filled)
+            star3.setImageResource(R.drawable.star_filled)
+            star4.setImageResource(R.drawable.star_unfilled)
+            star5.setImageResource(R.drawable.star_unfilled)
+        }
+        star4.setOnClickListener {
+            msgTv.isVisible = false
+            rating = 4
+            star1.setImageResource(R.drawable.star_filled)
+            star2.setImageResource(R.drawable.star_filled)
+            star3.setImageResource(R.drawable.star_filled)
+            star4.setImageResource(R.drawable.star_filled)
+            star5.setImageResource(R.drawable.star_unfilled)
+        }
+        star5.setOnClickListener {
+            msgTv.isVisible = true
+            rating = 5
+            star1.setImageResource(R.drawable.star_filled)
+            star2.setImageResource(R.drawable.star_filled)
+            star3.setImageResource(R.drawable.star_filled)
+            star4.setImageResource(R.drawable.star_filled)
+            star5.setImageResource(R.drawable.star_filled)
+        }
+    }
+
+    binding.cancelBtn.setOnClickListener{
+        dialog.dismiss()
+    }
+
+    binding.laterBtn.setOnClickListener{
+        dialog.dismiss()
+    }
+
+    binding.rateBtn.setOnClickListener {
+        if (rating > 3){
+            openPlayStore()
+        } else {
+            openGmail()
+        }
+        dialog.dismiss()
+    }
+
+
+    dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+    dialog.show()
+
+    val window = dialog.window
+    if (window != null) {
+        val layoutParams = WindowManager.LayoutParams()
+        layoutParams.copyFrom(window.attributes)
+        val displayMetrics = resources.displayMetrics
+        layoutParams.width = (displayMetrics.widthPixels * 0.9).toInt()
+        window.attributes = layoutParams
+    }
+}
+
+fun Context.openGmail() {
+    try {
+        val emailIntent = Intent(Intent.ACTION_SENDTO).apply {
+            data = Uri.parse("mailto:")
+            putExtra(Intent.EXTRA_EMAIL, arrayOf(resources.getString(R.string.email)))
+            putExtra(Intent.EXTRA_SUBJECT, "Feedback")
+        }
+        startActivity(emailIntent)
+    }catch (_: Exception){}
+}
+
+fun Context.openPlayStore() {
+    val appPackageName = packageName
+    try {
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=$appPackageName"))
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        startActivity(intent)
+    } catch (e: ActivityNotFoundException) {
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=$appPackageName"))
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        startActivity(intent)
+    }
+}

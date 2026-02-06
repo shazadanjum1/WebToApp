@@ -4,18 +4,14 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
-import android.text.InputType
 import android.util.Patterns
-import android.view.MotionEvent
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
 import com.app.styletap.webtoappconverter.R
-import com.app.styletap.webtoappconverter.databinding.ActivityLoginBinding
 import com.app.styletap.webtoappconverter.databinding.ActivitySignUpBinding
 import com.app.styletap.webtoappconverter.extentions.adjustBottomHeight
 import com.app.styletap.webtoappconverter.extentions.adjustTopHeight
@@ -23,6 +19,8 @@ import com.app.styletap.webtoappconverter.extentions.changeLocale
 import com.app.styletap.webtoappconverter.extentions.customEnableEdgeToEdge
 import com.app.styletap.webtoappconverter.extentions.enablePasswordToggle
 import com.app.styletap.webtoappconverter.extentions.isNetworkAvailable
+import com.app.styletap.webtoappconverter.extentions.isValidEmail
+import com.app.styletap.webtoappconverter.extentions.openLink
 import com.app.styletap.webtoappconverter.extentions.setClickableText
 import com.app.styletap.webtoappconverter.extentions.setMultiClickableText
 import com.app.styletap.webtoappconverter.presentations.ui.activities.home.MainActivity
@@ -30,7 +28,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
 import com.google.firebase.messaging.FirebaseMessaging
-import kotlin.system.exitProcess
 
 class SignUpActivity : AppCompatActivity() {
     lateinit var binding: ActivitySignUpBinding
@@ -49,6 +46,19 @@ class SignUpActivity : AppCompatActivity() {
 
         adjustTopHeight(binding.toolbarLL)
         adjustBottomHeight(binding.container)
+
+        ViewCompat.setOnApplyWindowInsetsListener(binding.main) { _, insets ->
+            val imeInsets = insets.getInsets(WindowInsetsCompat.Type.ime())
+            val systemBarsInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+
+            binding.scrollView.setPadding(
+                0,
+                0,
+                0,
+                imeInsets.bottom
+            )
+            insets
+        }
 
         onBackPressedDispatcher.addCallback(
             this,
@@ -117,13 +127,13 @@ class SignUpActivity : AppCompatActivity() {
                     termsText to {
                         // Open Terms of Service
                         if (isClickable){
-
+                            openLink(resources.getString(R.string.privacy_policy_link))
                         }
                     },
                     privacyText to {
                         // Open Privacy Policy
                         if (isClickable){
-
+                            openLink(resources.getString(R.string.privacy_policy_link))
                         }
                     }
                 )
@@ -134,8 +144,9 @@ class SignUpActivity : AppCompatActivity() {
                 val name = binding.etName.text.toString().trim()
                 val email = binding.etEmail.text.toString().trim()
                 val password = binding.etPassword.text.toString().trim()
+                val confirmPassword = binding.etConfirmPassword.text.toString().trim()
 
-                if (!validateInputs(name, email, password)) return@setOnClickListener
+                if (!validateInputs(name, email, password, confirmPassword)) return@setOnClickListener
                 if (!isNetworkAvailable()){
                     Toast.makeText(this@SignUpActivity, resources.getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show()
                     return@setOnClickListener
@@ -154,7 +165,12 @@ class SignUpActivity : AppCompatActivity() {
 
     }
 
-    private fun validateInputs(name: String, email: String, password: String): Boolean {
+    private fun validateInputs(
+        name: String,
+        email: String,
+        password: String,
+        confirmPassword: String
+    ): Boolean {
         if (name.isEmpty()) {
             binding.etName.error = resources.getString(R.string.name_is_required)
             binding.etName.requestFocus()
@@ -167,8 +183,14 @@ class SignUpActivity : AppCompatActivity() {
             return false
         }
 
-        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+        /*if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             binding.etEmail.error = resources.getString(R.string.please_enter_a_valid_email)
+            binding.etEmail.requestFocus()
+            return false
+        }*/
+
+        if (!isValidEmail(email)) {
+            binding.etEmail.error = getString(R.string.please_enter_a_valid_email)
             binding.etEmail.requestFocus()
             return false
         }
@@ -182,6 +204,23 @@ class SignUpActivity : AppCompatActivity() {
         if (password.length < 6) {
             binding.etPassword.error = resources.getString(R.string.password_must_be_at_least_6_characters)
             binding.etPassword.requestFocus()
+            return false
+        }
+
+        if (confirmPassword.isEmpty()) {
+            binding.etConfirmPassword.error = resources.getString(R.string.confirm_password_is_required)
+            binding.etConfirmPassword.requestFocus()
+            return false
+        }
+
+        if (confirmPassword.length < 6) {
+            binding.etConfirmPassword.error = resources.getString(R.string.confirm_password_must_be_at_least_6_characters)
+            binding.etConfirmPassword.requestFocus()
+            return false
+        }
+
+        if (confirmPassword != password) {
+            Toast.makeText(this, resources.getString(R.string.password_and_confirm_password_must_be_same), Toast.LENGTH_LONG).show()
             return false
         }
 

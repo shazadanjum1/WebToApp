@@ -14,6 +14,8 @@ import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.graphics.toColorInt
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
 import com.app.styletap.ads.InterstitialAdManager
 import com.app.styletap.interfaces.InterstitialLoadCallback
@@ -34,13 +36,13 @@ import com.app.styletap.webtoappconverter.presentations.ui.activities.createApp.
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.ACTION_FINISH_ACTIVITY
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.ACTION_REFRESH_ACTIVITY
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.buildapp_inter
+import com.app.styletap.webtoappconverter.presentations.utils.Contants.isIntertialAdshowing
 import com.app.styletap.webtoappconverter.presentations.utils.PrefHelper
 import com.bumptech.glide.Glide
 import com.google.firebase.firestore.FirebaseFirestore
 
 class EditAppActivity : AppCompatActivity() {
     lateinit var binding: ActivityEditAppBinding
-    lateinit var prefHelper: PrefHelper
     var appId = ""
     var appModel: AppModel? = null
 
@@ -91,7 +93,18 @@ class EditAppActivity : AppCompatActivity() {
         adjustTopHeight(binding.toolbarLL)
         adjustBottomHeight(binding.container)
 
-        prefHelper = PrefHelper(this)
+        ViewCompat.setOnApplyWindowInsetsListener(binding.main) { _, insets ->
+            val imeInsets = insets.getInsets(WindowInsetsCompat.Type.ime())
+            val systemBarsInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+
+            binding.scrollView.setPadding(
+                0,
+                0,
+                0,
+                imeInsets.bottom
+            )
+            insets
+        }
 
         onBackPressedDispatcher.addCallback(
             this,
@@ -337,17 +350,20 @@ class EditAppActivity : AppCompatActivity() {
 
     fun moveNext(intent: Intent){
 
-        if (prefHelper.getIsPurchased() || !prefHelper.getBooleanDefultTrue(buildapp_inter)){
+        if (PrefHelper.getIsPurchased() || !PrefHelper.getBooleanDefultTrue(buildapp_inter)){
             startActivity(intent)
         } else {
+            isIntertialAdshowing = true
             InterstitialAdManager(this).loadAndShowAd(
                 getString(R.string.buildAppInterstitialId),
-                prefHelper.getBooleanDefultTrue(buildapp_inter),
+                PrefHelper.getBooleanDefultTrue(buildapp_inter),
                 object : InterstitialLoadCallback{
                     override fun onFailedToLoad() {
+                        isIntertialAdshowing = false
                         Toast.makeText(this@EditAppActivity, resources.getString(R.string.failed_to_load_ads_please_try_again), Toast.LENGTH_SHORT).show()
                     }
                     override fun onLoaded() {
+                        isIntertialAdshowing = false
                         startActivity(intent)
                     }
                 }

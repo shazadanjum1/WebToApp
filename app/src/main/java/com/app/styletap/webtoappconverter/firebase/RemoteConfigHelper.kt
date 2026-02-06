@@ -38,23 +38,21 @@ class RemoteConfigHelper(val activity: Activity) {
                 .addOnCompleteListener(activity) { task ->
                     if (task.isSuccessful) {
 
-                        val prefHelper = PrefHelper(activity)
 
+                        PrefHelper.setBoolean(splash_inter, firebaseRemoteConfig.getBoolean(splash_inter))
+                        PrefHelper.setBoolean(app_open, firebaseRemoteConfig.getBoolean(app_open))
+                        PrefHelper.setBoolean(language_native, firebaseRemoteConfig.getBoolean(language_native))
+                        PrefHelper.setBoolean(onboarding_native, firebaseRemoteConfig.getBoolean(onboarding_native))
+                        PrefHelper.setBoolean(home_banner, firebaseRemoteConfig.getBoolean(home_banner))
+                        PrefHelper.setBoolean(createapp_native, firebaseRemoteConfig.getBoolean(createapp_native))
+                        PrefHelper.setBoolean(myapps_native, firebaseRemoteConfig.getBoolean(myapps_native))
+                        PrefHelper.setBoolean(generateapp_native, firebaseRemoteConfig.getBoolean(generateapp_native))
+                        PrefHelper.setBoolean(services_native, firebaseRemoteConfig.getBoolean(services_native))
+                        PrefHelper.setBoolean(turtorial_native, firebaseRemoteConfig.getBoolean(turtorial_native))
+                        PrefHelper.setBoolean(buildapp_inter, firebaseRemoteConfig.getBoolean(buildapp_inter))
+                        PrefHelper.setBoolean(apkdownload_inter, firebaseRemoteConfig.getBoolean(apkdownload_inter))
 
-                        prefHelper.setBoolean(splash_inter, firebaseRemoteConfig.getBoolean(splash_inter))
-                        prefHelper.setBoolean(app_open, firebaseRemoteConfig.getBoolean(app_open))
-                        prefHelper.setBoolean(language_native, firebaseRemoteConfig.getBoolean(language_native))
-                        prefHelper.setBoolean(onboarding_native, firebaseRemoteConfig.getBoolean(onboarding_native))
-                        prefHelper.setBoolean(home_banner, firebaseRemoteConfig.getBoolean(home_banner))
-                        prefHelper.setBoolean(createapp_native, firebaseRemoteConfig.getBoolean(createapp_native))
-                        prefHelper.setBoolean(myapps_native, firebaseRemoteConfig.getBoolean(myapps_native))
-                        prefHelper.setBoolean(generateapp_native, firebaseRemoteConfig.getBoolean(generateapp_native))
-                        prefHelper.setBoolean(services_native, firebaseRemoteConfig.getBoolean(services_native))
-                        prefHelper.setBoolean(turtorial_native, firebaseRemoteConfig.getBoolean(turtorial_native))
-                        prefHelper.setBoolean(buildapp_inter, firebaseRemoteConfig.getBoolean(buildapp_inter))
-                        prefHelper.setBoolean(apkdownload_inter, firebaseRemoteConfig.getBoolean(apkdownload_inter))
-
-                        prefHelper.setBoolean(createapp_banner, firebaseRemoteConfig.getBoolean(createapp_banner))
+                        PrefHelper.setBoolean(createapp_banner, firebaseRemoteConfig.getBoolean(createapp_banner))
 
 
                         remoteConfigCallback.onSuccess()

@@ -5,7 +5,6 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layoutDirection="ltr"
     android:background="@color/white"
     tools:context=".presentations.ui.activities.authorization.ForgetActivity">
 
@@ -29,6 +28,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -165,14 +165,14 @@
                             android:paddingHorizontal="@dimen/_12sdp"
                             android:layout_gravity="center_vertical"
                             android:textAlignment="viewStart"
-                            android:drawableLeft="@drawable/ic_email"
+                            android:drawableStart="@drawable/ic_email"
                             android:drawablePadding="@dimen/_8sdp"
                             android:background="@color/white"
                             android:maxLines="1"
                             android:fontFamily="@font/arimo_regular"
                             android:textSize="@dimen/_12ssp"
                             android:includeFontPadding="false"
-                            android:inputType="textEmailAddress"
+                            android:inputType="textEmailAddress|textNoSuggestions"
                             />
 
                     </com.google.android.material.card.MaterialCardView>

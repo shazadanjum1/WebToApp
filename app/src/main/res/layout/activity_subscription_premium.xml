@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/pro_bg"
-    android:layoutDirection="ltr"
     tools:context=".presentations.ui.activities.Premium.SubscriptionPremiumActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -346,7 +345,7 @@
                         android:id="@+id/perMonthTv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/per_month"
+                        android:text="@string/per_week"
                         android:textColor="@color/pro_c7"
                         android:textStyle="bold"
                         android:fontFamily="@font/arimo_regular"
@@ -447,6 +446,7 @@
 
 
                     <androidx.appcompat.widget.AppCompatImageView
+                        android:visibility="gone"
                         android:id="@+id/weeklyProCheckIv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

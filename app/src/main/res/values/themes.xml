@@ -11,6 +11,10 @@
 
     <style name="Theme.WebToAppConverter" parent="Base.Theme.WebToAppConverter" />
 
+    <style name="TransparentDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
 
 
 </resources>

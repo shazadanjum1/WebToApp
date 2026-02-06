@@ -10,6 +10,8 @@ import android.util.Patterns
 import android.view.View
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
 import com.app.styletap.ads.BannerAdManager
 import com.app.styletap.webtoappconverter.R
@@ -25,8 +27,6 @@ import com.app.styletap.webtoappconverter.presentations.utils.PrefHelper
 
 class CreateAppActivity : AppCompatActivity() {
     lateinit var binding: ActivityCreateAppBinding
-    lateinit var prefHelper: PrefHelper
-
 
     private val finishReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
@@ -49,7 +49,18 @@ class CreateAppActivity : AppCompatActivity() {
         adjustTopHeight(binding.toolbarLL)
         adjustBottomHeight(binding.container)
 
-        prefHelper = PrefHelper(this)
+        ViewCompat.setOnApplyWindowInsetsListener(binding.main) { _, insets ->
+            val imeInsets = insets.getInsets(WindowInsetsCompat.Type.ime())
+            val systemBarsInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+
+            binding.scrollView.setPadding(
+                0,
+                0,
+                0,
+                imeInsets.bottom
+            )
+            insets
+        }
 
         onBackPressedDispatcher.addCallback(
             this,
@@ -142,7 +153,7 @@ class CreateAppActivity : AppCompatActivity() {
 
 
     fun showBannerAd(){
-        if (isNetworkAvailable() && prefHelper.getBooleanDefultTrue(createapp_banner) && !prefHelper.getIsPurchased()){
+        if (isNetworkAvailable() && PrefHelper.getBooleanDefultTrue(createapp_banner) && !PrefHelper.getIsPurchased()){
             binding.adLayout.visibility = View.VISIBLE
             binding.bannerShimmerView.root.visibility = View.VISIBLE
             binding.bannerShimmerView.bannerShimmerView.startShimmer()

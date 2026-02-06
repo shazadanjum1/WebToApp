@@ -26,7 +26,6 @@ import com.app.styletap.webtoappconverter.presentations.utils.PrefHelper
 
 class TutorialsActivity : AppCompatActivity() {
     lateinit var binding: ActivityTutorialsBinding
-    lateinit var prefHelper: PrefHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,8 +37,6 @@ class TutorialsActivity : AppCompatActivity() {
 
         adjustTopHeight(binding.toolbarLL)
         adjustBottomHeight(binding.container)
-
-        prefHelper = PrefHelper(this)
 
         onBackPressedDispatcher.addCallback(
             this,
@@ -97,7 +94,7 @@ class TutorialsActivity : AppCompatActivity() {
     }
 
     fun showNativeAd(){
-        if (isNetworkAvailable() && prefHelper.getBooleanDefultTrue(turtorial_native) && !prefHelper.getIsPurchased()){
+        if (isNetworkAvailable() && PrefHelper.getBooleanDefultTrue(turtorial_native) && !PrefHelper.getIsPurchased()){
             binding.adParentLayout.visibility = View.VISIBLE
             binding.nativeLayout.visibility = View.VISIBLE
             binding.shimmerContainer.nativeShimmerView.startShimmer()

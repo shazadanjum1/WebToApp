@@ -208,7 +208,7 @@
         <string name="message">Mensaje</string>
         <string name="describe_your_issue_in_detail">Describe tu incidencia en detalle...</string>
         <string name="other_ways_to_reach_us">Otras formas de contactarnos</string>
-        <string name="email_">📧 Correo: appsmagic2952@gmail.com</string>
+        <string name="email_">📧 Correo: appsmagic2942@gmail.com</string>
         <string name="phone_">📞 Teléfono: +1512 300 5526</string>
         <string name="support_hours">⏰ Horario de soporte: 9 AM - 6 PM (Lun-Vie)</string>
 
@@ -450,6 +450,29 @@
     <string name="secure_payment">Pago seguro</string>
     <string name="_30_day_guarantee">Garantía de 30 días</string>
     <string name="trusted_by_10000_creators_worldwide">Con la confianza de más de 10,000 creadores en todo el mundo</string>
+
+    <string name="per_week">por semana</string>
+
+    <string name="confirm_password_is_required">Se requiere confirmar la contraseña</string>
+    <string name="confirm_password_must_be_at_least_6_characters">La confirmación de la contraseña debe tener al menos 6 caracteres</string>
+
+    <string name="password_and_confirm_password_must_be_same">La contraseña y la confirmación de la contraseña deben ser iguales</string>
+    <string name="failed_to_update_password">Error al actualizar la contraseña</string>
+
+    <string name="exit_app">Salir de la aplicación</string>
+    <string name="are_you_sure_you_want_to_exit_the_app">¿Estás seguro de que quieres salir de la aplicación?</string>
+    <string name="exit">Salir</string>
+
+    <string name="enjoying_our_app">¿Disfrutando de nuestra aplicación?</string>
+    <string name="your_feedback_helps_us_improve_and_serve_you_better">Tus comentarios nos ayudan a mejorar y ofrecerte un mejor servicio</string>
+    <string name="rate_now">Calificar ahora</string>
+    <string name="maybe_later">Tal vez más tarde</string>
+
+    <string name="rate_us">Califícanos</string>
+    <string name="rate_our_app_with_5_stars">Califica nuestra aplicación con 5 estrellas</string>
+    <string name="share_app">Compartir aplicación</string>
+    <string name="fast_easy_app_share">Compartir la aplicación de forma rápida y sencilla</string>
+    <string name="awesome_were_so_glad_you_love_it">¡Genial! ¡Nos alegra mucho que te encante! 🎉</string>
 
 
 </resources>

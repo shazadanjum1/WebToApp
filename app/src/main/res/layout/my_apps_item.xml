@@ -8,7 +8,6 @@
     android:layout_margin="@dimen/_6sdp"
     android:minHeight="@dimen/_80sdp"
     app:cardCornerRadius="@dimen/_16sdp"
-    android:layoutDirection="ltr"
     android:foreground="?attr/selectableItemBackground"
     >
 

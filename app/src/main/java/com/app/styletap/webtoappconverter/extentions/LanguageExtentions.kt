@@ -18,7 +18,6 @@ fun getLanguageData(): ArrayList<LanguageModel> {
     languageList.add(LanguageModel(R.drawable.flag_german, "German", "Deutsch","de", false))
     languageList.add(LanguageModel(R.drawable.flag_italian, "Italian", "Italiano","it", false))
     languageList.add(LanguageModel(R.drawable.flag_portuguese, "Portuguese", "Português","pt", false))
-    languageList.add(LanguageModel(R.drawable.flag_portuguese_br, "Portuguese (BR)", "Português (BR)","pt-rBR", false))
     languageList.add(LanguageModel(R.drawable.flag_chinese, "Chinese", "中文","zh", false))
     languageList.add(LanguageModel(R.drawable.flag_japanese, "Japanese", "日本語","ja", false))
     languageList.add(LanguageModel(R.drawable.flag_korean, "Korean", "한국어","ko", false))
@@ -36,7 +35,7 @@ fun getLanguageData(): ArrayList<LanguageModel> {
 
 
 fun Activity.changeLocale(){
-    val selectedLanguageCode = PrefHelper(applicationContext).getString(languageCode, "en").toString()
+    val selectedLanguageCode = PrefHelper.getString(languageCode, "en").toString()
     setLocale(this, selectedLanguageCode){}
 }
 

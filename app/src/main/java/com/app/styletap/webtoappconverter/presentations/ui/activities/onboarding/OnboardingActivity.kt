@@ -23,7 +23,6 @@ class OnboardingActivity : AppCompatActivity() {
     var introCounter = 1
     var fromWhere = "home"
 
-    private lateinit var prefHelper: PrefHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +33,6 @@ class OnboardingActivity : AppCompatActivity() {
         customEnableEdgeToEdge()
 
         adjustBottomHeight(binding.container)
-        prefHelper = PrefHelper(this.applicationContext)
 
         initiView()
         showNativeAd()
@@ -89,7 +87,7 @@ class OnboardingActivity : AppCompatActivity() {
 
             }
         } else {
-            prefHelper.setBoolean(isShowOnBoarding, false)
+            PrefHelper.setBoolean(isShowOnBoarding, false)
 
             val mIntent = Intent(this, LoginActivity::class.java).apply {
                 putExtra("from", "splash")
@@ -100,7 +98,7 @@ class OnboardingActivity : AppCompatActivity() {
     }
 
     fun showNativeAd(){
-        if (isNetworkAvailable() && prefHelper.getBooleanDefultTrue(onboarding_native) && !prefHelper.getIsPurchased()){
+        if (isNetworkAvailable() && PrefHelper.getBooleanDefultTrue(onboarding_native) && !PrefHelper.getIsPurchased()){
             binding.adParentLayout.visibility = View.VISIBLE
             binding.nativeLayout.visibility = View.VISIBLE
             binding.shimmerContainer.nativeShimmerView.startShimmer()

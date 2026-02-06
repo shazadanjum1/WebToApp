@@ -210,7 +210,7 @@
     <string name="message">Mesaj</string>
     <string name="describe_your_issue_in_detail">Sorununuzu detaylı şekilde anlatın...</string>
     <string name="other_ways_to_reach_us">Bize Ulaşmanın Diğer Yolları</string>
-    <string name="email_">📧 E-posta: appsmagic2952@gmail.com</string>
+    <string name="email_">📧 E-posta: appsmagic2942@gmail.com</string>
     <string name="phone_">📞 Telefon: +1512 300 5526</string>
     <string name="support_hours">⏰ Destek Saatleri: 09:00 - 18:00 (Pzt-Cum)</string>
 
@@ -445,5 +445,25 @@
     <string name="_30_day_guarantee">30 gün garanti</string>
     <string name="trusted_by_10000_creators_worldwide">Dünya çapında 10.000’den fazla yaratıcı tarafından güveniliyor</string>
 
+    <string name="per_week">haftada</string>
+    <string name="confirm_password_is_required">Şifre doğrulama gerekli</string>
+    <string name="confirm_password_must_be_at_least_6_characters">Şifre doğrulama en az 6 karakter olmalıdır</string>
+
+    <string name="password_and_confirm_password_must_be_same">Şifre ve şifre doğrulama aynı olmalıdır</string>
+    <string name="failed_to_update_password">Şifre güncellenemedi</string>
+    <string name="exit_app">Uygulamadan Çık</string>
+    <string name="are_you_sure_you_want_to_exit_the_app">Uygulamadan çıkmak istediğinizden emin misiniz?</string>
+    <string name="exit">Çıkış</string>
+
+    <string name="enjoying_our_app">Uygulamamızdan memnun musunuz?</string>
+    <string name="your_feedback_helps_us_improve_and_serve_you_better">Geri bildiriminiz, kendimizi geliştirmemize ve size daha iyi hizmet sunmamıza yardımcı olur</string>
+    <string name="rate_now">Şimdi Puanla</string>
+    <string name="maybe_later">Belki Sonra</string>
+
+    <string name="rate_us">Bizi Puanla</string>
+    <string name="rate_our_app_with_5_stars">Uygulamamıza 5 yıldız verin</string>
+    <string name="share_app">Uygulamayı Paylaş</string>
+    <string name="fast_easy_app_share">Hızlı ve kolay uygulama paylaşımı</string>
+    <string name="awesome_were_so_glad_you_love_it">Harika! Beğenmenize çok sevindik! 🎉</string>
 
 </resources>

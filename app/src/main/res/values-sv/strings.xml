@@ -307,7 +307,7 @@
 
     <string name="updated_successfully">Uppdaterades framgångsrikt</string>
 
-    <string name="email_">📧 E-post: appsmagic2952@gmail.com</string>
+    <string name="email_">📧 E-post: appsmagic2942@gmail.com</string>
     <string name="phone_">📞 Telefon: +1512 300 5526</string>
     <string name="support_hours">⏰ Supporttider: 9.00–18.00 (mån–fre)</string>
 
@@ -450,5 +450,27 @@
     <string name="secure_payment">Säker betalning</string>
     <string name="_30_day_guarantee">30 dagars garanti</string>
     <string name="trusted_by_10000_creators_worldwide">Betrodd av över 10 000 skapare världen över</string>
+
+    <string name="per_week">per vecka</string>
+    <string name="confirm_password_is_required">Bekräfta lösenord krävs</string>
+    <string name="confirm_password_must_be_at_least_6_characters">Bekräfta lösenord måste vara minst 6 tecken</string>
+
+    <string name="password_and_confirm_password_must_be_same">Lösenord och bekräfta lösenord måste vara samma</string>
+    <string name="failed_to_update_password">Misslyckades med att uppdatera lösenord</string>
+    <string name="exit_app">Avsluta app</string>
+    <string name="are_you_sure_you_want_to_exit_the_app">Är du säker på att du vill avsluta appen?</string>
+    <string name="exit">Avsluta</string>
+
+    <string name="enjoying_our_app">Njut av vår app?</string>
+    <string name="your_feedback_helps_us_improve_and_serve_you_better">Din feedback hjälper oss att förbättra och ge dig bättre service</string>
+    <string name="rate_now">Betygsätt nu</string>
+    <string name="maybe_later">Kanske senare</string>
+
+    <string name="rate_us">Betygsätt oss</string>
+    <string name="rate_our_app_with_5_stars">Betygsätt vår app med 5 stjärnor</string>
+    <string name="share_app">Dela app</string>
+    <string name="fast_easy_app_share">Snabbt och enkelt appdelning</string>
+    <string name="awesome_were_so_glad_you_love_it">Fantastiskt! Vi är så glada att du älskar det! 🎉</string>
+
 
 </resources>

@@ -27,11 +27,11 @@ class InterstitialAdManager (val mActivity: Activity) {
         var counter = 0
         //var adCounter = 2
     }
-    var prefHelper: PrefHelper
+    /*var prefHelper: PrefHelper
 
     init {
         prefHelper = PrefHelper(mActivity)
-    }
+    }*/
 
     fun loadInterstitialAds(ID: String){
 

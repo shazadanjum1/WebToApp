@@ -47,6 +47,7 @@ class BannerAdManager(val mActivity: Activity) {
                 override fun onAdFailedToLoad(adError : LoadAdError) {
                     shimmerBannerContainer.stopShimmer()
                     shimmerBannerContainer.visibility = View.GONE
+                    relativeLayout.visibility = View.GONE
                 }
 
                 override fun onAdImpression() {}
@@ -54,6 +55,7 @@ class BannerAdManager(val mActivity: Activity) {
                 override fun onAdLoaded() {
                     shimmerBannerContainer.stopShimmer()
                     shimmerBannerContainer.visibility = View.GONE
+                    relativeLayout.visibility = View.VISIBLE
                 }
 
                 override fun onAdOpened() {}
@@ -98,6 +100,7 @@ class BannerAdManager(val mActivity: Activity) {
                 override fun onAdFailedToLoad(adError : LoadAdError) {
                     shimmerBannerContainer.stopShimmer()
                     shimmerBannerContainer.visibility = View.GONE
+                    relativeLayout.visibility = View.GONE
                 }
 
                 override fun onAdImpression() {}
@@ -105,6 +108,7 @@ class BannerAdManager(val mActivity: Activity) {
                 override fun onAdLoaded() {
                     shimmerBannerContainer.stopShimmer()
                     shimmerBannerContainer.visibility = View.GONE
+                    relativeLayout.visibility = View.VISIBLE
                 }
 
                 override fun onAdOpened() {}

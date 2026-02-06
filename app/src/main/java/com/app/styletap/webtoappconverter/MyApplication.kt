@@ -23,6 +23,8 @@ import androidx.lifecycle.ProcessLifecycleOwner
 import com.app.styletap.ads.NativeAdManager
 import com.app.styletap.interfaces.AppOpenAdCallBack
 import com.app.styletap.interfaces.FirebaseAnalyticsUtils
+import com.app.styletap.webtoappconverter.presentations.ui.activities.Premium.LifeTimePremiumActivity
+import com.app.styletap.webtoappconverter.presentations.ui.activities.Premium.SubscriptionPremiumActivity
 import com.app.styletap.webtoappconverter.presentations.ui.activities.splash.SplashActivity
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.app_open
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.isIntertialAdshowing
@@ -48,13 +50,14 @@ class MyApplication : Application(), Application.ActivityLifecycleCallbacks, Def
     private lateinit var appOpenAdManager: AppOpenAdManager
     private var currentActivity: Activity? = null
 
-    lateinit var nativeAdManager: NativeAdManager
+    //lateinit var nativeAdManager: NativeAdManager
 
     override fun onCreate() {
         //super.onCreate()
         super<Application>.onCreate()
+        PrefHelper.init(this)
 
-        nativeAdManager = NativeAdManager(this)
+        //nativeAdManager = NativeAdManager(this)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
         FirebaseApp.initializeApp(this)
@@ -80,12 +83,14 @@ class MyApplication : Application(), Application.ActivityLifecycleCallbacks, Def
     private fun onMoveToForeground() {
         Log.d(LOG_TAG, "onMoveToForeground")
         if (
-            !PrefHelper(applicationContext).getIsPurchased() &&
+            !PrefHelper.getIsPurchased() &&
             currentActivity !is SplashActivity &&
             currentActivity !is AdActivity &&
+            currentActivity !is LifeTimePremiumActivity &&
+            currentActivity !is SubscriptionPremiumActivity &&
             !isIntertialAdshowing &&
             isShowApOpenAd &&
-            PrefHelper(applicationContext).getBooleanDefultTrue(app_open)
+            PrefHelper.getBooleanDefultTrue(app_open)
         ) {
             currentActivity?.let {
                 Handler(Looper.myLooper()!!).postDelayed({
@@ -120,7 +125,7 @@ class MyApplication : Application(), Application.ActivityLifecycleCallbacks, Def
     override fun onActivityResumed(activity: Activity) {
         Log.d(LOG_TAG, "onActivityResumed")
         // && !PreferencesHelper(applicationContext).getProUser()
-        if (!PrefHelper(applicationContext).getIsPurchased() && appOpenAdManager.appOpenAd == null && currentActivity !is SplashActivity && currentActivity !is AdActivity && PrefHelper(applicationContext).getBooleanDefultTrue(app_open)) {
+        if (!PrefHelper.getIsPurchased() && appOpenAdManager.appOpenAd == null && currentActivity !is SplashActivity && currentActivity !is AdActivity && PrefHelper.getBooleanDefultTrue(app_open)) {
             loadAd(currentActivity!!, getString(R.string.appOpenId))
         }
     }

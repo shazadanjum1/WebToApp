@@ -11,6 +11,8 @@ import android.text.style.StrikethroughSpan
 import android.view.View
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import com.android.billingclient.api.AcknowledgePurchaseParams
 import com.android.billingclient.api.BillingClient
 import com.android.billingclient.api.BillingClientStateListener
@@ -28,6 +30,7 @@ import com.app.styletap.webtoappconverter.extentions.animateViewXaxis
 import com.app.styletap.webtoappconverter.extentions.changeLocale
 import com.app.styletap.webtoappconverter.extentions.changeToDeviceLocale
 import com.app.styletap.webtoappconverter.extentions.customEnableEdgeToEdge
+import com.app.styletap.webtoappconverter.extentions.customEnableEdgeToEdge2
 import com.app.styletap.webtoappconverter.extentions.extractNumericValue
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.LIFETIME_PRICE
 import com.app.styletap.webtoappconverter.presentations.utils.PrefHelper
@@ -45,7 +48,6 @@ class LifeTimePremiumActivity : AppCompatActivity() {
 
     private var mLifeTimePlanIndex = 0
 
-    private var sharedPreferencePremium: PrefHelper? = null
     private var billingClient: BillingClient? = null
     private var productInAppDetailsList = mutableListOf<ProductDetails>()
     private val inAppProductIds = arrayListOf(PREMIUM_LIFETIME_PACKAGE)
@@ -59,24 +61,26 @@ class LifeTimePremiumActivity : AppCompatActivity() {
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         binding = ActivityLifeTimePremiumBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        customEnableEdgeToEdge()
+        /*customEnableEdgeToEdge()
 
         adjustTopHeight(binding.toolbarLL)
-        adjustBottomHeight(binding.container)
+        adjustBottomHeight(binding.container)*/
 
-        sharedPreferencePremium = PrefHelper(this.applicationContext)
+        customEnableEdgeToEdge2()
+
 
         onBackPressedDispatcher.addCallback(
             this,
             object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
-                    onBack()
+                    //onBack()
                 }
             })
 
         binding.buySubscriptionBtn.animateViewXaxis()
 
         setUpView()
+
     }
 
     private fun setUpView() {
@@ -158,7 +162,7 @@ class LifeTimePremiumActivity : AppCompatActivity() {
             if (billingResult.responseCode == BillingClient.BillingResponseCode.OK) {
                 val purchasedProduct = purchase.products[0]
                 if (purchasedProduct == PREMIUM_LIFETIME_PACKAGE) {
-                    sharedPreferencePremium?.setIsPurchasedLifeTime(true)
+                    PrefHelper.setIsPurchasedLifeTime(true)
                     /*val mIntent = Intent(this@LifeTimePremiumActivity, MainActivity::class.java)
                     startActivity(mIntent)
                     finishAffinity()*/
@@ -240,7 +244,7 @@ class LifeTimePremiumActivity : AppCompatActivity() {
                             formatter.format(seventyPercent)
                         )
 
-                        sharedPreferencePremium?.setString(LIFETIME_PRICE, lifetimePrice)
+                        PrefHelper.setString(LIFETIME_PRICE, lifetimePrice)
                     }
                 }
                 i++

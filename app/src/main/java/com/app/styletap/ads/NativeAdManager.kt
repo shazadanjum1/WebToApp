@@ -113,7 +113,7 @@ class NativeAdManager(val activity: Context) {
 
     fun loadNativeAd(activity: Activity, nativeId: String, nativeAdLoadCallback: NativeAdLoadCallback) {
 
-        if ( adIsLoading || !activity.isNetworkAvailable() || nativeAd != null || PrefHelper(activity.applicationContext).getIsPurchased()){
+        if ( adIsLoading || !activity.isNetworkAvailable() || nativeAd != null || PrefHelper.getIsPurchased()){
             return
         }
 
@@ -162,7 +162,7 @@ class NativeAdManager(val activity: Context) {
         shimmerViewContainer: ShimmerFrameLayout
     ) {
 
-        if (!activity.isNetworkAvailable() || PrefHelper(activity.applicationContext).getIsPurchased()){
+        if (!activity.isNetworkAvailable() || PrefHelper.getIsPurchased()){
             return
         }
 
@@ -212,7 +212,7 @@ class NativeAdManager(val activity: Context) {
 
 
     fun populateNativeAdView( activity: Activity, adFrame: FrameLayout, layout: Int) {
-        if ( adIsLoading || !activity.isNetworkAvailable() || nativeAd == null || PrefHelper(activity.applicationContext).getIsPurchased()){
+        if ( adIsLoading || !activity.isNetworkAvailable() || nativeAd == null || PrefHelper.getIsPurchased()){
             return
         }
 

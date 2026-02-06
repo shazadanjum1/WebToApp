@@ -210,7 +210,7 @@
     <string name="message">消息</string>
     <string name="describe_your_issue_in_detail">详细描述您的问题…</string>
     <string name="other_ways_to_reach_us">其他联系方式</string>
-    <string name="email_">📧 邮箱: appsmagic2952@gmail.com</string>
+    <string name="email_">📧 邮箱: appsmagic2942@gmail.com</string>
     <string name="phone_">📞 电话: +1512 300 5526</string>
     <string name="support_hours">⏰ 支持时间: 周一至周五 9:00 - 18:00</string>
 
@@ -450,5 +450,25 @@
     <string name="_30_day_guarantee">30天保证</string>
     <string name="trusted_by_10000_creators_worldwide">全球超过10,000位创作者的信赖</string>
 
+    <string name="per_week">每周</string>
+    <string name="confirm_password_is_required">确认密码为必填项</string>
+    <string name="confirm_password_must_be_at_least_6_characters">确认密码至少需要6个字符</string>
+
+    <string name="password_and_confirm_password_must_be_same">密码和确认密码必须相同</string>
+    <string name="failed_to_update_password">更新密码失败</string>
+    <string name="exit_app">退出应用</string>
+    <string name="are_you_sure_you_want_to_exit_the_app">您确定要退出应用吗？</string>
+    <string name="exit">退出</string>
+
+    <string name="enjoying_our_app">喜欢我们的应用吗？</string>
+    <string name="your_feedback_helps_us_improve_and_serve_you_better">您的反馈帮助我们改进并更好地为您服务</string>
+    <string name="rate_now">立即评分</string>
+    <string name="maybe_later">稍后再说</string>
+
+    <string name="rate_us">给我们评分</string>
+    <string name="rate_our_app_with_5_stars">给我们的应用评分5星</string>
+    <string name="share_app">分享应用</string>
+    <string name="fast_easy_app_share">快速轻松地分享应用</string>
+    <string name="awesome_were_so_glad_you_love_it">太棒了！我们很高兴您喜欢它！🎉</string>
 
 </resources>

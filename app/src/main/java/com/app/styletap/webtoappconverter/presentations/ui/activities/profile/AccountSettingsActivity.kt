@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
 import com.app.styletap.webtoappconverter.R
 import com.app.styletap.webtoappconverter.databinding.ActivityAccountSettingsBinding
@@ -36,6 +38,19 @@ class AccountSettingsActivity : AppCompatActivity() {
 
         adjustTopHeight(binding.toolbarLL)
         adjustBottomHeight(binding.container)
+
+        ViewCompat.setOnApplyWindowInsetsListener(binding.main) { _, insets ->
+            val imeInsets = insets.getInsets(WindowInsetsCompat.Type.ime())
+            val systemBarsInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+
+            binding.scrollView.setPadding(
+                0,
+                0,
+                0,
+                imeInsets.bottom
+            )
+            insets
+        }
 
         onBackPressedDispatcher.addCallback(
             this,
@@ -175,6 +190,7 @@ class AccountSettingsActivity : AppCompatActivity() {
                 binding.progressBar.isVisible = false
                 Toast.makeText(this, resources.getString(R.string.updated_successfully), Toast.LENGTH_SHORT).show()
                 sendBroadcast(Intent(ACTION_REFRESH_ACTIVITY).apply { setPackage(packageName) })
+                finish()
                 /*
                 startActivity(Intent(this@BuildingAppActivity, MyAppsActivity::class.java))
                 finish()*/
@@ -236,13 +252,12 @@ class AccountSettingsActivity : AppCompatActivity() {
             isClickable = false
             binding.progressBar.isVisible = true
 
-            // 2️⃣ Re-authenticate
             val email = user.email ?: return
             val credential = EmailAuthProvider.getCredential(email, currentPassword)
 
             user.reauthenticate(credential).addOnCompleteListener { reauthTask ->
                 if (reauthTask.isSuccessful) {
-                    // 3️⃣ Update password
+
                     user.updatePassword(newPassword).addOnCompleteListener { updateTask ->
                         isClickable = true
                         binding.progressBar.isVisible = false
@@ -251,8 +266,9 @@ class AccountSettingsActivity : AppCompatActivity() {
                             etNwPassword.setText("")
                             etConfirmPassword.setText("")
                             Toast.makeText(this@AccountSettingsActivity, resources.getString(R.string.password_updated_successfully), Toast.LENGTH_SHORT).show()
+                            finish()
                         } else {
-                            Toast.makeText(this@AccountSettingsActivity, "Failed to update password: ${updateTask.exception?.message}", Toast.LENGTH_LONG).show()
+                            Toast.makeText(this@AccountSettingsActivity, "${resources.getString(R.string.failed_to_update_password)}: ${updateTask.exception?.message}", Toast.LENGTH_LONG).show()
                         }
                     } .addOnFailureListener {
                         isClickable = true

@@ -74,8 +74,10 @@ class MyAppsActivity : AppCompatActivity() {
 
 
     var isAdCalled = false
-    lateinit var prefHelper: PrefHelper
 
+    companion object{
+        var isRecreateUI = false
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -87,8 +89,7 @@ class MyAppsActivity : AppCompatActivity() {
 
         adjustTopHeight(binding.toolbarLL)
         adjustBottomHeight(binding.container)
-
-        prefHelper = PrefHelper(this)
+        isRecreateUI = false
 
         onBackPressedDispatcher.addCallback(
             this,
@@ -105,6 +106,15 @@ class MyAppsActivity : AppCompatActivity() {
             IntentFilter(ACTION_FINISH_ACTIVITY),
             Context.RECEIVER_NOT_EXPORTED // required for Android 13+
         )
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (isRecreateUI){
+            isRecreateUI = false
+            recreate()
+        }
 
     }
 
@@ -146,8 +156,6 @@ class MyAppsActivity : AppCompatActivity() {
         binding.emptyMsgTv.isVisible = false
 
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
-
-
 
         val userId = FirebaseAuth.getInstance().currentUser?.uid ?: return
         val db = FirebaseFirestore.getInstance()
@@ -288,7 +296,7 @@ class MyAppsActivity : AppCompatActivity() {
         if (isAdCalled){
             return
         }
-        if (isNetworkAvailable() && prefHelper.getBooleanDefultTrue(myapps_native) && !prefHelper.getIsPurchased()){
+        if (isNetworkAvailable() && PrefHelper.getBooleanDefultTrue(myapps_native) && !PrefHelper.getIsPurchased()){
             isAdCalled = true
             binding.adParentLayout.visibility = View.VISIBLE
             binding.nativeLayout.visibility = View.VISIBLE

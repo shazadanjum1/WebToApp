@@ -207,7 +207,7 @@
         <string name="message">メッセージ</string>
         <string name="describe_your_issue_in_detail">問題の詳細を説明してください…</string>
         <string name="other_ways_to_reach_us">その他の連絡方法</string>
-        <string name="email_">📧 メール: appsmagic2952@gmail.com</string>
+        <string name="email_">📧 メール: appsmagic2942@gmail.com</string>
         <string name="phone_">📞 電話: +1512 300 5526</string>
         <string name="support_hours">⏰ サポート時間: 9時～18時 (月-金)</string>
 
@@ -441,6 +441,29 @@
     <string name="secure_payment">安全な支払い</string>
     <string name="_30_day_guarantee">30日間保証</string>
     <string name="trusted_by_10000_creators_worldwide">世界中の10,000人以上のクリエイターに信頼されています</string>
+
+    <string name="per_week">週あたり</string>
+
+    <string name="confirm_password_is_required">確認用パスワードは必須です</string>
+    <string name="confirm_password_must_be_at_least_6_characters">確認用パスワードは6文字以上である必要があります</string>
+
+    <string name="password_and_confirm_password_must_be_same">パスワードと確認用パスワードは同じである必要があります</string>
+    <string name="failed_to_update_password">パスワードの更新に失敗しました</string>
+
+    <string name="exit_app">アプリを終了</string>
+    <string name="are_you_sure_you_want_to_exit_the_app">アプリを終了してもよろしいですか？</string>
+    <string name="exit">終了</string>
+
+    <string name="enjoying_our_app">このアプリを楽しんでいますか？</string>
+    <string name="your_feedback_helps_us_improve_and_serve_you_better">あなたのフィードバックは、私たちがより良いサービスを提供するのに役立ちます</string>
+    <string name="rate_now">今すぐ評価</string>
+    <string name="maybe_later">後で</string>
+
+    <string name="rate_us">評価する</string>
+    <string name="rate_our_app_with_5_stars">このアプリを★5で評価してください</string>
+    <string name="share_app">アプリを共有</string>
+    <string name="fast_easy_app_share">簡単＆スピーディーにアプリを共有</string>
+    <string name="awesome_were_so_glad_you_love_it">素晴らしい！気に入っていただけて嬉しいです！ 🎉</string>
 
 
 </resources>

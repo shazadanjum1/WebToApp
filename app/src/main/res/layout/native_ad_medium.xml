@@ -74,12 +74,13 @@
             android:textColor="@color/black"
             />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/ad_call_to_action"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_height="@dimen/_36sdp"
             android:text="Install"
-            android:backgroundTint="@color/dark_blue"
+            android:background="@drawable/bg_fb_blue_gradient"
+            app:backgroundTint="@null"
             android:fontFamily="@font/arimo_regular"
             android:textSize="@dimen/_13sdp"
             android:textColor="@color/white"
@@ -89,6 +90,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ad_media" />
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -27,8 +27,6 @@ import com.app.styletap.webtoappconverter.presentations.utils.PrefHelper
 class ServicesActivity : AppCompatActivity() {
     lateinit var binding: ActivityServicesBinding
 
-    lateinit var prefHelper: PrefHelper
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         changeLocale()
@@ -39,8 +37,6 @@ class ServicesActivity : AppCompatActivity() {
 
         adjustTopHeight(binding.toolbarLL)
         adjustBottomHeight(binding.container)
-
-        prefHelper = PrefHelper(this)
 
         onBackPressedDispatcher.addCallback(
             this,
@@ -98,7 +94,7 @@ class ServicesActivity : AppCompatActivity() {
     }
 
     fun showNativeAd(){
-        if (isNetworkAvailable() && prefHelper.getBooleanDefultTrue(services_native) && !prefHelper.getIsPurchased()){
+        if (isNetworkAvailable() && PrefHelper.getBooleanDefultTrue(services_native) && !PrefHelper.getIsPurchased()){
             binding.adParentLayout.visibility = View.VISIBLE
             binding.nativeLayout.visibility = View.VISIBLE
             binding.shimmerContainer.nativeShimmerView.startShimmer()

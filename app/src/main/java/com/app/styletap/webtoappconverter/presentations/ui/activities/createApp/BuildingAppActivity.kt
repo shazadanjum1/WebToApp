@@ -36,7 +36,6 @@ class BuildingAppActivity : AppCompatActivity() {
     lateinit var binding: ActivityBuildingAppBinding
     var isClickable = false
 
-    lateinit var prefHelper: PrefHelper
 
     var webUrl = ""
     var appName = ""
@@ -75,7 +74,6 @@ class BuildingAppActivity : AppCompatActivity() {
         adjustTopHeight(binding.toolbarLL)
         adjustBottomHeight(binding.container)
 
-        prefHelper = PrefHelper(this)
         auth = FirebaseAuth.getInstance()
         user = auth.currentUser
 
@@ -460,7 +458,7 @@ class BuildingAppActivity : AppCompatActivity() {
 
 
     fun showNativeAd(){
-        if (isNetworkAvailable() && prefHelper.getBooleanDefultTrue(generateapp_native) && !prefHelper.getIsPurchased()){
+        if (isNetworkAvailable() && PrefHelper.getBooleanDefultTrue(generateapp_native) && !PrefHelper.getIsPurchased()){
             binding.adParentLayout.visibility = View.VISIBLE
             binding.nativeLayout.visibility = View.VISIBLE
             binding.shimmerContainer.nativeShimmerView.startShimmer()
