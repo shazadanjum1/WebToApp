@@ -127,7 +127,8 @@ class SubscriptionPremiumActivity : AppCompatActivity() {
     }
 
     fun fromSplash(){
-        if (PrefHelper.getIsPurchased() || !PrefHelper.getBooleanDefultTrue(splash_inter)){
+        moveNext()
+        /*if (PrefHelper.getIsPurchased() || !PrefHelper.getBooleanDefultTrue(splash_inter)){
             moveNext()
         } else {
             InterstitialAdManager(this).loadAndShowAd(
@@ -143,7 +144,7 @@ class SubscriptionPremiumActivity : AppCompatActivity() {
                     }
                 }
             )
-        }
+        }*/
     }
 
     fun moveNext(){
@@ -204,7 +205,13 @@ class SubscriptionPremiumActivity : AppCompatActivity() {
 
         binding.countinueWithAdBtn.setOnClickListener {
 
-            if (PrefHelper.getIsPurchased() || !PrefHelper.getBooleanDefultTrue(splash_inter)){
+            if (fromWhere == "splash"){
+                moveNext()
+            } else {
+                finish()
+            }
+
+            /*if (PrefHelper.getIsPurchased() || !PrefHelper.getBooleanDefultTrue(splash_inter)){
                 if (fromWhere == "splash"){
                     moveNext()
                 } else {
@@ -232,7 +239,7 @@ class SubscriptionPremiumActivity : AppCompatActivity() {
                         }
                     }
                 )
-            }
+            }*/
 
 
 

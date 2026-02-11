@@ -33,16 +33,55 @@
             android:paddingTop="@dimen/_8sdp"
             >
 
-            <androidx.appcompat.widget.AppCompatImageView
+
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/topIcon"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/pro2_header_icon"
-                app:layout_constraintStart_toStartOf="parent"
+                android:layout_height="@dimen/_36sdp"
+                app:cardCornerRadius="@dimen/_22sdp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginHorizontal="@dimen/_12sdp"
-                />
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginHorizontal="@dimen/_4sdp"
+                app:cardBackgroundColor="@color/white"
+                app:strokeWidth="0dp"
+                android:layout_marginTop="@dimen/_24sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/life_time_tag_bg"
+                    android:foreground="?attr/selectableItemBackground"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/LIFETIME_ACCESS"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/arimo_regular"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/_12ssp"
+                        android:maxLines="1"
+                        android:drawablePadding="@dimen/_8sdp"
+                        android:paddingHorizontal="@dimen/_12sdp"
+                        app:drawableStartCompat="@drawable/ic_pro_new"
+                        app:drawableEndCompat="@drawable/ic_star_new"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+            </com.google.android.material.card.MaterialCardView>
+
 
             <TextView
                 android:id="@+id/titleTv"
@@ -52,12 +91,12 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginHorizontal="@dimen/_26sdp"
                 app:layout_constraintTop_toBottomOf="@+id/topIcon"
-                android:layout_marginTop="-25dp"
-                android:text="@string/unlock"
+                android:text="@string/pay_just_once"
                 android:textAlignment="center"
                 android:fontFamily="@font/poppins_bold"
-                android:textSize="@dimen/_22ssp"
+                android:textSize="@dimen/_26ssp"
                 android:includeFontPadding="false"
+                android:layout_marginTop="@dimen/_8sdp"
                 />
             <TextView
                 android:id="@+id/title2Tv"
@@ -67,13 +106,13 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginHorizontal="@dimen/_26sdp"
                 app:layout_constraintTop_toBottomOf="@+id/titleTv"
-                android:text="@string/pay_just_once"
+                android:text="@string/yours_forever"
                 android:textAlignment="center"
                 android:fontFamily="@font/poppins_bold"
-                android:textSize="@dimen/_22ssp"
+                android:textSize="@dimen/_26ssp"
                 android:textColor="@color/blue"
                 android:includeFontPadding="false"
-                android:layout_marginTop="-6dp"
+                android:layout_marginTop="-8dp"
                 />
 
             <TextView
@@ -82,338 +121,170 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginHorizontal="@dimen/_12sdp"
-                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_marginHorizontal="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_3sdp"
                 app:layout_constraintTop_toBottomOf="@+id/title2Tv"
-                android:text="@string/full_access_forever_no_recurring_charges"
+                android:text="@string/full_access_forever_no_subscriptions_no_hidden_fees"
                 android:textAlignment="center"
                 android:fontFamily="@font/arimo_regular"
                 android:textSize="@dimen/_12ssp"
                 android:includeFontPadding="false"
                 />
 
-            <TextView
-                android:id="@+id/description2Tv"
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/infoCard"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginHorizontal="@dimen/_12sdp"
-                android:layout_marginTop="@dimen/_6sdp"
                 app:layout_constraintTop_toBottomOf="@+id/descriptionTv"
-                android:text="@string/complete_ownership_from_day_one"
-                android:textAlignment="center"
-                android:fontFamily="@font/arimo_regular"
-                android:textStyle="bold"
-                android:textSize="@dimen/_12ssp"
-                android:includeFontPadding="false"
-                android:textColor="@color/blue"
-                />
-
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/infoCard"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/_100sdp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/description2Tv"
-                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
                 android:layout_marginHorizontal="@dimen/_12sdp"
                 app:cardBackgroundColor="@color/white_95"
                 app:strokeColor="@color/pro_c8"
                 app:strokeWidth="@dimen/_2sdp"
                 >
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    >
+                <LinearLayout
+                    android:id="@+id/infoTv1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/infoTv2"
+                    android:layout_marginEnd="@dimen/_4sdp">
 
-                    <View
-                        android:id="@+id/view1"
-                        android:layout_width="0dp"
-                        android:layout_height="0.9dp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        android:background="@color/pro_c8"
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_web_to_app" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/web_to_app"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/arimo_regular"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:layout_marginStart="@dimen/_4sdp"
+                         />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/infoTv2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/infoTv1"
+                    android:layout_marginStart="@dimen/_4sdp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_free_updates_forever" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/free_updates_forever"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/arimo_regular"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:layout_marginStart="@dimen/_4sdp"
                         />
 
-                    <View
-                        android:id="@+id/view2"
-                        android:layout_width="0.9dp"
-                        android:layout_height="0dp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        android:background="@color/pro_c8"
+                </LinearLayout>
+
+
+
+
+                <LinearLayout
+                    android:id="@+id/infoTv3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    app:layout_constraintTop_toBottomOf="@+id/infoTv1"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/infoTv4"
+                    android:layout_marginEnd="@dimen/_4sdp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_priority_support" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/priority_support"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/arimo_regular"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:layout_marginStart="@dimen/_4sdp"
                         />
 
+                </LinearLayout>
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="0dp"
-                        android:layout_height="0dp"
-                        android:orientation="vertical"
-                        android:padding="@dimen/_6sdp"
-                        android:layout_marginStart="@dimen/_8sdp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toTopOf="@+id/view1"
-                        app:layout_constraintEnd_toStartOf="@+id/view2"
-                        >
+                <LinearLayout
+                    android:id="@+id/infoTv4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    app:layout_constraintTop_toBottomOf="@+id/infoTv1"
+                    android:layout_marginTop="@dimen/_10sdp"                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/infoTv3"
+                    android:layout_marginStart="@dimen/_4sdp">
 
-                        <androidx.appcompat.widget.AppCompatImageView
-                            android:id="@+id/proIV"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/ic_unlimited_app_pro"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_always_ads_free" />
 
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@+id/proIV"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            android:layout_marginStart="@dimen/_7sdp"
-                            >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/always_ads_free"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/arimo_regular"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:layout_marginStart="@dimen/_4sdp"
+                        />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="@color/black"
-                                android:text="@string/unlimited_apps"
-                                android:fontFamily="@font/arimo_regular"
-                                android:includeFontPadding="false"
-                                android:textSize="@dimen/_10ssp"
-                                android:maxLines="1"
-                                android:textStyle="bold"
-                                />
+                </LinearLayout>
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="@color/pro_c5"
-                                android:text="@string/no_usage_limits"
-                                android:fontFamily="@font/arimo_regular"
-                                android:includeFontPadding="false"
-                                android:textSize="@dimen/_9ssp"
-                                android:layout_marginTop="@dimen/_5sdp"
-                                android:maxLines="1"
-                                />
-
-                        </LinearLayout>
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="0dp"
-                        android:layout_height="0dp"
-                        android:minHeight="@dimen/_60sdp"
-                        android:orientation="vertical"
-                        android:padding="@dimen/_6sdp"
-                        android:layout_marginStart="@dimen/_8sdp"
-                        app:layout_constraintStart_toEndOf="@+id/view2"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toTopOf="@+id/view1"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        >
-
-                        <androidx.appcompat.widget.AppCompatImageView
-                            android:id="@+id/proIV2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/ic_instant_setup_pro"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            />
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@+id/proIV2"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            android:layout_marginStart="@dimen/_7sdp"
-                            >
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="@color/black"
-                                android:text="@string/instant_setup"
-                                android:fontFamily="@font/arimo_regular"
-                                android:includeFontPadding="false"
-                                android:textSize="@dimen/_10ssp"
-                                android:maxLines="1"
-                                android:textStyle="bold"
-                                />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="@color/pro_c5"
-                                android:text="@string/ready_in_minutes"
-                                android:fontFamily="@font/arimo_regular"
-                                android:includeFontPadding="false"
-                                android:textSize="@dimen/_9ssp"
-                                android:layout_marginTop="@dimen/_5sdp"
-                                android:maxLines="1"
-                                />
-
-                        </LinearLayout>
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="0dp"
-                        android:layout_height="0dp"
-                        android:minHeight="@dimen/_60sdp"
-                        android:orientation="vertical"
-                        android:padding="@dimen/_6sdp"
-                        android:layout_marginStart="@dimen/_8sdp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/view1"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/view2"
-                        >
-
-                        <androidx.appcompat.widget.AppCompatImageView
-                            android:id="@+id/proIV3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/ic_priority_support_pro"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            />
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@+id/proIV3"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            android:layout_marginStart="@dimen/_7sdp"
-                            >
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="@color/black"
-                                android:text="@string/priority_support"
-                                android:fontFamily="@font/arimo_regular"
-                                android:includeFontPadding="false"
-                                android:textSize="@dimen/_10ssp"
-                                android:maxLines="1"
-                                android:textStyle="bold"
-                                />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="@color/pro_c5"
-                                android:text="@string/always_available"
-                                android:fontFamily="@font/arimo_regular"
-                                android:includeFontPadding="false"
-                                android:textSize="@dimen/_9ssp"
-                                android:layout_marginTop="@dimen/_5sdp"
-                                android:maxLines="1"
-                                />
-
-                        </LinearLayout>
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="0dp"
-                        android:layout_height="0dp"
-                        android:minHeight="@dimen/_60sdp"
-                        android:orientation="vertical"
-                        android:padding="@dimen/_6sdp"
-                        android:layout_marginStart="@dimen/_8sdp"
-                        app:layout_constraintStart_toEndOf="@+id/view2"
-                        app:layout_constraintTop_toBottomOf="@+id/view1"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        >
-
-                        <androidx.appcompat.widget.AppCompatImageView
-                            android:id="@+id/proIV4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/ic_free_updates_pro"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            />
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@+id/proIV4"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            android:layout_marginStart="@dimen/_7sdp"
-                            >
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="@color/black"
-                                android:text="@string/free_updates"
-                                android:fontFamily="@font/arimo_regular"
-                                android:includeFontPadding="false"
-                                android:textSize="@dimen/_10ssp"
-                                android:maxLines="1"
-                                android:textStyle="bold"
-                                />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="@color/pro_c5"
-                                android:text="@string/forever_included"
-                                android:fontFamily="@font/arimo_regular"
-                                android:includeFontPadding="false"
-                                android:textSize="@dimen/_9ssp"
-                                android:layout_marginTop="@dimen/_5sdp"
-                                android:maxLines="1"
-                                />
-
-                        </LinearLayout>
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/priceCrd"
                 android:layout_width="0dp"
-                android:layout_height="@dimen/_180sdp"
+                android:layout_height="@dimen/_175sdp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/infoCard"
                 android:layout_marginHorizontal="@dimen/_12sdp"
-                android:layout_marginTop="@dimen/_24sdp"
+                android:layout_marginTop="@dimen/_20sdp"
                 app:cardCornerRadius="@dimen/_14sdp"
                 app:strokeColor="@color/blue"
                 app:strokeWidth="@dimen/_2sdp"
@@ -422,26 +293,30 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@drawable/pro_container1"
                     >
 
                     <TextView
-                        android:id="@+id/mTv"
-                        android:layout_width="0dp"
+                        android:id="@+id/percentageTv"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="@dimen/_12sdp"
-                        android:layout_marginTop="@dimen/_22sdp"
-                        android:fontFamily="@font/poppins_bold"
-                        android:includeFontPadding="false"
-                        android:maxLines="1"
-                        android:text="@string/one_payment_forever_yours"
-                        android:textAlignment="center"
-                        android:textAllCaps="true"
-                        android:textColor="@color/blue"
-                        android:textSize="@dimen/_11ssp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
+                        android:background="@drawable/ic_percentage_bg2"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:text="@string/save"
+                        android:textAlignment="center"
+                        android:textColor="@color/green_3"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/arimo_regular"
+                        android:textSize="@dimen/_11ssp"
+                        android:paddingHorizontal="@dimen/_9sdp"
+                        android:paddingTop="@dimen/_9sdp"
+                        android:maxLines="1"
+                        android:includeFontPadding="false"
+                        />
+
 
                     <LinearLayout
                         android:id="@+id/priceLL"
@@ -449,9 +324,10 @@
                         android:layout_height="wrap_content"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/mTv"
-                        android:layout_marginTop="@dimen/_8sdp"
-                        android:orientation="horizontal"
+                        app:layout_constraintTop_toBottomOf="@+id/percentageTv"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal"
                         >
 
                         <TextView
@@ -461,13 +337,11 @@
                             android:text="****"
                             android:textColor="@color/pro_c9"
                             android:fontFamily="@font/poppins_bold"
-                            android:textSize="@dimen/_12ssp"
+                            android:textSize="@dimen/_16ssp"
                             app:layout_constraintTop_toBottomOf="@+id/yearlyTv"
                             app:layout_constraintStart_toStartOf="parent"
-                            android:layout_marginStart="@dimen/_12sdp"
                             android:maxLines="1"
                             android:includeFontPadding="false"
-                            android:layout_gravity="center_vertical"
                             />
 
 
@@ -478,90 +352,51 @@
                             android:text="****"
                             android:textColor="@color/black"
                             android:fontFamily="@font/poppins_bold"
-                            android:textSize="@dimen/_18ssp"
-                            app:layout_constraintTop_toBottomOf="@+id/yearlyTv"
+                            android:textSize="@dimen/_40ssp"
+                            app:layout_constraintTop_toBottomOf="@+id/originalPriceTv"
                             app:layout_constraintStart_toStartOf="parent"
-                            android:layout_marginStart="@dimen/_12sdp"
                             android:maxLines="1"
                             android:includeFontPadding="false"
+                            android:layout_marginTop="-4dp"
                             />
 
 
                     </LinearLayout>
 
                     <TextView
-                        android:id="@+id/percentageTv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/ic_percentage_bg2"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        app:layout_constraintTop_toBottomOf="@+id/priceLL"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        android:text="@string/save"
-                        android:textAlignment="center"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
-                        android:fontFamily="@font/arimo_regular"
-                        android:textSize="@dimen/_11ssp"
-                        android:paddingHorizontal="@dimen/_9sdp"
-                        android:paddingTop="@dimen/_6sdp"
-                        android:maxLines="1"
-                        android:includeFontPadding="false"
-                        />
-
-                    <TextView
                         android:id="@+id/f1"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/pro_c10"
-                        android:text="@string/never_pay_a_subscription_again"
-                        android:fontFamily="@font/arimo_regular"
-                        android:textSize="@dimen/_10ssp"
+                        android:layout_marginHorizontal="@dimen/_12sdp"
+                        android:layout_marginTop="-6dp"
+                        android:fontFamily="@font/poppins_bold"
                         android:includeFontPadding="false"
-                        android:layout_marginHorizontal="@dimen/_8sdp"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:drawablePadding="@dimen/_8sdp"
-                        app:drawableStartCompat="@drawable/count_1"
-                        app:layout_constraintTop_toBottomOf="@+id/percentageTv"
-                        app:layout_constraintStart_toStartOf="parent"
+                        android:text="@string/one_time_payment_no_recurring_charges"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
+                        android:textColor="@color/blue"
+                        android:textSize="@dimen/_10ssp"
                         app:layout_constraintEnd_toEndOf="parent"
-                        android:maxLines="1"
-                        />
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/priceLL"/>
+
+
 
                     <TextView
                         android:id="@+id/f2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/pro_c10"
-                        android:text="@string/build_unlimited_apps_instantly"
+                        android:text="@string/_100_secure_checkout"
                         android:fontFamily="@font/arimo_regular"
                         android:textSize="@dimen/_10ssp"
                         android:includeFontPadding="false"
                         android:layout_marginHorizontal="@dimen/_8sdp"
                         android:layout_marginTop="@dimen/_4sdp"
                         android:drawablePadding="@dimen/_8sdp"
-                        app:drawableStartCompat="@drawable/count_1"
+                        app:drawableStartCompat="@drawable/ic_lock"
                         app:layout_constraintTop_toBottomOf="@+id/f1"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        android:maxLines="1"
-                        />
-
-                    <TextView
-                        android:id="@+id/f3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/pro_c10"
-                        android:text="@string/every_feature_every_update_included"
-                        android:fontFamily="@font/arimo_regular"
-                        android:textSize="@dimen/_10ssp"
-                        android:includeFontPadding="false"
-                        android:layout_marginHorizontal="@dimen/_8sdp"
-                        android:layout_marginTop="@dimen/_4sdp"
-                        android:drawablePadding="@dimen/_8sdp"
-                        app:drawableStartCompat="@drawable/count_1"
-                        app:layout_constraintTop_toBottomOf="@+id/f2"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         android:maxLines="1"
@@ -573,33 +408,25 @@
             </com.google.android.material.card.MaterialCardView>
 
 
-            <LinearLayout
+            <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:background="@drawable/life_time_tag_bg"
-                app:layout_constraintBottom_toTopOf="@+id/priceCrd"
+                app:srcCompat="@drawable/ic_pro_star"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/priceCrd"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_2sdp"
+                />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_pro_life2"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginBottom="-15dp"
-                >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/LIFETIME_ACCESS"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:fontFamily="@font/arimo_regular"
-                    android:textSize="@dimen/_11ssp"
-                    android:paddingHorizontal="@dimen/_9sdp"
-                    android:maxLines="1"
-                    android:includeFontPadding="false"
-                    android:drawablePadding="@dimen/_6sdp"
-                    android:layout_gravity="center_vertical"
-                    app:drawableLeftCompat="@drawable/ic_pro_icon" />
-
-            </LinearLayout>
+                app:layout_constraintBottom_toBottomOf="@id/priceCrd"
+                android:layout_marginBottom="-22dp"
+                android:layout_marginEnd="@dimen/_2sdp"
+                />
 
 
             <com.google.android.material.card.MaterialCardView
@@ -613,7 +440,7 @@
                 android:layout_marginHorizontal="@dimen/_12sdp"
                 app:cardBackgroundColor="@color/white"
                 app:strokeWidth="0dp"
-                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_26sdp"
                 >
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -657,7 +484,7 @@
                 android:textSize="@dimen/_11ssp"
                 android:includeFontPadding="false"
                 android:layout_marginHorizontal="@dimen/_8sdp"
-                android:layout_marginTop="@dimen/_14sdp"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:drawablePadding="@dimen/_5sdp"
                 app:drawableStartCompat="@drawable/ic_privacy_pro"
                 app:layout_constraintTop_toBottomOf="@+id/buySubscriptionBtn"
@@ -677,7 +504,7 @@
                 android:textSize="@dimen/_11ssp"
                 android:includeFontPadding="false"
                 android:layout_marginHorizontal="@dimen/_8sdp"
-                android:layout_marginTop="@dimen/_14sdp"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:drawablePadding="@dimen/_5sdp"
                 app:drawableStartCompat="@drawable/ic_tick_pro"
                 app:layout_constraintTop_toBottomOf="@+id/buySubscriptionBtn"
@@ -698,7 +525,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/m1"
-                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_5sdp"
                 android:includeFontPadding="false"
                 android:padding="@dimen/_4sdp"
                 android:foreground="?attr/selectableItemBackground"

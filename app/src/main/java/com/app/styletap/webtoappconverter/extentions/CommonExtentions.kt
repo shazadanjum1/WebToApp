@@ -77,11 +77,13 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.ComponentActivity
 import androidx.core.view.isVisible
 import com.app.styletap.ads.InterstitialAdManager
+import com.app.styletap.interfaces.FirebaseAnalyticsUtils
 import com.app.styletap.interfaces.InterstitialLoadCallback
 import com.app.styletap.webtoappconverter.databinding.DialogExitAppBinding
 import com.app.styletap.webtoappconverter.databinding.DialogLogoutAppBinding
 import com.app.styletap.webtoappconverter.databinding.DialogRateUsBinding
 import com.app.styletap.webtoappconverter.presentations.ui.activities.Premium.LifeTimePremiumActivity
+import com.app.styletap.webtoappconverter.presentations.ui.activities.Premium.SubscriptionAndLifeTimeActivity
 import com.app.styletap.webtoappconverter.presentations.ui.activities.Premium.SubscriptionPremiumActivity
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.apkdownload_inter
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.buildapp_inter
@@ -422,10 +424,38 @@ fun Context.addDynamicChips(
     }
 }
 
-fun isValidPackageName(packageName: String): Boolean {
+/*fun isValidPackageName(packageName: String): Boolean {
     val regex = Regex("^[a-z][a-z0-9]*(\\.[a-z][a-z0-9]*){2,}$")
     return regex.matches(packageName)
+}*/
+
+fun isValidPackageName(input: String): String {
+    // 1️⃣ replace spaces with dots (keep case)
+    var packageName = input
+        .trim()
+        .replace("\\s+".toRegex(), ".")
+        .replace("[^A-Za-z0-9.]".toRegex(), "")
+
+    // 2️⃣ split into parts
+    val parts = packageName.split(".").filter { it.isNotEmpty() }.toMutableList()
+
+    // 3️⃣ ensure each part starts with a LETTER (upper or lower)
+    for (i in parts.indices) {
+        if (!parts[i][0].isLetter()) {
+            parts[i] = "A${parts[i]}"
+        }
+    }
+
+    // 4️⃣ ensure at least 3 parts
+    when (parts.size) {
+        0 -> parts.addAll(listOf("com", "example", "app"))
+        1 -> parts.addAll(listOf("example", "app"))
+        2 -> parts.add("app")
+    }
+
+    return parts.joinToString(".")
 }
+
 
 fun Long.toFormattedDate(): String {
     return SimpleDateFormat("dd MMM yyyy", Locale.getDefault())
@@ -745,6 +775,7 @@ fun AppCompatActivity.downloadFile(url: String, appName: String, isShare: Boolea
     val fileName = "${appName}_$timestamp.zip"
 
     if (isApk){
+        FirebaseAnalyticsUtils.logEventMessage("export_apk_click")
         if (PrefHelper.getIsPurchased() || !PrefHelper.getBooleanDefultTrue(apkdownload_inter)){
             downloadWithProgress(url, fileName, isShare)
         } else {
@@ -766,6 +797,9 @@ fun AppCompatActivity.downloadFile(url: String, appName: String, isShare: Boolea
         }
 
     } else {
+        if (!isShare){
+            FirebaseAnalyticsUtils.logEventMessage("export_bundle_click")
+        }
         downloadWithProgress(url, fileName, isShare)
     }
 
@@ -998,8 +1032,10 @@ fun ComponentActivity.withNotificationPermission(onGranted: () -> Unit) {
             ActivityResultContracts.RequestPermission()
         ) { isGranted ->
             if (isGranted) {
+                FirebaseAnalyticsUtils.logEventMessage("permission_granted_notification")
                 onGranted()
             } else {
+                FirebaseAnalyticsUtils.logEventMessage("permission_denied_notification")
                 Toast.makeText(this, resources.getString(R.string.notification_permission_denied), Toast.LENGTH_SHORT).show()
             }
         }
@@ -1148,7 +1184,8 @@ fun View.animateViewXaxis() {
 }
 
 fun Activity.proIntent(): Intent {
-    val mIntent = Intent(this, SubscriptionPremiumActivity::class.java)
+    //val mIntent = Intent(this, SubscriptionPremiumActivity::class.java)
+    val mIntent = Intent(this, SubscriptionAndLifeTimeActivity::class.java)
     return mIntent
 }
 

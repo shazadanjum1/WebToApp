@@ -2,6 +2,7 @@ package com.app.styletap.ads
 
 import android.app.Activity
 import android.app.Dialog
+import com.app.styletap.interfaces.FirebaseAnalyticsUtils
 import com.app.styletap.interfaces.InterstitialCallback
 import com.app.styletap.interfaces.InterstitialLoadCallback
 import com.app.styletap.webtoappconverter.extentions.adLoadingDialog
@@ -211,6 +212,64 @@ class InterstitialAdManager (val mActivity: Activity) {
     }
 
 
+    fun loadAndShowNewSplashAd(ID: String, isShow: Boolean, interstitialLoadCallback: InterstitialLoadCallback){
+
+        if (!mActivity.isNetworkAvailable()) { //  || !isShow || prefHelper.getIsPurchased()
+            interstitialLoadCallback.onFailedToLoad()
+            return
+        }
+
+       // val adsDialog = mActivity.adLoadingDialog()
+
+        val adRequest = AdRequest.Builder().build()
+
+        InterstitialAd.load(mActivity, ID, adRequest,
+            object : InterstitialAdLoadCallback() {
+                override fun onAdFailedToLoad(adError: LoadAdError) {
+                    //adsDialog.safeDismiss(mActivity)
+                    mInterstitialAd = null
+                    adLoading = false
+                    interstitialLoadCallback.onFailedToLoad()
+                }
+
+                override fun onAdLoaded(ad: InterstitialAd) {
+                    mInterstitialAd = ad
+                    adLoading = false
+
+
+                    mInterstitialAd?.fullScreenContentCallback = object: FullScreenContentCallback() {
+                        override fun onAdClicked() {}
+
+                        override fun onAdDismissedFullScreenContent() {
+                            mInterstitialAd = null
+                            interstitialLoadCallback.onLoaded()
+                        }
+
+                        override fun onAdFailedToShowFullScreenContent(p0: AdError) {
+                            mInterstitialAd = null
+                            interstitialLoadCallback.onFailedToLoad()
+                        }
+
+                        override fun onAdImpression() {}
+
+                        override fun onAdShowedFullScreenContent() {
+                            FirebaseAnalyticsUtils.logEventMessage("ad_interstitial_show")
+                        }
+
+                    }
+
+                    //adsDialog.safeDismiss(mActivity)
+                    if (mInterstitialAd != null) {
+                        mInterstitialAd?.show(mActivity)
+                    } else {
+                        interstitialLoadCallback.onFailedToLoad()
+                    }
+                }
+            }
+        )
+    }
+
+
     fun loadAndShowAd(ID: String, isShow: Boolean, interstitialLoadCallback: InterstitialLoadCallback){
 
         if (!mActivity.isNetworkAvailable()) { //  || !isShow || prefHelper.getIsPurchased()
@@ -251,7 +310,9 @@ class InterstitialAdManager (val mActivity: Activity) {
 
                         override fun onAdImpression() {}
 
-                        override fun onAdShowedFullScreenContent() {}
+                        override fun onAdShowedFullScreenContent() {
+                            FirebaseAnalyticsUtils.logEventMessage("ad_interstitial_show")
+                        }
 
                     }
 

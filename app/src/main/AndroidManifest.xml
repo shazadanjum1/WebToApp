@@ -23,6 +23,9 @@
         android:theme="@style/Theme.WebToAppConverter"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".presentations.ui.activities.Premium.SubscriptionAndLifeTimeActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentations.ui.activities.Premium.LifeTimePremiumActivity"
             android:exported="false" />
         <activity
@@ -87,12 +90,12 @@
             android:exported="false" />
         <activity
             android:name=".presentations.ui.activities.authorization.SignUpActivity"
-            android:windowSoftInputMode="adjustResize|stateHidden"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name=".presentations.ui.activities.authorization.LoginActivity"
-            android:windowSoftInputMode="adjustResize|stateHidden"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name=".presentations.ui.activities.onboarding.OnboardingActivity"
             android:exported="false" />

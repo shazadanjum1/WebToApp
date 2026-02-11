@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
+import com.app.styletap.interfaces.FirebaseAnalyticsUtils
 import com.app.styletap.webtoappconverter.R
 import com.app.styletap.webtoappconverter.databinding.ActivityServiceRequestBinding
 import com.app.styletap.webtoappconverter.extentions.adjustBottomHeight
@@ -69,6 +70,7 @@ class ServiceRequestActivity : AppCompatActivity() {
             }
 
             waCard.setOnClickListener {
+                FirebaseAnalyticsUtils.logEventMessage("agency_whatsapp_click")
                 openWhatsApp(getString(R.string.phone_number))
             }
 

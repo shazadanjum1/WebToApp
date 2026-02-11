@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
+import com.app.styletap.interfaces.FirebaseAnalyticsUtils
 import com.app.styletap.webtoappconverter.MyApplication
 import com.app.styletap.webtoappconverter.R
 import com.app.styletap.webtoappconverter.databinding.ActivityAppFeaturesBinding
@@ -66,6 +67,7 @@ class AppFeaturesActivity : AppCompatActivity() {
 
         adjustTopHeight(binding.toolbarLL)
         adjustBottomHeight(binding.container)
+        FirebaseAnalyticsUtils.logEventMessage("features_screen_view")
 
         ViewCompat.setOnApplyWindowInsetsListener(binding.main) { _, insets ->
             val imeInsets = insets.getInsets(WindowInsetsCompat.Type.ime())
@@ -139,26 +141,32 @@ class AppFeaturesActivity : AppCompatActivity() {
 
 
             pullToRefreshBtn.setOnClickListener {
+                FirebaseAnalyticsUtils.logEventMessage("feature_pull_refresh_toggle")
                 isPullToRefresh = !isPullToRefresh
                 pullToRefreshIv.changeIcon(isPullToRefresh)
             }
             loaderScreenBtn.setOnClickListener {
+                FirebaseAnalyticsUtils.logEventMessage("feature_loader_screen_toggle")
                 isLoaderScreen = !isLoaderScreen
                 loaderScreenIV.changeIcon(isLoaderScreen)
             }
             fullScreenModeBtn.setOnClickListener {
+                FirebaseAnalyticsUtils.logEventMessage("feature_full_screen_toggle")
                 isFullScreenMode = !isFullScreenMode
                 fullScreenModeIv.changeIcon(isFullScreenMode)
             }
             navigationButtonsBtn.setOnClickListener {
+                FirebaseAnalyticsUtils.logEventMessage("feature_bottom_nav_toggle")
                 isNavigationButtons = !isNavigationButtons
                 navigationButtonsIv.changeIcon(isNavigationButtons)
             }
             externalLinksInBrowserBtn.setOnClickListener {
+                FirebaseAnalyticsUtils.logEventMessage("feature_external_links_toggle")
                 isExternalLinksInBrowser = !isExternalLinksInBrowser
                 externalLinksInBrowserIv.changeIcon(isExternalLinksInBrowser)
             }
             notificationSupportBtn.setOnClickListener {
+                FirebaseAnalyticsUtils.logEventMessage("feature_push_noti_toggle")
                 isNotificationSupport = !isNotificationSupport
                 notificationSupportIv.changeIcon(isNotificationSupport)
             }

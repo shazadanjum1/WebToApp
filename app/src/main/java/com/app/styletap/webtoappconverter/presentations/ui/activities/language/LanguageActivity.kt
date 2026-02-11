@@ -211,6 +211,10 @@ class LanguageActivity : AppCompatActivity() {
         if (fromWhere == "splash" && (PrefHelper.getBooleanDefultTrue(isShowOnBoarding))){
             // val mIntent = Intent(this@LanguageActivity, OnboardingActivity::class.java)
 
+            if (::lanuageModel.isInitialized){
+                PrefHelper.setBoolean(isLanguageSelected, true)
+                PrefHelper.setString(languageCode, lanuageModel.languageCode)
+            }
 
             val mIntent =
                 if (user?.isAnonymous == true) {

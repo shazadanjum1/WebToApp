@@ -108,28 +108,28 @@ class AppBasicInfoActivity : AppCompatActivity() {
                 onBack()
             }
 
-            val color = ContextCompat.getColor(this@AppBasicInfoActivity, R.color.grey_2)
+            /* val color = ContextCompat.getColor(this@AppBasicInfoActivity, R.color.grey_2)
 
-            portraitBtn.setOnClickListener {
-                ViewCompat.setBackgroundTintList(portraitCL, null)
-                ViewCompat.setBackgroundTintList(landscapeCL, ColorStateList.valueOf(color))
+             portraitBtn.setOnClickListener {
+                 ViewCompat.setBackgroundTintList(portraitCL, null)
+                 ViewCompat.setBackgroundTintList(landscapeCL, ColorStateList.valueOf(color))
 
-                portraitTv.setTextColor(ContextCompat.getColor(this@AppBasicInfoActivity, R.color.white))
-                landscapeTv.setTextColor(ContextCompat.getColor(this@AppBasicInfoActivity, R.color.black))
+                 portraitTv.setTextColor(ContextCompat.getColor(this@AppBasicInfoActivity, R.color.white))
+                 landscapeTv.setTextColor(ContextCompat.getColor(this@AppBasicInfoActivity, R.color.black))
 
-                appOrientation1 = "Portrait"
-            }
+                 appOrientation1 = "Portrait"
+             }
 
-            landscapeBtn.setOnClickListener {
-                ViewCompat.setBackgroundTintList(portraitCL, ColorStateList.valueOf(color))
-                ViewCompat.setBackgroundTintList(landscapeCL, null)
+             landscapeBtn.setOnClickListener {
+                 ViewCompat.setBackgroundTintList(portraitCL, ColorStateList.valueOf(color))
+                 ViewCompat.setBackgroundTintList(landscapeCL, null)
 
-                portraitTv.setTextColor(ContextCompat.getColor(this@AppBasicInfoActivity, R.color.black))
-                landscapeTv.setTextColor(ContextCompat.getColor(this@AppBasicInfoActivity, R.color.white))
+                 portraitTv.setTextColor(ContextCompat.getColor(this@AppBasicInfoActivity, R.color.black))
+                 landscapeTv.setTextColor(ContextCompat.getColor(this@AppBasicInfoActivity, R.color.white))
 
-                appOrientation1 = "Landscape"
+                 appOrientation1 = "Landscape"
 
-            }
+             }*/
 
             nextBtn.setOnClickListener {
                 val appName = etAppName.text.toString().trim()
@@ -140,7 +140,8 @@ class AppBasicInfoActivity : AppCompatActivity() {
                 val mIntent = Intent(this@AppBasicInfoActivity, AppBrandingActivity::class.java).apply {
                     putExtra("webUrl", webUrl)
                     putExtra("appName", appName)
-                    putExtra("packageName1", packageName1)
+                    //putExtra("packageName1", packageName1)
+                    putExtra("packageName1", isValidPackageName(packageName1))
                     putExtra("appOrientation1", appOrientation1)
 
                 }
@@ -162,13 +163,14 @@ class AppBasicInfoActivity : AppCompatActivity() {
                 return false
             }
 
-            if (!isValidPackageName(packageName1)) {
+            /*if (!isValidPackageName(packageName1)) {
                 etPackageName.apply {
                     requestFocus()
                     error = context.getString(R.string.the_package_name_must_follow_the_format_com_example_app)
                 }
                 return false
-            }
+            }*/
+
 
             return true
         }

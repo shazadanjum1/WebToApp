@@ -18,6 +18,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
 import com.app.styletap.ads.InterstitialAdManager
+import com.app.styletap.interfaces.FirebaseAnalyticsUtils
 import com.app.styletap.interfaces.InterstitialLoadCallback
 import com.app.styletap.webtoappconverter.R
 import com.app.styletap.webtoappconverter.databinding.ActivityEditAppBinding
@@ -265,6 +266,7 @@ class EditAppActivity : AppCompatActivity() {
                 }
             }
             .addOnFailureListener { e ->
+                FirebaseAnalyticsUtils.logEventMessage("server_error")
                 Toast.makeText(this, resources.getString(R.string.something_went_wrong_try_again), Toast.LENGTH_LONG).show()
                 finish()
             }
@@ -322,7 +324,9 @@ class EditAppActivity : AppCompatActivity() {
             val mIntent = Intent(this@EditAppActivity, BuildingAppActivity::class.java).apply {
                 putExtra("webUrl", url)
                 putExtra("appName", appName)
-                putExtra("packageName1", packageName1)
+                //putExtra("packageName1", packageName1)
+                putExtra("packageName1", isValidPackageName(packageName1))
+
                 putExtra("appOrientation1", appModel?.orientation ?: "Portrait")
                 putExtra("primaryColor", primaryColorTv.text)
                 putExtra("secondaryColor", secondaryColorTv.text)
@@ -417,13 +421,13 @@ class EditAppActivity : AppCompatActivity() {
                 return false
             }
 
-            if (!isValidPackageName(packageName1)) {
+            /*if (!isValidPackageName(packageName1)) {
                 etPackageName.apply {
                     requestFocus()
                     error = context.getString(R.string.the_package_name_must_follow_the_format_com_example_app)
                 }
                 return false
-            }
+            }*/
 
             return true
         }

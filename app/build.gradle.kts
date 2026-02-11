@@ -18,8 +18,8 @@ android {
         applicationId = "com.webtoapp.converter"
         minSdk = 26
         targetSdk = 36
-        versionCode = 3
-        versionName = "2.0.1"
+        versionCode = 1//4
+        versionName = "0.0"//"2.0.2"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -60,7 +60,7 @@ android {
             resValue("string", "appId", "ca-app-pub-5471933816484694~8077984612")
             resValue("string", "appOpenId", "ca-app-pub-5471933816484694/6127008072")
             resValue("string", "homeBannerId", "ca-app-pub-5471933816484694/4322971812")
-            resValue("string", "createappBannerId", "ca-app-pub-5471933816484694/4322971812")
+            resValue("string", "createappBannerId", "ca-app-pub-5471933816484694/9378630012")
 
             resValue("string", "splashInterstitialId", "ca-app-pub-5471933816484694/4138739605")
             resValue("string", "buildAppInterstitialId", "ca-app-pub-5471933816484694/2658536357")

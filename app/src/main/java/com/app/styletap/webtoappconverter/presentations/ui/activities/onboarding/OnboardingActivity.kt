@@ -7,22 +7,31 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.app.styletap.ads.NativeAdManager
+import com.app.styletap.interfaces.FirebaseAnalyticsUtils
 import com.app.styletap.webtoappconverter.R
 import com.app.styletap.webtoappconverter.databinding.ActivityOnboardingBinding
 import com.app.styletap.webtoappconverter.extentions.adjustBottomHeight
 import com.app.styletap.webtoappconverter.extentions.changeLocale
 import com.app.styletap.webtoappconverter.extentions.customEnableEdgeToEdge
 import com.app.styletap.webtoappconverter.extentions.isNetworkAvailable
+import com.app.styletap.webtoappconverter.extentions.proIntent
 import com.app.styletap.webtoappconverter.presentations.ui.activities.authorization.LoginActivity
+import com.app.styletap.webtoappconverter.presentations.ui.activities.home.MainActivity
+import com.app.styletap.webtoappconverter.presentations.ui.activities.language.LanguageActivity
+import com.app.styletap.webtoappconverter.presentations.utils.Contants.isLanguageSelected
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.isShowOnBoarding
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.onboarding_native
 import com.app.styletap.webtoappconverter.presentations.utils.PrefHelper
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 
 class OnboardingActivity : AppCompatActivity() {
     lateinit var binding: ActivityOnboardingBinding
     var introCounter = 1
     var fromWhere = "home"
 
+    private lateinit var auth: FirebaseAuth
+    var user: FirebaseUser? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +42,10 @@ class OnboardingActivity : AppCompatActivity() {
         customEnableEdgeToEdge()
 
         adjustBottomHeight(binding.container)
+        FirebaseAnalyticsUtils.logEventMessage("onboarding_start")
+
+        auth = FirebaseAuth.getInstance()
+        user = auth.currentUser
 
         initiView()
         showNativeAd()
@@ -87,9 +100,24 @@ class OnboardingActivity : AppCompatActivity() {
 
             }
         } else {
+            FirebaseAnalyticsUtils.logEventMessage("onboarding_complete")
             PrefHelper.setBoolean(isShowOnBoarding, false)
 
-            val mIntent = Intent(this, LoginActivity::class.java).apply {
+            /*val mIntent = Intent(this, LoginActivity::class.java).apply {
+                putExtra("from", "splash")
+            }*/
+
+            val mIntent =if (PrefHelper.getIsPurchased()){
+                if (user == null) {
+                    Intent(this, LoginActivity::class.java)
+                } else {
+                    Intent(this, MainActivity::class.java)
+                }
+            } else {
+                proIntent()
+            }
+
+            mIntent.apply {
                 putExtra("from", "splash")
             }
             startActivity(mIntent)

@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
+import com.app.styletap.interfaces.FirebaseAnalyticsUtils
 import com.app.styletap.webtoappconverter.R
 import com.app.styletap.webtoappconverter.databinding.ActivityLoginBinding
 import com.app.styletap.webtoappconverter.extentions.adjustBottomHeight
@@ -210,6 +211,7 @@ class LoginActivity : AppCompatActivity() {
                                     finishAffinity()
                                 }
                                 .addOnFailureListener { e ->
+                                    FirebaseAnalyticsUtils.logEventMessage("server_error")
                                     isClickable = true
                                     binding.progressBar.isVisible = false
                                     Toast.makeText(this,  "error: ${e.message}", Toast.LENGTH_SHORT).show()
@@ -217,6 +219,7 @@ class LoginActivity : AppCompatActivity() {
                         }
                     }
                 } else {
+                    FirebaseAnalyticsUtils.logEventMessage("server_error")
                     isClickable = true
                     binding.progressBar.isVisible = false
                     Toast.makeText(this, "Login failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
@@ -268,6 +271,7 @@ class LoginActivity : AppCompatActivity() {
                 }
             }
             .addOnFailureListener { e ->
+                FirebaseAnalyticsUtils.logEventMessage("server_error")
                 isClickable = true
                 binding.progressBar.isVisible = false
                 Toast.makeText(this, "Login failed: ${e.message}", Toast.LENGTH_SHORT).show()

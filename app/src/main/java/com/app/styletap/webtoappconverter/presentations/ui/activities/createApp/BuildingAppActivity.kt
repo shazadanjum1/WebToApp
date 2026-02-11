@@ -11,6 +11,7 @@ import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.net.toUri
 import com.app.styletap.ads.NativeAdManager
+import com.app.styletap.interfaces.FirebaseAnalyticsUtils
 import com.app.styletap.webtoappconverter.R
 import com.app.styletap.webtoappconverter.databinding.ActivityBuildingAppBinding
 import com.app.styletap.webtoappconverter.extentions.adjustBottomHeight
@@ -73,6 +74,7 @@ class BuildingAppActivity : AppCompatActivity() {
 
         adjustTopHeight(binding.toolbarLL)
         adjustBottomHeight(binding.container)
+        FirebaseAnalyticsUtils.logEventMessage("build_start")
 
         auth = FirebaseAuth.getInstance()
         user = auth.currentUser
@@ -162,6 +164,7 @@ class BuildingAppActivity : AppCompatActivity() {
                     if (downloadUrl != null) {
                         saveAppDetails(downloadUrl)
                     } else {
+                        FirebaseAnalyticsUtils.logEventMessage("build_failed")
                         isClickable = true
                         Toast.makeText(this@BuildingAppActivity, resources.getString(R.string.failed_to_upload_app_icon), Toast.LENGTH_SHORT).show()
                         sendBroadcast(Intent(ACTION_FINISH_ACTIVITY).apply { setPackage(packageName) })
@@ -306,6 +309,7 @@ class BuildingAppActivity : AppCompatActivity() {
                 .document(uid)  // use generated UID
                 .set(appDetails)
                 .addOnSuccessListener {
+                    //FirebaseAnalyticsUtils.logEventMessage("build_success")
                     isClickable = true
                     binding.progressBar.progress = 100
                     binding.progressTv.text = "100"
@@ -315,6 +319,7 @@ class BuildingAppActivity : AppCompatActivity() {
                     finish()
                 }
                 .addOnFailureListener { e ->
+                    FirebaseAnalyticsUtils.logEventMessage("server_error")
                     isClickable = true
                     binding.progressBar.progress = 100
                     binding.progressTv.text = "100"
@@ -392,6 +397,7 @@ class BuildingAppActivity : AppCompatActivity() {
                 .document(appId)  // use generated UID
                 .update(appDetails)
                 .addOnSuccessListener {
+                    FirebaseAnalyticsUtils.logEventMessage("build_success")
                     isClickable = true
                     binding.progressBar.progress = 100
                     binding.progressTv.text = "100"
@@ -401,6 +407,7 @@ class BuildingAppActivity : AppCompatActivity() {
                     finish()
                 }
                 .addOnFailureListener { e ->
+                    FirebaseAnalyticsUtils.logEventMessage("build_failed")
                     isClickable = true
                     binding.progressBar.progress = 100
                     binding.progressTv.text = "100"

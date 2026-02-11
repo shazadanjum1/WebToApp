@@ -6,6 +6,7 @@ import android.util.DisplayMetrics
 import android.view.View
 import android.widget.FrameLayout
 import android.widget.RelativeLayout
+import com.app.styletap.interfaces.FirebaseAnalyticsUtils
 import com.app.styletap.webtoappconverter.extentions.isNetworkAvailable
 import com.facebook.shimmer.ShimmerFrameLayout
 import com.google.ads.mediation.admob.AdMobAdapter
@@ -27,6 +28,7 @@ class BannerAdManager(val mActivity: Activity) {
         mAdFrameLayout = frameLayout
 
         if (mActivity.isNetworkAvailable()) {
+            FirebaseAnalyticsUtils.logEventMessage("ad_banner_view")
             relativeLayout.visibility = View.VISIBLE
 
             val adView = AdView(mActivity)
@@ -74,6 +76,7 @@ class BannerAdManager(val mActivity: Activity) {
     ){
         mAdFrameLayout = frameLayout
         if (mActivity.isNetworkAvailable()) {
+            FirebaseAnalyticsUtils.logEventMessage("ad_collapsible_banner_view")
             relativeLayout.visibility = View.VISIBLE
 
             val adView = AdView(mActivity)

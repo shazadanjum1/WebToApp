@@ -252,6 +252,7 @@
                             android:maxLines="1"
                             android:fontFamily="@font/arimo_regular"
                             android:textSize="@dimen/_12ssp"
+                            android:textAlignment="viewStart"
                             android:includeFontPadding="false" />
 
                     </com.google.android.material.card.MaterialCardView>
@@ -289,6 +290,7 @@
                             android:maxLines="1"
                             android:fontFamily="@font/arimo_regular"
                             android:textSize="@dimen/_12ssp"
+                            android:textAlignment="viewStart"
                             android:includeFontPadding="false" />
 
                     </com.google.android.material.card.MaterialCardView>

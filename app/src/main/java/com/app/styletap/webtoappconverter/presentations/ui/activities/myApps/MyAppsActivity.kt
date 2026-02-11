@@ -17,6 +17,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.styletap.ads.NativeAdManager
+import com.app.styletap.interfaces.FirebaseAnalyticsUtils
 import com.app.styletap.webtoappconverter.R
 import com.app.styletap.webtoappconverter.databinding.ActivityMyAppsBinding
 import com.app.styletap.webtoappconverter.extentions.adjustBottomHeight
@@ -89,6 +90,8 @@ class MyAppsActivity : AppCompatActivity() {
 
         adjustTopHeight(binding.toolbarLL)
         adjustBottomHeight(binding.container)
+        FirebaseAnalyticsUtils.logEventMessage("myapps_screen_view")
+
         isRecreateUI = false
 
         onBackPressedDispatcher.addCallback(
@@ -201,6 +204,7 @@ class MyAppsActivity : AppCompatActivity() {
 
             }
             .addOnFailureListener {
+                FirebaseAnalyticsUtils.logEventMessage("server_error")
                 isClickable = true
                 binding.progressBar.isVisible = false
                 binding.emptyMsgTv.isVisible = true
@@ -222,6 +226,7 @@ class MyAppsActivity : AppCompatActivity() {
                 Toast.makeText(this, resources.getString(R.string.app_deleted), Toast.LENGTH_SHORT).show()
             }
             .addOnFailureListener { e ->
+                FirebaseAnalyticsUtils.logEventMessage("server_error")
                 binding.progressBar.isVisible = false
                 Toast.makeText(this, "${resources.getString(R.string.failed_to_delete)}: ${e.message}", Toast.LENGTH_SHORT).show()
             }
@@ -284,6 +289,7 @@ class MyAppsActivity : AppCompatActivity() {
             }
             .addOnFailureListener { e ->
                 onRequestSubmission()
+                FirebaseAnalyticsUtils.logEventMessage("server_error")
                 isClickable = true
                 binding.reFetchBtn.isVisible = true
                 binding.progressBar.isVisible = false

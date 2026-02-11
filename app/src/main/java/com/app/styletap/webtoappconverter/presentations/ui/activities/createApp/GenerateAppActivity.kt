@@ -26,6 +26,7 @@ import androidx.core.graphics.toColorInt
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.app.styletap.ads.InterstitialAdManager
+import com.app.styletap.interfaces.FirebaseAnalyticsUtils
 import com.app.styletap.interfaces.InterstitialLoadCallback
 import com.app.styletap.webtoappconverter.MyApplication
 import com.app.styletap.webtoappconverter.extentions.changeLocale

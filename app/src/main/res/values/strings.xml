@@ -474,4 +474,30 @@
     <string name="fast_easy_app_share">Fast &amp; easy app share</string>
     <string name="awesome_were_so_glad_you_love_it">Awesome! We\'re so glad you love it! 🎉</string>
 
+    <string name="upgrade_premium">Upgrade Premium</string>
+    <string name="own_it_forever">Own it forever</string>
+    <string name="yours_forever">Yours Forever</string>
+    <string name="full_access_forever_no_subscriptions_no_hidden_fees">Full access forever. No subscriptions. No hidden fees</string>
+
+    <string name="free_updates_forever">Free Updates Forever</string>
+    <string name="always_ads_free">Always Ads Free</string>
+    <string name="one_time_payment_no_recurring_charges">One-time payment • No recurring charges</string>
+    <string name="_100_secure_checkout">100% Secure Checkout</string>
+    <string name="save_amount_today_only">Save %1$s Today Only</string>
+    <string name="priority_support_available">Priority Support Available</string>
+
+    <string name="start_free_trial">Start Free Trial</string>
+    <string name="try_3_days_for_free_then_week">Try 3 days for free, then %1$s/week</string>
+
+    <string name="best_offer">Best Offer</string>
+    <string name="Yearly">Yearly</string>
+    <string name="just_per_year">Just %1$s per year</string>
+    <string name="lifetime">Lifetime</string>
+<!--    <string name="terms_of_use_privacy_policy_cancel_anytime">Terms of Use\u0020\u0020\u0020|\u0020\u0020\u0020Privacy Policy\u0020\u0020\u0020|\u0020\u0020\u0020Cancel anytime</string>-->
+
+    <string name="terms_of_use_privacy_policy_cancel_anytime">%1$s | %2$s | %3$s</string>
+
+    <string name="terms_of_use">Terms of Use</string>
+    <string name="cancel_anytime">Cancel anytime</string>
+
 </resources>

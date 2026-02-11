@@ -14,6 +14,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
 import com.app.styletap.ads.BannerAdManager
+import com.app.styletap.interfaces.FirebaseAnalyticsUtils
 import com.app.styletap.webtoappconverter.R
 import com.app.styletap.webtoappconverter.databinding.ActivityCreateAppBinding
 import com.app.styletap.webtoappconverter.extentions.adjustBottomHeight
@@ -48,6 +49,7 @@ class CreateAppActivity : AppCompatActivity() {
 
         adjustTopHeight(binding.toolbarLL)
         adjustBottomHeight(binding.container)
+        FirebaseAnalyticsUtils.logEventMessage("url_screen_view")
 
         ViewCompat.setOnApplyWindowInsetsListener(binding.main) { _, insets ->
             val imeInsets = insets.getInsets(WindowInsetsCompat.Type.ime())
@@ -104,6 +106,7 @@ class CreateAppActivity : AppCompatActivity() {
             nextBtn.setOnClickListener {
                 val url = etUrl.text.toString().trim()
                 if (!invalidateUrl(url)) return@setOnClickListener
+                FirebaseAnalyticsUtils.logEventMessage("url_validation_success")
 
                 val mIntent = Intent(this@CreateAppActivity, AppBasicInfoActivity::class.java).apply {
                     putExtra("webUrl", url)
@@ -124,9 +127,12 @@ class CreateAppActivity : AppCompatActivity() {
                     error = context.getString(R.string.please_enter_url)
                 }
                 return false
+            } else {
+                FirebaseAnalyticsUtils.logEventMessage("url_entered")
             }
 
             if (!url.startsWith("http://") && !url.startsWith("https://")) {
+                FirebaseAnalyticsUtils.logEventMessage("url_validation_failed")
                 etUrl.apply {
                     requestFocus()
                     error = context.getString(R.string.url_must_start_with_http_or_https)
@@ -135,6 +141,7 @@ class CreateAppActivity : AppCompatActivity() {
             }
 
             if (!Patterns.WEB_URL.matcher(url).matches()) {
+                FirebaseAnalyticsUtils.logEventMessage("url_validation_failed")
                 etUrl.apply {
                     requestFocus()
                     error = context.getString(R.string.invalid_web_url)

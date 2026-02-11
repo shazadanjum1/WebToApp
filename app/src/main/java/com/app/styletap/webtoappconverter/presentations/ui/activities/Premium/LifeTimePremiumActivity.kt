@@ -240,7 +240,7 @@ class LifeTimePremiumActivity : AppCompatActivity() {
                         binding.originalPriceTv.text = spannable
 
                         binding.percentageTv.text = getString(
-                            R.string.save_amount_today,
+                            R.string.save_amount_today_only,
                             formatter.format(seventyPercent)
                         )
 

@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.graphics.toColorInt
 import androidx.core.view.isVisible
+import com.app.styletap.interfaces.FirebaseAnalyticsUtils
 import com.app.styletap.webtoappconverter.R
 import com.app.styletap.webtoappconverter.databinding.ActivityViewAppDetailsBinding
 import com.app.styletap.webtoappconverter.extentions.addDynamicChips
@@ -245,6 +246,7 @@ class ViewAppDetailsActivity : AppCompatActivity() {
                 }
             }
             .addOnFailureListener { e ->
+                FirebaseAnalyticsUtils.logEventMessage("server_error")
                 Toast.makeText(this, resources.getString(R.string.something_went_wrong_try_again), Toast.LENGTH_LONG).show()
                 finish()
             }

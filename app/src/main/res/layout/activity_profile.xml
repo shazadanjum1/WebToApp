@@ -175,6 +175,7 @@
                             android:fontFamily="@font/arimo_regular"
                             android:includeFontPadding="false"
                             android:textSize="@dimen/_16ssp"
+                            android:maxLines="1"
                             />
 
                         <TextView
@@ -186,6 +187,7 @@
                             android:includeFontPadding="false"
                             android:textSize="@dimen/_12ssp"
                             android:layout_marginTop="@dimen/_6sdp"
+                            android:maxLines="1"
                             />
 
                     </LinearLayout>

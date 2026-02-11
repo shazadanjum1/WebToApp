@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
+import com.app.styletap.interfaces.FirebaseAnalyticsUtils
 import com.app.styletap.webtoappconverter.R
 import com.app.styletap.webtoappconverter.databinding.ActivitySignUpBinding
 import com.app.styletap.webtoappconverter.extentions.adjustBottomHeight
@@ -256,6 +257,7 @@ class SignUpActivity : AppCompatActivity() {
                                     finishAffinity()
                                 }
                                 .addOnFailureListener { e ->
+                                    FirebaseAnalyticsUtils.logEventMessage("server_error")
                                     isClickable = true
                                     binding.progressBar.isVisible = false
                                     Toast.makeText(this, "error: ${e.message}", Toast.LENGTH_SHORT).show()
@@ -263,6 +265,7 @@ class SignUpActivity : AppCompatActivity() {
                         }
                     }
                 } else {
+                    FirebaseAnalyticsUtils.logEventMessage("server_error")
                     isClickable = true
                     binding.progressBar.isVisible = false
                     Toast.makeText(this, "Registration failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()

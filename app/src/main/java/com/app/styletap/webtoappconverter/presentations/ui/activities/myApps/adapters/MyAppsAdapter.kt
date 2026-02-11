@@ -26,6 +26,7 @@ import java.lang.reflect.Method
 import androidx.core.view.size
 import androidx.core.view.get
 import androidx.core.view.isVisible
+import com.app.styletap.interfaces.FirebaseAnalyticsUtils
 import com.app.styletap.webtoappconverter.extentions.decorateStatus
 import com.app.styletap.webtoappconverter.extentions.isNetworkAvailable
 import com.app.styletap.webtoappconverter.extentions.proLifeTimeIntent

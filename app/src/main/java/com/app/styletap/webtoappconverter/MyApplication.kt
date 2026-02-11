@@ -178,7 +178,7 @@ class MyApplication : Application(), Application.ActivityLifecycleCallbacks, Def
                         isLoadingAd = false
                         loadTime = Date().time
                         Log.d(LOG_TAG, "onAdLoaded.")
-                        FirebaseAnalyticsUtils.logEventMessage("AppOpenAd_Loaded")
+                        FirebaseAnalyticsUtils.logEventMessage("app_open_Loaded")
 
                         appOpenAdsCallBack.onLoaded()
                     }
@@ -187,7 +187,7 @@ class MyApplication : Application(), Application.ActivityLifecycleCallbacks, Def
                         isLoadingAd = false
                         Log.d(LOG_TAG, "onAdFailedToLoad: " + loadAdError.message)
                         appOpenAdsCallBack.onFailedToLoaded()
-                        FirebaseAnalyticsUtils.logEventMessage("AppOpenAd_FailedToLoad")
+                        FirebaseAnalyticsUtils.logEventMessage("app_open_FailedToLoad")
 
                     }
                 }
@@ -249,7 +249,7 @@ class MyApplication : Application(), Application.ActivityLifecycleCallbacks, Def
                         isShowApOpenAd = true
                         isIntertialAdshowing = false
 
-                        FirebaseAnalyticsUtils.logEventMessage("AppOpenAd_Dismissed")
+                        FirebaseAnalyticsUtils.logEventMessage("app_open_Dismissed")
 
                         if (loadingDialog != null && loadingDialog!!.isShowing) try {
                             loadingDialog!!.dismiss()
@@ -282,7 +282,7 @@ class MyApplication : Application(), Application.ActivityLifecycleCallbacks, Def
                         }
 
                         Log.d(LOG_TAG, "onAdFailedToShowFullScreenContent: " + adError.message)
-                        FirebaseAnalyticsUtils.logEventMessage("AppOpenAd_FailedToShow")
+                        FirebaseAnalyticsUtils.logEventMessage("app_open_FailedToShow")
 
                         onShowAdCompleteListener.onShowAdComplete()
                         loadAd(activity, AD_UNIT_ID, object : AppOpenAdCallBack {
@@ -295,7 +295,7 @@ class MyApplication : Application(), Application.ActivityLifecycleCallbacks, Def
                     override fun onAdShowedFullScreenContent() {
                         isShowApOpenAd = true
                         isIntertialAdshowing = false
-                        FirebaseAnalyticsUtils.logEventMessage("AppOpenAd_Showing")
+                        FirebaseAnalyticsUtils.logEventMessage("app_open_Showing")
 
                     }
                 }

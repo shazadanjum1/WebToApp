@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.view.View
 import android.widget.FrameLayout
+import com.app.styletap.interfaces.FirebaseAnalyticsUtils
 import com.app.styletap.interfaces.NativeAdLoadCallback
 import com.app.styletap.webtoappconverter.databinding.NativeAdMediumBinding
 import com.app.styletap.webtoappconverter.extentions.isNetworkAvailable
@@ -215,6 +216,7 @@ class NativeAdManager(val activity: Context) {
         if ( adIsLoading || !activity.isNetworkAvailable() || nativeAd == null || PrefHelper.getIsPurchased()){
             return
         }
+        FirebaseAnalyticsUtils.logEventMessage("ad_native_view")
 
         populateNativeMediumAd(adFrame, NativeAdMediumBinding.inflate(activity.layoutInflater))
 

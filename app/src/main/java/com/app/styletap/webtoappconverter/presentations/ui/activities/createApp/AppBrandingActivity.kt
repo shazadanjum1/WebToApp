@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
+import com.app.styletap.interfaces.FirebaseAnalyticsUtils
 import com.app.styletap.webtoappconverter.MyApplication
 import com.app.styletap.webtoappconverter.R
 import com.app.styletap.webtoappconverter.databinding.ActivityAppBrandingBinding
@@ -44,6 +45,8 @@ class AppBrandingActivity : AppCompatActivity() {
     //private var imageUri: Uri? = null
     var filePath: String? = ""
 
+    var isThemeSelected = false
+
     private val pickImageLauncher = registerForActivityResult(
         ActivityResultContracts.GetContent()
     ) { uri: Uri? ->
@@ -60,6 +63,9 @@ class AppBrandingActivity : AppCompatActivity() {
 
             binding.appIconImageView.isVisible = true
             binding.iconErrorTv.isVisible = false
+
+            FirebaseAnalyticsUtils.logEventMessage("config_icon_uploaded")
+
         }
     }
 
@@ -82,6 +88,7 @@ class AppBrandingActivity : AppCompatActivity() {
 
         adjustTopHeight(binding.toolbarLL)
         adjustBottomHeight(binding.container)
+        FirebaseAnalyticsUtils.logEventMessage("config_screen_view")
 
         ViewCompat.setOnApplyWindowInsetsListener(binding.main) { _, insets ->
             val imeInsets = insets.getInsets(WindowInsetsCompat.Type.ime())
@@ -194,6 +201,12 @@ class AppBrandingActivity : AppCompatActivity() {
             binding.primaryColorTv.text = hexColor
             binding.primaryColorCD.setCardBackgroundColor(ColorStateList.valueOf(selectedColor))
         }
+
+        if (!isThemeSelected){
+            FirebaseAnalyticsUtils.logEventMessage("config_theme_selected")
+            isThemeSelected = true
+        }
+
     }
 
 }

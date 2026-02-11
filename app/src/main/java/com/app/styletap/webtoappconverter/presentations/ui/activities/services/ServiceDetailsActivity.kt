@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+import com.app.styletap.interfaces.FirebaseAnalyticsUtils
 import com.app.styletap.webtoappconverter.R
 import com.app.styletap.webtoappconverter.databinding.ActivityServiceDetailsBinding
 import com.app.styletap.webtoappconverter.extentions.adjustBottomHeight
@@ -78,6 +79,7 @@ class ServiceDetailsActivity : AppCompatActivity() {
 
 
             orderBtn.setOnClickListener {
+                FirebaseAnalyticsUtils.logEventMessage("agency_whatsapp_click")
                 openWhatsApp(getString(R.string.phone_number))
             }
         }

@@ -9,6 +9,7 @@ import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.app.styletap.ads.BannerAdManager
+import com.app.styletap.interfaces.FirebaseAnalyticsUtils
 import com.app.styletap.webtoappconverter.R
 import com.app.styletap.webtoappconverter.databinding.ActivityMainBinding
 import com.app.styletap.webtoappconverter.extentions.adjustBottomHeight
@@ -51,6 +52,7 @@ class MainActivity : AppCompatActivity() {
 
         adjustTopHeight(binding.toolbarLL)
         adjustBottomHeight(binding.container)
+        FirebaseAnalyticsUtils.logEventMessage("home_view")
 
         onBackPressedDispatcher.addCallback(
             this,
@@ -67,7 +69,7 @@ class MainActivity : AppCompatActivity() {
 
         withNotificationPermission{}
 
-        showBannerAd()
+        //showBannerAd()
     }
 
     fun onBack(){
@@ -108,6 +110,7 @@ class MainActivity : AppCompatActivity() {
 
             toolbar.profileBtn.setOnClickListener {
                 if (isNetworkAvailable()){
+                    FirebaseAnalyticsUtils.logEventMessage("home_menu_open")
                     moveNext(Intent(this@MainActivity, ProfileActivity::class.java))
                 } else {
                     Toast.makeText(this@MainActivity, resources.getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show()
@@ -116,6 +119,16 @@ class MainActivity : AppCompatActivity() {
 
             toolbar.proBtn.setOnClickListener {
                 if (isNetworkAvailable()){
+                    FirebaseAnalyticsUtils.logEventMessage("home_upgrade_click")
+                    moveNext(proIntent().apply { putExtra("from", "home") })
+                } else {
+                    Toast.makeText(this@MainActivity, resources.getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            proNewBtn.setOnClickListener {
+                if (isNetworkAvailable()){
+                    FirebaseAnalyticsUtils.logEventMessage("home_upgrade_click")
                     moveNext(proIntent().apply { putExtra("from", "home") })
                 } else {
                     Toast.makeText(this@MainActivity, resources.getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show()
@@ -123,6 +136,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             createAppBtn.setOnClickListener {
+                FirebaseAnalyticsUtils.logEventMessage("home_add_project_click")
                 moveNext(Intent(this@MainActivity, CreateAppActivity::class.java))
             }
 
@@ -165,7 +179,7 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun showBannerAd(){
+    /*fun showBannerAd(){
         if (isNetworkAvailable() && PrefHelper.getBooleanDefultTrue(home_banner) && !PrefHelper.getIsPurchased()){
             binding.adLayout.visibility = View.VISIBLE
             binding.bannerShimmerView.root.visibility = View.VISIBLE
@@ -175,5 +189,5 @@ class MainActivity : AppCompatActivity() {
             binding.adLayout.visibility = View.GONE
             binding.bannerShimmerView.bannerShimmerView.stopShimmer()
         }
-    }
+    }*/
 }

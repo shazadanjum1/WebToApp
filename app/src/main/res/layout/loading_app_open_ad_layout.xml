@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:cardBackgroundColor="@color/white"
-    android:layoutDirection="ltr"
     app:cardCornerRadius="@dimen/_1sdp">
 
     <ImageView

@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
+import com.app.styletap.interfaces.FirebaseAnalyticsUtils
 import com.app.styletap.webtoappconverter.R
 import com.app.styletap.webtoappconverter.databinding.ActivityForgetBinding
 import com.app.styletap.webtoappconverter.databinding.ActivityLoginBinding
@@ -133,6 +134,9 @@ class ForgetActivity : AppCompatActivity() {
                 } else {
                     Toast.makeText(this, "Error: ${task.exception?.message}", Toast.LENGTH_LONG).show()
                 }
+            }
+            .addOnFailureListener {
+                FirebaseAnalyticsUtils.logEventMessage("server_error")
             }
     }
 

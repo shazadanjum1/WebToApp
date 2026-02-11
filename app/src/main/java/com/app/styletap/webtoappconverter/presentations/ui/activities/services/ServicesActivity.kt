@@ -8,6 +8,7 @@ import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.app.styletap.ads.NativeAdManager
+import com.app.styletap.interfaces.FirebaseAnalyticsUtils
 import com.app.styletap.webtoappconverter.R
 import com.app.styletap.webtoappconverter.databinding.ActivityServicesBinding
 import com.app.styletap.webtoappconverter.extentions.adjustBottomHeight
@@ -37,6 +38,7 @@ class ServicesActivity : AppCompatActivity() {
 
         adjustTopHeight(binding.toolbarLL)
         adjustBottomHeight(binding.container)
+        FirebaseAnalyticsUtils.logEventMessage("agency_offer_view")
 
         onBackPressedDispatcher.addCallback(
             this,
