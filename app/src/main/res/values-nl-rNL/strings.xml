@@ -470,4 +470,28 @@
     <string name="fast_easy_app_share">Snelle en gemakkelijke app-deling</string>
     <string name="awesome_were_so_glad_you_love_it">Geweldig! We zijn zo blij dat u ervan houdt! 🎉</string>
 
+    <string name="upgrade_premium">Upgrade naar Premium</string>
+    <string name="own_it_forever">Voor altijd van jou</string>
+    <string name="yours_forever">Voor altijd van jou</string>
+    <string name="full_access_forever_no_subscriptions_no_hidden_fees">Volledige toegang voor altijd. Geen abonnementen. Geen verborgen kosten</string>
+
+    <string name="free_updates_forever">Gratis updates voor altijd</string>
+    <string name="always_ads_free">Altijd advertentievrij</string>
+    <string name="one_time_payment_no_recurring_charges">Eenmalige betaling • Geen terugkerende kosten</string>
+    <string name="_100_secure_checkout">100% veilige betaling</string>
+    <string name="save_amount_today_only">Bespaar %1$s alleen vandaag</string>
+    <string name="priority_support_available">Prioriteitsondersteuning beschikbaar</string>
+
+    <string name="start_free_trial">Start gratis proefperiode</string>
+    <string name="try_3_days_for_free_then_week">Probeer 3 dagen gratis, daarna %1$s per week</string>
+
+    <string name="best_offer">Beste aanbieding</string>
+    <string name="Yearly">Jaarlijks</string>
+    <string name="just_per_year">Slechts %1$s per jaar</string>
+    <string name="lifetime">Levenslang</string>
+
+    <string name="terms_of_use_privacy_policy_cancel_anytime">%1$s | %2$s | %3$s</string>
+    <string name="terms_of_use">Gebruiksvoorwaarden</string>
+    <string name="cancel_anytime">Altijd opzegbaar</string>
+
 </resources>

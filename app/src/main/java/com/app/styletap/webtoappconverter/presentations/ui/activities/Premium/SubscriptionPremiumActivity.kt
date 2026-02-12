@@ -50,6 +50,7 @@ import com.app.styletap.webtoappconverter.presentations.utils.Contants.WEEKLY_PR
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.YEARLY_PRICE
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.isLanguageSelected
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.isShowOnBoarding
+import com.app.styletap.webtoappconverter.presentations.utils.Contants.is_show_onboarding_screen
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.splash_inter
 import com.app.styletap.webtoappconverter.presentations.utils.PrefHelper
 import com.google.firebase.auth.FirebaseAuth
@@ -153,7 +154,7 @@ class SubscriptionPremiumActivity : AppCompatActivity() {
         } else if (user == null) {
             if (!PrefHelper.getBoolean(isLanguageSelected)){
                 Intent(this, LanguageActivity::class.java)
-            } else if (PrefHelper.getBooleanDefultTrue(isShowOnBoarding)){
+            } else if (PrefHelper.getBooleanDefultTrue(isShowOnBoarding) && PrefHelper.getBooleanDefultTrue(is_show_onboarding_screen)){
                 Intent(this, OnboardingActivity::class.java)
             } else {
                 Intent(this, LoginActivity::class.java)

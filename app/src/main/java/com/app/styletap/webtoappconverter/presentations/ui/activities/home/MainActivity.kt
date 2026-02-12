@@ -31,6 +31,7 @@ import com.app.styletap.webtoappconverter.presentations.ui.activities.services.S
 import com.app.styletap.webtoappconverter.presentations.ui.activities.support.SupportActivity
 import com.app.styletap.webtoappconverter.presentations.ui.activities.tutorials.TutorialsActivity
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.home_banner
+import com.app.styletap.webtoappconverter.presentations.utils.Contants.is_show_iap_screen
 import com.app.styletap.webtoappconverter.presentations.utils.PrefHelper
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -81,7 +82,14 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        binding.toolbar.proBtn.isVisible = !PrefHelper.getIsPurchased()
+
+        if (!PrefHelper.getBooleanDefultTrue(is_show_iap_screen)){
+            binding.toolbar.proBtn.isVisible = false
+            binding.proNewBtn.isVisible = false
+        } else {
+            binding.toolbar.proBtn.isVisible = !PrefHelper.getIsPurchased()
+            binding.proNewBtn.isVisible = !PrefHelper.getIsPurchased()
+        }
 
         changeLocale()
 

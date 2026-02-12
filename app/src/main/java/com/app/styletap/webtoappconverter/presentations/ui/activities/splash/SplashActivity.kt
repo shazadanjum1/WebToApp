@@ -23,7 +23,6 @@ import com.app.styletap.webtoappconverter.extentions.customEnableEdgeToEdge
 import com.app.styletap.webtoappconverter.extentions.customEnableEdgeToEdge2
 import com.app.styletap.webtoappconverter.extentions.isNetworkAvailable
 import com.app.styletap.webtoappconverter.extentions.proIntent
-import com.app.styletap.webtoappconverter.extentions.proLifeTimeIntent
 import com.app.styletap.webtoappconverter.firebase.RemoteConfigHelper
 import com.app.styletap.webtoappconverter.presentations.ui.activities.authorization.LoginActivity
 import com.app.styletap.webtoappconverter.presentations.ui.activities.home.MainActivity
@@ -32,6 +31,8 @@ import com.app.styletap.webtoappconverter.presentations.ui.activities.onboarding
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.isIntertialAdshowing
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.isLanguageSelected
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.isShowOnBoarding
+import com.app.styletap.webtoappconverter.presentations.utils.Contants.is_show_iap_screen
+import com.app.styletap.webtoappconverter.presentations.utils.Contants.is_show_onboarding_screen
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.splash_inter
 import com.app.styletap.webtoappconverter.presentations.utils.PrefHelper
 import com.google.android.gms.ads.MobileAds
@@ -42,11 +43,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-/*
-loading dialog
-IAP control firebase
-onboarding control firebase
-*/
+
 class SplashActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     var user: FirebaseUser? = null
@@ -307,7 +304,7 @@ class SplashActivity : AppCompatActivity() {
 
     fun moveNext(){
         /*val mIntent = if (user == null){
-            if (prefHelper.getBooleanDefultTrue(isShowOnBoarding)){
+            if (prefHelper.getBooleanDefultTrue(isShowOnBoarding) && PrefHelper.getBooleanDefultTrue(is_show_onboarding_screen)){
                 Intent(this, OnboardingActivity::class.java)
             } else {
                 Intent(this, LoginActivity::class.java)
@@ -316,13 +313,13 @@ class SplashActivity : AppCompatActivity() {
             Intent(this, MainActivity::class.java)
         }*/
 
-        val mIntent = if (PrefHelper.getIsPurchased()){
+        val mIntent = if (PrefHelper.getIsPurchased() || !PrefHelper.getBooleanDefultTrue(is_show_iap_screen)){
             if (user?.isAnonymous == true) {
                 Intent(this, MainActivity::class.java)
             } else if (user == null) {
                 if (!PrefHelper.getBoolean(isLanguageSelected)){
                     Intent(this@SplashActivity, LanguageActivity::class.java)
-                } else if (PrefHelper.getBooleanDefultTrue(isShowOnBoarding)){
+                } else if (PrefHelper.getBooleanDefultTrue(isShowOnBoarding) && PrefHelper.getBooleanDefultTrue(is_show_onboarding_screen)){
                     Intent(this, OnboardingActivity::class.java)
                 } else {
                     Intent(this, LoginActivity::class.java)
@@ -338,7 +335,7 @@ class SplashActivity : AppCompatActivity() {
             } else if (user == null) {
                 if (!PrefHelper.getBoolean(isLanguageSelected)){
                     Intent(this@SplashActivity, LanguageActivity::class.java)
-                } else if (PrefHelper.getBooleanDefultTrue(isShowOnBoarding)){
+                } else if (PrefHelper.getBooleanDefultTrue(isShowOnBoarding) && PrefHelper.getBooleanDefultTrue(is_show_onboarding_screen)){
                     Intent(this, OnboardingActivity::class.java)
                 } else {
                     //Intent(this, LoginActivity::class.java)

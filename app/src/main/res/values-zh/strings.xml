@@ -471,4 +471,28 @@
     <string name="fast_easy_app_share">快速轻松地分享应用</string>
     <string name="awesome_were_so_glad_you_love_it">太棒了！我们很高兴您喜欢它！🎉</string>
 
+    <string name="upgrade_premium">升级到高级版</string>
+    <string name="own_it_forever">永久拥有</string>
+    <string name="yours_forever">永远属于你</string>
+    <string name="full_access_forever_no_subscriptions_no_hidden_fees">永久完全访问。无订阅。无隐藏费用</string>
+
+    <string name="free_updates_forever">永久免费更新</string>
+    <string name="always_ads_free">始终无广告</string>
+    <string name="one_time_payment_no_recurring_charges">一次性付款 • 无重复收费</string>
+    <string name="_100_secure_checkout">100% 安全结账</string>
+    <string name="save_amount_today_only">今日仅节省 %1$s</string>
+    <string name="priority_support_available">提供优先支持</string>
+
+    <string name="start_free_trial">开始免费试用</string>
+    <string name="try_3_days_for_free_then_week">免费试用 3 天，然后每周 %1$s</string>
+
+    <string name="best_offer">最佳优惠</string>
+    <string name="Yearly">按年</string>
+    <string name="just_per_year">每年仅需 %1$s</string>
+    <string name="lifetime">终身</string>
+
+    <string name="terms_of_use_privacy_policy_cancel_anytime">%1$s | %2$s | %3$s</string>
+    <string name="terms_of_use">使用条款</string>
+    <string name="cancel_anytime">随时取消</string>
+
 </resources>

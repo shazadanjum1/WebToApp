@@ -32,6 +32,7 @@ import com.app.styletap.webtoappconverter.presentations.ui.activities.home.MainA
 import com.app.styletap.webtoappconverter.presentations.ui.activities.language.LanguageActivity
 import com.app.styletap.webtoappconverter.presentations.ui.activities.services.ServiceDetailsActivity
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.ACTION_REFRESH_ACTIVITY
+import com.app.styletap.webtoappconverter.presentations.utils.Contants.is_show_iap_screen
 import com.app.styletap.webtoappconverter.presentations.utils.PrefHelper
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -102,7 +103,11 @@ class ProfileActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        binding.proCard.isVisible = !PrefHelper.getIsPurchased()
+        if (!PrefHelper.getBooleanDefultTrue(is_show_iap_screen)){
+            binding.proCard.isVisible = false
+        } else {
+            binding.proCard.isVisible = !PrefHelper.getIsPurchased()
+        }
         changeLocale()
     }
 

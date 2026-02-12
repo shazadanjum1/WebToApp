@@ -469,5 +469,28 @@
     <string name="fast_easy_app_share">مشاركة سريعة وسهلة للتطبيق</string>
     <string name="awesome_were_so_glad_you_love_it">رائع! نحن سعداء جدًا لأنك أحببته! 🎉</string>
 
+    <string name="upgrade_premium">الترقية إلى بريميوم</string>
+    <string name="own_it_forever">امتلكه مدى الحياة</string>
+    <string name="yours_forever">لك مدى الحياة</string>
+    <string name="full_access_forever_no_subscriptions_no_hidden_fees">وصول كامل مدى الحياة. بدون اشتراكات. بدون رسوم مخفية</string>
+
+    <string name="free_updates_forever">تحديثات مجانية مدى الحياة</string>
+    <string name="always_ads_free">خالٍ من الإعلانات دائمًا</string>
+    <string name="one_time_payment_no_recurring_charges">دفعة واحدة • بدون رسوم متكررة</string>
+    <string name="_100_secure_checkout">دفع آمن 100٪</string>
+    <string name="save_amount_today_only">وفّر %1$s اليوم فقط</string>
+    <string name="priority_support_available">دعم أولوية متاح</string>
+
+    <string name="start_free_trial">ابدأ التجربة المجانية</string>
+    <string name="try_3_days_for_free_then_week">جرّب 3 أيام مجانًا، ثم %1$s أسبوعيًا</string>
+
+    <string name="best_offer">أفضل عرض</string>
+    <string name="Yearly">سنوي</string>
+    <string name="just_per_year">فقط %1$s سنويًا</string>
+    <string name="lifetime">مدى الحياة</string>
+
+    <string name="terms_of_use_privacy_policy_cancel_anytime">%1$s | %2$s | %3$s</string>
+    <string name="terms_of_use">شروط الاستخدام</string>
+    <string name="cancel_anytime">إلغاء في أي وقت</string>
 
 </resources>

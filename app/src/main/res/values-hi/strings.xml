@@ -467,4 +467,28 @@
     <string name="fast_easy_app_share">तेज़ और आसान ऐप साझा करें</string>
     <string name="awesome_were_so_glad_you_love_it">शानदार! हमें खुशी है कि आपको यह पसंद आया! 🎉</string>
 
+    <string name="upgrade_premium">प्रीमियम में अपग्रेड करें</string>
+    <string name="own_it_forever">हमेशा के लिए अपना बनाएं</string>
+    <string name="yours_forever">हमेशा के लिए आपका</string>
+    <string name="full_access_forever_no_subscriptions_no_hidden_fees">हमेशा के लिए पूर्ण एक्सेस। कोई सब्सक्रिप्शन नहीं। कोई छिपी हुई फीस नहीं</string>
+
+    <string name="free_updates_forever">हमेशा के लिए मुफ्त अपडेट्स</string>
+    <string name="always_ads_free">हमेशा विज्ञापन मुक्त</string>
+    <string name="one_time_payment_no_recurring_charges">एक बार का भुगतान • कोई आवर्ती शुल्क नहीं</string>
+    <string name="_100_secure_checkout">100% सुरक्षित भुगतान</string>
+    <string name="save_amount_today_only">केवल आज %1$s बचाएं</string>
+    <string name="priority_support_available">प्राथमिकता समर्थन उपलब्ध</string>
+
+    <string name="start_free_trial">मुफ्त ट्रायल शुरू करें</string>
+    <string name="try_3_days_for_free_then_week">3 दिन मुफ्त आज़माएं, फिर %1$s/सप्ताह</string>
+
+    <string name="best_offer">सबसे अच्छा ऑफर</string>
+    <string name="Yearly">वार्षिक</string>
+    <string name="just_per_year">सिर्फ %1$s प्रति वर्ष</string>
+    <string name="lifetime">लाइफटाइम</string>
+
+    <string name="terms_of_use_privacy_policy_cancel_anytime">%1$s | %2$s | %3$s</string>
+    <string name="terms_of_use">उपयोग की शर्तें</string>
+    <string name="cancel_anytime">कभी भी रद्द करें</string>
+
 </resources>

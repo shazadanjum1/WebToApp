@@ -20,6 +20,7 @@ import com.app.styletap.webtoappconverter.presentations.ui.activities.home.MainA
 import com.app.styletap.webtoappconverter.presentations.ui.activities.language.LanguageActivity
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.isLanguageSelected
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.isShowOnBoarding
+import com.app.styletap.webtoappconverter.presentations.utils.Contants.is_show_iap_screen
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.onboarding_native
 import com.app.styletap.webtoappconverter.presentations.utils.PrefHelper
 import com.google.firebase.auth.FirebaseAuth
@@ -107,7 +108,7 @@ class OnboardingActivity : AppCompatActivity() {
                 putExtra("from", "splash")
             }*/
 
-            val mIntent =if (PrefHelper.getIsPurchased()){
+            val mIntent =if (PrefHelper.getIsPurchased() || !PrefHelper.getBooleanDefultTrue(is_show_iap_screen)){
                 if (user == null) {
                     Intent(this, LoginActivity::class.java)
                 } else {

@@ -472,5 +472,28 @@
     <string name="fast_easy_app_share">Snabbt och enkelt appdelning</string>
     <string name="awesome_were_so_glad_you_love_it">Fantastiskt! Vi är så glada att du älskar det! 🎉</string>
 
+    <string name="upgrade_premium">Uppgradera Premium</string>
+    <string name="own_it_forever">Äg det för alltid</string>
+    <string name="yours_forever">Ditt för alltid</string>
+    <string name="full_access_forever_no_subscriptions_no_hidden_fees">Fullständig tillgång för alltid. Inga prenumerationer. Inga dolda avgifter</string>
+
+    <string name="free_updates_forever">Gratis uppdateringar för alltid</string>
+    <string name="always_ads_free">Alltid reklamfritt</string>
+    <string name="one_time_payment_no_recurring_charges">Engångsbetalning • Inga återkommande avgifter</string>
+    <string name="_100_secure_checkout">100% säker kassa</string>
+    <string name="save_amount_today_only">Spara %1$s endast idag</string>
+    <string name="priority_support_available">Prioriterad support tillgänglig</string>
+
+    <string name="start_free_trial">Starta gratis testperiod</string>
+    <string name="try_3_days_for_free_then_week">Prova 3 dagar gratis, sedan %1$s/vecka</string>
+
+    <string name="best_offer">Bästa erbjudandet</string>
+    <string name="Yearly">Årsvis</string>
+    <string name="just_per_year">Endast %1$s per år</string>
+    <string name="lifetime">Livstid</string>
+
+    <string name="terms_of_use_privacy_policy_cancel_anytime">%1$s | %2$s | %3$s</string>
+    <string name="terms_of_use">Användarvillkor</string>
+    <string name="cancel_anytime">Avbryt när som helst</string>
 
 </resources>

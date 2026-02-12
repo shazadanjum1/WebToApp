@@ -54,4 +54,8 @@ object Contants {
     const val apkdownload_inter = "apkdownload_inter"
 
 
+    const val is_show_onboarding_screen = "is_show_onboarding_screen"
+    const val is_show_iap_screen = "is_show_iap_screen"
+
+
 }

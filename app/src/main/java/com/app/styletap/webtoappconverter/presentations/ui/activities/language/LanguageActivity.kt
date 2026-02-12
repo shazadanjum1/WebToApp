@@ -26,6 +26,7 @@ import com.app.styletap.webtoappconverter.extentions.changeLocale
 import com.app.styletap.webtoappconverter.extentions.customEnableEdgeToEdge
 import com.app.styletap.webtoappconverter.extentions.getLanguageData
 import com.app.styletap.webtoappconverter.extentions.isNetworkAvailable
+import com.app.styletap.webtoappconverter.extentions.proIntent
 import com.app.styletap.webtoappconverter.models.LanguageModel
 import com.app.styletap.webtoappconverter.presentations.ui.activities.authorization.LoginActivity
 import com.app.styletap.webtoappconverter.presentations.ui.activities.home.MainActivity
@@ -33,6 +34,8 @@ import com.app.styletap.webtoappconverter.presentations.ui.activities.language.a
 import com.app.styletap.webtoappconverter.presentations.ui.activities.onboarding.OnboardingActivity
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.isLanguageSelected
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.isShowOnBoarding
+import com.app.styletap.webtoappconverter.presentations.utils.Contants.is_show_iap_screen
+import com.app.styletap.webtoappconverter.presentations.utils.Contants.is_show_onboarding_screen
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.languageCode
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.language_native
 import com.app.styletap.webtoappconverter.presentations.utils.PrefHelper
@@ -178,10 +181,14 @@ class LanguageActivity : AppCompatActivity() {
                 if (user?.isAnonymous == true) {
                     Intent(this, MainActivity::class.java)
                 } else if (user == null) {
-                    if (PrefHelper.getBooleanDefultTrue(isShowOnBoarding)){
+                    if (PrefHelper.getBooleanDefultTrue(isShowOnBoarding) && PrefHelper.getBooleanDefultTrue(is_show_onboarding_screen)){
                         Intent(this, OnboardingActivity::class.java)
                     } else {
-                        Intent(this, LoginActivity::class.java)
+                        if (PrefHelper.getIsPurchased() || !PrefHelper.getBooleanDefultTrue(is_show_iap_screen)){
+                            Intent(this, LoginActivity::class.java)
+                        } else {
+                            proIntent()
+                        }
                     }
                 } else {
                     Intent(this, MainActivity::class.java)
@@ -220,10 +227,14 @@ class LanguageActivity : AppCompatActivity() {
                 if (user?.isAnonymous == true) {
                     Intent(this, MainActivity::class.java)
                 } else if (user == null) {
-                    if (PrefHelper.getBooleanDefultTrue(isShowOnBoarding)){
+                    if (PrefHelper.getBooleanDefultTrue(isShowOnBoarding) && PrefHelper.getBooleanDefultTrue(is_show_onboarding_screen)){
                         Intent(this, OnboardingActivity::class.java)
                     } else {
-                        Intent(this, LoginActivity::class.java)
+                        if (PrefHelper.getIsPurchased() || !PrefHelper.getBooleanDefultTrue(is_show_iap_screen)){
+                            Intent(this, LoginActivity::class.java)
+                        } else {
+                            proIntent()
+                        }
                     }
                 } else {
                     Intent(this, MainActivity::class.java)

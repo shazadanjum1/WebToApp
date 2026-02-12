@@ -36,6 +36,7 @@ import com.app.styletap.webtoappconverter.presentations.ui.activities.myApps.MyA
 import com.app.styletap.webtoappconverter.presentations.ui.activities.myApps.MyAppsActivity.Companion.isRecreateUI
 import com.app.styletap.webtoappconverter.presentations.ui.activities.myApps.ViewAppDetailsActivity
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.READY_TO_DOWNLOAD_BUNDLE
+import com.app.styletap.webtoappconverter.presentations.utils.Contants.is_show_iap_screen
 import com.app.styletap.webtoappconverter.presentations.utils.PrefHelper
 import com.bumptech.glide.Glide
 
@@ -114,7 +115,7 @@ class MyAppsAdapter(
                     if (!activity.isNetworkAvailable()){
                         Toast.makeText(activity, activity.resources.getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show()
                     } else {
-                        if (PrefHelper.getIsPurchasedLifeTime()){
+                        if (PrefHelper.getIsPurchasedLifeTime() || !PrefHelper.getBooleanDefultTrue(is_show_iap_screen)){
                             if (app.status == READY_TO_DOWNLOAD){
                                 isClickable = false
                                 app.id?.let { appId -> activity.generateBundle(appId){isClickable = true } }

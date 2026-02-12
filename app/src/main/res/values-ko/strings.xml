@@ -467,4 +467,28 @@
     <string name="fast_easy_app_share">빠르고 쉬운 앱 공유</string>
     <string name="awesome_were_so_glad_you_love_it">대단해요! 마음에 들어 해주셔서 정말 기뻐요! 🎉</string>
 
+    <string name="upgrade_premium">프리미엄 업그레이드</string>
+    <string name="own_it_forever">영구 소유</string>
+    <string name="yours_forever">평생 이용</string>
+    <string name="full_access_forever_no_subscriptions_no_hidden_fees">평생 전체 이용. 구독 없음. 숨겨진 요금 없음</string>
+
+    <string name="free_updates_forever">평생 무료 업데이트</string>
+    <string name="always_ads_free">항상 광고 없음</string>
+    <string name="one_time_payment_no_recurring_charges">일회성 결제 • 추가 요금 없음</string>
+    <string name="_100_secure_checkout">100% 안전한 결제</string>
+    <string name="save_amount_today_only">오늘만 %1$s 할인</string>
+    <string name="priority_support_available">우선 지원 제공</string>
+
+    <string name="start_free_trial">무료 체험 시작</string>
+    <string name="try_3_days_for_free_then_week">3일 무료 체험 후 %1$s/주</string>
+
+    <string name="best_offer">최고 혜택</string>
+    <string name="Yearly">연간</string>
+    <string name="just_per_year">연간 %1$s</string>
+    <string name="lifetime">평생</string>
+
+    <string name="terms_of_use_privacy_policy_cancel_anytime">%1$s | %2$s | %3$s</string>
+    <string name="terms_of_use">이용 약관</string>
+    <string name="cancel_anytime">언제든지 취소 가능</string>
+
 </resources>

@@ -18,8 +18,8 @@ android {
         applicationId = "com.webtoapp.converter"
         minSdk = 26
         targetSdk = 36
-        versionCode = 1//4
-        versionName = "0.0"//"2.0.2"
+        versionCode = 4
+        versionName = "2.0.2"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

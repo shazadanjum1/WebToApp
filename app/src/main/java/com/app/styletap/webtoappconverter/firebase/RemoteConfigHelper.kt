@@ -9,6 +9,8 @@ import com.app.styletap.webtoappconverter.presentations.utils.Contants.createapp
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.createapp_native
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.generateapp_native
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.home_banner
+import com.app.styletap.webtoappconverter.presentations.utils.Contants.is_show_iap_screen
+import com.app.styletap.webtoappconverter.presentations.utils.Contants.is_show_onboarding_screen
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.language_native
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.myapps_native
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.onboarding_native
@@ -38,7 +40,6 @@ class RemoteConfigHelper(val activity: Activity) {
                 .addOnCompleteListener(activity) { task ->
                     if (task.isSuccessful) {
 
-
                         PrefHelper.setBoolean(splash_inter, firebaseRemoteConfig.getBoolean(splash_inter))
                         PrefHelper.setBoolean(app_open, firebaseRemoteConfig.getBoolean(app_open))
                         PrefHelper.setBoolean(language_native, firebaseRemoteConfig.getBoolean(language_native))
@@ -51,9 +52,10 @@ class RemoteConfigHelper(val activity: Activity) {
                         PrefHelper.setBoolean(turtorial_native, firebaseRemoteConfig.getBoolean(turtorial_native))
                         PrefHelper.setBoolean(buildapp_inter, firebaseRemoteConfig.getBoolean(buildapp_inter))
                         PrefHelper.setBoolean(apkdownload_inter, firebaseRemoteConfig.getBoolean(apkdownload_inter))
-
                         PrefHelper.setBoolean(createapp_banner, firebaseRemoteConfig.getBoolean(createapp_banner))
 
+                        PrefHelper.setBoolean(is_show_onboarding_screen, firebaseRemoteConfig.getBoolean(is_show_onboarding_screen))
+                        PrefHelper.setBoolean(is_show_iap_screen, firebaseRemoteConfig.getBoolean(is_show_iap_screen))
 
                         remoteConfigCallback.onSuccess()
                     } else {

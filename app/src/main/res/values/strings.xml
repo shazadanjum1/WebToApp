@@ -493,10 +493,8 @@
     <string name="Yearly">Yearly</string>
     <string name="just_per_year">Just %1$s per year</string>
     <string name="lifetime">Lifetime</string>
-<!--    <string name="terms_of_use_privacy_policy_cancel_anytime">Terms of Use\u0020\u0020\u0020|\u0020\u0020\u0020Privacy Policy\u0020\u0020\u0020|\u0020\u0020\u0020Cancel anytime</string>-->
 
     <string name="terms_of_use_privacy_policy_cancel_anytime">%1$s | %2$s | %3$s</string>
-
     <string name="terms_of_use">Terms of Use</string>
     <string name="cancel_anytime">Cancel anytime</string>
 

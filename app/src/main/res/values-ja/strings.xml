@@ -465,5 +465,29 @@
     <string name="fast_easy_app_share">簡単＆スピーディーにアプリを共有</string>
     <string name="awesome_were_so_glad_you_love_it">素晴らしい！気に入っていただけて嬉しいです！ 🎉</string>
 
+    <string name="upgrade_premium">プレミアムにアップグレード</string>
+    <string name="own_it_forever">永久にご利用いただけます</string>
+    <string name="yours_forever">永久にあなたのもの</string>
+    <string name="full_access_forever_no_subscriptions_no_hidden_fees">永久にフルアクセス。サブスクリプションなし。隠れた料金なし</string>
+
+    <string name="free_updates_forever">永久無料アップデート</string>
+    <string name="always_ads_free">常に広告なし</string>
+    <string name="one_time_payment_no_recurring_charges">一度のお支払い • 継続課金なし</string>
+    <string name="_100_secure_checkout">100％安全な決済</string>
+    <string name="save_amount_today_only">本日限定 %1$s 割引</string>
+    <string name="priority_support_available">優先サポート対応</string>
+
+    <string name="start_free_trial">無料トライアルを開始</string>
+    <string name="try_3_days_for_free_then_week">3日間無料、その後 %1$s/週</string>
+
+    <string name="best_offer">ベストオファー</string>
+    <string name="Yearly">年間</string>
+    <string name="just_per_year">年間わずか %1$s</string>
+    <string name="lifetime">永久版</string>
+
+    <string name="terms_of_use_privacy_policy_cancel_anytime">%1$s | %2$s | %3$s</string>
+    <string name="terms_of_use">利用規約</string>
+    <string name="cancel_anytime">いつでも解約可能</string>
+
 
 </resources>

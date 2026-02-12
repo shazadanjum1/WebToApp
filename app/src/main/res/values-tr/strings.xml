@@ -466,4 +466,28 @@
     <string name="fast_easy_app_share">Hızlı ve kolay uygulama paylaşımı</string>
     <string name="awesome_were_so_glad_you_love_it">Harika! Beğenmenize çok sevindik! 🎉</string>
 
+    <string name="upgrade_premium">Premium’e Yükselt</string>
+    <string name="own_it_forever">Sonsuza kadar sahip olun</string>
+    <string name="yours_forever">Sonsuza kadar sizin</string>
+    <string name="full_access_forever_no_subscriptions_no_hidden_fees">Sonsuza kadar tam erişim. Abonelik yok. Gizli ücret yok</string>
+
+    <string name="free_updates_forever">Sonsuza kadar ücretsiz güncellemeler</string>
+    <string name="always_ads_free">Her zaman reklamsız</string>
+    <string name="one_time_payment_no_recurring_charges">Tek seferlik ödeme • Tekrarlayan ücret yok</string>
+    <string name="_100_secure_checkout">%100 Güvenli Ödeme</string>
+    <string name="save_amount_today_only">Sadece bugün %1$s tasarruf edin</string>
+    <string name="priority_support_available">Öncelikli Destek Mevcut</string>
+
+    <string name="start_free_trial">Ücretsiz Denemeyi Başlat</string>
+    <string name="try_3_days_for_free_then_week">3 gün ücretsiz deneyin, ardından %1$s/hafta</string>
+
+    <string name="best_offer">En İyi Teklif</string>
+    <string name="Yearly">Yıllık</string>
+    <string name="just_per_year">Yalnızca yılda %1$s</string>
+    <string name="lifetime">Ömür Boyu</string>
+
+    <string name="terms_of_use_privacy_policy_cancel_anytime">%1$s | %2$s | %3$s</string>
+    <string name="terms_of_use">Kullanım Şartları</string>
+    <string name="cancel_anytime">İstediğiniz zaman iptal edin</string>
+
 </resources>

@@ -469,4 +469,28 @@
     <string name="fast_easy_app_share">Condivisione dell\'app facile e veloce</string>
     <string name="awesome_were_so_glad_you_love_it">Fantastico! Siamo felici che ti piaccia! 🎉</string>
 
+    <string name="upgrade_premium">Passa a Premium</string>
+    <string name="own_it_forever">Possiedilo per sempre</string>
+    <string name="yours_forever">Tuo per sempre</string>
+    <string name="full_access_forever_no_subscriptions_no_hidden_fees">Accesso completo per sempre. Nessun abbonamento. Nessun costo nascosto</string>
+
+    <string name="free_updates_forever">Aggiornamenti gratuiti per sempre</string>
+    <string name="always_ads_free">Sempre senza pubblicità</string>
+    <string name="one_time_payment_no_recurring_charges">Pagamento una tantum • Nessun costo ricorrente</string>
+    <string name="_100_secure_checkout">Pagamento sicuro al 100%</string>
+    <string name="save_amount_today_only">Risparmia %1$s solo per oggi</string>
+    <string name="priority_support_available">Supporto prioritario disponibile</string>
+
+    <string name="start_free_trial">Inizia la prova gratuita</string>
+    <string name="try_3_days_for_free_then_week">Prova 3 giorni gratis, poi %1$s/settimana</string>
+
+    <string name="best_offer">Migliore offerta</string>
+    <string name="Yearly">Annuale</string>
+    <string name="just_per_year">Solo %1$s all\'anno</string>
+    <string name="lifetime">A vita</string>
+
+    <string name="terms_of_use_privacy_policy_cancel_anytime">%1$s | %2$s | %3$s</string>
+    <string name="terms_of_use">Termini di utilizzo</string>
+    <string name="cancel_anytime">Annulla in qualsiasi momento</string>
+
 </resources>

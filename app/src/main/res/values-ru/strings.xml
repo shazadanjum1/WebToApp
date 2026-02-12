@@ -465,5 +465,28 @@
     <string name="share_app">Поделиться приложением</string>
     <string name="fast_easy_app_share">Быстрое и простое поделиться приложением</string>
     <string name="awesome_were_so_glad_you_love_it">Отлично! Мы рады, что вам нравится! 🎉</string>
+    <string name="upgrade_premium">Обновить до Premium</string>
+    <string name="own_it_forever">Ваша навсегда</string>
+    <string name="yours_forever">Навсегда ваш</string>
+    <string name="full_access_forever_no_subscriptions_no_hidden_fees">Полный доступ навсегда. Без подписок. Без скрытых платежей</string>
+
+    <string name="free_updates_forever">Бесплатные обновления навсегда</string>
+    <string name="always_ads_free">Всегда без рекламы</string>
+    <string name="one_time_payment_no_recurring_charges">Разовый платёж • Без повторяющихся списаний</string>
+    <string name="_100_secure_checkout">100% безопасная оплата</string>
+    <string name="save_amount_today_only">Сэкономьте %1$s только сегодня</string>
+    <string name="priority_support_available">Доступна приоритетная поддержка</string>
+
+    <string name="start_free_trial">Начать бесплатный пробный период</string>
+    <string name="try_3_days_for_free_then_week">Попробуйте 3 дня бесплатно, затем %1$s/неделя</string>
+
+    <string name="best_offer">Лучшее предложение</string>
+    <string name="Yearly">Ежегодно</string>
+    <string name="just_per_year">Всего %1$s в год</string>
+    <string name="lifetime">Пожизненно</string>
+
+    <string name="terms_of_use_privacy_policy_cancel_anytime">%1$s | %2$s | %3$s</string>
+    <string name="terms_of_use">Условия использования</string>
+    <string name="cancel_anytime">Отменить в любое время</string>
 
 </resources>

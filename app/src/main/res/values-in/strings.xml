@@ -590,5 +590,29 @@ Hapus watermark dan dapatkan fitur premium
     <string name="fast_easy_app_share">Berbagi aplikasi dengan cepat &amp; mudah</string>
     <string name="awesome_were_so_glad_you_love_it">Luar biasa! Kami sangat senang Anda menyukainya! 🎉</string>
 
+    <string name="upgrade_premium">Tingkatkan ke Premium</string>
+    <string name="own_it_forever">Miliki selamanya</string>
+    <string name="yours_forever">Milik Anda Selamanya</string>
+    <string name="full_access_forever_no_subscriptions_no_hidden_fees">Akses penuh selamanya. Tanpa langganan. Tanpa biaya tersembunyi</string>
+
+    <string name="free_updates_forever">Pembaruan gratis selamanya</string>
+    <string name="always_ads_free">Selalu bebas iklan</string>
+    <string name="one_time_payment_no_recurring_charges">Pembayaran sekali • Tanpa biaya berulang</string>
+    <string name="_100_secure_checkout">Pembayaran 100% aman</string>
+    <string name="save_amount_today_only">Hemat %1$s Hanya Hari Ini</string>
+    <string name="priority_support_available">Dukungan prioritas tersedia</string>
+
+    <string name="start_free_trial">Mulai Uji Coba Gratis</string>
+    <string name="try_3_days_for_free_then_week">Coba gratis 3 hari, lalu %1$s/minggu</string>
+
+    <string name="best_offer">Penawaran Terbaik</string>
+    <string name="Yearly">Tahunan</string>
+    <string name="just_per_year">Hanya %1$s per tahun</string>
+    <string name="lifetime">Seumur Hidup</string>
+
+    <string name="terms_of_use_privacy_policy_cancel_anytime">%1$s | %2$s | %3$s</string>
+    <string name="terms_of_use">Syarat Penggunaan</string>
+    <string name="cancel_anytime">Batalkan kapan saja</string>
+
 
 </resources>
