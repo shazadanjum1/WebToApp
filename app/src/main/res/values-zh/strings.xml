@@ -495,4 +495,8 @@
     <string name="terms_of_use">使用条款</string>
     <string name="cancel_anytime">随时取消</string>
 
+    <string name="this_action_may_contain_ads">此操作可能包含广告</string>
+    <string name="password_must_contain_at_least_one_special_character">密码必须包含至少一个特殊字符</string>
+    <string name="or">或者</string>
+
 </resources>

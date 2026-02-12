@@ -498,4 +498,8 @@
     <string name="terms_of_use">Términos de uso</string>
     <string name="cancel_anytime">Cancela en cualquier momento</string>
 
+    <string name="this_action_may_contain_ads">Esta acción puede contener anuncios</string>
+    <string name="password_must_contain_at_least_one_special_character">La contraseña debe contener al menos un carácter especial</string>
+    <string name="or">O</string>
+
 </resources>

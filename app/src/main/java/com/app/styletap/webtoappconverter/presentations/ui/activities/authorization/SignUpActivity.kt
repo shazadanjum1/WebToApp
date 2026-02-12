@@ -21,6 +21,7 @@ import com.app.styletap.webtoappconverter.extentions.customEnableEdgeToEdge
 import com.app.styletap.webtoappconverter.extentions.enablePasswordToggle
 import com.app.styletap.webtoappconverter.extentions.isNetworkAvailable
 import com.app.styletap.webtoappconverter.extentions.isValidEmail
+import com.app.styletap.webtoappconverter.extentions.isValidPassword
 import com.app.styletap.webtoappconverter.extentions.openLink
 import com.app.styletap.webtoappconverter.extentions.setClickableText
 import com.app.styletap.webtoappconverter.extentions.setMultiClickableText
@@ -208,6 +209,12 @@ class SignUpActivity : AppCompatActivity() {
             return false
         }
 
+        if (!isValidPassword(password)) {
+            binding.etPassword.error = resources.getString(R.string.password_must_contain_at_least_one_special_character)
+            binding.etPassword.requestFocus()
+            return false
+        }
+
         if (confirmPassword.isEmpty()) {
             binding.etConfirmPassword.error = resources.getString(R.string.confirm_password_is_required)
             binding.etConfirmPassword.requestFocus()
@@ -220,10 +227,19 @@ class SignUpActivity : AppCompatActivity() {
             return false
         }
 
+        if (!isValidPassword(confirmPassword)) {
+            binding.etConfirmPassword.error = resources.getString(R.string.password_must_contain_at_least_one_special_character)
+            binding.etConfirmPassword.requestFocus()
+            return false
+        }
+
         if (confirmPassword != password) {
             Toast.makeText(this, resources.getString(R.string.password_and_confirm_password_must_be_same), Toast.LENGTH_LONG).show()
             return false
         }
+
+
+
 
         return true
     }

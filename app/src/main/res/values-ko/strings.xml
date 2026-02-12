@@ -491,4 +491,8 @@
     <string name="terms_of_use">이용 약관</string>
     <string name="cancel_anytime">언제든지 취소 가능</string>
 
+    <string name="this_action_may_contain_ads">이 작업에는 광고가 포함될 수 있습니다</string>
+    <string name="password_must_contain_at_least_one_special_character">비밀번호에는 최소한 하나의 특수 문자가 포함되어야 합니다</string>
+    <string name="or">또는</string>
+
 </resources>

@@ -614,5 +614,8 @@ Hapus watermark dan dapatkan fitur premium
     <string name="terms_of_use">Syarat Penggunaan</string>
     <string name="cancel_anytime">Batalkan kapan saja</string>
 
+    <string name="this_action_may_contain_ads">Tindakan ini mungkin berisi iklan</string>
+    <string name="password_must_contain_at_least_one_special_character">Kata sandi harus mengandung setidaknya satu karakter khusus</string>
+    <string name="or">Atau</string>
 
 </resources>

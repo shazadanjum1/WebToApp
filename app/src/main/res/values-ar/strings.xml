@@ -493,4 +493,9 @@
     <string name="terms_of_use">شروط الاستخدام</string>
     <string name="cancel_anytime">إلغاء في أي وقت</string>
 
+    <string name="this_action_may_contain_ads">قد يحتوي هذا الإجراء على إعلانات</string>
+    <string name="password_must_contain_at_least_one_special_character">يجب أن تحتوي كلمة المرور على حرف خاص واحد على الأقل</string>
+    <string name="or">أو</string>
+
+
 </resources>

@@ -61,12 +61,12 @@ class LifeTimePremiumActivity : AppCompatActivity() {
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         binding = ActivityLifeTimePremiumBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        /*customEnableEdgeToEdge()
+        customEnableEdgeToEdge()
 
         adjustTopHeight(binding.toolbarLL)
-        adjustBottomHeight(binding.container)*/
+        adjustBottomHeight(binding.container)
 
-        customEnableEdgeToEdge2()
+        //customEnableEdgeToEdge2()
 
 
         onBackPressedDispatcher.addCallback(

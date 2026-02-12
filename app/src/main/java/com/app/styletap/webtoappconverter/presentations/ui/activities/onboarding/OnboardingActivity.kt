@@ -3,7 +3,9 @@ package com.app.styletap.webtoappconverter.presentations.ui.activities.onboardin
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
+import android.view.GestureDetector
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.app.styletap.ads.NativeAdManager
@@ -23,6 +25,7 @@ import com.app.styletap.webtoappconverter.presentations.utils.Contants.isShowOnB
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.is_show_iap_screen
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.onboarding_native
 import com.app.styletap.webtoappconverter.presentations.utils.PrefHelper
+import com.app.styletap.webtoappconverter.presentations.utils.SwipeGestureListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 
@@ -33,6 +36,8 @@ class OnboardingActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
     var user: FirebaseUser? = null
+
+    lateinit var gestureDetector: GestureDetector
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,6 +75,28 @@ class OnboardingActivity : AppCompatActivity() {
             onNext()
         }
 
+        gestureDetector = GestureDetector(
+            this,
+            SwipeGestureListener(
+                onSwipeLeft = {
+                    if (introCounter<3){
+                        introCounter++
+                        onNext()
+                    }
+                              },
+                onSwipeRight = {
+                    if (introCounter>1){
+                        introCounter--
+                        onNext()
+                    }
+                }
+            )
+        )
+
+        binding.viewPager.setOnTouchListener { _, event ->
+            gestureDetector.onTouchEvent(event)
+            true
+        }
 
 
     }

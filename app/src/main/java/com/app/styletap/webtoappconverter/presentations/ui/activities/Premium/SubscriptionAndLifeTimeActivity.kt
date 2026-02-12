@@ -29,8 +29,11 @@ import com.android.billingclient.api.Purchase
 import com.android.billingclient.api.QueryProductDetailsParams
 import com.app.styletap.webtoappconverter.R
 import com.app.styletap.webtoappconverter.databinding.ActivitySubscriptionAndLifeTimeBinding
+import com.app.styletap.webtoappconverter.extentions.adjustBottomHeight
+import com.app.styletap.webtoappconverter.extentions.adjustTopHeight
 import com.app.styletap.webtoappconverter.extentions.calculateMonthlyPriceFromFormattedPrice
 import com.app.styletap.webtoappconverter.extentions.changeToDeviceLocale
+import com.app.styletap.webtoappconverter.extentions.customEnableEdgeToEdge
 import com.app.styletap.webtoappconverter.extentions.customEnableEdgeToEdge2
 import com.app.styletap.webtoappconverter.extentions.openLink
 import com.app.styletap.webtoappconverter.presentations.ui.activities.authorization.LoginActivity
@@ -81,12 +84,12 @@ class SubscriptionAndLifeTimeActivity : AppCompatActivity() {
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         binding = ActivitySubscriptionAndLifeTimeBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        /*customEnableEdgeToEdge()
+        customEnableEdgeToEdge()
 
         adjustTopHeight(binding.toolbarLL)
-        adjustBottomHeight(binding.container)*/
+        adjustBottomHeight(binding.container)
 
-        customEnableEdgeToEdge2()
+        //customEnableEdgeToEdge2()
 
 
         auth = FirebaseAuth.getInstance()

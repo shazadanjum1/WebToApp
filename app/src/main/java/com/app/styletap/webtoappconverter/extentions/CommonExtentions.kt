@@ -112,7 +112,7 @@ fun Activity.customEnableEdgeToEdge() {
     val windowController = ViewCompat.getWindowInsetsController(window.decorView)
     windowController?.apply {
         systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_DEFAULT
-        isAppearanceLightStatusBars = false
+        isAppearanceLightStatusBars = true
         isAppearanceLightNavigationBars = false
         show(WindowInsetsCompat.Type.statusBars() or WindowInsetsCompat.Type.navigationBars())
     }
@@ -1336,4 +1336,10 @@ fun Context.openPlayStore() {
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         startActivity(intent)
     }
+}
+
+
+fun isValidPassword(password: String): Boolean {
+    val regex = Regex(".*[&%#\$@].*")
+    return regex.containsMatchIn(password)
 }

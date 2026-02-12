@@ -494,4 +494,8 @@
     <string name="terms_of_use">Gebruiksvoorwaarden</string>
     <string name="cancel_anytime">Altijd opzegbaar</string>
 
+    <string name="this_action_may_contain_ads">Deze actie kan advertenties bevatten</string>
+    <string name="password_must_contain_at_least_one_special_character">Wachtwoord moet ten minste één speciaal teken bevatten</string>
+    <string name="or">Of</string>
+
 </resources>

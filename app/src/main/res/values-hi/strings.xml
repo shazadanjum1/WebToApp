@@ -491,4 +491,8 @@
     <string name="terms_of_use">उपयोग की शर्तें</string>
     <string name="cancel_anytime">कभी भी रद्द करें</string>
 
+    <string name="this_action_may_contain_ads">इस क्रिया में विज्ञापन हो सकते हैं</string>
+    <string name="password_must_contain_at_least_one_special_character">पासवर्ड में कम से कम एक विशेष वर्ण होना चाहिए</string>
+    <string name="or">या</string>
+
 </resources>

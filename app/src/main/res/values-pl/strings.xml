@@ -490,4 +490,8 @@
     <string name="terms_of_use">Warunki użytkowania</string>
     <string name="cancel_anytime">Anuluj w dowolnym momencie</string>
 
+    <string name="this_action_may_contain_ads">Ta akcja może zawierać reklamy</string>
+    <string name="password_must_contain_at_least_one_special_character">Hasło musi zawierać przynajmniej jeden znak specjalny</string>
+    <string name="or">Lub</string>
+
 </resources>

@@ -15,9 +15,14 @@ import com.android.billingclient.api.Purchase
 import com.android.billingclient.api.QueryPurchasesParams
 import com.app.styletap.ads.ConsentManager
 import com.app.styletap.ads.InterstitialAdManager
+import com.app.styletap.ads.safeDismiss
 import com.app.styletap.interfaces.InterstitialLoadCallback
 import com.app.styletap.interfaces.RemoteConfigCallbackListiner
 import com.app.styletap.webtoappconverter.R
+import com.app.styletap.webtoappconverter.databinding.ActivityLifeTimePremiumBinding
+import com.app.styletap.webtoappconverter.databinding.ActivitySplashBinding
+import com.app.styletap.webtoappconverter.extentions.adLoadingDialog
+import com.app.styletap.webtoappconverter.extentions.adjustBottomHeight
 import com.app.styletap.webtoappconverter.extentions.changeLocale
 import com.app.styletap.webtoappconverter.extentions.customEnableEdgeToEdge
 import com.app.styletap.webtoappconverter.extentions.customEnableEdgeToEdge2
@@ -45,6 +50,7 @@ import kotlinx.coroutines.launch
 
 
 class SplashActivity : AppCompatActivity() {
+    lateinit var binding: ActivitySplashBinding
     private lateinit var auth: FirebaseAuth
     var user: FirebaseUser? = null
 
@@ -59,13 +65,18 @@ class SplashActivity : AppCompatActivity() {
     private val PREMIUM_WEEKLY_PACKAGE = "weekly_sub"
     private val PREMIUM_YEARLY_PACKAGE = "yearly_sub"
 
+    var isMoved = false
+    var isInterAdShowing = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         changeLocale()
-        setContentView(R.layout.activity_splash)
-        //customEnableEdgeToEdge()
+        binding = ActivitySplashBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        customEnableEdgeToEdge()
+        adjustBottomHeight(binding.container)
 
-        customEnableEdgeToEdge2()
+        //customEnableEdgeToEdge2()
 
 
         auth = FirebaseAuth.getInstance()
@@ -98,7 +109,11 @@ class SplashActivity : AppCompatActivity() {
     }
 
     fun remoteConfigResponse(){
-        initAdsConsent()
+        if (PrefHelper.getIsPurchased()){
+            moveNext()
+        } else {
+            initAdsConsent()
+        }
     }
 
     private fun initAdsConsent() {
@@ -283,7 +298,7 @@ class SplashActivity : AppCompatActivity() {
             moveNext()
         } else {
             isIntertialAdshowing = true
-            InterstitialAdManager(this).loadAndShowNewSplashAd(
+            /*InterstitialAdManager(this).loadAndShowNewSplashAd(
                 getString(R.string.splashInterstitialId),
                 PrefHelper.getBooleanDefultTrue(splash_inter),
                 object : InterstitialLoadCallback{
@@ -297,12 +312,69 @@ class SplashActivity : AppCompatActivity() {
                         moveNext()
                     }
                 }
+            )*/
+
+
+            val mInterstitialAdManager = InterstitialAdManager(this)
+            val adsDialog = adLoadingDialog()
+
+            mInterstitialAdManager.loadWithCallback(
+                getString(R.string.splashInterstitialId),
+                object :InterstitialLoadCallback{
+                    override fun onFailedToLoad() {
+                        adsDialog.safeDismiss(this@SplashActivity)
+                        isIntertialAdshowing = false
+                        moveNext()
+                    }
+
+                    override fun onLoaded() {
+                        if (!isMoved){
+                            isInterAdShowing = true
+                            adsDialog.safeDismiss(this@SplashActivity)
+                            mInterstitialAdManager.showNewSplashAd(
+                                object : InterstitialLoadCallback{
+                                    override fun onFailedToLoad() {
+                                        isInterAdShowing = false
+                                        isIntertialAdshowing = false
+                                        moveNext()
+                                    }
+                                    override fun onLoaded() {
+                                        isInterAdShowing = false
+                                        isIntertialAdshowing = false
+                                        moveNext()
+                                    }
+
+                                }
+                            )
+                        }
+                    }
+
+                }
             )
+
+            CoroutineScope(Dispatchers.Main).launch {
+                delay(20000)
+                when {
+                    isMoved || isInterAdShowing -> {
+
+                    }
+                    else -> {
+                        adsDialog.safeDismiss(this@SplashActivity)
+                        moveNext()
+                    }
+                }
+
+            }
         }
     }
 
 
     fun moveNext(){
+        if (isMoved || isInterAdShowing){
+            return
+        }
+        isMoved = true
+
         /*val mIntent = if (user == null){
             if (prefHelper.getBooleanDefultTrue(isShowOnBoarding) && PrefHelper.getBooleanDefultTrue(is_show_onboarding_screen)){
                 Intent(this, OnboardingActivity::class.java)

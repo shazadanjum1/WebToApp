@@ -135,6 +135,8 @@ class InterstitialAdManager (val mActivity: Activity) {
             return
         }
 
+        adLoading = true
+
         val adRequest = AdRequest.Builder().build()
 
         InterstitialAd.load(mActivity, ID, adRequest,
@@ -328,13 +330,54 @@ class InterstitialAdManager (val mActivity: Activity) {
     }
 
 
-    fun Dialog?.safeDismiss(activity: Activity?) {
-        if (this != null && this.isShowing && activity != null && !activity.isFinishing && !activity.isDestroyed) {
-            try {
-                dismiss()
-            } catch (e: IllegalStateException) { }
-            catch (e: IllegalArgumentException) { }
-            catch (e: Exception) { }
+    fun showNewSplashAd(interstitialLoadCallback: InterstitialLoadCallback){
+
+        if (!mActivity.isNetworkAvailable() || mInterstitialAd == null) { //  || !isShow || prefHelper.getIsPurchased()
+            interstitialLoadCallback.onFailedToLoad()
+            return
         }
+
+        // val adsDialog = mActivity.adLoadingDialog()
+
+        adLoading = false
+
+        mInterstitialAd?.fullScreenContentCallback = object: FullScreenContentCallback() {
+            override fun onAdClicked() {}
+
+            override fun onAdDismissedFullScreenContent() {
+                mInterstitialAd = null
+                interstitialLoadCallback.onLoaded()
+            }
+
+            override fun onAdFailedToShowFullScreenContent(p0: AdError) {
+                mInterstitialAd = null
+                interstitialLoadCallback.onFailedToLoad()
+            }
+
+            override fun onAdImpression() {}
+
+            override fun onAdShowedFullScreenContent() {
+                FirebaseAnalyticsUtils.logEventMessage("ad_interstitial_show")
+            }
+
+        }
+
+        //adsDialog.safeDismiss(mActivity)
+        if (mInterstitialAd != null) {
+            mInterstitialAd?.show(mActivity)
+        } else {
+            interstitialLoadCallback.onFailedToLoad()
+        }
+
+    }
+}
+
+fun Dialog?.safeDismiss(activity: Activity?) {
+    if (this != null && this.isShowing && activity != null && !activity.isFinishing && !activity.isDestroyed) {
+        try {
+            dismiss()
+        } catch (e: IllegalStateException) { }
+        catch (e: IllegalArgumentException) { }
+        catch (e: Exception) { }
     }
 }

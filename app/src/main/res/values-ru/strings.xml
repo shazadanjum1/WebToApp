@@ -489,4 +489,8 @@
     <string name="terms_of_use">Условия использования</string>
     <string name="cancel_anytime">Отменить в любое время</string>
 
+    <string name="this_action_may_contain_ads">Это действие может содержать рекламу</string>
+    <string name="password_must_contain_at_least_one_special_character">Пароль должен содержать хотя бы один специальный символ</string>
+    <string name="or">Или</string>
+
 </resources>

@@ -139,18 +139,18 @@ class BuildingAppActivity : AppCompatActivity() {
             }*/
 
             progressBar.progress = 25
-            progressTv.text = "25"
+            progressTv.text = "25 %"
 
             if (isEditMode){
                 filePath?.let {
                     uploadAppIcon(it) { downloadUrl ->
                         progressBar.progress = 50
-                        binding.progressTv.text = "50"
+                        binding.progressTv.text = "50 %"
                         updateAppDetails(appId,downloadUrl)
                     }
                 } ?: run{
                     progressBar.progress = 40
-                    binding.progressTv.text = "40"
+                    binding.progressTv.text = "40 %"
                     updateAppDetails(appId,null)
 
                 }
@@ -160,7 +160,7 @@ class BuildingAppActivity : AppCompatActivity() {
 
                 uploadAppIcon(filePath!!) { downloadUrl ->
                     progressBar.progress = 50
-                    binding.progressTv.text = "50"
+                    binding.progressTv.text = "50 %"
                     if (downloadUrl != null) {
                         saveAppDetails(downloadUrl)
                     } else {
@@ -253,7 +253,7 @@ class BuildingAppActivity : AppCompatActivity() {
 
         fetchFcmToken(_userId) { fcmToken ->
             binding.progressBar.progress = 75
-            binding.progressTv.text = "75"
+            binding.progressTv.text = "75 %"
 
             val uid = db.collection("apps").document().id
 
@@ -303,7 +303,7 @@ class BuildingAppActivity : AppCompatActivity() {
             )
 
         /*binding.progressBar.progress = 75
-        binding.progressTv.text = "75"*/
+        binding.progressTv.text = "75 %"*/
 
             db.collection("apps")
                 .document(uid)  // use generated UID
@@ -312,7 +312,7 @@ class BuildingAppActivity : AppCompatActivity() {
                     //FirebaseAnalyticsUtils.logEventMessage("build_success")
                     isClickable = true
                     binding.progressBar.progress = 100
-                    binding.progressTv.text = "100"
+                    binding.progressTv.text = "100 %"
                     Toast.makeText(this, resources.getString(R.string.app_details_saved_successfully), Toast.LENGTH_SHORT).show()
                     sendBroadcast(Intent(ACTION_FINISH_ACTIVITY).apply { setPackage(packageName) })
                     startActivity(Intent(this@BuildingAppActivity, MyAppsActivity::class.java))
@@ -322,7 +322,7 @@ class BuildingAppActivity : AppCompatActivity() {
                     FirebaseAnalyticsUtils.logEventMessage("server_error")
                     isClickable = true
                     binding.progressBar.progress = 100
-                    binding.progressTv.text = "100"
+                    binding.progressTv.text = "100 %"
                     Toast.makeText(this, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
                     sendBroadcast(Intent(ACTION_FINISH_ACTIVITY).apply { setPackage(packageName) })
                     startActivity(Intent(this@BuildingAppActivity, MainActivity::class.java))
@@ -349,7 +349,7 @@ class BuildingAppActivity : AppCompatActivity() {
 
         fetchFcmToken(userId) { fcmToken ->
             binding.progressBar.progress = 75
-            binding.progressTv.text = "75"
+            binding.progressTv.text = "75 %"
 
             // Complete data as a new record
             val appDetails = hashMapOf<String, Any?>(
@@ -391,7 +391,7 @@ class BuildingAppActivity : AppCompatActivity() {
             }
 
         /*binding.progressBar.progress = 75
-        binding.progressTv.text = "75"*/
+        binding.progressTv.text = "75 %"*/
 
             db.collection("apps")
                 .document(appId)  // use generated UID
@@ -400,7 +400,7 @@ class BuildingAppActivity : AppCompatActivity() {
                     FirebaseAnalyticsUtils.logEventMessage("build_success")
                     isClickable = true
                     binding.progressBar.progress = 100
-                    binding.progressTv.text = "100"
+                    binding.progressTv.text = "100 %"
                     Toast.makeText(this, resources.getString(R.string.app_details_saved_successfully), Toast.LENGTH_SHORT).show()
                     sendBroadcast(Intent(ACTION_FINISH_ACTIVITY).apply { setPackage(packageName) })
                     startActivity(Intent(this@BuildingAppActivity, MyAppsActivity::class.java))
@@ -410,7 +410,7 @@ class BuildingAppActivity : AppCompatActivity() {
                     FirebaseAnalyticsUtils.logEventMessage("build_failed")
                     isClickable = true
                     binding.progressBar.progress = 100
-                    binding.progressTv.text = "100"
+                    binding.progressTv.text = "100 %"
                     Toast.makeText(this, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
                     sendBroadcast(Intent(ACTION_FINISH_ACTIVITY).apply { setPackage(packageName) })
                     startActivity(Intent(this@BuildingAppActivity, MainActivity::class.java))

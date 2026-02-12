@@ -490,4 +490,8 @@
     <string name="terms_of_use">Kullanım Şartları</string>
     <string name="cancel_anytime">İstediğiniz zaman iptal edin</string>
 
+    <string name="this_action_may_contain_ads">Bu işlem reklam içerebilir</string>
+    <string name="password_must_contain_at_least_one_special_character">Şifre en az bir özel karakter içermelidir</string>
+    <string name="or">Veya</string>
+
 </resources>

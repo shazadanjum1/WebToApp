@@ -6,10 +6,23 @@
 
         <item name="statusBarBackground">@color/white</item>
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <item name="android:windowLightStatusBar">false</item>
+
+    </style>
+
+
+    <style name="Base.Theme.WebToAppConverter2" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <item name="statusBarBackground">@color/white</item>
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <item name="android:windowLightStatusBar">true</item>
 
     </style>
 
     <style name="Theme.WebToAppConverter" parent="Base.Theme.WebToAppConverter" />
+    <style name="Theme.WebToAppConverter2" parent="Base.Theme.WebToAppConverter2" />
 
     <style name="TransparentDialog" parent="Theme.AppCompat.Dialog">
         <item name="android:windowBackground">@android:color/transparent</item>

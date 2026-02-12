@@ -489,5 +489,8 @@
     <string name="terms_of_use">利用規約</string>
     <string name="cancel_anytime">いつでも解約可能</string>
 
+    <string name="this_action_may_contain_ads">この操作には広告が含まれる場合があります</string>
+    <string name="password_must_contain_at_least_one_special_character">パスワードには少なくとも1つの特殊文字を含める必要があります</string>
+    <string name="or">または</string>
 
 </resources>
