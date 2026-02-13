@@ -56,8 +56,8 @@ class LifeTimePremiumActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //changeLocale()
-        changeToDeviceLocale()
+        changeLocale()
+        //changeToDeviceLocale()
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         binding = ActivityLifeTimePremiumBinding.inflate(layoutInflater)
         setContentView(binding.root)

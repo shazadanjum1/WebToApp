@@ -32,6 +32,7 @@ import com.app.styletap.webtoappconverter.databinding.ActivitySubscriptionAndLif
 import com.app.styletap.webtoappconverter.extentions.adjustBottomHeight
 import com.app.styletap.webtoappconverter.extentions.adjustTopHeight
 import com.app.styletap.webtoappconverter.extentions.calculateMonthlyPriceFromFormattedPrice
+import com.app.styletap.webtoappconverter.extentions.changeLocale
 import com.app.styletap.webtoappconverter.extentions.changeToDeviceLocale
 import com.app.styletap.webtoappconverter.extentions.customEnableEdgeToEdge
 import com.app.styletap.webtoappconverter.extentions.customEnableEdgeToEdge2
@@ -80,7 +81,8 @@ class SubscriptionAndLifeTimeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        changeToDeviceLocale()
+        //changeToDeviceLocale()
+        changeLocale()
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         binding = ActivitySubscriptionAndLifeTimeBinding.inflate(layoutInflater)
         setContentView(binding.root)

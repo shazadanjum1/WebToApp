@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
+import androidx.core.view.updatePadding
 import com.app.styletap.interfaces.FirebaseAnalyticsUtils
 import com.app.styletap.webtoappconverter.R
 import com.app.styletap.webtoappconverter.databinding.ActivitySignUpBinding
@@ -18,6 +19,7 @@ import com.app.styletap.webtoappconverter.extentions.adjustBottomHeight
 import com.app.styletap.webtoappconverter.extentions.adjustTopHeight
 import com.app.styletap.webtoappconverter.extentions.changeLocale
 import com.app.styletap.webtoappconverter.extentions.customEnableEdgeToEdge
+import com.app.styletap.webtoappconverter.extentions.customEnableEdgeToEdgeNew
 import com.app.styletap.webtoappconverter.extentions.enablePasswordToggle
 import com.app.styletap.webtoappconverter.extentions.isNetworkAvailable
 import com.app.styletap.webtoappconverter.extentions.isValidEmail
@@ -47,9 +49,21 @@ class SignUpActivity : AppCompatActivity() {
         customEnableEdgeToEdge()
 
         adjustTopHeight(binding.toolbarLL)
-        adjustBottomHeight(binding.container)
+        //adjustBottomHeight(binding.container)
 
-        ViewCompat.setOnApplyWindowInsetsListener(binding.main) { _, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
+            val imeVisible = insets.isVisible(WindowInsetsCompat.Type.ime())
+
+            val bottomInset = insets.getInsets(
+                WindowInsetsCompat.Type.systemBars() or WindowInsetsCompat.Type.ime()
+            ).bottom
+
+            v.updatePadding(bottom = bottomInset)
+
+            insets
+        }
+
+        /*ViewCompat.setOnApplyWindowInsetsListener(binding.main) { _, insets ->
             val imeInsets = insets.getInsets(WindowInsetsCompat.Type.ime())
             val systemBarsInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
 
@@ -61,6 +75,23 @@ class SignUpActivity : AppCompatActivity() {
             )
             insets
         }
+
+        val editTexts = listOf(
+            binding.etName,
+            binding.etEmail,
+            binding.etPassword,
+            binding.etConfirmPassword)
+
+        editTexts.forEach { editText ->
+            editText.setOnFocusChangeListener { v, hasFocus ->
+                if (hasFocus) {
+                    binding.scrollView.post {
+                        binding.scrollView.requestChildFocus(v, v)
+                    }
+                }
+            }
+        }*/
+
 
         onBackPressedDispatcher.addCallback(
             this,
@@ -87,6 +118,11 @@ class SignUpActivity : AppCompatActivity() {
     fun initView(){
         binding.apply {
             toolbar.titleTv.text = resources.getString(R.string.create_account)
+            toolbar.backBtn.isVisible = true
+            toolbar.backBtn.setOnClickListener {
+                onBack()
+            }
+
             etPassword.enablePasswordToggle(
                 startDrawable = R.drawable.ic_lock,
                 eyeOnDrawable = R.drawable.ic_eye_on,

@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.isVisible
 import com.android.billingclient.api.BillingClient
 import com.android.billingclient.api.BillingClientStateListener
 import com.android.billingclient.api.BillingResult
@@ -92,6 +93,10 @@ class SplashActivity : AppCompatActivity() {
             }
         }
 
+    }
+
+    override fun onResume() {
+        super.onResume()
     }
 
     fun fetchRemoteConfigData() {
@@ -316,13 +321,13 @@ class SplashActivity : AppCompatActivity() {
 
 
             val mInterstitialAdManager = InterstitialAdManager(this)
-            val adsDialog = adLoadingDialog()
+            binding.loadingDialog.isVisible = true
 
             mInterstitialAdManager.loadWithCallback(
                 getString(R.string.splashInterstitialId),
                 object :InterstitialLoadCallback{
                     override fun onFailedToLoad() {
-                        adsDialog.safeDismiss(this@SplashActivity)
+                        binding.loadingDialog.isVisible = false
                         isIntertialAdshowing = false
                         moveNext()
                     }
@@ -330,7 +335,7 @@ class SplashActivity : AppCompatActivity() {
                     override fun onLoaded() {
                         if (!isMoved){
                             isInterAdShowing = true
-                            adsDialog.safeDismiss(this@SplashActivity)
+                            binding.loadingDialog.isVisible = false
                             mInterstitialAdManager.showNewSplashAd(
                                 object : InterstitialLoadCallback{
                                     override fun onFailedToLoad() {
@@ -359,7 +364,7 @@ class SplashActivity : AppCompatActivity() {
 
                     }
                     else -> {
-                        adsDialog.safeDismiss(this@SplashActivity)
+                        binding.loadingDialog.isVisible = false
                         moveNext()
                     }
                 }

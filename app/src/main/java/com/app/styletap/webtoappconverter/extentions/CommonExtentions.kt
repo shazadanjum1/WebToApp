@@ -79,6 +79,7 @@ import androidx.core.view.isVisible
 import com.app.styletap.ads.InterstitialAdManager
 import com.app.styletap.interfaces.FirebaseAnalyticsUtils
 import com.app.styletap.interfaces.InterstitialLoadCallback
+import com.app.styletap.webtoappconverter.databinding.DialogAdLoadingBinding
 import com.app.styletap.webtoappconverter.databinding.DialogExitAppBinding
 import com.app.styletap.webtoappconverter.databinding.DialogLogoutAppBinding
 import com.app.styletap.webtoappconverter.databinding.DialogRateUsBinding
@@ -122,6 +123,24 @@ fun Activity.customEnableEdgeToEdge() {
         window.navigationBarColor = Color.TRANSPARENT
     }
 }
+
+fun Activity.customEnableEdgeToEdgeNew() {
+    WindowCompat.setDecorFitsSystemWindows(window, true)
+
+    val windowController = ViewCompat.getWindowInsetsController(window.decorView)
+    windowController?.apply {
+        systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_DEFAULT
+        isAppearanceLightStatusBars = true
+        isAppearanceLightNavigationBars = false
+        show(WindowInsetsCompat.Type.statusBars() or WindowInsetsCompat.Type.navigationBars())
+    }
+
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        window.statusBarColor = Color.TRANSPARENT
+        window.navigationBarColor = Color.TRANSPARENT
+    }
+}
+
 
 fun Activity.customEnableEdgeToEdge2(
     statusBarColor: Int = Color.BLUE, // desired color
@@ -880,7 +899,7 @@ fun Context.openWhatsApp1(phoneNumber: String) {
     }
 }
 
-fun Context.openWhatsApp(phoneNumber: String) {
+fun Context.openWhatsApp2(phoneNumber: String) {
     val cleanNumber = phoneNumber
         .replace("+", "")
         .replace(" ", "")
@@ -925,6 +944,55 @@ fun Context.openWhatsApp(phoneNumber: String) {
 
     startActivity(chooser)
 }
+
+fun Context.openWhatsApp(phoneNumber: String) {
+    val cleanNumber = phoneNumber
+        .replace("+", "")
+        .replace(" ", "")
+
+    val uri = Uri.parse("https://wa.me/$cleanNumber")
+
+    val intents = mutableListOf<Intent>()
+
+    // Normal WhatsApp
+    val whatsappIntent = Intent(Intent.ACTION_VIEW, uri).apply {
+        setPackage("com.whatsapp")
+    }
+
+    if (whatsappIntent.resolveActivity(packageManager) != null) {
+        intents.add(whatsappIntent)
+    }
+
+    // WhatsApp Business
+    val businessIntent = Intent(Intent.ACTION_VIEW, uri).apply {
+        setPackage("com.whatsapp.w4b")
+    }
+
+    if (businessIntent.resolveActivity(packageManager) != null) {
+        intents.add(businessIntent)
+    }
+
+    // If no WhatsApp app found
+    if (intents.isEmpty()) {
+        Toast.makeText(
+            this,
+            getString(R.string.whatsapp_not_installed),
+            Toast.LENGTH_SHORT
+        ).show()
+        return
+    }
+
+    val chooser = Intent.createChooser(
+        intents.removeAt(0),
+        "Open with WhatsApp"
+    )
+
+    chooser.putExtra(Intent.EXTRA_INITIAL_INTENTS, intents.toTypedArray())
+
+    startActivity(chooser)
+}
+
+
 fun Context.openEmail1(
     email: String,
     subject: String,
@@ -969,6 +1037,7 @@ fun Activity.logoutUser() {
 
     val intent = Intent(this, LoginActivity::class.java)
     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+    intent.putExtra("from", "settings")
     startActivity(intent)
     this.finishAffinity()
 }
@@ -1157,22 +1226,25 @@ fun Context.showExitDialog(
 
 
 @SuppressLint("MissingInflatedId")
-fun Activity.adLoadingDialog(): android.app.AlertDialog? {
-    var alertDialog: android.app.AlertDialog? = null
+fun Activity.adLoadingDialog(): Dialog {
 
-    try {
-        val builder = android.app.AlertDialog.Builder(this)
-        builder.setCancelable(false)
-        val inflate = LayoutInflater.from(this).inflate(R.layout.dialog_ad_loading, null as ViewGroup?)
+    val dialog = Dialog(this)
+    val binding = DialogAdLoadingBinding.inflate(LayoutInflater.from(this))
 
-        builder.setView(inflate)
-        alertDialog = builder.create()
+    dialog.setContentView(binding.root)
+    dialog.setCancelable(true)
 
-        alertDialog?.window!!.setBackgroundDrawableResource(android.R.color.transparent)
-        alertDialog?.show()
-    } catch (_: Exception){}
+    dialog.window?.setBackgroundDrawable(Color.TRANSPARENT.toDrawable())
 
-    return alertDialog
+    dialog.show()
+    val layoutParams = WindowManager.LayoutParams().apply {
+        copyFrom(dialog.window?.attributes)
+        width = (resources.displayMetrics.widthPixels * 0.90).toInt() // 85% of screen width
+        height = WindowManager.LayoutParams.WRAP_CONTENT
+    }
+    dialog.window?.attributes = layoutParams
+
+    return dialog
 }
 
 fun View.animateViewXaxis() {
@@ -1237,6 +1309,7 @@ fun Activity.showRateUsDialog() {
     var rating = 4
     binding.apply {
         star1.setOnClickListener {
+            rateBtn.text = resources.getString(R.string.feedback)
             msgTv.isVisible = false
             rating = 1
             star1.setImageResource(R.drawable.star_filled)
@@ -1246,6 +1319,7 @@ fun Activity.showRateUsDialog() {
             star5.setImageResource(R.drawable.star_unfilled)
         }
         star2.setOnClickListener {
+            rateBtn.text = resources.getString(R.string.feedback)
             msgTv.isVisible = false
             rating = 2
             star1.setImageResource(R.drawable.star_filled)
@@ -1255,6 +1329,7 @@ fun Activity.showRateUsDialog() {
             star5.setImageResource(R.drawable.star_unfilled)
         }
         star3.setOnClickListener {
+            rateBtn.text = resources.getString(R.string.feedback)
             msgTv.isVisible = false
             rating = 3
             star1.setImageResource(R.drawable.star_filled)
@@ -1264,6 +1339,7 @@ fun Activity.showRateUsDialog() {
             star5.setImageResource(R.drawable.star_unfilled)
         }
         star4.setOnClickListener {
+            rateBtn.text = resources.getString(R.string.rate_us)
             msgTv.isVisible = false
             rating = 4
             star1.setImageResource(R.drawable.star_filled)
@@ -1273,6 +1349,7 @@ fun Activity.showRateUsDialog() {
             star5.setImageResource(R.drawable.star_unfilled)
         }
         star5.setOnClickListener {
+            rateBtn.text = resources.getString(R.string.rate_us)
             msgTv.isVisible = true
             rating = 5
             star1.setImageResource(R.drawable.star_filled)

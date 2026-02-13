@@ -542,7 +542,7 @@
                 app:cardCornerRadius="@dimen/_16sdp"
                 android:layout_marginHorizontal="@dimen/_12sdp"
                 android:layout_marginTop="@dimen/_14sdp"
-                app:cardBackgroundColor="@color/white"
+                android:layout_marginBottom="@dimen/_10sdp"
                 android:foreground="?attr/selectableItemBackground"
                 android:focusable="true"
                 >
@@ -619,7 +619,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/get_started"
                             android:textColor="@color/blue"
-                            app:drawableRightCompat="@drawable/ic_forward2"
+                            app:drawableEndCompat="@drawable/ic_forward2"
                             android:paddingHorizontal="@dimen/_12sdp"
                             android:paddingVertical="@dimen/_8sdp"
                             android:drawablePadding="@dimen/_8sdp"

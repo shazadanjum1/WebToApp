@@ -84,7 +84,8 @@ class SubscriptionPremiumActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        changeToDeviceLocale()
+        //changeToDeviceLocale()
+        changeLocale()
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         binding = ActivitySubscriptionPremiumBinding.inflate(layoutInflater)
         setContentView(binding.root)

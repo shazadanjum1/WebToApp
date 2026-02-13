@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
+import androidx.core.view.updatePadding
 import com.app.styletap.interfaces.FirebaseAnalyticsUtils
 import com.app.styletap.webtoappconverter.R
 import com.app.styletap.webtoappconverter.databinding.ActivityLoginBinding
@@ -37,6 +38,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var db: FirebaseFirestore
 
+    var fromWhere = "splash"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         changeLocale()
@@ -46,18 +48,17 @@ class LoginActivity : AppCompatActivity() {
         customEnableEdgeToEdge()
 
         adjustTopHeight(binding.toolbarLL)
-        adjustBottomHeight(binding.container)
+        //adjustBottomHeight(binding.container)
 
-        ViewCompat.setOnApplyWindowInsetsListener(binding.main) { _, insets ->
-            val imeInsets = insets.getInsets(WindowInsetsCompat.Type.ime())
-            val systemBarsInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
+            val imeVisible = insets.isVisible(WindowInsetsCompat.Type.ime())
 
-            binding.scrollView.setPadding(
-                0,
-                0,
-                0,
-                imeInsets.bottom
-            )
+            val bottomInset = insets.getInsets(
+                WindowInsetsCompat.Type.systemBars() or WindowInsetsCompat.Type.ime()
+            ).bottom
+
+            v.updatePadding(bottom = bottomInset)
+
             insets
         }
 
@@ -72,6 +73,10 @@ class LoginActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         db = FirebaseFirestore.getInstance()
 
+        intent?.extras?.let {
+            fromWhere = it.getString("from", "splash")
+        }
+
         initView()
     }
 
@@ -85,6 +90,13 @@ class LoginActivity : AppCompatActivity() {
     fun initView(){
         binding.apply {
             toolbar.titleTv.text = resources.getString(R.string.login)
+
+            if (fromWhere == "settings"){
+                toolbar.backBtn.isVisible = true
+                toolbar.backBtn.setOnClickListener {
+                    onBack()
+                }
+            }
 
             etPassword.enablePasswordToggle(
                 startDrawable = R.drawable.ic_lock,

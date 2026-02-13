@@ -95,7 +95,8 @@
         <activity
             android:name=".presentations.ui.activities.authorization.SignUpActivity"
             android:exported="false"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            />
         <activity
             android:name=".presentations.ui.activities.authorization.LoginActivity"
             android:exported="false"

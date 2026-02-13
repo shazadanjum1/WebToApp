@@ -24,6 +24,7 @@ import com.app.styletap.ads.NativeAdManager
 import com.app.styletap.interfaces.AppOpenAdCallBack
 import com.app.styletap.interfaces.FirebaseAnalyticsUtils
 import com.app.styletap.webtoappconverter.presentations.ui.activities.Premium.LifeTimePremiumActivity
+import com.app.styletap.webtoappconverter.presentations.ui.activities.Premium.SubscriptionAndLifeTimeActivity
 import com.app.styletap.webtoappconverter.presentations.ui.activities.Premium.SubscriptionPremiumActivity
 import com.app.styletap.webtoappconverter.presentations.ui.activities.splash.SplashActivity
 import com.app.styletap.webtoappconverter.presentations.utils.Contants.app_open
@@ -88,6 +89,7 @@ class MyApplication : Application(), Application.ActivityLifecycleCallbacks, Def
             currentActivity !is AdActivity &&
             currentActivity !is LifeTimePremiumActivity &&
             currentActivity !is SubscriptionPremiumActivity &&
+            currentActivity !is SubscriptionAndLifeTimeActivity &&
             !isIntertialAdshowing &&
             isShowApOpenAd &&
             PrefHelper.getBooleanDefultTrue(app_open)

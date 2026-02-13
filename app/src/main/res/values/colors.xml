@@ -57,4 +57,7 @@
     <color name="pro_c9">#90A1B9</color>
     <color name="pro_c10">#314158</color>
 
+
+    <color name="transpColor">#33000000</color>
+
 </resources>
