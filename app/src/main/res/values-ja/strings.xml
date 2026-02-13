@@ -69,7 +69,7 @@
 
     <string name="dashboard">ダッシュボード</string>
     <string name="create_app">アプリ作成</string>
-    <string name="web_to_app">Web to App</string>
+    <string name="web_to_app">ウェブからアプリへ</string>
     <string name="my_apps">マイアプリ</string>
     <string name="manage_apps">アプリ管理</string>
     <string name="wa_support">WAサポート</string>

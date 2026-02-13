@@ -72,7 +72,7 @@
 
     <string name="dashboard">仪表盘</string>
     <string name="create_app">创建应用</string>
-    <string name="web_to_app">Web 转 App</string>
+    <string name="web_to_app">网页转应用</string>
     <string name="my_apps">我的应用</string>
     <string name="manage_apps">管理应用</string>
     <string name="wa_support">WhatsApp 支持</string>

@@ -69,7 +69,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/iv2"
                 android:layout_marginHorizontal="@dimen/_16sdp"
-                android:layout_marginTop="-12dp"
+                android:layout_marginTop="-6dp"
                 >
 
                 <LinearLayout
@@ -111,7 +111,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/infoTv2"
-                    android:layout_marginTop="@dimen/_10sdp">
+                    android:layout_marginTop="@dimen/_11sdp">
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -141,7 +141,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/infoTv2"
-                    android:layout_marginTop="@dimen/_10sdp">
+                    android:layout_marginTop="@dimen/_11sdp">
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -171,7 +171,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/infoTv2"
-                    android:layout_marginTop="@dimen/_11sdp">
+                    android:layout_marginTop="@dimen/_12sdp">
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -207,7 +207,7 @@
                 android:layout_marginHorizontal="@dimen/_16sdp"
                 app:cardBackgroundColor="@color/blue"
                 app:strokeColor="@color/chip_text_purple"
-                android:layout_marginTop="@dimen/_22sdp"
+                android:layout_marginTop="@dimen/_24sdp"
                 >
 
                 <LinearLayout
@@ -218,7 +218,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    android:paddingVertical="@dimen/_12sdp"
+                    android:paddingVertical="@dimen/_10sdp"
                     >
 
                     <TextView
@@ -236,12 +236,14 @@
                         android:id="@+id/weeklyPriceTv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:text="@string/try_3_days_for_free_then_week"
                         android:textColor="@color/white"
                         android:fontFamily="@font/arimo_regular"
                         android:includeFontPadding="false"
                         android:textSize="@dimen/_11ssp"
                         android:textAlignment="center"
                         android:maxLines="1"
+                        android:layout_marginTop="@dimen/_3sdp"
                         />
 
                 </LinearLayout>
@@ -252,8 +254,8 @@
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/proYearlyBtn"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_65sdp"
-                app:cardCornerRadius="@dimen/_32sdp"
+                android:layout_height="@dimen/_56sdp"
+                app:cardCornerRadius="@dimen/_27sdp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/proWeeklyBtn"
                 app:layout_constraintStart_toStartOf="parent"
@@ -286,7 +288,6 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         android:layout_marginStart="@dimen/_16sdp"
-                        android:layout_marginTop="@dimen/_5sdp"
                         android:maxLines="1"
                         android:includeFontPadding="false"
                         />
@@ -302,7 +303,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/yearlyTv"
                         app:layout_constraintStart_toStartOf="parent"
                         android:layout_marginStart="@dimen/_16sdp"
-                        android:layout_marginTop="@dimen/_3sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
                         android:maxLines="1"
                         android:includeFontPadding="false"
                         />
@@ -319,7 +320,7 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         android:layout_marginEnd="@dimen/_16sdp"
-                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
                         android:maxLines="1"
                         android:includeFontPadding="false"
                         />
@@ -335,6 +336,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/yearlyTv"
                         android:layout_marginEnd="@dimen/_16sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
                         android:maxLines="1"
                         android:includeFontPadding="false"
                         />
@@ -368,8 +370,8 @@
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/proLifeTimeBtn"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_65sdp"
-                app:cardCornerRadius="@dimen/_32sdp"
+                android:layout_height="@dimen/_56sdp"
+                app:cardCornerRadius="@dimen/_27sdp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/proYearlyBtn"
                 app:layout_constraintStart_toStartOf="parent"
@@ -441,7 +443,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/proLifeTimeBtn"
-                android:layout_marginTop="@dimen/_9sdp"
+                android:layout_marginTop="@dimen/_8sdp"
                 android:includeFontPadding="false"
                 android:padding="@dimen/_4sdp"
                 />

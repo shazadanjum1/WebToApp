@@ -96,7 +96,7 @@
                 android:fontFamily="@font/poppins_bold"
                 android:textSize="@dimen/_26ssp"
                 android:includeFontPadding="false"
-                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_10sdp"
                 />
             <TextView
                 android:id="@+id/title2Tv"
@@ -112,7 +112,7 @@
                 android:textSize="@dimen/_26ssp"
                 android:textColor="@color/blue"
                 android:includeFontPadding="false"
-                android:layout_marginTop="-8dp"
+                android:layout_marginTop="-6dp"
                 />
 
             <TextView
@@ -122,7 +122,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginHorizontal="@dimen/_30sdp"
-                android:layout_marginTop="@dimen/_3sdp"
+                android:layout_marginTop="@dimen/_6sdp"
                 app:layout_constraintTop_toBottomOf="@+id/title2Tv"
                 android:text="@string/full_access_forever_no_subscriptions_no_hidden_fees"
                 android:textAlignment="center"
@@ -139,7 +139,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/descriptionTv"
-                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_18sdp"
                 android:layout_marginHorizontal="@dimen/_12sdp"
                 app:cardBackgroundColor="@color/white_95"
                 app:strokeColor="@color/pro_c8"
@@ -276,15 +276,16 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <!--@dimen/_175sdp-->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/priceCrd"
                 android:layout_width="0dp"
-                android:layout_height="@dimen/_175sdp"
+                android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/infoCard"
                 android:layout_marginHorizontal="@dimen/_12sdp"
-                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_22sdp"
                 app:cardCornerRadius="@dimen/_14sdp"
                 app:strokeColor="@color/blue"
                 app:strokeWidth="@dimen/_2sdp"
@@ -294,6 +295,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/pro_container1"
+                    android:paddingBottom="@dimen/_14sdp"
                     >
 
                     <TextView
@@ -424,7 +426,7 @@
                 app:srcCompat="@drawable/ic_pro_life2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="@id/priceCrd"
-                android:layout_marginBottom="-22dp"
+                android:layout_marginBottom="-24dp"
                 android:layout_marginEnd="@dimen/_2sdp"
                 />
 
@@ -440,7 +442,7 @@
                 android:layout_marginHorizontal="@dimen/_12sdp"
                 app:cardBackgroundColor="@color/white"
                 app:strokeWidth="0dp"
-                android:layout_marginTop="@dimen/_26sdp"
+                android:layout_marginTop="@dimen/_30sdp"
                 >
 
                 <androidx.constraintlayout.widget.ConstraintLayout
